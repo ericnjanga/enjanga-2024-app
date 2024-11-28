@@ -1,0 +1,128 @@
+// :root {
+//     //navbar-nav
+//     --website-bgscr-pos-y: 0;
+// }
+
+
+@layer utilities {
+
+
+    .is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure it's on top */
+    }
+
+    .txt-highlight1 { 
+        font-weight: 600;
+    }
+
+    .list-bullets-vert-align {
+        padding-left: 0.875rem;
+    }
+
+    // .box-width-1 {
+    //     max-width: var(--website-box-width-1);
+    // }
+    // .box-width-2 {
+    //     max-width: var(--website-box-width-2);
+    // }
+
+
+    // .fw-450 {
+    //     font-weight: 450!important;
+    // }
+
+    // // Will force the image to behave like it's being cropped:
+    // // Whenever the size of the image varies, the picture remains constant
+    // .img-poster {
+    //     object-fit: cover;
+    //     width: 100%;
+    // }
+
+    // .highlight-col1 {
+    //     color: var(--website-clr-col1-700);
+    // }
+    // a.highlight-col1 {
+    //     &:hover {
+    //         color: var(--website-clr-col3-e75);
+    //         text-decoration: none;
+    //     }
+    // }
+
+    // a.shinespot-col3-1 {
+    //     &:hover {
+    //         color: var(--website-clr-col3-e75);
+    //         text-decoration: none;
+    //     }
+    // }
+
+    // .fs-14 {
+    //     font-size: 14px;
+    // }
+//     @layer decorators {
+//         .bg-clr-gray, .bg-clr-white {
+//             position: relative;
+//             z-index: 0; // Making sure it doesn't obstruct any other elements relying on z-index
+//         }
+//         .bg-clr-gray {
+//             background-color: var(--website-clr-gray-1);
+//         }
+//         .bg-clr-white {
+//             background-color: var(--website-clr-fff);
+//         }
+
+//         .block-gradient-spacers {
+//             position: relative;
+
+//             // Medium Medium screens ...
+//             @media (min-width: 768px) and (max-width: (992px - 1)) {
+//                 --website-bgscr-pos-y: -5px;
+//             }
+
+//             // Small Medium screens ...
+//             @media (min-width: 576px) and (max-width: (768px - 1)) {
+//                 --website-bgscr-pos-y: -5px;
+//             }
+
+//             // Smaller screens ...
+//             @media (max-width: (576px - 1px)) {
+//             }
+
+//             &:before, &::after {
+//                 content: '';
+//                 position: absolute;
+//                 background-position-x: 0;
+//                 background-position-y: var(--website-bgscr-pos-y);
+//                 left: 0;
+//                 width: 100%;
+//                 height: var(--website-spacing-section-h-small);
+//                 background-size: cover;
+//                 background-image: url(./_img/aurora-spacer-1.png);
+//                 background-repeat: no-repeat;
+//                 overflow: hidden;
+//             }
+//             &:before {
+//                 top: calc(-1 * var(--website-spacing-section-h-small)); 
+//                 transform: rotate(180deg); /* Rotate the background image by 180 degrees */
+//             }
+//             &:after {
+//                 bottom: calc(-1 * var(--website-spacing-section-h-small));  
+//             }
+//         }
+    }
+
+
+//     @layer animations {
+//         @keyframes rotate {
+//             0% {
+//                 transform: rotate(0deg);
+//             }
+//             100% {
+//                 transform: rotate(360deg);
+//             }
+//         }
+//     }
+// }

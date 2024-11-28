@@ -1,0 +1,64 @@
+:root {
+    --website-alert-padding: 66px 16px 16px 16px;
+}
+
+
+@layer alert {
+    .alert {
+        position: relative;
+        border-radius: 0;
+        border-width: 0;
+        padding: var(--website-alert-padding);
+
+        &-info {
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 34px;
+                height: 34px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+
+
+        // Extra Large screens ...
+        @media (min-width: 1400px) {
+            // border: 10px solid purple;
+            --website-alert-padding: 16px 16px 16px 76px;
+        }
+        
+        // Large screens ...
+        @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+            // border: 10px solid violet;
+            --website-alert-padding: 16px 16px 16px 76px;
+        }
+        
+        // Large Medium screens ...
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            // border: 10px solid lime;
+            --website-alert-padding: 16px 16px 16px 76px;
+        }
+
+        // Medium Medium screens ...
+        @media (min-width: 768px) and (max-width: (992px - 1)) {
+            // border: 10px solid blue;
+            --website-alert-padding: 16px 16px 16px 76px;
+        }
+
+        // Small Medium screens ...
+        @media (min-width: 576px) and (max-width: (768px - 1)) {
+            // border: 10px solid turquoise;
+            --website-alert-padding: 16px 16px 16px 76px;
+        }
+
+        // // Smaller screens ...
+        // @media (max-width: (576px - 1px)) {
+        //     border: 10px solid chocolate;
+        // }
+    }
+}

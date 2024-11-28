@@ -1,0 +1,256 @@
+:root {
+    --website-theme-light-xxxx-0: #fff;
+    
+    --website-theme-light-aaaa-0: #E0FFF2; 
+    --website-theme-light-aaaa-1: #C9FFE8; 
+    --website-theme-light-aaaa-2: #A5FFD9; 
+    --website-theme-light-aaaa-x: #ADFF00;
+    --website-theme-light-aaaa-y: #00ff94;
+    --website-theme-light-aaaa-3: #80D1A5; 
+    --website-theme-light-aaaa-7: #80AA27; 
+
+    --website-theme-light-bbbb-0: #010023;
+    --website-theme-light-bbbb-1: #323069;
+    --website-theme-light-bbbb-2: #3B27BE;
+    --website-theme-light-bbbb-3: #4934d5;
+    --website-theme-light-bbbb-4: #5742d3;
+    --website-theme-light-bbbb-5: #535273;
+    --website-theme-light-bbbb-6: #DDDCF2;
+    --website-theme-light-bbbb-7: #F0EFFB;
+    --website-theme-light-bbbb-8: #EDEBF7;
+    --website-theme-light-bbbb-9: #CCCCF5;
+    --website-theme-light-bbbb-10: #C4C2FF;
+
+    --website-theme-light-cccc-0: #0066FF;
+
+    --website-theme-light-cccc-2: #E0DCF6;
+    --website-theme-light-cccc-3: #d9caf2; 
+    --website-theme-light-cccc-4: #AFAEDE;
+    --website-theme-light-cccc-7: #B5AEE8;
+    --website-theme-light-cccc-8: #ABA1EE;
+    --website-theme-light-cccc-10: #8073D5;
+    --website-theme-light-cccc-14: #9C8EFF; 
+}
+
+// html[data-theme="light"] {
+    body {
+        background-color: var(--website-theme-light-bbbb-8);
+        color: var(--website-theme-light-bbbb-5);
+    }
+
+    @layer component-mix {
+        .section-introduction .card,
+        .site-carousel__items-list .card {
+            border: 1px solid var(--website-theme-light-cccc-3); 
+        }
+    }
+
+    @layer site-carousel {
+        .site-carousel-item {  
+            .card { 
+                background-color: var(--website-theme-light-cccc-2);
+
+                // Overlay screen designed to blur the content on hover ...
+                &::before { 
+                    background-color: var(--website-theme-light-aaaa-0);
+                }
+
+                &-body {
+                    background-color: var(--website-theme-light-xxxx-0);
+                }
+                &:hover { 
+                    background-color: var(--website-theme-light-cccc-8);
+
+                    color: var(--website-theme-light-bbbb-4)!important;
+
+                    .card-body {
+                        h3, p {
+                            color: var(--website-theme-light-bbbb-4)!important;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+    @layer color-mix {
+        .light-block-txt-col {
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--website-theme-light-bbbb-1);
+            }
+            ul, p, a {
+                color: var(--website-theme-light-bbbb-5);
+            }
+            a {
+                &:hover {
+                    text-decoration: none;
+                    color: var(--website-theme-light-cccc-0);
+                }
+            }
+        }
+    
+        .dark-block-txt-col {
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--website-theme-light-bbbb-6);
+            }
+            ul, p, a {
+                color: var(--website-theme-light-bbbb-9);
+            }
+        }
+    }
+
+    @layer hero {
+        .hero {
+            background-color: var(--website-theme-light-bbbb-0);
+        }
+    }
+
+    @layer navbar {
+        .navbar {
+
+            &.navbar-masked {
+                background-color: var(--website-theme-light-bbbb-0);
+            }
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28200, 200, 200, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+            }
+            .navbar-toggler:focus { 
+                box-shadow: 0px 0px 10px var(--website-theme-light-xxxx-0);
+            }
+
+            .navbar-brand, .nav-link {
+                &:hover, &.active {
+                    color: var(--website-theme-light-aaaa-y);
+                } 
+            }
+            .navbar-collapse.collapse.show {
+                background-color: var(--website-theme-light-bbbb-0);
+            }
+
+            .nav-item { 
+                // separator between links
+                &::after { 
+                    background-color: var(--website-theme-light-bbbb-4);
+                }
+            }
+
+            .nav-link {
+                &.item-icon-material {
+                    &:hover {
+                        color: var(--website-theme-light-aaaa-y);
+                    }
+                }
+            }
+
+
+            // Extra Large screens ...
+            @media (min-width: 1400px) {
+                // border: 10px solid purple;
+            }
+            
+            // Large screens ...
+            @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+                // border: 10px solid violet;
+            }
+            
+            // Large Medium screens ...
+            @media (min-width: 992px) and (max-width: (1200px - 1)) {
+                // border: 10px solid lime;
+            }
+
+            // Medium Medium screens ...
+            @media (min-width: 768px) and (max-width: (992px - 1)) {
+                // border: 10px solid blue;
+            }
+
+            // Small Medium screens ...
+            @media (min-width: 576px) and (max-width: (768px - 1)) {
+                // border: 10px solid turquoise;
+            }
+
+            // Smaller screens ...
+            @media (max-width: (576px - 1px)) {
+                // border: 10px solid chocolate;
+            }
+        }
+    }
+
+    @layer section-theme {
+        .section-theme1 {
+            background-color: var(--website-theme-light-bbbb-2);
+
+            .card {
+                background-color: var(--website-theme-light-bbbb-3);
+            }
+        }
+    }
+
+    @layer buttons {
+        .btn {
+            &:disabled {
+                opacity: 0.5;
+            }
+        }
+        .btn-primary {
+            color: var(--website-theme-light-bbbb-0);
+            background-color: var(--website-theme-light-aaaa-y);
+            border-color: var(--website-theme-light-aaaa-y);
+
+            &:hover {
+                background-color: var(--website-theme-light-aaaa-x);
+                border-color: var(--website-theme-light-aaaa-7);
+            }
+            &:active {
+                background-color: var(--website-theme-light-aaaa-7);
+            }
+        }
+
+
+        .slick-arrow, // Set carousel buttons as 2nd btns
+        .btn-secondary {
+            color: var(--website-theme-light-bbbb-0);
+            background-color: var(--website-theme-light-bbbb-6);
+            border-color: var(--website-theme-light-cccc-10); 
+
+            &:hover {
+                background-color: var(--website-theme-light-aaaa-x);
+            }
+            &:active {
+                background-color: var(--website-theme-light-cccc-10);
+            }
+        }
+    }
+
+    @layer footer {
+        .global-footer {
+            background-color: var(--website-theme-light-xxxx-0);
+        }
+    } 
+
+    @layer modal {
+        .modal { 
+            .modal-body {
+                a {
+                    color: var(--website-theme-light-bbbb-3);
+                }
+            }
+            .bi-check-circle-fill {
+                &:before{
+                    color: var(--website-theme-light-bbbb-2);
+                }
+            }
+            .light-color-icon { 
+                &:before{
+                    color: var(--website-theme-light-bbbb-10);
+                }
+            }
+        }
+    }
+
+    @layer utilities { 
+        .txt-highlight1 { 
+            color: var(--website-theme-light-bbbb-1);
+        }
+    }
+// }

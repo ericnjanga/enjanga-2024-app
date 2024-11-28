@@ -1,0 +1,45 @@
+:root{
+    --website-case-study-thumb--img-marg: 0 0 10px 0;
+    --website-case-study-thumb--title-pad: 0 0 0 20px;
+}
+
+
+@layer case-study-thumb {
+    .case-study-thumb {
+        container-type: inline-size; /* or block-size, size */
+
+        a {
+            display: block;
+            text-decoration: none;
+
+            img {
+                margin: var(--website-case-study-thumb--img-marg);
+            }
+            h3 {
+                padding: var(--website-case-study-thumb--title-pad);
+            }
+
+            // @container (min-width: 1141px) {
+            //     border: 10px solid orange;
+            // }
+        
+            // @container (min-width: 961px) and (max-width: 1140px) {
+            //     border: 10px solid green;
+            // }
+        
+            // @container (min-width: 721px) and (max-width: 960px) {
+            //     border: 10px solid lime;
+            // }
+        
+            @container (min-width: 541px) and (max-width: 720px) {
+                // border: 10px solid blue;
+                --website-case-study-thumb--img-marg: 0 0 20px 0;
+                --website-case-study-thumb--title-pad: 0 0 0 40px;
+            }
+
+            // @container (max-width: 540px) {
+            //     border: 10px solid turquoise;
+            // } 
+        }
+    }
+}

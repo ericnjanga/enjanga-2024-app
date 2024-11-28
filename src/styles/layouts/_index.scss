@@ -1,0 +1,194 @@
+:root {
+    --website-section-intro-card-marg: 0 0 4px 0;
+    --website-section-intro-card-display: block;
+
+    // Intro card
+    --website-section-intro-h-textalign: left;
+    --website-section-intro-card-padd: 30px 20px 20px 20px;
+
+    // Skills card
+    --website-skills-wrapper-grid-template: 1fr / 1fr;
+    --website-skills-card-padd: 30px 20px 20px 20px;
+    --website-skills-card-1st-child-gridrow: unset;
+}
+
+@layer best-work {
+    .best-work__header {
+        padding: 0 30% 0 0;
+    }
+}
+
+@layer section-introduction {
+    .section-introduction {
+        .card-group {
+            display: var(--website-section-intro-card-display);
+
+            .card {
+                margin: var(--website-section-intro-card-marg);
+
+                .card-body {
+                    padding: var(--website-section-intro-card-padd);
+                }
+            }
+
+            // Extra Large screens ...
+            @media (min-width: 1400px) {
+                // border: 4px solid purple;
+                --website-section-intro-card-display: flex;
+                --website-section-intro-card-padd: 45px 55px 40px 55px;
+            }
+            
+            // Large screens ...
+            @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+                // border: 4px solid violet;
+                --website-section-intro-card-display: flex;
+                --website-section-intro-card-padd: 45px 45px 35px 45px;
+            }
+            
+            // Large Medium screens ...
+            @media (min-width: 992px) and (max-width: (1200px - 1)) {
+                // border: 4px solid lime;
+                --website-section-intro-card-display: flex;
+                --website-section-intro-card-padd: 45px 30px 30px 30px;
+            }
+
+            // Medium Medium screens ...
+            @media (min-width: 768px) and (max-width: (992px - 1)) {
+                // border: 4px solid blue;
+                --website-section-intro-card-padd: 45px 30px 30px 30px;
+            }
+
+            // Small Medium screens ...
+            @media (min-width: 576px) and (max-width: (768px - 1)) {
+                // border: 4px solid turquoise;
+                --website-section-intro-card-padd: 45px 30px 30px 30px;
+            }
+
+            // Smaller screens ...
+            @media (max-width: (576px - 1px)) {
+                // border: 4px solid chocolate;
+            }
+        }
+
+        &__header {
+            text-align: var(--website-section-intro-h-textalign);
+        }
+
+        // Extra Large screens ...
+        @media (min-width: 1400px) {
+            // border: 3px solid purple;
+            --website-section-intro-h-textalign: center;
+        }
+        
+        // Large screens ...
+        @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+            // border: 3px solid violet;
+            --website-section-intro-h-textalign: center;
+        }
+        
+        // Large Medium screens ...
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            // border: 3px solid lime;
+            --website-section-intro-h-textalign: center;
+        }
+    
+        // Medium Medium screens ...
+        @media (min-width: 768px) and (max-width: (992px - 1)) {
+            // border: 3px solid blue;
+            --website-section-intro-h-textalign: center;
+        }
+    
+        // // Small Medium screens ...
+        // @media (min-width: 576px) and (max-width: (768px - 1)) {
+        //     // border: 3px solid turquoise;
+        // }
+    
+        // // Smaller screens ...
+        // @media (max-width: (576px - 1px)) {
+        //     // border: 3px solid chocolate;
+        // }
+    }
+}
+
+.best-work-header,
+.site-carousel-item .card,
+.section-skills header,
+.jumbotron__textwrapper,
+.sc-header-bot-spacing,
+.banner-shine, .banner-feature,
+.alert,
+.special-card {
+    ul, ol, p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@layer section-skills {
+    .section-skills {
+        header {
+            max-width: 670px;
+        }
+        .section-skills__wrapper {
+            display: grid;
+            grid-template: var(--website-skills-wrapper-grid-template);
+            gap: 4px;
+
+            .special-card { 
+                .card-body {
+                    padding: var(--website-skills-card-padd);
+                }
+
+                &:first-of-type { // Occupy 2 rows
+                    grid-row: var(--website-skills-card-1st-child-gridrow);
+                }
+            }
+
+            // Extra Large screens ...
+            @media (min-width: 1400px) {
+                // border: 4px solid purple;
+                --website-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --website-skills-card-1st-child-gridrow: span 2;
+                --website-skills-card-padd: 40px 40px 40px 85px;
+            }
+            
+            // Large screens ...
+            @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+                // border: 4px solid violet;
+                --website-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --website-skills-card-1st-child-gridrow: span 2;
+                --website-skills-card-padd: 40px 40px 40px 65px;
+            }
+            
+            // Large Medium screens ...
+            @media (min-width: 992px) and (max-width: (1200px - 1)) {
+                // border: 4px solid lime;
+                --website-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --website-skills-card-1st-child-gridrow: span 2;
+                --website-skills-card-padd: 30px 30px 30px 55px;
+            }
+    
+            // Medium Medium screens ...
+            @media (min-width: 768px) and (max-width: (992px - 1)) {
+                // border: 4px solid blue;
+                --website-skills-card-padd: 45px 30px 30px 30px;
+            }
+    
+            // // Small Medium screens ...
+            // @media (min-width: 576px) and (max-width: (768px - 1)) {
+            //     border: 4px solid turquoise;
+            //     --website-skills-card-padd: 45px 30px 30px 30px;
+            // }
+    
+            // // Smaller screens ...
+            // @media (max-width: (576px - 1px)) {
+            //     border: 4px solid chocolate;
+            // }
+        }
+    }
+}
+
+
+
+

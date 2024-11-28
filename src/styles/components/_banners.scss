@@ -1,0 +1,230 @@
+:root {
+    --website-banner-feature-padd: 20px;
+    --website-banner-feature-img-height: 300px;
+    --website-banner-feature-img-width: 100%;
+    --website-banner-feature-img-obj-orientation: top;
+    --website-banner-feature-display: block;
+    --website-banner-feature-flex-dir: row;
+
+    --website-banner-shine-display: flex;
+    --website-banner-shine-gap: 35px;
+    --website-banner-shine-direction: column;
+    --website-banner-shine-aligitms: unset;
+    --website-banner-shine-msg-marg: 0;
+    --website-banner-shine-msg-txtalign: left;
+    --website-banner-shine-box-1-title-mrg: 0 0 20px 0;
+
+    --website-banner-shine-cta-mrg: 20px 0 0 0;
+}
+
+
+@layer banner-icon {
+    .banner-icon {
+        display: block;
+        width: 67px;
+        height: 67px;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+
+        &-about-vision {
+            background-image: url(./_img/icon-about-our-vision.png);
+        } 
+        &-about-appart {
+            background-image: url(./_img/icon-about-set-appart.png);
+        } 
+        &-about-who {
+            background-image: url(./_img/icon-about-who-we-are.png);
+        } 
+        &-about-how {
+            background-image: url(./_img/icon-about-how-we-do.png);
+        }
+    }
+}
+
+
+@layer banners {
+    .banner-shine, .banner-feature {
+        p, ul {
+            &+ .btn {
+                margin: var(--website-banner-shine-cta-mrg);
+                // border: 20px solid palevioletred;
+            }
+        }
+    }
+
+    @layer banner-shine {
+        .banner-shine {
+
+            // h1, h2, h3, h4, h5, p {
+            //     color: var(--website-clr-fff);
+            // }
+
+            .container {
+                display: var(--website-banner-shine-display);
+                gap: var(--website-banner-shine-gap);
+                flex-direction: var(--website-banner-shine-direction);
+                align-items: var(--website-banner-shine-aligitms);
+            }
+
+            // ...
+            .btn-secondary {
+                background-color: transparent;
+                border-color: var(--website-clr-fff);
+
+                &:hover {
+                    color: var(--website-clr-dark-col3-f8f);
+                    background-color: var(--website-clr-col3-ff7);
+                    border-color: var(--website-clr-col1-300);
+                }
+            }
+
+            &__box-1 {
+                flex: 1;
+
+                h2 {
+                    margin: var(--website-banner-shine-box-1-title-mrg);
+                }
+            }
+            &__box-2 {
+                flex: 1;
+            }
+
+             
+
+            // Extra Large screens ...
+            @media (min-width: 1400px) {
+                // border: 10px solid purple;
+                --website-banner-shine-msg-marg: 0 auto;
+                --website-banner-shine-msg-txtalign: center;
+                --website-banner-shine-direction: row;
+                --website-banner-shine-aligitms: center;
+                --website-banner-shine-gap: 50px;
+                --website-banner-shine-box-1-title-mrg: 0 0 45px 0;
+                --website-banner-shine-cta-mrg: 40px 0 0 0;
+            }
+            
+            // Large screens ...
+            @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+                // border: 10px solid violet;
+                --website-banner-shine-msg-marg: 0 auto;
+                --website-banner-shine-msg-txtalign: center;
+                --website-banner-shine-direction: row;
+                --website-banner-shine-aligitms: center;
+                --website-banner-shine-gap: 50px;
+                --website-banner-shine-box-1-title-mrg: 0 0 35px 0;
+                --website-banner-shine-cta-mrg: 40px 0 0 0;
+            }
+            
+            // Large Medium screens ...
+            @media (min-width: 992px) and (max-width: (1200px - 1)) {
+                // border: 10px solid lime;
+                --website-banner-shine-msg-marg: 0 auto;
+                --website-banner-shine-msg-txtalign: center;
+                --website-banner-shine-direction: row;
+                --website-banner-shine-aligitms: center;
+                --website-banner-shine-gap: 50px;
+                --website-banner-shine-box-1-title-mrg: 0 0 30px 0;
+                --website-banner-shine-cta-mrg: 35px 0 0 0;
+            }
+
+            // Medium Medium screens ...
+            @media (min-width: 768px) and (max-width: (992px - 1)) {
+                // border: 10px solid blue;
+                --website-banner-shine-msg-marg: 0 auto;
+                --website-banner-shine-msg-txtalign: center;
+                --website-banner-shine-cta-mrg: 25px 0 0 0;
+            }
+            // // Small Medium screens ...
+            // @media (min-width: 576px) and (max-width: (768px - 1)) {
+            //     border: 10px solid turquoise;
+            // }
+            // // Smaller screens ...
+            // @media (max-width: (576px - 1px)) {
+            //     border: 10px solid chocolate;
+            // }
+        }
+        .banner-shine--center-stage {
+            .banner-shine__message {
+                margin: var(--website-banner-shine-msg-marg);
+                text-align: var(--website-banner-shine-msg-txtalign);
+            }
+        }
+        .banner-shine--2-cols-1-full {
+            .banner-shine__box-2 {
+                flex: unset;
+            }
+        }
+    }
+
+    @layer banner-feature {
+        .banner-feature {
+            display: var(--website-banner-feature-display);
+            flex-direction: var(--website-banner-feature-flex-dir);
+
+            &--text {
+                flex: 1;
+                padding: var(--website-banner-feature-padd);
+            }
+            &--img-deco {
+                display: block;
+                object-position: var(--website-banner-feature-img-obj-orientation);
+                width: var(--website-banner-feature-img-width);
+                height: var(--website-banner-feature-img-height);
+                background-repeat: no-repeat;
+                background-size:cover;
+            }
+
+
+            // Extra Large screens ...
+            @media (min-width: 1400px) {
+                // border: 10px solid purple;
+                --website-banner-feature-display: flex;
+                --website-banner-feature-flex-dir: row-reverse;
+                --website-banner-feature-padd: 80px;
+                --website-banner-feature-img-height: auto;
+                --website-banner-feature-img-width: 55%;
+                --website-banner-feature-img-obj-orientation: left;
+            }
+            
+            // Large screens ...
+            @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+                // border: 10px solid violet;
+                --website-banner-feature-display: flex;
+                --website-banner-feature-flex-dir: row-reverse;
+                --website-banner-feature-padd: 80px;
+                --website-banner-feature-img-height: auto;
+                --website-banner-feature-img-width: 50%;
+                --website-banner-feature-img-obj-orientation: left;
+            }
+            
+            // Large Medium screens ...
+            @media (min-width: 992px) and (max-width: (1200px - 1)) {
+                // border: 10px solid lime;
+                --website-banner-feature-display: flex;
+                --website-banner-feature-flex-dir: row-reverse;
+                --website-banner-feature-padd: 50px;
+                --website-banner-feature-img-height: auto;
+                --website-banner-feature-img-width: 50%;
+                --website-banner-feature-img-obj-orientation: left;
+            }
+
+            // Medium Medium screens ...
+            @media (min-width: 768px) and (max-width: (992px - 1)) {
+                // border: 10px solid blue;
+                --website-banner-feature-padd: 50px;
+                --website-banner-feature-img-height: 350px;
+            }
+
+            // // Small Medium screens ...
+            // @media (min-width: 576px) and (max-width: (768px - 1)) {
+            //     border: 10px solid turquoise;
+            // }
+
+            // // Smaller screens ...
+            // @media (max-width: (576px - 1px)) {
+            //     border: 10px solid chocolate;
+            // }
+        }
+    }
+}

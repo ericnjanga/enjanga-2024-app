@@ -1,0 +1,42 @@
+
+/**
+ * NOTE ON BACKGROUND IMAGES
+ * ------
+ They have to be referrenced relative to this file (_index.scss), so url(./_img/...)
+*/
+
+// Using layers to override bootstrap features without using "!important"
+@layer vendors {
+    @import './vendors/_bootstrap@5.3.3.min';
+}
+
+@layer base {
+    @import './base/initialization';
+    @import './base/variables';
+    @import './base/utilities';
+}
+
+@layer layouts {
+    @import './layouts/index';
+}
+
+@layer vendors {
+    @import './vendors/modal.scss';
+}
+
+@layer components {
+    @import './components/icons-and-more';
+    @import './components/form-elts';
+    @import './components/jumbotron';
+    @import './components/hero';
+    @import './components/icon-list';
+    @import './components/speech-bubble';
+    @import './components/navbar';
+    @import './components/site-carousel.scss';
+    @import './components/mixed-components';
+    @import './components/footer';
+}
+
+@layer theming {
+    @import './theming/light-mode';
+}

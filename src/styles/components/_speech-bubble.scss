@@ -1,0 +1,21 @@
+:root {
+    --website-speech-bubble-padding: 20px;
+}
+
+@layer speech-bubble {
+    .speech-bubble {
+        padding: var(--website-speech-bubble-padding);
+
+        // Speech bubble pointer
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8.5px solid transparent;  /* 17px width divided by 2 */
+            border-right: 8.5px solid transparent; /* 17px width divided by 2 */
+            border-bottom: 74px solid black;       /* 74px height and the color of the triangle */
+            transform: translateX(-50%); 
+        }
+    }
+}

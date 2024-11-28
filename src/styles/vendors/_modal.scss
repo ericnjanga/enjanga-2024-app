@@ -1,0 +1,97 @@
+/**
+ * Modal is from the Bootstrap vendor, so we are mostly overriding styles
+*/
+
+
+:root {
+    --website-modal-space-gap: 1.25rem;
+    --website-modal-heading-margtop: 1.875rem; // 30px
+    --website-modal-gallery-images-margtop: 1.25rem;
+    --website-modal-gallery-grid-template: 1fr / 1fr;
+}
+
+
+
+@layer modal {
+    .modal { 
+        .modal-header, .modal-body, .modal-footer {
+            padding: var(--website-modal-space-gap);
+        }
+
+        .modal-body {
+            .list-text, .gallery-images {
+                display: grid;
+            }
+            .list-text { 
+                gap: 0.625rem;
+            } 
+            h4 {
+                margin-top: var(--website-modal-heading-margtop);
+            }
+            .gallery-images {
+                grid-template-columns: var(--website-modal-gallery-grid-template);
+                grid-gap: 0.75rem;
+                margin-top: var(--website-modal-gallery-images-margtop);
+            }
+ 
+            .list-highlights {
+                list-style: none;
+    
+                li {
+                    &:before{
+                        padding-right: 11px;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+            .btn {
+                margin: 0;
+            }
+        }
+ 
+        
+
+
+        // Extra Large screens ...
+        @media (min-width: 1400px) {
+            // border: 10px solid purple;
+            --website-modal-space-gap: 1.875rem 3.125rem;
+            --website-modal-heading-margtop: 2.5rem;
+            --website-modal-gallery-images-margtop: 1.875rem;
+        }
+        
+        // Large screens ...
+        @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+            // border: 10px solid violet;
+            --website-modal-space-gap: 1.875rem 2.5rem;
+            --website-modal-heading-margtop: 2.5rem;
+            --website-modal-gallery-images-margtop: 1.875rem;
+        }
+        
+        // Large Medium screens ...
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            // border: 10px solid lime;
+            --website-modal-space-gap: 1.875rem 2.5rem;
+            --website-modal-heading-margtop: 2.5rem;
+            --website-modal-gallery-images-margtop: 1.875rem;
+        }
+
+        // Medium Medium screens ...
+        @media (min-width: 768px) and (max-width: (992px - 1)) {
+            // border: 10px solid blue;
+        }
+
+        // Small Medium screens ...
+        @media (min-width: 576px) and (max-width: (768px - 1)) {
+            // border: 10px solid turquoise;
+        }
+
+        // Smaller screens ...
+        @media (max-width: (576px - 1px)) {
+            // border: 10px solid chocolate;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+:root {
+    --website-section-accordion-and-img-body-font-size: inherit;
+}
+
+@layer accordion {
+    .accordion {
+        container-type: inline-size; /* or block-size, size */
+
+        .accordion-button {
+            font-weight: inherit;
+            font-size: inherit;
+        }
+        .accordion-body {
+            font-size: var(--website-section-accordion-and-img-body-font-size);
+        }
+
+        .accordion-item {
+            @container (min-width: 1141px) {
+                // border: 10px solid orange;
+                --website-section-accordion-and-img-body-font-size: 1.40rem;
+            }
+        
+            @container (min-width: 961px) and (max-width: 1140px) {
+                // border: 10px solid green;
+                --website-section-accordion-and-img-body-font-size: 1.25rem;
+            }
+        
+            @container (min-width: 721px) and (max-width: 960px) {
+                // border: 10px solid lime;
+                --website-section-accordion-and-img-body-font-size: 1.20rem;
+            }
+        
+            @container (min-width: 541px) and (max-width: 720px) {
+                // border: 10px solid blue;
+                --website-section-accordion-and-img-body-font-size: 1.17rem;
+            }
+    
+            @container (max-width: 540px) {
+                // border: 10px solid turquoise;
+                --website-section-accordion-and-img-body-font-size: 1.13rem;
+            } 
+    
+        }
+    }
+    .accordion-header {
+        margin-bottom: 0;
+    }
+    .accordion-item, .accordion-button {
+        border-radius: 0;
+    }
+    .accordion-item {
+        border-width: 0;
+        background-color: transparent;
+    }
+    .accordion-button {
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--website-clr-col1-f7e);
+        }
+    }
+    .accordion-collapse.collapse.show {
+        background-color: var(--website-clr-col3-f7e);
+    }
+}
+
+

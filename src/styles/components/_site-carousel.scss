@@ -1,0 +1,225 @@
+:root {
+    --website-site-carousel-hover-state: 35%; 
+    --website-site-carousel-btnprev-y: -60px; 
+    --website-site-carousel-item-gap: 20px;
+
+    --website-carousel-controls-top: -110px;
+    --website-carousel-controls-flexdir: column;
+    --website-carousel-controls-width: min-content;
+    --website-carousel-controls-gap: 5px; 
+
+    // Special card
+    --website-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
+}
+
+/**
+ * Basic decorator of the carousel component.
+ * This class takes care of every styling uncovered by the Slick slider plugin
+ * https://kenwheeler.github.io/slick/
+*/
+
+@layer site-carousel {
+    .site-carousel-wrapper {
+        position: relative;
+
+        // [Carousel controls]
+        .site-carousel-controls {
+            position: absolute;
+            display: flex;
+            top: var(--website-carousel-controls-top);
+            gap: var(--website-carousel-controls-gap); 
+            right: 0;
+            justify-content: end;
+            flex-direction: var(--website-carousel-controls-flexdir);
+            width: var(--website-carousel-controls-width);
+    
+            button {
+                width: fit-content;
+            }
+        }
+
+        .site-carousel__items-list { 
+            list-style: none;    
+            margin: 0;
+            padding: 0;
+            
+            // Hide default carousel controls
+            .slick-arrow {
+                display: none!important;
+            }
+    
+            .site-carousel-item { 
+                .card {
+                    position: relative;
+                    display: block; 
+                    text-decoration: none;
+    
+                    // Overlay screen designed to blur the content on hover ...
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        z-index: 1;
+                        opacity: 0; // hidden by default
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%; 
+                        transition: all 0.3s ease; // ensures a smooth transition
+                    }
+    
+                    .hover-btn {
+                        position: absolute;
+                        z-index: 2;
+                        opacity: 0;
+                        visibility: hidden;
+                        box-shadow: 0 1px 3px rgb(19, 63, 0);
+                        top: 20px;
+                        right: 20px;
+                        width: 41.34px;
+                        height: 41.34px;
+
+                        &::after {
+                            font-size: 1.5rem;
+                            left: 0.7rem;
+                        }
+                    }
+                    
+                    &:hover { 
+                        .card-body {
+                            text-decoration: underline;
+                        }
+                        .hover-btn { // Reveal the CTA
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    .card-body {
+                        padding: var(--website-carousel-card-padd);
+                        border-bottom-left-radius: var(--website-bdr-radius-0);
+                        border-bottom-right-radius: var(--website-bdr-radius-0);
+                    }
+                } 
+            }
+    
+            .slick-track {
+                /**
+                 * Styling the 3 active items .......
+                 * ----------------------------------
+                */ 
+                @media (min-width: 1200px) { 
+                    --website-site-carousel-item-gap: 25px;
+    
+                    .slick-active { 
+                        // 1st element ...
+                        &:has(+ .slick-active + .slick-active) {
+                            .card {
+                                margin-left: 0;
+                                margin-right: var(--website-site-carousel-item-gap);
+                                // background-color: rgb(0, 91, 165);
+                            }
+                        }
+                        // 2nd element ...
+                        &:has(+ .slick-active),
+                        &.slick-current + .slick-active {
+                            .card {
+                                margin-left: calc(var(--website-site-carousel-item-gap) / 2);
+                                margin-right: calc(var(--website-site-carousel-item-gap) / 2);
+                                // background-color: rgb(0, 140, 255);
+                            }
+                        }
+                        // 3rd element ...
+                        &.slick-current + .slick-active + .slick-active,
+                        &:last-of-type.slick-current {
+                            .card {
+                                margin-left: var(--website-site-carousel-item-gap);
+                                // background-color: rgb(163, 19, 0);
+                            } 
+                        }
+                    }
+                }
+    
+                /**
+                 * Styling the 2 active items .......
+                 * ----------------------------------
+                */ 
+                @media (min-width: 768px) and (max-width: (1200px - 1)) { 
+                    --website-site-carousel-item-gap: 20px;
+                    
+                    .slick-active {
+                        // 1st element ...
+                        &:has(+ .slick-active) { 
+                            .card {
+                                // background-color: rgb(0, 91, 165);
+                                margin-right: var(--website-site-carousel-item-gap);
+                            }
+                        }
+                        // 2nd element ...
+                        &.slick-current + .slick-active,
+                        &:last-of-type.slick-current {
+                            .card {
+                                // background-color: rgb(163, 19, 0);
+                                margin-left: var(--website-site-carousel-item-gap);
+                            } 
+                        }
+                    }
+        
+        
+                }
+            }
+        }
+
+
+    
+    
+    
+        // Extra Large screens ...
+        @media (min-width: 1400px) {
+            // border: 3px solid purple;
+            --website-site-carousel-btnnext-y: -70px;
+            --website-site-carousel-btnprev-y: -70px;  
+            --website-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --website-carousel-controls-top: -70px;
+            --website-carousel-controls-flexdir: row;
+        }
+        
+        // Large screens ...
+        @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+            // border: 3px solid violet;
+            --website-site-carousel-btnnext-y: -70px;
+            --website-site-carousel-btnprev-y: -70px;  
+            --website-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --website-carousel-controls-top: -70px;
+            --website-carousel-controls-flexdir: row;
+        }
+        
+        // Large Medium screens ...
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            // border: 3px solid lime;
+            --website-site-carousel-btnprev-y: -70px;  
+            --website-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --website-carousel-controls-top: -70px;
+            --website-carousel-controls-flexdir: row;
+        }
+
+        // Medium Medium screens ...
+        @media (min-width: 768px) and (max-width: (992px - 1)) {
+            // border: 3px solid blue;
+            --website-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
+            --website-carousel-controls-top: -70px;
+            --website-carousel-controls-flexdir: row;
+        }
+
+        // Small Medium screens ...
+        @media (min-width: 576px) and (max-width: (768px - 1)) {
+            // border: 3px solid turquoise;
+            --website-carousel-controls-top: -100px;
+            --website-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+        }
+
+        // Smaller screens ...
+        @media (max-width: (576px - 1px)) {
+            // border: 3px solid chocolate;
+        }
+    }
+}

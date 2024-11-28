@@ -1,0 +1,80 @@
+:root {
+    --website-info1-blurb-flex-dir: column;
+    --website-info1-blurb-flex-gap: 10px;
+    --website-info1-blurb-dim: 100px; 
+    --website-info1-blurb-width: 100%;
+}
+
+
+@layer info1-blurb {
+    .info1-blurb {
+        container-type: inline-size; /* or block-size, size */ 
+
+        &_header {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                margin-bottom: 5px;
+                width: var(--website-info1-blurb-dim);
+                height: var(--website-info1-blurb-dim);
+            }
+            span {
+                display: block;
+                line-height: 18px;
+
+                &:first-of-type {
+                    margin-top: 5px;
+                    font-weight: 600;
+                }
+
+                &:nth-of-type(2) {
+                    font-size: .9rem;
+                }
+            }
+        }
+
+        &_content {
+            flex: 1;
+        }
+ 
+        .info1-blurb-wrapper {
+            display: flex;
+            gap: var(--website-info1-blurb-flex-gap); 
+            flex-direction: var(--website-info1-blurb-flex-dir);
+            width: var(--website-info1-blurb-width);
+
+            p {
+                &:first-of-type {
+                    margin: 0;
+                }
+            } 
+
+            @container (min-width: 1141px) {
+                --website-info1-blurb-flex-dir: row;
+                --website-info1-blurb-flex-gap: 140px;
+                --website-info1-blurb-width: 80%;
+                // border: 10px solid orange;
+            }
+         
+            @container (min-width: 961px) and (max-width: 1140px) {
+                --website-info1-blurb-flex-dir: row;
+                --website-info1-blurb-flex-gap: 100px;
+                --website-info1-blurb-width: 85%;
+                // border: 10px solid turquoise;
+            }
+
+            @container (min-width: 721px) and (max-width: 960px) {
+                --website-info1-blurb-flex-dir: row;
+                --website-info1-blurb-flex-gap: 60px;
+                // border: 10px solid green;
+            }
+    
+            @container (min-width: 541px) and (max-width: 720px) {
+                --website-info1-blurb-flex-dir: row;
+                --website-info1-blurb-flex-gap: 30px;
+                // border: 10px dashed blue;
+            }
+        }
+    }
+}

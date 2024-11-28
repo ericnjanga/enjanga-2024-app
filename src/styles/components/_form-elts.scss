@@ -1,0 +1,99 @@
+
+:root {
+    // Normal buttons ...
+    --website-btn-padding: 10px 20px;
+    --website-btn-fontsize: 1.15rem;
+    // Normal buttons + icon
+    --website-btn-icon-before-padding: 10px 20px 10px 40px;
+    --website-btn-icon-after-padding: 10px 40px 10px 20px;
+    --website-btn-icon-icon-size: 1.5rem; 
+    --website-btn-icon-icon-top: 5px;
+    --website-btn-icon-icon-left: 9px;
+    --website-btn-icon-icon-right: 17px;
+
+    // Small buttons ...
+    --website-btn-sm-padding: 0.25rem 0.75rem; 
+    --website-btn-sm-fontsize: 0.875rem;
+    // Small buttons + icon
+    --website-btn-icon-before-sm-padding: 0.25rem 0.75rem 0.25rem 2rem; // icon before
+    --website-btn-icon-after-sm-padding: 0.25rem 2rem 0.25rem 0.75rem; // icon after
+    --website-btn-icon-sm-icon-size: 1.1rem; 
+    --website-btn-icon-sm-icon-top: 2px;
+    --website-btn-icon-sm-icon-right: 10px;
+
+    // btn icon ...
+    --website-btnicon-padding: 10px 45px 10px 20px;
+    --website-btnicon-icon-top: 6px;
+    --website-btnicon-icon-right: 20px;
+}
+
+@layer form-elts {
+    @layer buttons {   
+        .btn {
+            border-radius: var(--website-bdr-radius-0);
+            padding: var(--website-btn-padding);
+            font-weight: 500;
+            font-size: var(--website-btn-fontsize);
+
+            // ...
+            &.item-icon-bootstrap,
+            &.item-icon-material {
+                position: relative;
+
+                &.item-icon-material-before {
+                    padding: var(--website-btn-icon-before-padding);
+                    
+                    &::before {
+                        left: var(--website-btn-icon-icon-left);
+                    }
+                }
+                &.item-icon-material-after {
+                    padding: var(--website-btn-icon-after-padding);
+                    
+                    &::after {
+                        left: unset;
+                        right: var(--website-btn-icon-icon-right);
+                    }
+                }
+
+                &::before, &::after {
+                    position: absolute;
+
+                    font-size: var(--website-btn-icon-icon-size);
+                    top: var(--website-btn-icon-icon-top);
+                }
+            }
+
+            &.btn-sm {
+                padding: var(--website-btn-sm-padding);
+                font-size: var(--website-btn-sm-fontsize);
+
+                &.item-icon-bootstrap,
+                &.item-icon-material {
+
+                    &.item-icon-material-before {
+                        padding: var(--website-btn-icon-before-sm-padding);
+
+                        &::before {
+                            left: var(--website-btn-icon-sm-icon-right);
+                        }
+                    }
+                    &.item-icon-material-after {
+                        padding: var(--website-btn-icon-after-sm-padding);
+
+                        &::after {
+                            right: var(--website-btn-icon-sm-icon-right);
+                        }
+                    } 
+
+                    &::before, &::after {
+                        font-size: var(--website-btn-icon-sm-icon-size);
+                        top: var(--website-btn-icon-sm-icon-top);
+                    }
+                }
+            }
+
+
+        } 
+    } 
+}
