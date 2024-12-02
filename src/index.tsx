@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import makeMirageServer from './server/mirageServerSetup';
 import reportWebVitals from './reportWebVitals';
