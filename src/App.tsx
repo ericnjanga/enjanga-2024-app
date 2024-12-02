@@ -1,17 +1,22 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles/App.scss";
-import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
+import Caroussel from "./components/Caroussel/Caroussel";
+import Portfolio from "./components/Portfolio/Portfolio";
+import About from "./components/About/About";
 
 const Home = () => <p>Home</p>;
-
-const About = () => <p>About</p>;
+ 
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Hero />
+      <Caroussel />
+      <Portfolio />
+      <About />
       <Footer />
 
 

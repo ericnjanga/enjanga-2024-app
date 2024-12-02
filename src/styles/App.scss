@@ -27,11 +27,9 @@
 @layer components {
     @import './components/icons-and-more';
     @import './components/form-elts';
-    @import './components/jumbotron';
-    @import './components/hero';
+    @import './components/jumbotron'; 
     @import './components/icon-list';
-    @import './components/speech-bubble';
-    @import './components/navbar';
+    @import './components/speech-bubble'; 
     @import './components/site-carousel.scss';
     @import './components/mixed-components';
     @import './components/footer';
@@ -41,11 +39,4 @@
     @import './theming/light-mode';
 }
 
-
-body {
-    border: 20px solid greenyellow;
-}
-
-.Footer {
-    border: 4px solid blue!important;
-}
+  

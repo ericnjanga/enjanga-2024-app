@@ -1,7 +1,7 @@
 
 :root {
     // Normal buttons ...
-    --website-btn-padding: 10px 20px;
+    --website-btn-md-padding: 8px 16px;
     --website-btn-fontsize: 1.15rem;
     // Normal buttons + icon
     --website-btn-icon-before-padding: 10px 20px 10px 40px;
@@ -14,6 +14,12 @@
     // Small buttons ...
     --website-btn-sm-padding: 0.25rem 0.75rem; 
     --website-btn-sm-fontsize: 0.875rem;
+
+    // large buttons ...
+    --website-btn-lg-padding: 14px 25px;
+    --website-btn-lg-fontsize: 1.4rem;
+
+
     // Small buttons + icon
     --website-btn-icon-before-sm-padding: 0.25rem 0.75rem 0.25rem 2rem; // icon before
     --website-btn-icon-after-sm-padding: 0.25rem 2rem 0.25rem 0.75rem; // icon after
@@ -31,7 +37,8 @@
     @layer buttons {   
         .btn {
             border-radius: var(--website-bdr-radius-0);
-            padding: var(--website-btn-padding);
+            border-width: 2px;
+            padding: var(--website-btn-md-padding);
             font-weight: 500;
             font-size: var(--website-btn-fontsize);
 
@@ -91,6 +98,11 @@
                         top: var(--website-btn-icon-sm-icon-top);
                     }
                 }
+            }
+
+            &.btn-lg {
+                padding: var(--website-btn-lg-padding);
+                font-size: var(--website-btn-lg-fontsize);
             }
 
 

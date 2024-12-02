@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@chromatic-com/storybook", 
     "@storybook/addon-styling",
+    '@storybook/addon-controls', // Adds the controls addon
     // Other addons...
   ],
   framework: {

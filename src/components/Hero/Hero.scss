@@ -1,0 +1,159 @@
+:root { 
+  --website-hero-height: auto; // 270px; 
+  --website-hero-container-paddtop: 90px;
+
+  --website-hero-persona-position: relative;
+  --website-hero-persona-pos-bottom: 0;
+  --website-hero-persona-pos-right: 0;
+  --website-hero-persona-position: relative;
+  --website-hero-persona-width: 50%;
+  --website-hero-persona-margin: 0 auto;
+  
+  --website-hero-subtitle: 1.188rem;
+  --website-hero-subtitle-lineheight: 1.75rem;
+
+  --website-hero-decoration-display: none;
+  --website-hero-decoration-height: 400px;
+  --website-hero-decoration-right: 0;
+
+  --website-jumbotron-textwrapper-width: unset;
+  --website-hero-jumbotron-margin: 0 0 20px 0;
+}
+
+
+@layer hero {
+  .Hero {
+      position: relative;
+      height: var(--website-hero-height); 
+      overflow: hidden;
+
+      &-subtitle { 
+          font-size: var(--website-hero-subtitle);
+          line-height: var(--website-hero-subtitle-lineheight); 
+      }
+
+      &-content-wrapper {
+          padding-top: var(--website-hero-container-paddtop);
+      }
+
+      &-persona {
+          display: block;
+          position: var(--website-hero-persona-position);
+          bottom: var(--website-hero-persona-pos-bottom);
+          right: var(--website-hero-persona-pos-right);
+          width: var(--website-hero-persona-width);
+          margin: var(--website-hero-persona-margin);
+          transform: scaleX(-1); // Mirroring an Image Horizontally
+          z-index: 2;
+      }
+
+      &-decoration {
+          position: absolute;
+          z-index: 1;
+          display: var(--website-hero-decoration-display);
+          // width: inherit;
+          height: var(--website-hero-decoration-height);
+          right: var(--website-hero-decoration-right);
+          bottom: 0;
+      }
+     
+      &-jumbotron {
+          position: relative;
+          width: var(--website-jumbotron-textwrapper-width);
+          margin: var(--website-hero-jumbotron-margin);
+          z-index: 3;
+      }
+
+      // Extra Large screens ...
+      @media (min-width: 1400px) {
+          // border: 3px solid purple; 
+          --website-hero-height: 560px; 
+          --website-hero-container-paddtop: 150px; 
+          --website-hero-persona-width: 400px;
+          --website-jumbotron-textwrapper-width: 620px;
+          --website-hero-persona-margin: 0;
+          --website-hero-persona-position: absolute;
+          --website-hero-persona-pos-right: 40px;
+
+          --website-hero-subtitle: 1.48rem;
+          --website-hero-subtitle-lineheight: 2.05rem;
+
+          --website-hero-decoration-height: 100%;
+          --website-hero-decoration-right: -5%;
+          --website-hero-decoration-display: block;
+      }
+      
+      // Large screens ...
+      @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+          // border: 3px solid violet; 
+          --website-hero-height: 560px; 
+          --website-hero-container-paddtop: 150px;
+          --website-hero-persona-width: 400px;
+          --website-jumbotron-textwrapper-width: 550px;
+          --website-hero-persona-margin: 0;
+          --website-hero-persona-position: absolute;
+          --website-hero-persona-pos-right: 40px;
+
+          --website-hero-subtitle: 1.38rem;
+          --website-hero-subtitle-lineheight: 1.95rem;
+          
+          --website-hero-decoration-height: 100%;
+          --website-hero-decoration-right: -5%;
+          --website-hero-decoration-display: block;
+      }
+      
+      // Large Medium screens ...
+      @media (min-width: 992px) and (max-width: (1200px - 1)) {
+          // border: 3px solid lime; 
+          --website-hero-height: 430px; 
+          --website-hero-container-paddtop: 120px;
+          --website-hero-persona-width: 300px;
+          --website-jumbotron-textwrapper-width: 500px;
+          --website-hero-persona-margin: 0;
+          --website-hero-persona-position: absolute;
+          --website-hero-persona-pos-right: 40px;
+
+          --website-hero-subtitle: 1.38rem;
+          --website-hero-subtitle-lineheight: 1.95rem;
+          
+          --website-hero-decoration-height: 100%;
+          --website-hero-decoration-right: -10%;
+          --website-hero-decoration-display: block;
+      }
+
+      // Medium Medium screens ...
+      @media (min-width: 768px) and (max-width: (992px - 1)) {
+          // border: 3px solid blue; 
+          --website-hero-height: 430px; 
+          --website-hero-container-paddtop: 130px;
+          --website-hero-persona-width: 300px;
+          --website-jumbotron-textwrapper-width: 400px;
+          --website-hero-persona-margin: 0;
+          --website-hero-persona-position: absolute;
+          --website-hero-persona-pos-right: 60px;
+
+          --website-hero-subtitle: 1.288rem;
+          --website-hero-subtitle-lineheight: 1.85rem;
+          
+          --website-hero-decoration-height: 100%;
+          --website-hero-decoration-right: -20%;
+          --website-hero-decoration-display: block;
+      }
+
+      // Small Medium screens ...
+      @media (min-width: 576px) and (max-width: (768px - 1)) {
+          // border: 3px solid turquoise;
+          --website-hero-persona-width: 45%;
+          
+          --website-hero-decoration-height: 100%;
+          --website-hero-decoration-right: -20%;
+          --website-hero-decoration-display: block;
+      }
+
+      // Smaller screens ...
+      @media (max-width: (576px - 1px)) {
+          // border: 3px solid chocolate;
+      }
+  }
+}
+

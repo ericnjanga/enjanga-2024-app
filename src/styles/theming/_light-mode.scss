@@ -210,11 +210,21 @@
         .slick-arrow, // Set carousel buttons as 2nd btns
         .btn-secondary {
             color: var(--website-theme-light-bbbb-0);
-            background-color: var(--website-theme-light-bbbb-6);
-            border-color: var(--website-theme-light-cccc-10); 
+            background-color: transparent;
+            border-color: var(--website-theme-light-bbbb-5); 
+
+            &.btn-neon {
+                color: var(--website-theme-light-aaaa-y); 
+                border-color: var(--website-theme-light-aaaa-y); 
+
+                &:hover {
+                    color: var(--website-theme-light-bbbb-5);
+                }
+            }
 
             &:hover {
                 background-color: var(--website-theme-light-aaaa-x);
+                border-color: var(--website-theme-light-aaaa-x);
             }
             &:active {
                 background-color: var(--website-theme-light-cccc-10);
