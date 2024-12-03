@@ -1,10 +1,10 @@
 import Navigation from "../Navigation/Navigation";
 import './Hero.scss'; 
-import { useHero } from "../../hooks/useAPI";
+import { usePageSection } from "../../hooks/useAPI";
 
 const Hero = () => {
 
-  const hero = useHero();
+  const hero = usePageSection('1');
 
   return (
     <header className="Hero">

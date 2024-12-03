@@ -1,53 +1,89 @@
 
-import { useCallback, useEffect, useState } from "react";
+import { /* useCallback, */ useEffect, useState } from "react";
 // import { HostContext } from "../utils/contexts";
 // import { useParams } from "react-router-dom";
-import { HeroProps } from "../models";
+import { PageSectionProps, ExpertiseSpecProps, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 
 
 
 
+/**
+ * Fetch server data, handle errors, and save response using a state provided function
+ * @param stateProps It has to match the database record property
+ * @param setStateFct 
+ * @param queryUrl 
+ */
+const fetchData = async(
+    stateProps: string, 
+    setStateFct: React.Dispatch<React.SetStateAction<null>>, 
+    queryUrl: string
+  ) => {
+  try {
+    const response = await fetch(queryUrl);
+
+    // Handle HTTP Errors (500, 400, ...)
+    if (!response.ok) {
+      throw new Error(`HTTP Error. Status: ${response.status}`);
+    }
+
+    // Parse data to JSON
+    const data = await response.json();
+
+    // Handle invalid data structure
+    if (!data && !data[stateProps]) {
+      throw new Error('Invalid data structure');
+    }
+
+    console.log(`**** data[${stateProps}]>>>`, data[stateProps]);
+    // Save data
+    setStateFct(data[stateProps]);
+  }
+  catch(error) {
+    // Handle all errors
+    logErrorMessage(error); 
+  }
+};
+
  
-/*
-
- * The custom hook will return an object of type HeroProps
-*/
-export const useHero = (): HeroProps | null => {
-  const [hero, setHero] = useState(null); 
-  const query = `/api/hero/1`;
-
-  const fetchData = useCallback(async() => {
-    console.log('**** hero>>>', hero);
-    try {
-      const response = await fetch(query);
-
-      // Handle HTTP Errors (500, 400, ...)
-      if (!response.ok) {
-        throw new Error(`HTTP Error. Status: ${response.status}`);
-      }
-
-      // Parse data to JSON
-      const data = await response.json();
-
-      // Handle invalid data structure
-      if (!data && !data.hero) {
-        throw new Error('Invalid data structure');
-      }
-
-      // Save data
-      setHero(data.hero);
-    }
-    catch(error) {
-      // Handle all errors
-      logErrorMessage(error); 
-    }
-  }, []);
+// Returns a database record of type "PageSectionProps"
+export const usePageSection = (id: string): PageSectionProps | null => {
+  const [pageSection, setPageSection] = useState(null); 
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-  return hero;
+    fetchData('pageSection', setPageSection, `/api/pageSection/${id}`);
+  }, []);
+  return pageSection;
+};
+
+// Returns a database record of type "ExpertiseSpecProps[]"
+export const useExpertises = (parentId: string): ExpertiseSpecProps[] | null => {
+  const [expertiseSpecs, setExpertisePanel] = useState(null); 
+  
+  useEffect(() => {
+    fetchData('expertiseSpecs', setExpertisePanel, `/api/expertiseSpecsByParent/${parentId}`);
+  }, [parentId]);
+  return expertiseSpecs;
+};
+
+// Returns a database record of type "ExpertiseSpecProps[]"
+export const useProjects = (): ProjectProps[] | null => {
+  const [projects, setExpertisePanel] = useState(null); 
+  
+  useEffect(() => {
+    fetchData('projects', setExpertisePanel, `/api/projects`);
+  }, []);
+  return projects;
+};
+
+// Returns a database record of type "ExpertiseSpecProps[]"
+export const useNavOptions = (): NavOptionProps[] | null => {
+  const [navOptions, setNavOptions] = useState(null); 
+  
+  useEffect(() => {
+    fetchData('navOptions', setNavOptions, `/api/navOptions`);
+  }, []);
+  return navOptions;
 };
 
 

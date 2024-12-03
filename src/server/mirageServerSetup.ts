@@ -6,15 +6,149 @@ function makeMirageServer() {
 
   return createServer({
     models: {
-      hero: Model, // Define a hero model
+      pageSection: Model, // Define a hero model
+      expertiseSpec: Model,
+      project: Model,
+      navOption: Model
     },
 
-    seeds(server: Server) {
+    seeds(server: Server) { 
+      // Nav Options
+      server.create('navOption', {
+        id: '1',
+        name: 'Scope of Expertise ...', 
+        url: '#scope-of-expertise',
+        description: '....', 
+      });
+      server.create('navOption', {
+        id: '2',
+        name: 'Some work ...', 
+        url: '#some-work',
+        description: '....', 
+      });
+      server.create('navOption', {
+        id: '3',
+        name: 'About me...', 
+        url: '#about',
+        description: '....', 
+      });
 
-      server.create('hero', {
+      // Projects ...
+      server.create('project', {
+        id: '1',
+        title: 'proejct 1 title', 
+        description: '....', 
+      });
+      server.create('project', {
+        id: '2',
+        title: 'proejct 2 title', 
+        description: '....', 
+      });
+      server.create('project', {
+        id: '3',
+        title: 'proejct 3 title', 
+        description: '....', 
+      });
+      server.create('project', {
+        id: '4',
+        title: 'proejct 4 title', 
+        description: '....', 
+      });
+
+      // Page Sections ...
+      server.create('pageSection', {
         id: '1',
         title: 'Software Design & Engineering', 
         description: 'I excel at creating custom software for web applications, and web platforms. I have a taste for visual aesthetics and user-friendliness, and enjoy designing as much as coding.', 
+      }); 
+      server.create('pageSection', { // Expertise specification 1
+        id: '2',
+        title: 'Writing custom code', 
+        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>', 
+      });
+      server.create('pageSection', { // Fportfolio
+        id: '3',
+        title: 'Some of my work', 
+        description: 'I’ve wrote code for hundreds of web applications over my 15+ years of experience. Below is some of my work.', 
+      });
+      server.create('pageSection', {
+        id: '4',
+        title: 'A little bit about me :)', 
+        description: `
+          <p>I’m a passionate of web technologies</p>
+          <ul>
+            <li>15+ years in the tech industry</li>
+            <li>Computer science Bachelor degree</li>
+            <li>Have a keep eye for aesthetics</li>
+          </ul>
+        `, 
+      });
+      server.create('pageSection', { // Footer
+        id: '5',
+        title: 'Eric Njanga', 
+        description: `
+        <p className="title mb-0">Software Engineer &amp; Designer</p>
+        <address className="location mb-0">Toronto, Canada</address>
+        `, 
+      }); 
+      server.create('pageSection', { // Expertise specification 2
+        id: '6',
+        title: 'Expertise 2', 
+        description: '<p>...</p>', 
+      });
+      
+      
+
+      // Expertise Specification ...
+      // parentId: '2' ...
+      server.create('expertiseSpec', {
+        id: '1', 
+        parentId: '2',
+        blurb: `Creating single page applications that are optimized for speed and efficiency.`,
+        description: `...`, 
+      });
+      server.create('expertiseSpec', {
+        id: '2', 
+        parentId: '2',
+        blurb: `Translating visual designs into responsive and interactive User Interfaces.`,
+        description: `...`, 
+      });
+      server.create('expertiseSpec', {
+        id: '3', 
+        parentId: '2',
+        blurb: `Creating Responsive and interactive User Interfaces.`,
+        description: `...`, 
+      });
+      server.create('expertiseSpec', {
+        id: '4', 
+        parentId: '2',
+        blurb: `Ensuring Accessibility compliance ...`,
+        description: `...`, 
+      });
+      server.create('expertiseSpec', {
+        id: '5', 
+        parentId: '2',
+        blurb: `Solving complex and unusual coding problems and communication effectively with stakeholders`,
+        description: `...`, 
+      });
+      // parentId: '2' ...
+      server.create('expertiseSpec', {
+        id: '6', 
+        parentId: '6',
+        blurb: `Expertise specification 2 - blurb 1`,
+        description: `...`, 
+      });
+      server.create('expertiseSpec', {
+        id: '7', 
+        parentId: '6',
+        blurb: `Expertise specification 2 - blurb 2`,
+        description: `...`, 
+      });
+      server.create('expertiseSpec', {
+        id: '8', 
+        parentId: '6',
+        blurb: `Expertise specification 2 - blurb 3`,
+        description: `...`, 
       });
     },
 
@@ -27,9 +161,33 @@ function makeMirageServer() {
     routes() {
       this.namespace = 'api';
 
-      this.get("/hero/:id", (schema: AppRegistry, request: Request) => { 
-        return this.schema.heros.find(request.params.id);
+      // navOptions ...
+      this.get("/navOptions", () => { 
+        return this.schema.navOptions.all();
       });
+
+      // PageSection ...
+      this.get("/pageSection/:id", (schema: AppRegistry, request: Request) => { 
+        return this.schema.pageSections.find(request.params.id);
+      });
+ 
+
+      // Expertise Specification ...
+      this.get("/expertiseSpecs", () => { 
+        return this.schema.expertiseSpecs.all();
+      }); 
+      this.get("/expertiseSpecsByParent/:id", (schema: AppRegistry, request: Request) => { 
+        return this.schema.expertiseSpecs.where({ parentId: request.params.id });
+      });  
+      this.get("/expertiseSpec/:id", (schema: AppRegistry, request: Request) => { 
+        return this.schema.expertiseSpecs.find(request.params.id);
+      });
+ 
+
+      // Projects ...
+      this.get("/projects", () => { 
+        return this.schema.projects.all();
+      }); 
     },
   });
 }

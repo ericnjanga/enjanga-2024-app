@@ -1,22 +1,31 @@
 import "./Portfolio.scss";
+import { usePageSection, useProjects } from "../../hooks/useAPI";
+import ProjectThumb from "../ProjectThumb/ProjectThumb";
 
 const Portfolio = () => {
+  const sectionData = usePageSection("3");
+  const projectList = useProjects();
+
   return (
-    <footer className="Portfolio">
-      <div className="container text-center">
-        <h4 className="name mb-0">Eric Njanga</h4>
+    <section className="Portfolio">
+      <div className="container">
+        <h2 className="name mb-0">
+          {!sectionData ? "..." : sectionData.title}
+        </h2>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: sectionData ? sectionData.description : "",
+          }}
+        ></div>
 
-        <p className="title mb-0">Software Engineer &amp; Designer</p>
-        <address className="location mb-0">Toronto, Canada</address>
+        <div>
+          {projectList && projectList.map(project => {
 
-        <button
-          className="btn-link"
-          aria-label="Open contact form to get in touch with Eric Njanga"
-        >
-          Get in touch with me
-        </button>
+            return <ProjectThumb {...project} />;
+          })}
+        </div>
       </div>
-    </footer>
+    </section>
   );
 };
 

@@ -1,6 +1,8 @@
 import './Navigation.scss';
+import { useNavOptions } from '../../hooks/useAPI';
 
 const Navigation = () => {
+  const navItemsList = useNavOptions();
 
   return (
     <nav id="main-nav" className="Navigation navbar navbar-expand-lg w-100 fixed-top">
@@ -14,21 +16,19 @@ const Navigation = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#scope-of-expertise">Scope of Expertise</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#fields-of-excellence">Fields of Excellence</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#best-work">Best Work</a>
-            </li> 
+            {navItemsList && navItemsList.map((navItem, index) => {
+
+              return (
+                <li className="nav-item" key={index}>
+                  <a className="nav-link" href={navItem.url}>{navItem.name}</a>
+                </li>
+              );
+            })} 
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
               <a href="#" target="_blank"
-                className="btn btn-primary item-icon-material item-icon-material-after chat-bubble js-chat-button">Ask me a
-                question</a>
+                className="btn btn-primary item-icon-material item-icon-material-after chat-bubble js-chat-button">Get in touch with me</a>
             </li>
           </ul>
 

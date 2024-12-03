@@ -1,14 +1,16 @@
 import "./Caroussel.scss";
+import ExpertisePanel from "../ExpertisePanel/ExpertisePanel";
 
 const Caroussel = () => {
   return (
-    <footer className="Caroussel">
-      <div className="container text-center">
-        <h4 className="name mb-0">Caroussel</h4>
-
+    <section className="Caroussel">
+      <div className="container">
+        
+        <ExpertisePanel pageSectionId={'2'} />
+        <ExpertisePanel pageSectionId={'6'} />
      
       </div>
-    </footer>
+    </section>
   );
 };
 
