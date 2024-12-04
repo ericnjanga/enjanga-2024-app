@@ -19,9 +19,8 @@ const Portfolio = () => {
         ></div>
 
         <div>
-          {projectList && projectList.map(project => {
-
-            return <ProjectThumb {...project} />;
+          {projectList && projectList.map((project, index) => {
+            return <ProjectThumb key={index} {...project} />;
           })}
         </div>
       </div>

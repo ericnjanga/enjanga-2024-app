@@ -1,14 +1,31 @@
-import { ExpertiseSpecProps } from "../../models"; 
-import './ExpertiseSpec.scss';
+import { ExpertiseSpecProps } from "../../models";
+import "./ExpertiseSpec.scss";
+import { ModalContext } from "../../utils/contexts";
+import { useContext } from "react";
 
-const ExpertiseSpec = ({ blurb }: ExpertiseSpecProps) => {
+const ExpertiseSpec = ({ id, blurb }: ExpertiseSpecProps) => {
+  const context = useContext(ModalContext);
+
+  if (!context) {
+    // return if the context is empty
+    return <div className="placeholder">... placeholder ...</div>;
+  }
+
+  // Otherwise, destructure the context
+  const { openModal } = context;
+
   return (
-    <a className="ExpertiseSpec card" href="#vfsvd">
+    <div
+      className="ExpertiseSpec card"
+      onClick={() => {
+        openModal("ExpertiseSpec item", id);
+      }}
+    >
       <div className="card-body">
-      <p className="mb-0">{blurb}</p>
-      <button className="btn btn-link">Learn more ...</button>
+        <p className="mb-0">{blurb}</p>
+        <button className="btn btn-link">Learn more ...</button>
       </div>
-    </a>
+    </div>
   );
 };
 

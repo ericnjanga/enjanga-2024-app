@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <nav id="main-nav" className="Navigation navbar navbar-expand-lg w-100 fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="#eric-njanga">
+        <a className="navbar-brand" href="#welcome">
           <img src="./images/logo-light.png" className="img-fluid" alt="Eric Njanga" />
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

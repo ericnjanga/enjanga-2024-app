@@ -1,12 +1,17 @@
 
-import { /* useCallback, */ useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 // import { HostContext } from "../utils/contexts";
 // import { useParams } from "react-router-dom";
 import { PageSectionProps, ExpertiseSpecProps, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 
 
-
+/**
+ * TODO
+ * THESE FUNCTIONS NEED TO BE OPTIMIZED FOR:
+ * - RENDERING PERFORMANCE
+ * - CODE EFFICIENCY
+ */
 
 /**
  * Fetch server data, handle errors, and save response using a state provided function
@@ -66,6 +71,16 @@ export const useExpertises = (parentId: string): ExpertiseSpecProps[] | null => 
   return expertiseSpecs;
 };
 
+// Returns a database record of type "ExpertiseSpecProps"
+export const useExpertise = (id: string): ExpertiseSpecProps | null => {
+  const [expertiseSpecs, setExpertisePanel] = useState(null); 
+  
+  useEffect(() => {
+    fetchData('expertiseSpecs', setExpertisePanel, `/api/expertiseSpec/${id}`);
+  }, [id]);
+  return expertiseSpecs;
+};
+
 // Returns a database record of type "ExpertiseSpecProps[]"
 export const useProjects = (): ProjectProps[] | null => {
   const [projects, setExpertisePanel] = useState(null); 
@@ -84,6 +99,108 @@ export const useNavOptions = (): NavOptionProps[] | null => {
     fetchData('navOptions', setNavOptions, `/api/navOptions`);
   }, []);
   return navOptions;
+};
+
+
+
+/**
+ * - Responsible for fetching data from the "/api/definition"
+ * - MEMOIZATION: Using useCallback() to ensure fetchDefinition() is not re-created on each render
+ * @returns Promise containing either the successful data or and error object
+ */
+export const useDefinition = () => {
+  const fetchDefinition = useCallback(async (id: string) => {
+    try {
+      // Issue the API request and wait for the response ...
+      const response = await fetch(`/api/definition/${id}`);
+
+      console.log('>>>>>(244) data fetch', id);
+
+      // Handle http errors ...
+      if (!response.ok) {
+        throw new Error(`HTTP Error. Status: ${response.status}`);
+      }
+
+      // Once the response is available, parse it to json ...
+      const data = await response.json();
+
+      // Handle data structure errors ...
+      if (!data || !data.definition) {
+        throw new Error("The expected data structure was not received. Please try another query.");
+      }
+
+      // Place the result inside the returned promise ...
+      return data.definition;
+    } 
+    
+    // Place the error object inside the returned promise ...
+    catch (error: unknown) { 
+      const errorMsg = { title:'Oups, something went wrong!', description: 'An unknown error occurred.' };
+      if (error instanceof Error) {
+        errorMsg.description = error.message; 
+      } 
+      return errorMsg;
+    }
+  }, []);
+
+  return {
+    fetchDefinition,
+  };
+};
+
+
+export const fetchAPIData = async(dataType: string, dataId: string) => {
+  let queryString = '';
+  let stateProps = '';
+  // `/api/definition/${dataId}` 
+
+  // ...
+  switch(dataType) {
+    case 'ExpertiseSpec item':
+      queryString = `/api/expertiseSpec/${dataId}`;
+      stateProps = 'expertiseSpec';
+    break;
+
+    case 'ProjectThumb item':
+      queryString = `/api/projects/${dataId}`;
+      stateProps = 'project';
+    break;
+  }
+
+
+  
+
+  try {
+    // Issue the API request and wait for the response ...
+    const response = await fetch(queryString);
+
+    console.log('>>>>>(244) data fetch', dataId);
+
+    // Handle http errors ...
+    if (!response.ok) {
+      throw new Error(`HTTP Error. Status: ${response.status}`);
+    }
+
+    // Once the response is available, parse it to json ...
+    const data = await response.json();
+
+    // Handle data structure errors ...
+    if (!data || !data[stateProps]) {
+      throw new Error("The expected data structure was not received. Please try another query.");
+    }
+
+    // Place the result inside the returned promise ...
+    return data[stateProps];
+  } 
+  
+  // Place the error object inside the returned promise ...
+  catch (error: unknown) { 
+    const errorMsg = { title:'Oups, something went wrong!', description: 'An unknown error occurred.' };
+    if (error instanceof Error) {
+      errorMsg.description = error.message; 
+    } 
+    return errorMsg;
+  }
 };
 
 

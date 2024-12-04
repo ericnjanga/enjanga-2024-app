@@ -36,23 +36,39 @@ function makeMirageServer() {
       // Projects ...
       server.create('project', {
         id: '1',
-        title: 'proejct 1 title', 
-        description: '....', 
+        title: 'project 1 title', 
+        blurb: `project 1 blurb ...`,
+        description: `<h3> (Project 1)</h3>
+          <p><b>Description ..</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('project', {
         id: '2',
-        title: 'proejct 2 title', 
-        description: '....', 
+        title: 'project 2 title', 
+        blurb: `project 2 blurb ...`,
+        description: `<h3> (Project 2)</h3>
+          <p><b>Description ..</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('project', {
         id: '3',
-        title: 'proejct 3 title', 
-        description: '....', 
+        title: 'project 3 title', 
+        blurb: `project 3 blurb ...`,
+        description: `<h3> (Project 3)</h3>
+          <p><b>Description ..</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('project', {
         id: '4',
-        title: 'proejct 4 title', 
-        description: '....', 
+        title: 'project 4 title', 
+        blurb: `project 4 blurb ...`,
+        description: `<h3> (Project 4)</h3>
+          <p><b>Description ..</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
 
       // Page Sections ...
@@ -105,50 +121,74 @@ function makeMirageServer() {
         id: '1', 
         parentId: '2',
         blurb: `Creating single page applications that are optimized for speed and efficiency.`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 1 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('expertiseSpec', {
         id: '2', 
         parentId: '2',
         blurb: `Translating visual designs into responsive and interactive User Interfaces.`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 2 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('expertiseSpec', {
         id: '3', 
         parentId: '2',
         blurb: `Creating Responsive and interactive User Interfaces.`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 3 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('expertiseSpec', {
         id: '4', 
         parentId: '2',
         blurb: `Ensuring Accessibility compliance ...`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 4 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `,  
       });
       server.create('expertiseSpec', {
         id: '5', 
         parentId: '2',
         blurb: `Solving complex and unusual coding problems and communication effectively with stakeholders`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 5 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       // parentId: '2' ...
       server.create('expertiseSpec', {
         id: '6', 
         parentId: '6',
         blurb: `Expertise specification 2 - blurb 1`,
-        description: `...`, 
+        description: `<h3> (Expertise 2)</h3>
+          <p><b>Description 1 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('expertiseSpec', {
         id: '7', 
         parentId: '6',
         blurb: `Expertise specification 2 - blurb 2`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 2 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
       server.create('expertiseSpec', {
         id: '8', 
         parentId: '6',
         blurb: `Expertise specification 2 - blurb 3`,
-        description: `...`, 
+        description: `<h3> (Expertise 1)</h3>
+          <p><b>Description 3 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
       });
     },
 
@@ -188,6 +228,11 @@ function makeMirageServer() {
       this.get("/projects", () => { 
         return this.schema.projects.all();
       }); 
+      this.get("/projects/:id", (schema: AppRegistry, request: Request) => { 
+        return this.schema.projects.find(request.params.id);
+      });
+
+
     },
   });
 }

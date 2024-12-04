@@ -1,14 +1,32 @@
 import { ProjectProps } from "../../models"; 
 import './ProjectThumb.scss';
+import { ModalContext } from "../../utils/contexts";
+import { useContext } from "react";
 
-const ProjectThumb = ({ title, description }: ProjectProps) => {
+const ProjectThumb = ({ id, title, blurb }: ProjectProps) => {
+  const context = useContext(ModalContext);
+
+  if (!context) { // return if the context is empty
+    return (
+      <div className="placeholder">... placeholder ...</div>
+    );
+  }
+
+  // Otherwise, destructure the context
+  const { openModal } = context; 
+
   return (
-    <a className="ExpertiseSpec card" href="#vfsvd">
+    <div
+      className="ProjectThumb card"
+      onClick={() => {
+        openModal("ProjectThumb item", id);
+      }}
+    >
       <div className="card-body">
         <h3>{title}</h3>
-        <p className="mb-0">{description}</p> 
+        <p className="mb-0">{blurb}</p> 
       </div>
-    </a>
+    </div>
   );
 };
 

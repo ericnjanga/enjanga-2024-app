@@ -1,0 +1,24 @@
+
+.appname-modal.modal-wrapper {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal-content {
+    margin: 2rem auto;
+    max-width: 500px;
+    min-height: 300px;
+    padding: 2rem;
+    border-radius: 6px;
+    background-color: #fff;
+  }
+}
+.appname-modal {
+  // border: 10px solid purple;
+  // padding: 1rem;
+
+}

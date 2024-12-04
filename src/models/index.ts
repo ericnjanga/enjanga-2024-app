@@ -1,5 +1,6 @@
 import { Registry, Model } from "miragejs";
 import { Server } from "miragejs";
+import { ReactNode } from "react";
 
 
 /**
@@ -38,6 +39,7 @@ export type ExpertiseSpecProps = {
 export type ProjectProps = {
   id: string
   title: string 
+  blurb: string
   description: string
 };
 
@@ -56,3 +58,13 @@ export interface ButtonProps {
   label: string;
   neonVersion?: boolean
 };
+
+
+export type ModalContextProps = {
+  isOpen: boolean
+  openModal: (dataType: string, definitionId: string) => void
+  closeModal: () => void
+  modalContent: ExpertiseSpecProps | ProjectProps | null
+};
+
+
