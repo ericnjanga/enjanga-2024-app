@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ExpertiseSpecProps, ModalContextProps } from "../models";
+import {  ModalContextProps } from "../models";
 // import { CarProps, HostProps } from "../models";
 
 

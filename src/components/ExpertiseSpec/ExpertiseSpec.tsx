@@ -18,7 +18,7 @@ const ExpertiseSpec = ({ id, blurb }: ExpertiseSpecProps) => {
     <div
       className="ExpertiseSpec card"
       onClick={() => {
-        openModal("ExpertiseSpec item", id);
+        openModal({ renderingType: 'data', dataType: 'ExpertiseSpec item', dataId: id });
       }}
     >
       <div className="card-body">

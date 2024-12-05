@@ -1,0 +1,17 @@
+
+
+
+.form-control,
+.form-select {
+  background-color: #eeedf5;
+  border-color: #d1cce8;
+  border-radius: var(--website-bdr-radius-0);
+}
+
+textarea {
+  min-height: 7rem;
+}
+
+.form-label { 
+  margin-bottom: 0.25rem;
+}

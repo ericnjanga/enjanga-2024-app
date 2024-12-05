@@ -61,10 +61,24 @@ export interface ButtonProps {
 
 
 export type ModalContextProps = {
-  isOpen: boolean
-  openModal: (dataType: string, definitionId: string) => void
-  closeModal: () => void
-  modalContent: ExpertiseSpecProps | ProjectProps | null
+  isOpen: boolean               // Is the modal window open?
+  renderingType: string          // Type of information being rendered: "data" or "another component"?
+  modalData: ExpertiseSpecProps | ProjectProps | null             // Data rendered by the modal
+  openModal: ({ 
+    renderingType, 
+    dataType, 
+    dataId }: { 
+      renderingType: string, 
+      dataType: string, 
+      dataId: string 
+  }) => void     // Responsible for opening the modal
+  closeModal: () => void        // Responsible for losing the modal
+};
+
+export type InputFieldProps = {
+  id: string
+  type: string
+  description: string
 };
 
 

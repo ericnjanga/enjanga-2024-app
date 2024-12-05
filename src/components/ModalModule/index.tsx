@@ -7,8 +7,9 @@
  */
 import { useContext, useState, ReactNode } from "react";
 import "./modal.scss";
-import { useDefinition, useExpertise, fetchAPIData } from "../../hooks/useAPI";
+import { fetchAPIData } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
+import ContactForm from "../ContactForm/ContactForm";
 
 /**
  * 2) Modal Provider:
@@ -21,36 +22,47 @@ import { ModalContext } from "../../utils/contexts";
  */
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+  const [modalData, setModalContent] = useState(null);
+  const [renderingType, setRenderingType] = useState("data"); // Renders data by default
   // const { fetchDefinition } = useDefinition();
 
   // Function to close the modal
   function closeModal() {
     setIsOpen(false);
     setModalContent(null);
+    setRenderingType("data");
   }
 
   // Function to open the modal
-  function openModal(dataType: string, dataId: string) {
-    /**
-     * TODO:
-     * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
-     * */
-    fetchAPIData(dataType, dataId).then((result) => {
-      setModalContent(result);
-    });
+  function openModal({
+    renderingType,
+    dataType,
+    dataId,
+  }: {
+    renderingType: string;
+    dataType: string;
+    dataId: string;
+  }) {
+    // Setting rendering type
+    setRenderingType(renderingType);
 
-    // fetchDefinition(dataId)
-    //   .then(result => {
-    //     setModalContent(result);
-    //   });
+    // Only fetch API data if required
+    if (renderingType === "data") {
+      /**
+       * TODO:
+       * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
+       * */
+      fetchAPIData(dataType, dataId).then((result) => {
+        setModalContent(result);
+      });
+    }
 
     setIsOpen(true);
   }
 
   return (
     <ModalContext.Provider
-      value={{ isOpen, openModal, closeModal, modalContent }}
+      value={{ isOpen, renderingType, openModal, closeModal, modalData }}
     >
       {children}
     </ModalContext.Provider>
@@ -60,6 +72,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 /**
  * 3) Modal Component:
  * -------------------
+ * - Renders 2 types of content:
+ * - 1) Data content
+ * - 2) Other components
  * - It gets its logic from "ModalContext" and renders the UI accordingly
  * - tabindex="-1": Helps force keyboard navigation inside the modal
  * @returns
@@ -73,33 +88,39 @@ const Modal = () => {
   }
 
   // Otherwise, destructure the context
-  const { isOpen, closeModal, modalContent } = context;
+  const { isOpen, renderingType, closeModal, modalData } = context;
 
   return (
     <>
       {isOpen && (
         <section className="appname-modal modal-wrapper" tabIndex={-1}>
-          <div className="modal-content">
+          <div className="modal-content"> 
             {/* <header className="modal-header"> 
-              <h3 className={!modalContent ? 'placeholder heading' : ''}>{modalContent && modalContent.title}</h3>
-            </header> */}
+                <h3 className={!modalData ? 'placeholder heading' : ''}>{modalData && modalData.title}</h3>
+              </header> */}
 
             <main className="modal-body">
-              {!modalContent && <p>... placehodler ...</p>}
+              {renderingType === "data" && (
+                !modalData ? 
+                  (<p>... placehodler ...</p>) :
+                  (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: modalData.description }}
+                    ></div>
+                  )
+                )
+              }  
 
-              {modalContent && (
-                <div
-                  dangerouslySetInnerHTML={{ __html: modalContent.description }}
-                ></div>
-              )}
+              {renderingType === "contact" && <ContactForm />  }
             </main>
-
+            
             <footer className="modal-footer">
               <button className="btn btn-primary" onClick={closeModal}>
                 Close
               </button>
             </footer>
           </div>
+
         </section>
       )}
     </>

@@ -20,7 +20,7 @@ const Hero = () => {
         </div>
 
         <footer>
-          <a href="" className="btn btn-secondary">How can I hellp?</a>
+          <a href="#scope-of-expertise" className="btn btn-secondary">How can I help?</a>
         </footer>
 
         <img className="Hero-persona img-fluid" src="./images/hero-persona.png" alt="" />
