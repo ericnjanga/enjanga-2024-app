@@ -32,6 +32,7 @@ export type PageSectionProps = {
 export type ExpertiseSpecProps = {
   id: string
   title?: string
+  parentId: string
   blurb: string
   description: string
 };

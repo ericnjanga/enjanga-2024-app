@@ -5,7 +5,7 @@ import Button from "./Button";
 import { ButtonProps } from "../../models";
 
 export default {
-  title: "Components/Button",  // The category and name of the component
+  title: "Small Components/Button",  // The category and name of the component
   component: Button,
   argTypes: {
     variant: {

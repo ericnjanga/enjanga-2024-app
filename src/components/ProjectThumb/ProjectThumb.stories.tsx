@@ -5,7 +5,7 @@ import ProjectThumb from "./ProjectThumb";
 import { ProjectProps } from "../../models";
 
 export default {
-  title: "Components/ProjectThumb",  // The category and name of the component
+  title: "Medium Components/ProjectThumb",  // The category and name of the component
   component: ProjectThumb,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

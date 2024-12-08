@@ -2,6 +2,7 @@ import { ExpertiseSpecProps } from "../../models";
 import "./ExpertiseSpec.scss";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
+import IconCube from "../Icons/icons";
 
 const ExpertiseSpec = ({ id, blurb }: ExpertiseSpecProps) => {
   const context = useContext(ModalContext);
@@ -22,8 +23,9 @@ const ExpertiseSpec = ({ id, blurb }: ExpertiseSpecProps) => {
       }}
     >
       <div className="card-body">
+        <IconCube className="icon" size="tiny" />
         <p className="mb-0">{blurb}</p>
-        <button className="btn btn-link">Learn more ...</button>
+        <span className="btn btn-link">Learn more ...</span>
       </div>
     </div>
   );

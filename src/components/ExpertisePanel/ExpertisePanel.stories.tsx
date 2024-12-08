@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import ExpertisePanel from "./ExpertisePanel";
 
 export default {
-  title: "Components/ExpertisePanel",  // The category and name of the component
+  title: "Large Components/ExpertisePanel",  // The category and name of the component
   component: ExpertisePanel,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Hero from "./Hero";
 
 export default {
-  title: "Components/Hero",  // The category and name of the component
+  title: "Large Components/Hero",  // The category and name of the component
   component: Hero,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.
