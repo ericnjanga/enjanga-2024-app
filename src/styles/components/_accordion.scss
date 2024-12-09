@@ -1,5 +1,5 @@
 :root {
-    --website-section-accordion-and-img-body-font-size: inherit;
+    --appName-section-accordion-and-img-body-font-size: inherit;
 }
 
 @layer accordion {
@@ -11,33 +11,33 @@
             font-size: inherit;
         }
         .accordion-body {
-            font-size: var(--website-section-accordion-and-img-body-font-size);
+            font-size: var(--appName-section-accordion-and-img-body-font-size);
         }
 
         .accordion-item {
             @container (min-width: 1141px) {
                 // border: 10px solid orange;
-                --website-section-accordion-and-img-body-font-size: 1.40rem;
+                --appName-section-accordion-and-img-body-font-size: 1.40rem;
             }
         
             @container (min-width: 961px) and (max-width: 1140px) {
                 // border: 10px solid green;
-                --website-section-accordion-and-img-body-font-size: 1.25rem;
+                --appName-section-accordion-and-img-body-font-size: 1.25rem;
             }
         
             @container (min-width: 721px) and (max-width: 960px) {
                 // border: 10px solid lime;
-                --website-section-accordion-and-img-body-font-size: 1.20rem;
+                --appName-section-accordion-and-img-body-font-size: 1.20rem;
             }
         
             @container (min-width: 541px) and (max-width: 720px) {
                 // border: 10px solid blue;
-                --website-section-accordion-and-img-body-font-size: 1.17rem;
+                --appName-section-accordion-and-img-body-font-size: 1.17rem;
             }
     
             @container (max-width: 540px) {
                 // border: 10px solid turquoise;
-                --website-section-accordion-and-img-body-font-size: 1.13rem;
+                --appName-section-accordion-and-img-body-font-size: 1.13rem;
             } 
     
         }
@@ -56,11 +56,11 @@
         background-color: transparent;
 
         &:hover {
-            background-color: var(--website-clr-col1-f7e);
+            background-color: var(--appName-clr-col1-f7e);
         }
     }
     .accordion-collapse.collapse.show {
-        background-color: var(--website-clr-col3-f7e);
+        background-color: var(--appName-clr-col3-f7e);
     }
 }
 

@@ -1,6 +1,6 @@
 // import { ExpertisePanelProps } from "../../models";
 import { usePageSection, useExpertises } from "../../hooks/useAPI";
-import ExpertiseSpec from "../ExpertiseSpec/ExpertiseSpec";
+import InformationCard1 from "../InformationCard1/InformationCard1";
 
 
 
@@ -22,7 +22,7 @@ const ExpertisePanel = ({ pageSectionId }: { pageSectionId: string }) => {
       <div>
         {expertiseList &&
           expertiseList.map((expertise, index) => {
-            return <ExpertiseSpec key={index} {...expertise} />;
+            return <InformationCard1 key={index} {...expertise} />;
           })}
       </div>
     </section>

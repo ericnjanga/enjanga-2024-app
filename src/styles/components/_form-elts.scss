@@ -1,46 +1,46 @@
 
 :root {
     // Normal buttons ...
-    --website-btn-md-padding: 8px 16px;
-    --website-btn-fontsize: 1.15rem;
+    --appName-btn-md-padding: 8px 16px;
+    --appName-btn-fontsize: 1.15rem;
     // Normal buttons + icon
-    --website-btn-icon-before-padding: 10px 20px 10px 40px;
-    --website-btn-icon-after-padding: 10px 40px 10px 20px;
-    --website-btn-icon-icon-size: 1.5rem; 
-    --website-btn-icon-icon-top: 5px;
-    --website-btn-icon-icon-left: 9px;
-    --website-btn-icon-icon-right: 17px;
+    --appName-btn-icon-before-padding: 10px 20px 10px 40px;
+    --appName-btn-icon-after-padding: 10px 40px 10px 20px;
+    --appName-btn-icon-icon-size: 1.5rem; 
+    --appName-btn-icon-icon-top: 5px;
+    --appName-btn-icon-icon-left: 9px;
+    --appName-btn-icon-icon-right: 17px;
 
     // Small buttons ...
-    --website-btn-sm-padding: 0.25rem 0.75rem; 
-    --website-btn-sm-fontsize: 0.875rem;
+    --appName-btn-sm-padding: 0.25rem 0.75rem; 
+    --appName-btn-sm-fontsize: 0.875rem;
 
     // large buttons ...
-    --website-btn-lg-padding: 14px 25px;
-    --website-btn-lg-fontsize: 1.4rem;
+    --appName-btn-lg-padding: 14px 25px;
+    --appName-btn-lg-fontsize: 1.4rem;
 
 
     // Small buttons + icon
-    --website-btn-icon-before-sm-padding: 0.25rem 0.75rem 0.25rem 2rem; // icon before
-    --website-btn-icon-after-sm-padding: 0.25rem 2rem 0.25rem 0.75rem; // icon after
-    --website-btn-icon-sm-icon-size: 1.1rem; 
-    --website-btn-icon-sm-icon-top: 2px;
-    --website-btn-icon-sm-icon-right: 10px;
+    --appName-btn-icon-before-sm-padding: 0.25rem 0.75rem 0.25rem 2rem; // icon before
+    --appName-btn-icon-after-sm-padding: 0.25rem 2rem 0.25rem 0.75rem; // icon after
+    --appName-btn-icon-sm-icon-size: 1.1rem; 
+    --appName-btn-icon-sm-icon-top: 2px;
+    --appName-btn-icon-sm-icon-right: 10px;
 
     // btn icon ...
-    --website-btnicon-padding: 10px 45px 10px 20px;
-    --website-btnicon-icon-top: 6px;
-    --website-btnicon-icon-right: 20px;
+    --appName-btnicon-padding: 10px 45px 10px 20px;
+    --appName-btnicon-icon-top: 6px;
+    --appName-btnicon-icon-right: 20px;
 }
 
 @layer form-elts {
     @layer buttons {   
         .btn {
-            border-radius: var(--website-bdr-radius-0);
+            border-radius: var(--appName-bdr-radius-0);
             border-width: 2px;
-            padding: var(--website-btn-md-padding);
+            padding: var(--appName-btn-md-padding);
             font-weight: 500;
-            font-size: var(--website-btn-fontsize);
+            font-size: var(--appName-btn-fontsize);
 
             // ...
             &.item-icon-bootstrap,
@@ -48,61 +48,61 @@
                 position: relative;
 
                 &.item-icon-material-before {
-                    padding: var(--website-btn-icon-before-padding);
+                    padding: var(--appName-btn-icon-before-padding);
                     
                     &::before {
-                        left: var(--website-btn-icon-icon-left);
+                        left: var(--appName-btn-icon-icon-left);
                     }
                 }
                 &.item-icon-material-after {
-                    padding: var(--website-btn-icon-after-padding);
+                    padding: var(--appName-btn-icon-after-padding);
                     
                     &::after {
                         left: unset;
-                        right: var(--website-btn-icon-icon-right);
+                        right: var(--appName-btn-icon-icon-right);
                     }
                 }
 
                 &::before, &::after {
                     position: absolute;
 
-                    font-size: var(--website-btn-icon-icon-size);
-                    top: var(--website-btn-icon-icon-top);
+                    font-size: var(--appName-btn-icon-icon-size);
+                    top: var(--appName-btn-icon-icon-top);
                 }
             }
 
             &.btn-sm {
-                padding: var(--website-btn-sm-padding);
-                font-size: var(--website-btn-sm-fontsize);
+                padding: var(--appName-btn-sm-padding);
+                font-size: var(--appName-btn-sm-fontsize);
 
                 &.item-icon-bootstrap,
                 &.item-icon-material {
 
                     &.item-icon-material-before {
-                        padding: var(--website-btn-icon-before-sm-padding);
+                        padding: var(--appName-btn-icon-before-sm-padding);
 
                         &::before {
-                            left: var(--website-btn-icon-sm-icon-right);
+                            left: var(--appName-btn-icon-sm-icon-right);
                         }
                     }
                     &.item-icon-material-after {
-                        padding: var(--website-btn-icon-after-sm-padding);
+                        padding: var(--appName-btn-icon-after-sm-padding);
 
                         &::after {
-                            right: var(--website-btn-icon-sm-icon-right);
+                            right: var(--appName-btn-icon-sm-icon-right);
                         }
                     } 
 
                     &::before, &::after {
-                        font-size: var(--website-btn-icon-sm-icon-size);
-                        top: var(--website-btn-icon-sm-icon-top);
+                        font-size: var(--appName-btn-icon-sm-icon-size);
+                        top: var(--appName-btn-icon-sm-icon-top);
                     }
                 }
             }
 
             &.btn-lg {
-                padding: var(--website-btn-lg-padding);
-                font-size: var(--website-btn-lg-fontsize);
+                padding: var(--appName-btn-lg-padding);
+                font-size: var(--appName-btn-lg-fontsize);
             }
 
 

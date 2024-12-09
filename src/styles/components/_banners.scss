@@ -1,20 +1,20 @@
 :root {
-    --website-banner-feature-padd: 20px;
-    --website-banner-feature-img-height: 300px;
-    --website-banner-feature-img-width: 100%;
-    --website-banner-feature-img-obj-orientation: top;
-    --website-banner-feature-display: block;
-    --website-banner-feature-flex-dir: row;
+    --appName-banner-feature-padd: 20px;
+    --appName-banner-feature-img-height: 300px;
+    --appName-banner-feature-img-width: 100%;
+    --appName-banner-feature-img-obj-orientation: top;
+    --appName-banner-feature-display: block;
+    --appName-banner-feature-flex-dir: row;
 
-    --website-banner-shine-display: flex;
-    --website-banner-shine-gap: 35px;
-    --website-banner-shine-direction: column;
-    --website-banner-shine-aligitms: unset;
-    --website-banner-shine-msg-marg: 0;
-    --website-banner-shine-msg-txtalign: left;
-    --website-banner-shine-box-1-title-mrg: 0 0 20px 0;
+    --appName-banner-shine-display: flex;
+    --appName-banner-shine-gap: 35px;
+    --appName-banner-shine-direction: column;
+    --appName-banner-shine-aligitms: unset;
+    --appName-banner-shine-msg-marg: 0;
+    --appName-banner-shine-msg-txtalign: left;
+    --appName-banner-shine-box-1-title-mrg: 0 0 20px 0;
 
-    --website-banner-shine-cta-mrg: 20px 0 0 0;
+    --appName-banner-shine-cta-mrg: 20px 0 0 0;
 }
 
 
@@ -47,7 +47,7 @@
     .banner-shine, .banner-feature {
         p, ul {
             &+ .btn {
-                margin: var(--website-banner-shine-cta-mrg);
+                margin: var(--appName-banner-shine-cta-mrg);
                 // border: 20px solid palevioletred;
             }
         }
@@ -57,25 +57,25 @@
         .banner-shine {
 
             // h1, h2, h3, h4, h5, p {
-            //     color: var(--website-clr-fff);
+            //     color: var(--appName-clr-fff);
             // }
 
             .container {
-                display: var(--website-banner-shine-display);
-                gap: var(--website-banner-shine-gap);
-                flex-direction: var(--website-banner-shine-direction);
-                align-items: var(--website-banner-shine-aligitms);
+                display: var(--appName-banner-shine-display);
+                gap: var(--appName-banner-shine-gap);
+                flex-direction: var(--appName-banner-shine-direction);
+                align-items: var(--appName-banner-shine-aligitms);
             }
 
             // ...
             .btn-secondary {
                 background-color: transparent;
-                border-color: var(--website-clr-fff);
+                border-color: var(--appName-clr-fff);
 
                 &:hover {
-                    color: var(--website-clr-dark-col3-f8f);
-                    background-color: var(--website-clr-col3-ff7);
-                    border-color: var(--website-clr-col1-300);
+                    color: var(--appName-clr-dark-col3-f8f);
+                    background-color: var(--appName-clr-col3-ff7);
+                    border-color: var(--appName-clr-col1-300);
                 }
             }
 
@@ -83,7 +83,7 @@
                 flex: 1;
 
                 h2 {
-                    margin: var(--website-banner-shine-box-1-title-mrg);
+                    margin: var(--appName-banner-shine-box-1-title-mrg);
                 }
             }
             &__box-2 {
@@ -95,45 +95,45 @@
             // Extra Large screens ...
             @media (min-width: 1400px) {
                 // border: 10px solid purple;
-                --website-banner-shine-msg-marg: 0 auto;
-                --website-banner-shine-msg-txtalign: center;
-                --website-banner-shine-direction: row;
-                --website-banner-shine-aligitms: center;
-                --website-banner-shine-gap: 50px;
-                --website-banner-shine-box-1-title-mrg: 0 0 45px 0;
-                --website-banner-shine-cta-mrg: 40px 0 0 0;
+                --appName-banner-shine-msg-marg: 0 auto;
+                --appName-banner-shine-msg-txtalign: center;
+                --appName-banner-shine-direction: row;
+                --appName-banner-shine-aligitms: center;
+                --appName-banner-shine-gap: 50px;
+                --appName-banner-shine-box-1-title-mrg: 0 0 45px 0;
+                --appName-banner-shine-cta-mrg: 40px 0 0 0;
             }
             
             // Large screens ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 10px solid violet;
-                --website-banner-shine-msg-marg: 0 auto;
-                --website-banner-shine-msg-txtalign: center;
-                --website-banner-shine-direction: row;
-                --website-banner-shine-aligitms: center;
-                --website-banner-shine-gap: 50px;
-                --website-banner-shine-box-1-title-mrg: 0 0 35px 0;
-                --website-banner-shine-cta-mrg: 40px 0 0 0;
+                --appName-banner-shine-msg-marg: 0 auto;
+                --appName-banner-shine-msg-txtalign: center;
+                --appName-banner-shine-direction: row;
+                --appName-banner-shine-aligitms: center;
+                --appName-banner-shine-gap: 50px;
+                --appName-banner-shine-box-1-title-mrg: 0 0 35px 0;
+                --appName-banner-shine-cta-mrg: 40px 0 0 0;
             }
             
             // Large Medium screens ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 10px solid lime;
-                --website-banner-shine-msg-marg: 0 auto;
-                --website-banner-shine-msg-txtalign: center;
-                --website-banner-shine-direction: row;
-                --website-banner-shine-aligitms: center;
-                --website-banner-shine-gap: 50px;
-                --website-banner-shine-box-1-title-mrg: 0 0 30px 0;
-                --website-banner-shine-cta-mrg: 35px 0 0 0;
+                --appName-banner-shine-msg-marg: 0 auto;
+                --appName-banner-shine-msg-txtalign: center;
+                --appName-banner-shine-direction: row;
+                --appName-banner-shine-aligitms: center;
+                --appName-banner-shine-gap: 50px;
+                --appName-banner-shine-box-1-title-mrg: 0 0 30px 0;
+                --appName-banner-shine-cta-mrg: 35px 0 0 0;
             }
 
             // Medium Medium screens ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 10px solid blue;
-                --website-banner-shine-msg-marg: 0 auto;
-                --website-banner-shine-msg-txtalign: center;
-                --website-banner-shine-cta-mrg: 25px 0 0 0;
+                --appName-banner-shine-msg-marg: 0 auto;
+                --appName-banner-shine-msg-txtalign: center;
+                --appName-banner-shine-cta-mrg: 25px 0 0 0;
             }
             // // Small Medium screens ...
             // @media (min-width: 576px) and (max-width: (768px - 1)) {
@@ -146,8 +146,8 @@
         }
         .banner-shine--center-stage {
             .banner-shine__message {
-                margin: var(--website-banner-shine-msg-marg);
-                text-align: var(--website-banner-shine-msg-txtalign);
+                margin: var(--appName-banner-shine-msg-marg);
+                text-align: var(--appName-banner-shine-msg-txtalign);
             }
         }
         .banner-shine--2-cols-1-full {
@@ -159,18 +159,18 @@
 
     @layer banner-feature {
         .banner-feature {
-            display: var(--website-banner-feature-display);
-            flex-direction: var(--website-banner-feature-flex-dir);
+            display: var(--appName-banner-feature-display);
+            flex-direction: var(--appName-banner-feature-flex-dir);
 
             &--text {
                 flex: 1;
-                padding: var(--website-banner-feature-padd);
+                padding: var(--appName-banner-feature-padd);
             }
             &--img-deco {
                 display: block;
-                object-position: var(--website-banner-feature-img-obj-orientation);
-                width: var(--website-banner-feature-img-width);
-                height: var(--website-banner-feature-img-height);
+                object-position: var(--appName-banner-feature-img-obj-orientation);
+                width: var(--appName-banner-feature-img-width);
+                height: var(--appName-banner-feature-img-height);
                 background-repeat: no-repeat;
                 background-size:cover;
             }
@@ -179,41 +179,41 @@
             // Extra Large screens ...
             @media (min-width: 1400px) {
                 // border: 10px solid purple;
-                --website-banner-feature-display: flex;
-                --website-banner-feature-flex-dir: row-reverse;
-                --website-banner-feature-padd: 80px;
-                --website-banner-feature-img-height: auto;
-                --website-banner-feature-img-width: 55%;
-                --website-banner-feature-img-obj-orientation: left;
+                --appName-banner-feature-display: flex;
+                --appName-banner-feature-flex-dir: row-reverse;
+                --appName-banner-feature-padd: 80px;
+                --appName-banner-feature-img-height: auto;
+                --appName-banner-feature-img-width: 55%;
+                --appName-banner-feature-img-obj-orientation: left;
             }
             
             // Large screens ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 10px solid violet;
-                --website-banner-feature-display: flex;
-                --website-banner-feature-flex-dir: row-reverse;
-                --website-banner-feature-padd: 80px;
-                --website-banner-feature-img-height: auto;
-                --website-banner-feature-img-width: 50%;
-                --website-banner-feature-img-obj-orientation: left;
+                --appName-banner-feature-display: flex;
+                --appName-banner-feature-flex-dir: row-reverse;
+                --appName-banner-feature-padd: 80px;
+                --appName-banner-feature-img-height: auto;
+                --appName-banner-feature-img-width: 50%;
+                --appName-banner-feature-img-obj-orientation: left;
             }
             
             // Large Medium screens ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 10px solid lime;
-                --website-banner-feature-display: flex;
-                --website-banner-feature-flex-dir: row-reverse;
-                --website-banner-feature-padd: 50px;
-                --website-banner-feature-img-height: auto;
-                --website-banner-feature-img-width: 50%;
-                --website-banner-feature-img-obj-orientation: left;
+                --appName-banner-feature-display: flex;
+                --appName-banner-feature-flex-dir: row-reverse;
+                --appName-banner-feature-padd: 50px;
+                --appName-banner-feature-img-height: auto;
+                --appName-banner-feature-img-width: 50%;
+                --appName-banner-feature-img-obj-orientation: left;
             }
 
             // Medium Medium screens ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 10px solid blue;
-                --website-banner-feature-padd: 50px;
-                --website-banner-feature-img-height: 350px;
+                --appName-banner-feature-padd: 50px;
+                --appName-banner-feature-img-height: 350px;
             }
 
             // // Small Medium screens ...

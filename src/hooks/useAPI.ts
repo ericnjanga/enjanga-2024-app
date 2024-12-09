@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 // import { HostContext } from "../utils/contexts";
 // import { useParams } from "react-router-dom";
-import { PageSectionProps, ExpertiseSpecProps, ProjectProps, NavOptionProps } from "../models";
+import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 
 
@@ -61,27 +61,27 @@ export const usePageSection = (id: string): PageSectionProps | null => {
   return pageSection;
 };
 
-// Returns a database record of type "ExpertiseSpecProps[]"
-export const useExpertises = (parentId: string): ExpertiseSpecProps[] | null => {
-  const [expertiseSpecs, setExpertisePanel] = useState(null); 
+// Returns a database record of type "InformationCard1Props[]"
+export const useExpertises = (parentId: string): InformationCard1Props[] | null => {
+  const [InformationCard1s, setExpertisePanel] = useState(null); 
   
   useEffect(() => {
-    fetchData('expertiseSpecs', setExpertisePanel, `/api/expertiseSpecsByParent/${parentId}`);
+    fetchData('InformationCard1s', setExpertisePanel, `/api/InformationCard1sByParent/${parentId}`);
   }, [parentId]);
-  return expertiseSpecs;
+  return InformationCard1s;
 };
 
-// Returns a database record of type "ExpertiseSpecProps"
-export const useExpertise = (id: string): ExpertiseSpecProps | null => {
-  const [expertiseSpecs, setExpertisePanel] = useState(null); 
+// Returns a database record of type "InformationCard1Props"
+export const useExpertise = (id: string): InformationCard1Props | null => {
+  const [InformationCard1s, setExpertisePanel] = useState(null); 
   
   useEffect(() => {
-    fetchData('expertiseSpecs', setExpertisePanel, `/api/expertiseSpec/${id}`);
+    fetchData('InformationCard1s', setExpertisePanel, `/api/InformationCard1/${id}`);
   }, [id]);
-  return expertiseSpecs;
+  return InformationCard1s;
 };
 
-// Returns a database record of type "ExpertiseSpecProps[]"
+// Returns a database record of type "InformationCard1Props[]"
 export const useProjects = (): ProjectProps[] | null => {
   const [projects, setExpertisePanel] = useState(null); 
   
@@ -91,7 +91,7 @@ export const useProjects = (): ProjectProps[] | null => {
   return projects;
 };
 
-// Returns a database record of type "ExpertiseSpecProps[]"
+// Returns a database record of type "InformationCard1Props[]"
 export const useNavOptions = (): NavOptionProps[] | null => {
   const [navOptions, setNavOptions] = useState(null); 
   
@@ -156,9 +156,9 @@ export const fetchAPIData = async(dataType: string, dataId: string) => {
 
   // ...
   switch(dataType) {
-    case 'ExpertiseSpec item':
-      queryString = `/api/expertiseSpec/${dataId}`;
-      stateProps = 'expertiseSpec';
+    case 'InformationCard1 item':
+      queryString = `/api/InformationCard1/${dataId}`;
+      stateProps = 'InformationCard1';
     break;
 
     case 'ProjectThumb item':

@@ -69,9 +69,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// 3) Modal Component:
+// -------------------
 /**
- * 3) Modal Component:
- * -------------------
  * - Renders 2 types of content:
  * - 1) Data content
  * - 2) Other components
@@ -115,7 +115,7 @@ const Modal = () => {
             </main>
             
             <footer className="modal-footer">
-              <button className="btn btn-primary" onClick={closeModal}>
+              <button className="btn btn-secondary" onClick={closeModal}>
                 Close
               </button>
             </footer>

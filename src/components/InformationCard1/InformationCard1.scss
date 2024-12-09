@@ -1,0 +1,35 @@
+:root {
+  --appName-ExpertiseSpec-padd: 24px;
+  --appName-ExpertiseSpec-padd-left: 60px;
+}
+
+.InformationCard1.card {
+  display: block;
+  width: 100%;
+  border-radius: var(--appName-bdr-radius-0);
+  border-width: 0;
+  background-color: var(--appName-theme-light-cccc-2a);
+  padding: var(--appName-ExpertiseSpec-padd);
+  padding-left: var(--appName-ExpertiseSpec-padd-left);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--appName-theme-light-aaaa-3x);
+  }
+
+  .card-body {
+    padding: 0;
+
+    .icon {
+      position: absolute;
+      top: var(--appName-ExpertiseSpec-padd);
+      left: var(--appName-ExpertiseSpec-padd);
+    }
+  }
+  .btn {
+    padding-left: 0;
+    font-size: 1rem;
+    color: var(--appName-theme-light-eee-1);
+  }
+}

@@ -1,3 +1,8 @@
+:root {
+  --appName-modal-brd-width: 7px; 
+  --appName-modal-body-padd: 2rem 2rem 1rem 2rem;
+  --appName-modal-footer-padd: 1rem 2rem;
+}
 
 .appname-modal.modal-wrapper {
   position: fixed;
@@ -12,13 +17,30 @@
     margin: 2rem auto;
     max-width: 500px;
     min-height: 300px;
-    padding: 2rem;
+    padding: 0;
     border-radius: 6px;
-    background-color: #fff;
+
+    // border styles ...
+    border: var(--appName-modal-brd-width) solid var(--appName-theme-light-xxxx-0); 
+
+    // inner droshadow looking like a solid border ...
+    box-shadow: inset 0 0 0 1px var(--appName-theme-light-cccc-8);
+    background-color: var(--appName-theme-light-bbbb-8);
+  }
+  .modal-body {
+    padding: var(--appName-modal-body-padd);
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-footer {
+    padding: var(--appName-modal-footer-padd);
+    border-top: 1px solid var(--appName-theme-light-cccc-8); 
   }
 }
 .appname-modal {
   // border: 10px solid purple;
   // padding: 1rem;
-
 }

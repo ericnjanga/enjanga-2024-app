@@ -7,7 +7,7 @@ function makeMirageServer() {
   return createServer({
     models: {
       pageSection: Model, // Define a hero model
-      expertiseSpec: Model,
+      InformationCard1: Model,
       project: Model,
       navOption: Model
     },
@@ -117,7 +117,7 @@ function makeMirageServer() {
 
       // Expertise Specification ...
       // parentId: '2' ...
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '1', 
         parentId: '2',
         blurb: `Creating single page applications that are optimized for speed and efficiency.`,
@@ -126,7 +126,7 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '2', 
         parentId: '2',
         blurb: `Translating visual designs into responsive and interactive User Interfaces.`,
@@ -135,7 +135,7 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '3', 
         parentId: '2',
         blurb: `Creating Responsive and interactive User Interfaces.`,
@@ -144,7 +144,7 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '4', 
         parentId: '2',
         blurb: `Ensuring Accessibility compliance ...`,
@@ -153,7 +153,7 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `,  
       });
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '5', 
         parentId: '2',
         blurb: `Solving complex and unusual coding problems and communication effectively with stakeholders`,
@@ -163,7 +163,7 @@ function makeMirageServer() {
         `, 
       });
       // parentId: '2' ...
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '6', 
         parentId: '6',
         blurb: `Expertise specification 2 - blurb 1`,
@@ -172,7 +172,7 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '7', 
         parentId: '6',
         blurb: `Expertise specification 2 - blurb 2`,
@@ -181,7 +181,7 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
-      server.create('expertiseSpec', {
+      server.create('InformationCard1', {
         id: '8', 
         parentId: '6',
         blurb: `Expertise specification 2 - blurb 3`,
@@ -213,14 +213,14 @@ function makeMirageServer() {
  
 
       // Expertise Specification ...
-      this.get("/expertiseSpecs", () => { 
-        return this.schema.expertiseSpecs.all();
+      this.get("/InformationCard1s", () => { 
+        return this.schema.InformationCard1s.all();
       }); 
-      this.get("/expertiseSpecsByParent/:id", (schema: AppRegistry, request: Request) => { 
-        return this.schema.expertiseSpecs.where({ parentId: request.params.id });
+      this.get("/InformationCard1sByParent/:id", (schema: AppRegistry, request: Request) => { 
+        return this.schema.InformationCard1s.where({ parentId: request.params.id });
       });  
-      this.get("/expertiseSpec/:id", (schema: AppRegistry, request: Request) => { 
-        return this.schema.expertiseSpecs.find(request.params.id);
+      this.get("/InformationCard1/:id", (schema: AppRegistry, request: Request) => { 
+        return this.schema.InformationCard1s.find(request.params.id);
       });
  
 

@@ -1,10 +1,10 @@
 :root {
-    --website-speech-bubble-padding: 20px;
+    --appName-speech-bubble-padding: 20px;
 }
 
 @layer speech-bubble {
     .speech-bubble {
-        padding: var(--website-speech-bubble-padding);
+        padding: var(--appName-speech-bubble-padding);
 
         // Speech bubble pointer
         &::before {

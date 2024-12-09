@@ -1,76 +1,77 @@
 :root {
-    --website-theme-light-xxxx-0: #fff;
+    --appName-theme-light-xxxx-0: #fff;
     
-    --website-theme-light-aaaa-0: #E0FFF2; 
-    --website-theme-light-aaaa-1: #C9FFE8; 
-    --website-theme-light-aaaa-2: #A5FFD9; 
-    --website-theme-light-aaaa-3x: #86F9C8;
-    --website-theme-light-aaaa-x: #ADFF00;
-    --website-theme-light-aaaa-y: #00ff94;
-    --website-theme-light-aaaa-3: #80D1A5; 
-    --website-theme-light-aaaa-7: #80AA27; 
+    --appName-theme-light-aaaa-0: #E0FFF2; 
+    --appName-theme-light-aaaa-1: #C9FFE8; 
+    --appName-theme-light-aaaa-2: #A5FFD9; 
+    --appName-theme-light-aaaa-3x: #86F9C8;
+    --appName-theme-light-aaaa-x: #ADFF00;
+    --appName-theme-light-aaaa-y: #00ff94;
+    --appName-theme-light-aaaa-2: #4AC994; 
+    --appName-theme-light-aaaa-3: #80D1A5; 
+    --appName-theme-light-aaaa-7: #80AA27; 
 
-    --website-theme-light-bbbb-0: #010023;
-    --website-theme-light-bbbb-1: #323069;
-    --website-theme-light-bbbb-2: #3B27BE;
-    --website-theme-light-bbbb-3: #4934d5;
-    --website-theme-light-bbbb-4: #5742d3;
-    --website-theme-light-bbbb-5: #535273;
-    --website-theme-light-bbbb-6: #DDDCF2;
-    --website-theme-light-bbbb-7: #F0EFFB;
-    --website-theme-light-bbbb-8: #EDEBF7;
-    --website-theme-light-bbbb-9: #CCCCF5;
-    --website-theme-light-bbbb-10: #C4C2FF;
+    --appName-theme-light-bbbb-0: #010023;
+    --appName-theme-light-bbbb-1: #323069;
+    --appName-theme-light-bbbb-2: #3B27BE;
+    --appName-theme-light-bbbb-3: #4934d5;
+    --appName-theme-light-bbbb-4: #5742d3;
+    --appName-theme-light-bbbb-5: #535273;
+    --appName-theme-light-bbbb-6: #DDDCF2;
+    --appName-theme-light-bbbb-7: #F0EFFB;
+    --appName-theme-light-bbbb-8: #EDEBF7;
+    --appName-theme-light-bbbb-9: #CCCCF5;
+    --appName-theme-light-bbbb-10: #C4C2FF;
 
 
-    --website-theme-light-eee-1: #BD0DB1;
+    --appName-theme-light-eee-1: #BD0DB1;
 
-    --website-theme-light-cccc-0: #0066FF;
+    --appName-theme-light-cccc-0: #0066FF;
 
-    --website-theme-light-cccc-2: #E0DCF6;
-    --website-theme-light-cccc-2a: #DAD6EE;
-    --website-theme-light-cccc-3: #d9caf2; 
-    --website-theme-light-cccc-4: #AFAEDE;
-    --website-theme-light-cccc-7: #B5AEE8;
-    --website-theme-light-cccc-8: #ABA1EE;
-    --website-theme-light-cccc-10: #8073D5;
-    --website-theme-light-cccc-14: #9C8EFF; 
+    --appName-theme-light-cccc-2: #E0DCF6;
+    --appName-theme-light-cccc-2a: #DAD6EE;
+    --appName-theme-light-cccc-3: #d9caf2; 
+    --appName-theme-light-cccc-4: #AFAEDE;
+    --appName-theme-light-cccc-7: #B5AEE8;
+    --appName-theme-light-cccc-8: #ABA1EE;
+    --appName-theme-light-cccc-10: #8073D5;
+    --appName-theme-light-cccc-14: #9C8EFF; 
 }
 
 // html[data-theme="light"] {
     body {
-        background-color: var(--website-theme-light-bbbb-8);
-        color: var(--website-theme-light-bbbb-5);
+        background-color: var(--appName-theme-light-bbbb-8);
+        color: var(--appName-theme-light-bbbb-5);
     }
 
     @layer component-mix {
         .section-introduction .card,
         .site-carousel__items-list .card {
-            border: 1px solid var(--website-theme-light-cccc-3); 
+            border: 1px solid var(--appName-theme-light-cccc-3); 
         }
     }
 
     @layer site-carousel {
         .site-carousel-item {  
             .card { 
-                background-color: var(--website-theme-light-cccc-2);
+                background-color: var(--appName-theme-light-cccc-2);
 
                 // Overlay screen designed to blur the content on hover ...
                 &::before { 
-                    background-color: var(--website-theme-light-aaaa-0);
+                    background-color: var(--appName-theme-light-aaaa-0);
                 }
 
                 &-body {
-                    background-color: var(--website-theme-light-xxxx-0);
+                    background-color: var(--appName-theme-light-xxxx-0);
                 }
                 &:hover { 
-                    background-color: var(--website-theme-light-cccc-8);
+                    background-color: var(--appName-theme-light-cccc-8);
 
-                    color: var(--website-theme-light-bbbb-4)!important;
+                    color: var(--appName-theme-light-bbbb-4)!important;
 
                     .card-body {
                         h3, p {
-                            color: var(--website-theme-light-bbbb-4)!important;
+                            color: var(--appName-theme-light-bbbb-4)!important;
                         }
                     }
                 }
@@ -81,32 +82,32 @@
     @layer color-mix {
         .light-block-txt-col {
             h1, h2, h3, h4, h5, h6 {
-                color: var(--website-theme-light-bbbb-1);
+                color: var(--appName-theme-light-bbbb-1);
             }
             ul, p, a {
-                color: var(--website-theme-light-bbbb-5);
+                color: var(--appName-theme-light-bbbb-5);
             }
             a {
                 &:hover {
                     text-decoration: none;
-                    color: var(--website-theme-light-cccc-0);
+                    color: var(--appName-theme-light-cccc-0);
                 }
             }
         }
     
         .dark-block-txt-col {
             h1, h2, h3, h4, h5, h6 {
-                color: var(--website-theme-light-bbbb-6);
+                color: var(--appName-theme-light-bbbb-6);
             }
             ul, p, a {
-                color: var(--website-theme-light-bbbb-9);
+                color: var(--appName-theme-light-bbbb-9);
             }
         }
     }
 
     @layer hero {
         .hero {
-            background-color: var(--website-theme-light-bbbb-0);
+            background-color: var(--appName-theme-light-bbbb-0);
         }
     }
 
@@ -114,36 +115,36 @@
         .navbar {
 
             &.navbar-masked {
-                background-color: var(--website-theme-light-bbbb-0);
+                background-color: var(--appName-theme-light-bbbb-0);
             }
 
             .navbar-toggler-icon {
                 background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28200, 200, 200, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
             }
             .navbar-toggler:focus { 
-                box-shadow: 0px 0px 10px var(--website-theme-light-xxxx-0);
+                box-shadow: 0px 0px 10px var(--appName-theme-light-xxxx-0);
             }
 
             .navbar-brand, .nav-link {
                 &:hover, &.active {
-                    color: var(--website-theme-light-aaaa-y);
+                    color: var(--appName-theme-light-aaaa-y);
                 } 
             }
             .navbar-collapse.collapse.show {
-                background-color: var(--website-theme-light-bbbb-0);
+                background-color: var(--appName-theme-light-bbbb-0);
             }
 
             .nav-item { 
                 // separator between links
                 &::after { 
-                    background-color: var(--website-theme-light-bbbb-4);
+                    background-color: var(--appName-theme-light-bbbb-4);
                 }
             }
 
             .nav-link {
                 &.item-icon-material {
                     &:hover {
-                        color: var(--website-theme-light-aaaa-y);
+                        color: var(--appName-theme-light-aaaa-y);
                     }
                 }
             }
@@ -183,10 +184,10 @@
 
     @layer section-theme {
         .section-theme1 {
-            background-color: var(--website-theme-light-bbbb-2);
+            background-color: var(--appName-theme-light-bbbb-2);
 
             .card {
-                background-color: var(--website-theme-light-bbbb-3);
+                background-color: var(--appName-theme-light-bbbb-3);
             }
         }
     }
@@ -198,48 +199,48 @@
             }
         }
         .btn-primary {
-            color: var(--website-theme-light-bbbb-0);
-            background-color: var(--website-theme-light-aaaa-y);
-            border-color: var(--website-theme-light-aaaa-y);
+            color: var(--appName-theme-light-bbbb-0);
+            background-color: var(--appName-theme-light-aaaa-y);
+            border-color: var(--appName-theme-light-aaaa-2);
 
             &:hover {
-                background-color: var(--website-theme-light-aaaa-x);
-                border-color: var(--website-theme-light-aaaa-7);
+                background-color: var(--appName-theme-light-aaaa-x);
+                border-color: var(--appName-theme-light-aaaa-7);
             }
             &:active {
-                background-color: var(--website-theme-light-aaaa-7);
+                background-color: var(--appName-theme-light-aaaa-7);
             }
         }
 
 
         .slick-arrow, // Set carousel buttons as 2nd btns
         .btn-secondary {
-            color: var(--website-theme-light-bbbb-0);
+            color: var(--appName-theme-light-bbbb-0);
             background-color: transparent;
-            border-color: var(--website-theme-light-bbbb-5); 
+            border-color: var(--appName-theme-light-bbbb-5); 
 
             &.btn-neon {
-                color: var(--website-theme-light-aaaa-y); 
-                border-color: var(--website-theme-light-aaaa-y); 
+                color: var(--appName-theme-light-aaaa-y); 
+                border-color: var(--appName-theme-light-aaaa-y); 
 
                 &:hover {
-                    color: var(--website-theme-light-bbbb-5);
+                    color: var(--appName-theme-light-bbbb-5);
                 }
             }
 
             &:hover {
-                background-color: var(--website-theme-light-aaaa-x);
-                border-color: var(--website-theme-light-aaaa-x);
+                background-color: var(--appName-theme-light-aaaa-x);
+                border-color: var(--appName-theme-light-aaaa-x);
             }
             &:active {
-                background-color: var(--website-theme-light-cccc-10);
+                background-color: var(--appName-theme-light-cccc-10);
             }
         }
     }
 
     @layer footer {
         .global-footer {
-            background-color: var(--website-theme-light-xxxx-0);
+            background-color: var(--appName-theme-light-xxxx-0);
         }
     } 
 
@@ -247,17 +248,17 @@
         .modal { 
             .modal-body {
                 a {
-                    color: var(--website-theme-light-bbbb-3);
+                    color: var(--appName-theme-light-bbbb-3);
                 }
             }
             .bi-check-circle-fill {
                 &:before{
-                    color: var(--website-theme-light-bbbb-2);
+                    color: var(--appName-theme-light-bbbb-2);
                 }
             }
             .light-color-icon { 
                 &:before{
-                    color: var(--website-theme-light-bbbb-10);
+                    color: var(--appName-theme-light-bbbb-10);
                 }
             }
         }
@@ -265,7 +266,7 @@
 
     @layer utilities { 
         .txt-highlight1 { 
-            color: var(--website-theme-light-bbbb-1);
+            color: var(--appName-theme-light-bbbb-1);
         }
     }
 // }

@@ -3,9 +3,9 @@
 
 .form-control,
 .form-select {
-  background-color: #eeedf5;
-  border-color: #d1cce8;
-  border-radius: var(--website-bdr-radius-0);
+  background-color: var(--appName-theme-light-xxxx-0);
+  border-color: var(--appName-theme-light-cccc-8);
+  border-radius: var(--appName-bdr-radius-0);
 }
 
 textarea {

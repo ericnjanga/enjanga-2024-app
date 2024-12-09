@@ -3,26 +3,26 @@
 
 :root {
   // Font sizes and line heights ...
-  --website-fs-h1: 3rem; // 48px;
-  --website-ln-h1: 3.375rem; // 54px; 
+  --appName-fs-h1: 3rem; // 48px;
+  --appName-ln-h1: 3.375rem; // 54px; 
 
-  --website-fs-h2: 2.125rem; // 34px;
-  --website-ln-h2: 2.438rem; // 39px;  
-  --website-fs-h2-subtitle: 1.125rem; // 18px;
-  --website-ln-h2-subtitle: 1.688rem; // 27px; 
+  --appName-fs-h2: 2.125rem; // 34px;
+  --appName-ln-h2: 2.438rem; // 39px;  
+  --appName-fs-h2-subtitle: 1.125rem; // 18px;
+  --appName-ln-h2-subtitle: 1.688rem; // 27px; 
 
-  --website-fs-h3: 1.625rem; // 26px;
-  --website-ln-h3: 1.875rem; // 30px; 
+  --appName-fs-h3: 1.625rem; // 26px;
+  --appName-ln-h3: 1.875rem; // 30px; 
 
-  --website-fs-h4: 1.438rem; // 23px;
-  --website-ln-h4: 1.296rem; // 27px
+  --appName-fs-h4: 1.438rem; // 23px;
+  --appName-ln-h4: 1.296rem; // 27px
  
 
   // Bottom margins
-  --website-mb-h1: 0.938rem; // 15px;
-  --website-mb-h2: 0.938rem; // 15px;
-  --website-mb-h3: 0.625rem; // 10px;
-  --website-mb-h4: 0.625rem; // 10px;
+  --appName-mb-h1: 0.938rem; // 15px;
+  --appName-mb-h2: 0.938rem; // 15px;
+  --appName-mb-h3: 0.625rem; // 10px;
+  --appName-mb-h4: 0.625rem; // 10px;
 }
 
 
@@ -40,7 +40,7 @@ body {
   font-size: 1.05rem;
 
   // Typography
-  font-family: var(--website-font-body);
+  font-family: var(--appName-font-body);
   font-weight: 400;
   font-style: normal;
   font-optical-sizing: auto;
@@ -98,7 +98,7 @@ h2,
 h3,
 h4,
 h5, .btn, .navbar-brand, .logo, .speech-bubble a {
-  font-family: var(--website-font-headings); 
+  font-family: var(--appName-font-headings); 
   font-style: normal;
 }
 
@@ -123,92 +123,92 @@ h5 {
   @media (min-width: 1400px) {
     // border: 3px solid purple;
     // Font sizes and line heights ...
-    --website-fs-h1: 5rem; //80px;
-    --website-ln-h1: 79px; 
-    --website-mb-h1: 30px;
+    --appName-fs-h1: 5rem; //80px;
+    --appName-ln-h1: 79px; 
+    --appName-mb-h1: 30px;
 
-    --website-fs-h2: 3rem; // 48px;
-    --website-ln-h2: 3.25rem; // 52px; 
+    --appName-fs-h2: 3rem; // 48px;
+    --appName-ln-h2: 3.25rem; // 52px; 
 
-    --website-fs-h3: 30px;
-    --website-ln-h3: 2.188rem; // 35px;
+    --appName-fs-h3: 30px;
+    --appName-ln-h3: 2.188rem; // 35px;
 
-    --website-fs-h4: 1.625rem; // 26px;
-    --website-ln-h4: 1.875rem; // 30px; 
+    --appName-fs-h4: 1.625rem; // 26px;
+    --appName-ln-h4: 1.875rem; // 30px; 
 
     // Margins ...
-    --website-mb-h2: 1.25rem; // 20px
-    --website-mb-h3: 0.813rem; // 13px;
-    --website-mb-h4: 0.813rem; // 13
+    --appName-mb-h2: 1.25rem; // 20px
+    --appName-mb-h3: 0.813rem; // 13px;
+    --appName-mb-h4: 0.813rem; // 13
   }
   
   // Large screens ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 3px solid violet;
     // Font sizes and line heights ...
-    --website-fs-h1: 72px;
-    --website-ln-h1: 70px; 
-    --website-mb-h1: 30px;
+    --appName-fs-h1: 72px;
+    --appName-ln-h1: 70px; 
+    --appName-mb-h1: 30px;
 
-    --website-fs-h2: 2.875rem; // 46px;
-    --website-ln-h2: 3.25rem; // 52px; 
+    --appName-fs-h2: 2.875rem; // 46px;
+    --appName-ln-h2: 3.25rem; // 52px; 
 
-    --website-fs-h3: 1.75rem; // 28px;
-    --website-ln-h3: 2rem; // 32px; 
+    --appName-fs-h3: 1.75rem; // 28px;
+    --appName-ln-h3: 2rem; // 32px; 
 
-    --website-fs-h4: 1.625rem; // 26px;
-    --website-ln-h4: 1.875rem; // 30px; 
+    --appName-fs-h4: 1.625rem; // 26px;
+    --appName-ln-h4: 1.875rem; // 30px; 
 
     // Margins ...
-    --website-mb-h2: 1.25rem; // 20px
-    --website-mb-h3: 0.625rem; // 10px;
-    --website-mb-h4: 0.813rem; // 13
+    --appName-mb-h2: 1.25rem; // 20px
+    --appName-mb-h3: 0.625rem; // 10px;
+    --appName-mb-h4: 0.813rem; // 13
   }
   
   // Large Medium screens ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 3px solid lime;
     // Font sizes and line heights ... 
-    --website-fs-h1: 68px;
-    --website-ln-h1: 64px; 
-    --website-mb-h1: 22px;
+    --appName-fs-h1: 68px;
+    --appName-ln-h1: 64px; 
+    --appName-mb-h1: 22px;
 
-    --website-fs-h2: 2.625rem; // 42px;  
-    --website-ln-h2: 2.938rem; // 47px
+    --appName-fs-h2: 2.625rem; // 42px;  
+    --appName-ln-h2: 2.938rem; // 47px
 
-    --website-fs-h3: 1.625rem; // 26px;
-    --website-ln-h3: 2rem; // 32px; 
+    --appName-fs-h3: 1.625rem; // 26px;
+    --appName-ln-h3: 2rem; // 32px; 
 
-    --website-fs-h4: 1.438rem; // 23px;
-    --website-ln-h4: 1.296rem; // 27px
+    --appName-fs-h4: 1.438rem; // 23px;
+    --appName-ln-h4: 1.296rem; // 27px
 
     // Margins ...
-    --website-mb-h2: 1.25rem; // 20px
-    --website-mb-h3: 0.625rem; // 10px;
-    --website-mb-h4: 0.813rem; // 13
+    --appName-mb-h2: 1.25rem; // 20px
+    --appName-mb-h3: 0.625rem; // 10px;
+    --appName-mb-h4: 0.813rem; // 13
   }
 
   // Medium Medium screens ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 3px solid blue;
     // Font sizes and line heights ...  
-    --website-fs-h1: 58px;
-    --website-ln-h1: 56px; 
-    --website-mb-h1: 22px;
+    --appName-fs-h1: 58px;
+    --appName-ln-h1: 56px; 
+    --appName-mb-h1: 22px;
 
-    --website-fs-h2: 2.375rem; // 38px;
-    --website-ln-h2: 2.625rem; // 42px;  
+    --appName-fs-h2: 2.375rem; // 38px;
+    --appName-ln-h2: 2.625rem; // 42px;  
 
-    --website-fs-h3: 1.625rem; // 26px;
-    --website-ln-h3: 1.875rem; // 30px; 
+    --appName-fs-h3: 1.625rem; // 26px;
+    --appName-ln-h3: 1.875rem; // 30px; 
 
-    --website-fs-h4: 1.438rem; // 23px;
-    --website-ln-h4: 1.296rem; // 27px
+    --appName-fs-h4: 1.438rem; // 23px;
+    --appName-ln-h4: 1.296rem; // 27px
 
     // Margins ...
-      --website-mb-h2: 1.25rem; // 20
-      --website-mb-h3: 0.625rem; // 10px;
-      --website-mb-h4: 0.813rem; // 13
+      --appName-mb-h2: 1.25rem; // 20
+      --appName-mb-h3: 0.625rem; // 10px;
+      --appName-mb-h4: 0.813rem; // 13
   }
 
   // // Small Medium screens ...
@@ -224,35 +224,35 @@ h5 {
 
 
 h1, .h1 {
-  margin-bottom: var(--website-mb-h1);
-  font-size: var(--website-fs-h1);
-  line-height: var(--website-ln-h1);
+  margin-bottom: var(--appName-mb-h1);
+  font-size: var(--appName-fs-h1);
+  line-height: var(--appName-ln-h1);
   letter-spacing: -0.66px;
 }
 
 h2, .h2 {
-  margin-bottom: var(--website-mb-h2);
-  font-size: var(--website-fs-h2); 
-  line-height: var(--website-ln-h2);
+  margin-bottom: var(--appName-mb-h2);
+  font-size: var(--appName-fs-h2); 
+  line-height: var(--appName-ln-h2);
   letter-spacing: -0.28px;
   font-weight: 350;
 }
 .h2-subtitle {
-  font-size: var(--website-fs-h2-subtitle); 
-  line-height: var(--website-ln-h2-subtitle); 
+  font-size: var(--appName-fs-h2-subtitle); 
+  line-height: var(--appName-ln-h2-subtitle); 
 }
 
 h3, .h3 {
-  margin-bottom: var(--website-mb-h3);
-  font-size: var(--website-fs-h3); 
-  line-height: var(--website-ln-h3);
+  margin-bottom: var(--appName-mb-h3);
+  font-size: var(--appName-fs-h3); 
+  line-height: var(--appName-ln-h3);
   letter-spacing: -0.46px;
 }
 
 h4, .h4 {
-  margin-bottom: var(--website-mb-h4);
-  font-size: var(--website-fs-h4); 
-  line-height: var(--website-ln-h4);
+  margin-bottom: var(--appName-mb-h4);
+  font-size: var(--appName-fs-h4); 
+  line-height: var(--appName-ln-h4);
   letter-spacing: -0.46px;
 }
 

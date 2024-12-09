@@ -1,23 +1,23 @@
 :root {
-    --website-footer-container-gap: 20px;
-    --website-footer-container-grid-template: 1fr / 1fr;
-    --website-footer-logo-width: 184.24px;
-    --website-footer-copyright-grid-col: unset;
-    --website-footer-copyright-text-align: left;
+    --appName-footer-container-gap: 20px;
+    --appName-footer-container-grid-template: 1fr / 1fr;
+    --appName-footer-logo-width: 184.24px;
+    --appName-footer-copyright-grid-col: unset;
+    --appName-footer-copyright-text-align: left;
 }
 
 @layer footer {
     .global-footer {
         .container {
             display: grid;
-            grid-template: var(--website-footer-container-grid-template);
-            gap: var(--website-footer-container-gap);
+            grid-template: var(--appName-footer-container-grid-template);
+            gap: var(--appName-footer-container-gap);
         }
 
         .logo {
             position: relative;
             img {
-                width: var(--website-footer-logo-width);
+                width: var(--appName-footer-logo-width);
                 height: inherit;
             }
         }
@@ -60,46 +60,46 @@
 
         .copyright {
             font-size: .9rem;
-            grid-column: var(--website-footer-copyright-grid-col);
-            text-align: var(--website-footer-copyright-text-align);
+            grid-column: var(--appName-footer-copyright-grid-col);
+            text-align: var(--appName-footer-copyright-text-align);
         }
 
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 3px solid purple;
-            --website-footer-container-gap: 30px;
-            --website-footer-logo-width: 263.48px;
-            --website-footer-container-grid-template: auto auto / auto auto auto;
-            --website-footer-copyright-grid-col: span 3;
-            --website-footer-copyright-text-align: center;
+            --appName-footer-container-gap: 30px;
+            --appName-footer-logo-width: 263.48px;
+            --appName-footer-container-grid-template: auto auto / auto auto auto;
+            --appName-footer-copyright-grid-col: span 3;
+            --appName-footer-copyright-text-align: center;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 3px solid violet;
-            --website-footer-container-gap: 30px;
-            --website-footer-logo-width: 363.48px;
-            --website-footer-container-grid-template: auto auto / auto auto auto;
-            --website-footer-copyright-grid-col: span 3;
-            --website-footer-copyright-text-align: center;
+            --appName-footer-container-gap: 30px;
+            --appName-footer-logo-width: 363.48px;
+            --appName-footer-container-grid-template: auto auto / auto auto auto;
+            --appName-footer-copyright-grid-col: span 3;
+            --appName-footer-copyright-text-align: center;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 3px solid lime;
-            --website-footer-container-gap: 30px;
-            --website-footer-logo-width: 263.48px;
-            --website-footer-container-grid-template: auto auto / auto auto auto;
-            --website-footer-copyright-grid-col: span 3;
-            --website-footer-copyright-text-align: center;
+            --appName-footer-container-gap: 30px;
+            --appName-footer-logo-width: 263.48px;
+            --appName-footer-container-grid-template: auto auto / auto auto auto;
+            --appName-footer-copyright-grid-col: span 3;
+            --appName-footer-copyright-text-align: center;
         }
 
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 3px solid blue;
-            --website-footer-container-grid-template: auto auto / auto auto auto;
-            --website-footer-copyright-grid-col: span 3;
-            --website-footer-copyright-text-align: center;
+            --appName-footer-container-grid-template: auto auto / auto auto auto;
+            --appName-footer-copyright-grid-col: span 3;
+            --appName-footer-copyright-text-align: center;
         }
 
         // // Small Medium screens ...

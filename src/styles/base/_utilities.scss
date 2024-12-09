@@ -1,6 +1,6 @@
 // :root {
 //     //navbar-nav
-//     --website-bgscr-pos-y: 0;
+//     --appName-bgscr-pos-y: 0;
 // }
 
 
@@ -24,10 +24,10 @@
     }
 
     // .box-width-1 {
-    //     max-width: var(--website-box-width-1);
+    //     max-width: var(--appName-box-width-1);
     // }
     // .box-width-2 {
-    //     max-width: var(--website-box-width-2);
+    //     max-width: var(--appName-box-width-2);
     // }
 
 
@@ -43,18 +43,18 @@
     // }
 
     // .highlight-col1 {
-    //     color: var(--website-clr-col1-700);
+    //     color: var(--appName-clr-col1-700);
     // }
     // a.highlight-col1 {
     //     &:hover {
-    //         color: var(--website-clr-col3-e75);
+    //         color: var(--appName-clr-col3-e75);
     //         text-decoration: none;
     //     }
     // }
 
     // a.shinespot-col3-1 {
     //     &:hover {
-    //         color: var(--website-clr-col3-e75);
+    //         color: var(--appName-clr-col3-e75);
     //         text-decoration: none;
     //     }
     // }
@@ -68,10 +68,10 @@
 //             z-index: 0; // Making sure it doesn't obstruct any other elements relying on z-index
 //         }
 //         .bg-clr-gray {
-//             background-color: var(--website-clr-gray-1);
+//             background-color: var(--appName-clr-gray-1);
 //         }
 //         .bg-clr-white {
-//             background-color: var(--website-clr-fff);
+//             background-color: var(--appName-clr-fff);
 //         }
 
 //         .block-gradient-spacers {
@@ -79,12 +79,12 @@
 
 //             // Medium Medium screens ...
 //             @media (min-width: 768px) and (max-width: (992px - 1)) {
-//                 --website-bgscr-pos-y: -5px;
+//                 --appName-bgscr-pos-y: -5px;
 //             }
 
 //             // Small Medium screens ...
 //             @media (min-width: 576px) and (max-width: (768px - 1)) {
-//                 --website-bgscr-pos-y: -5px;
+//                 --appName-bgscr-pos-y: -5px;
 //             }
 
 //             // Smaller screens ...
@@ -95,21 +95,21 @@
 //                 content: '';
 //                 position: absolute;
 //                 background-position-x: 0;
-//                 background-position-y: var(--website-bgscr-pos-y);
+//                 background-position-y: var(--appName-bgscr-pos-y);
 //                 left: 0;
 //                 width: 100%;
-//                 height: var(--website-spacing-section-h-small);
+//                 height: var(--appName-spacing-section-h-small);
 //                 background-size: cover;
 //                 background-image: url(./_img/aurora-spacer-1.png);
 //                 background-repeat: no-repeat;
 //                 overflow: hidden;
 //             }
 //             &:before {
-//                 top: calc(-1 * var(--website-spacing-section-h-small)); 
+//                 top: calc(-1 * var(--appName-spacing-section-h-small)); 
 //                 transform: rotate(180deg); /* Rotate the background image by 180 degrees */
 //             }
 //             &:after {
-//                 bottom: calc(-1 * var(--website-spacing-section-h-small));  
+//                 bottom: calc(-1 * var(--appName-spacing-section-h-small));  
 //             }
 //         }
     }

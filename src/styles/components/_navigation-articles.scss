@@ -15,27 +15,27 @@
         flex-direction: column;
         gap: 20px;
         flex: 1;
-        padding: var(--website-nav-ai-prev-padd);
+        padding: var(--appName-nav-ai-prev-padd);
 
-        color: var(--website-clr-blue-shade-1);
+        color: var(--appName-clr-blue-shade-1);
 
         &:hover {
-            color:  var(--website-clr-col1-accent-2);
+            color:  var(--appName-clr-col1-accent-2);
             text-decoration: none;
             
             &::before, &::after {
-                color:  var(--website-clr-col1-accent-2);
+                color:  var(--appName-clr-col1-accent-2);
             }
         }
 
         &::before, &::after {
             position: absolute;
-            top: var(--website-nav-ai-icon-y);
-            color: var(--website-clr-blue-shade-1);
+            top: var(--appName-nav-ai-icon-y);
+            color: var(--appName-clr-blue-shade-1);
         }
 
         &.item-next {
-            padding: var(--website-nav-ai-next-padd);
+            padding: var(--appName-nav-ai-next-padd);
             &::after {
                 right: 4px;
                 left: auto;
@@ -45,37 +45,37 @@
 
         // Extra Large screens ...
         @media (min-width: 1400px) {
-            --website-nav-ai-icon-y: 2px;
-            --website-nav-ai-prev-padd: 0 0 0 25px;
-            --website-nav-ai-next-padd: 0 30px 0 0;
+            --appName-nav-ai-icon-y: 2px;
+            --appName-nav-ai-prev-padd: 0 0 0 25px;
+            --appName-nav-ai-next-padd: 0 30px 0 0;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-            --website-nav-ai-icon-y: 2px;
-            --website-nav-ai-prev-padd: 0 0 0 25px;
-            --website-nav-ai-next-padd: 0 30px 0 0;
+            --appName-nav-ai-icon-y: 2px;
+            --appName-nav-ai-prev-padd: 0 0 0 25px;
+            --appName-nav-ai-next-padd: 0 30px 0 0;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
-            --website-nav-ai-icon-y: 2px;
-            --website-nav-ai-prev-padd: 0 0 0 25px;
-            --website-nav-ai-next-padd: 0 30px 0 0;
+            --appName-nav-ai-icon-y: 2px;
+            --appName-nav-ai-prev-padd: 0 0 0 25px;
+            --appName-nav-ai-next-padd: 0 30px 0 0;
         }
 
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
-            --website-nav-ai-icon-y: 2px;
-            --website-nav-ai-prev-padd: 0 0 0 20px;
-            --website-nav-ai-next-padd: 0 25px 0 0;
+            --appName-nav-ai-icon-y: 2px;
+            --appName-nav-ai-prev-padd: 0 0 0 20px;
+            --appName-nav-ai-next-padd: 0 25px 0 0;
         }
 
         // Small Medium screens ...
         @media (min-width: 576px) and (max-width: (768px - 1)) {
-            --website-nav-ai-icon-y: 2px;
-            --website-nav-ai-prev-padd: 0 0 0 20px;
-            --website-nav-ai-next-padd: 0 25px 0 0;
+            --appName-nav-ai-icon-y: 2px;
+            --appName-nav-ai-prev-padd: 0 0 0 20px;
+            --appName-nav-ai-next-padd: 0 25px 0 0;
         }
     }
 }

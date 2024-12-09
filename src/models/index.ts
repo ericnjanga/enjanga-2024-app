@@ -11,7 +11,7 @@ export type AppSchema = {
   // Correct models typing
   PageSection: Model;
   Hero: Model;
-  ExpertiseSpec: Model;
+  InformationCard1: Model;
   NavOptions: Model;
 };
 
@@ -29,7 +29,7 @@ export type PageSectionProps = {
   description: string, 
 }; 
  
-export type ExpertiseSpecProps = {
+export type InformationCard1Props = {
   id: string
   title?: string
   parentId: string
@@ -64,7 +64,7 @@ export interface ButtonProps {
 export type ModalContextProps = {
   isOpen: boolean               // Is the modal window open?
   renderingType: string          // Type of information being rendered: "data" or "another component"?
-  modalData: ExpertiseSpecProps | ProjectProps | null             // Data rendered by the modal
+  modalData: InformationCard1Props | ProjectProps | null             // Data rendered by the modal
   openModal: ({ 
     renderingType, 
     dataType, 
