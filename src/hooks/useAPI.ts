@@ -57,36 +57,36 @@ export const usePageSection = (id: string): PageSectionProps | null => {
 
   useEffect(() => {
     fetchData('pageSection', setPageSection, `/api/pageSection/${id}`);
-  }, []);
+  }, [id]);
   return pageSection;
 };
 
 // Returns a database record of type "InformationCard1Props[]"
 export const useExpertises = (parentId: string): InformationCard1Props[] | null => {
-  const [InformationCard1s, setExpertisePanel] = useState(null); 
+  const [InformationCard1s, setPanelGrid1] = useState(null); 
   
   useEffect(() => {
-    fetchData('InformationCard1s', setExpertisePanel, `/api/InformationCard1sByParent/${parentId}`);
+    fetchData('expertiseSpecs', setPanelGrid1, `/api/expertiseSpecsByParent/${parentId}`);
   }, [parentId]);
   return InformationCard1s;
 };
 
 // Returns a database record of type "InformationCard1Props"
 export const useExpertise = (id: string): InformationCard1Props | null => {
-  const [InformationCard1s, setExpertisePanel] = useState(null); 
+  const [InformationCard1s, setPanelGrid1] = useState(null); 
   
   useEffect(() => {
-    fetchData('InformationCard1s', setExpertisePanel, `/api/InformationCard1/${id}`);
+    fetchData('InformationCard1s', setPanelGrid1, `/api/InformationCard1/${id}`);
   }, [id]);
   return InformationCard1s;
 };
 
 // Returns a database record of type "InformationCard1Props[]"
 export const useProjects = (): ProjectProps[] | null => {
-  const [projects, setExpertisePanel] = useState(null); 
+  const [projects, setPanelGrid1] = useState(null); 
   
   useEffect(() => {
-    fetchData('projects', setExpertisePanel, `/api/projects`);
+    fetchData('projects', setPanelGrid1, `/api/projects`);
   }, []);
   return projects;
 };
