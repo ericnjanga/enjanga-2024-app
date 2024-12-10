@@ -1,7 +1,7 @@
 // PanelGrid1.stories.tsx
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react"; 
-import PanelGrid1 from "./PanelGrid1"; 
+import { Meta, StoryFn } from "@storybook/react";  
+import PanelGrid1 from "./PanelGrid1";
 // import { mockPageSectionProps, mockInformationCard1DataArray } from "../../models/mockupData"; 
 
 export default {
@@ -13,27 +13,10 @@ export default {
   },
 } as Meta;
 
-// // Mocking up custom hooks
-// // ------------
-// jest.mock("../../hooks/useAPI/usePageSection", () => ({
-//   __esModule: true,
-//   default: jest.fn(() => ({
-//     ...mockPageSectionProps
-//   }))
-// }));
-
-// jest.mock("../../hooks/useAPI/useExpertises", () => ({
-//   __esModule: true,
-//   default: jest.fn(() => [
-//     ...mockInformationCard1DataArray
-//   ])
-// }));
+ 
 
 
-
-const Template: StoryFn<{ pageSectionId: string }> = (args) => {
-
-  console.log(jest);
+const Template: StoryFn<{ pageSectionId: string }> = (args) => { 
 
   return <PanelGrid1 {...args} />;
 };
