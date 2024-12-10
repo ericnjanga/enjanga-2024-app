@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import InformationCard1 from "./InformationCard1";
 import { InformationCard1Props } from "../../models";
 import { ModalContext } from "../../utils/contexts";
-import { mockInformationCard1Data, mockModalContext } from "../../models/mockupData";
+import { mockInformationCard1DataArray, mockModalContext } from "../../models/mockupData";
 
 
 
@@ -25,5 +25,5 @@ const Template: StoryFn<InformationCard1Props> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  ...mockInformationCard1Data
+  ...mockInformationCard1DataArray[0]
 };
