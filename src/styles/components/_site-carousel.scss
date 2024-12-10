@@ -1,15 +1,15 @@
 :root {
-    --appName-site-carousel-hover-state: 35%; 
-    --appName-site-carousel-btnprev-y: -60px; 
-    --appName-site-carousel-item-gap: 20px;
+    --appname-site-carousel-hover-state: 35%; 
+    --appname-site-carousel-btnprev-y: -60px; 
+    --appname-site-carousel-item-gap: 20px;
 
-    --appName-carousel-controls-top: -110px;
-    --appName-carousel-controls-flexdir: column;
-    --appName-carousel-controls-width: min-content;
-    --appName-carousel-controls-gap: 5px; 
+    --appname-carousel-controls-top: -110px;
+    --appname-carousel-controls-flexdir: column;
+    --appname-carousel-controls-width: min-content;
+    --appname-carousel-controls-gap: 5px; 
 
     // Special card
-    --appName-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
+    --appname-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
 }
 
 /**
@@ -26,12 +26,12 @@
         .site-carousel-controls {
             position: absolute;
             display: flex;
-            top: var(--appName-carousel-controls-top);
-            gap: var(--appName-carousel-controls-gap); 
+            top: var(--appname-carousel-controls-top);
+            gap: var(--appname-carousel-controls-gap); 
             right: 0;
             justify-content: end;
-            flex-direction: var(--appName-carousel-controls-flexdir);
-            width: var(--appName-carousel-controls-width);
+            flex-direction: var(--appname-carousel-controls-flexdir);
+            width: var(--appname-carousel-controls-width);
     
             button {
                 width: fit-content;
@@ -95,9 +95,9 @@
                     }
 
                     .card-body {
-                        padding: var(--appName-carousel-card-padd);
-                        border-bottom-left-radius: var(--appName-bdr-radius-0);
-                        border-bottom-right-radius: var(--appName-bdr-radius-0);
+                        padding: var(--appname-carousel-card-padd);
+                        border-bottom-left-radius: var(--appname-bdr-radius-0);
+                        border-bottom-right-radius: var(--appname-bdr-radius-0);
                     }
                 } 
             }
@@ -108,14 +108,14 @@
                  * ----------------------------------
                 */ 
                 @media (min-width: 1200px) { 
-                    --appName-site-carousel-item-gap: 25px;
+                    --appname-site-carousel-item-gap: 25px;
     
                     .slick-active { 
                         // 1st element ...
                         &:has(+ .slick-active + .slick-active) {
                             .card {
                                 margin-left: 0;
-                                margin-right: var(--appName-site-carousel-item-gap);
+                                margin-right: var(--appname-site-carousel-item-gap);
                                 // background-color: rgb(0, 91, 165);
                             }
                         }
@@ -123,8 +123,8 @@
                         &:has(+ .slick-active),
                         &.slick-current + .slick-active {
                             .card {
-                                margin-left: calc(var(--appName-site-carousel-item-gap) / 2);
-                                margin-right: calc(var(--appName-site-carousel-item-gap) / 2);
+                                margin-left: calc(var(--appname-site-carousel-item-gap) / 2);
+                                margin-right: calc(var(--appname-site-carousel-item-gap) / 2);
                                 // background-color: rgb(0, 140, 255);
                             }
                         }
@@ -132,7 +132,7 @@
                         &.slick-current + .slick-active + .slick-active,
                         &:last-of-type.slick-current {
                             .card {
-                                margin-left: var(--appName-site-carousel-item-gap);
+                                margin-left: var(--appname-site-carousel-item-gap);
                                 // background-color: rgb(163, 19, 0);
                             } 
                         }
@@ -144,14 +144,14 @@
                  * ----------------------------------
                 */ 
                 @media (min-width: 768px) and (max-width: (1200px - 1)) { 
-                    --appName-site-carousel-item-gap: 20px;
+                    --appname-site-carousel-item-gap: 20px;
                     
                     .slick-active {
                         // 1st element ...
                         &:has(+ .slick-active) { 
                             .card {
                                 // background-color: rgb(0, 91, 165);
-                                margin-right: var(--appName-site-carousel-item-gap);
+                                margin-right: var(--appname-site-carousel-item-gap);
                             }
                         }
                         // 2nd element ...
@@ -159,7 +159,7 @@
                         &:last-of-type.slick-current {
                             .card {
                                 // background-color: rgb(163, 19, 0);
-                                margin-left: var(--appName-site-carousel-item-gap);
+                                margin-left: var(--appname-site-carousel-item-gap);
                             } 
                         }
                     }
@@ -176,45 +176,45 @@
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 3px solid purple;
-            --appName-site-carousel-btnnext-y: -70px;
-            --appName-site-carousel-btnprev-y: -70px;  
-            --appName-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
-            --appName-carousel-controls-top: -70px;
-            --appName-carousel-controls-flexdir: row;
+            --appname-site-carousel-btnnext-y: -70px;
+            --appname-site-carousel-btnprev-y: -70px;  
+            --appname-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --appname-carousel-controls-top: -70px;
+            --appname-carousel-controls-flexdir: row;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 3px solid violet;
-            --appName-site-carousel-btnnext-y: -70px;
-            --appName-site-carousel-btnprev-y: -70px;  
-            --appName-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
-            --appName-carousel-controls-top: -70px;
-            --appName-carousel-controls-flexdir: row;
+            --appname-site-carousel-btnnext-y: -70px;
+            --appname-site-carousel-btnprev-y: -70px;  
+            --appname-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --appname-carousel-controls-top: -70px;
+            --appname-carousel-controls-flexdir: row;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 3px solid lime;
-            --appName-site-carousel-btnprev-y: -70px;  
-            --appName-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
-            --appName-carousel-controls-top: -70px;
-            --appName-carousel-controls-flexdir: row;
+            --appname-site-carousel-btnprev-y: -70px;  
+            --appname-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --appname-carousel-controls-top: -70px;
+            --appname-carousel-controls-flexdir: row;
         }
 
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 3px solid blue;
-            --appName-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
-            --appName-carousel-controls-top: -70px;
-            --appName-carousel-controls-flexdir: row;
+            --appname-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
+            --appname-carousel-controls-top: -70px;
+            --appname-carousel-controls-flexdir: row;
         }
 
         // Small Medium screens ...
         @media (min-width: 576px) and (max-width: (768px - 1)) {
             // border: 3px solid turquoise;
-            --appName-carousel-controls-top: -100px;
-            --appName-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
+            --appname-carousel-controls-top: -100px;
+            --appname-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
         }
 
         // Smaller screens ...

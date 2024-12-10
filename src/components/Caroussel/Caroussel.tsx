@@ -1,13 +1,13 @@
-import "./Caroussel.scss";
-import ExpertisePanel from "../ExpertisePanel/ExpertisePanel";
+import "./Caroussel.scss"; 
+import PanelGrid1 from "../PanelGrid1/PanelGrid1";
 
 const Caroussel = () => {
   return (
-    <section className="Caroussel">
+    <section className="Caroussel sc-block">
       <div className="container">
         
-        <ExpertisePanel pageSectionId={'2'} />
-        <ExpertisePanel pageSectionId={'6'} />
+        <PanelGrid1 pageSectionId={'2'} />
+        {/* <PanelGrid1 pageSectionId={'6'} /> */}
      
       </div>
     </section>

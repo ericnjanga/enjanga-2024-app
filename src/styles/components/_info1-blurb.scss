@@ -1,8 +1,8 @@
 :root {
-    --appName-info1-blurb-flex-dir: column;
-    --appName-info1-blurb-flex-gap: 10px;
-    --appName-info1-blurb-dim: 100px; 
-    --appName-info1-blurb-width: 100%;
+    --appname-info1-blurb-flex-dir: column;
+    --appname-info1-blurb-flex-gap: 10px;
+    --appname-info1-blurb-dim: 100px; 
+    --appname-info1-blurb-width: 100%;
 }
 
 
@@ -16,8 +16,8 @@
 
             img {
                 margin-bottom: 5px;
-                width: var(--appName-info1-blurb-dim);
-                height: var(--appName-info1-blurb-dim);
+                width: var(--appname-info1-blurb-dim);
+                height: var(--appname-info1-blurb-dim);
             }
             span {
                 display: block;
@@ -40,9 +40,9 @@
  
         .info1-blurb-wrapper {
             display: flex;
-            gap: var(--appName-info1-blurb-flex-gap); 
-            flex-direction: var(--appName-info1-blurb-flex-dir);
-            width: var(--appName-info1-blurb-width);
+            gap: var(--appname-info1-blurb-flex-gap); 
+            flex-direction: var(--appname-info1-blurb-flex-dir);
+            width: var(--appname-info1-blurb-width);
 
             p {
                 &:first-of-type {
@@ -51,28 +51,28 @@
             } 
 
             @container (min-width: 1141px) {
-                --appName-info1-blurb-flex-dir: row;
-                --appName-info1-blurb-flex-gap: 140px;
-                --appName-info1-blurb-width: 80%;
+                --appname-info1-blurb-flex-dir: row;
+                --appname-info1-blurb-flex-gap: 140px;
+                --appname-info1-blurb-width: 80%;
                 // border: 10px solid orange;
             }
          
             @container (min-width: 961px) and (max-width: 1140px) {
-                --appName-info1-blurb-flex-dir: row;
-                --appName-info1-blurb-flex-gap: 100px;
-                --appName-info1-blurb-width: 85%;
+                --appname-info1-blurb-flex-dir: row;
+                --appname-info1-blurb-flex-gap: 100px;
+                --appname-info1-blurb-width: 85%;
                 // border: 10px solid turquoise;
             }
 
             @container (min-width: 721px) and (max-width: 960px) {
-                --appName-info1-blurb-flex-dir: row;
-                --appName-info1-blurb-flex-gap: 60px;
+                --appname-info1-blurb-flex-dir: row;
+                --appname-info1-blurb-flex-gap: 60px;
                 // border: 10px solid green;
             }
     
             @container (min-width: 541px) and (max-width: 720px) {
-                --appName-info1-blurb-flex-dir: row;
-                --appName-info1-blurb-flex-gap: 30px;
+                --appname-info1-blurb-flex-dir: row;
+                --appname-info1-blurb-flex-gap: 30px;
                 // border: 10px dashed blue;
             }
         }

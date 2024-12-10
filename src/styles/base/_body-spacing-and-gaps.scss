@@ -1,34 +1,34 @@
 :root {
-  --appName-spacing-top-gap: 20px;
-  --appName-header-bot-spacing: 1.438rem; // 23px;
+  --appname-spacing-top-gap: 20px;
+  --appname-header-bot-spacing: 1.438rem; // 23px;
 }
 
 body {
   // Extra Large screens ...
   @media (min-width: 1400px) {
     // border: 4px solid purple;
-    --appName-spacing-section-h-small: 120px;
-    --appName-header-bot-spacing: 1.875rem; // 30px;
+    --appname-spacing-section-h-small: 120px;
+    --appname-header-bot-spacing: 1.875rem; // 30px;
   }
   
   // Large screens ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 4px solid violet;
-    --appName-spacing-section-h-small: 90px;
-    --appName-header-bot-spacing: 1.875rem; // 30px;
+    --appname-spacing-section-h-small: 90px;
+    --appname-header-bot-spacing: 1.875rem; // 30px;
   }
   
   // Large Medium screens ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 4px solid lime;
-    --appName-spacing-section-h-small: 70px;
-    --appName-header-bot-spacing: 1.875rem; // 30px;
+    --appname-spacing-section-h-small: 70px;
+    --appname-header-bot-spacing: 1.875rem; // 30px;
   }
 
   // Medium Medium screens ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 4px solid blue;
-    --appName-spacing-section-h-small: 60px;
+    --appname-spacing-section-h-small: 60px;
   }
 
   // Small Medium screens ...
@@ -46,24 +46,24 @@ body {
 
 @layer blocks {
   .sc-block {
-    padding-top: var(--appName-spacing-section-h-small);
-    padding-bottom: var(--appName-spacing-section-h-small);
+    padding-top: var(--appname-spacing-section-h-small);
+    padding-bottom: var(--appname-spacing-section-h-small);
   }
 
   .sc-block-mg-top {
-    margin-top: var(--appName-spacing-section-h-small);
+    margin-top: var(--appname-spacing-section-h-small);
   }
   .sc-block-mg-bot {
-    margin-bottom: var(--appName-spacing-section-h-small);
+    margin-bottom: var(--appname-spacing-section-h-small);
   }
   .sc-header-bot-spacing {
-    margin-bottom: var(--appName-header-bot-spacing);
+    margin-bottom: var(--appname-header-bot-spacing);
   }
   .sc-block-pd-top {
-    padding-top: var(--appName-spacing-section-h-small);
+    padding-top: var(--appname-spacing-section-h-small);
   }
   .sc-block-pd-bot {
-    padding-bottom: var(--appName-spacing-section-h-small);
+    padding-bottom: var(--appname-spacing-section-h-small);
   }
 }
 

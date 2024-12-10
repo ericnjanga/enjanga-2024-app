@@ -1,15 +1,15 @@
 :root {
-    --appName-section-intro-card-marg: 0 0 4px 0;
-    --appName-section-intro-card-display: block;
+    --appname-section-intro-card-marg: 0 0 4px 0;
+    --appname-section-intro-card-display: block;
 
     // Intro card
-    --appName-section-intro-h-textalign: left;
-    --appName-section-intro-card-padd: 30px 20px 20px 20px;
+    --appname-section-intro-h-textalign: left;
+    --appname-section-intro-card-padd: 30px 20px 20px 20px;
 
     // Skills card
-    --appName-skills-wrapper-grid-template: 1fr / 1fr;
-    --appName-skills-card-padd: 30px 20px 20px 20px;
-    --appName-skills-card-1st-child-gridrow: unset;
+    --appname-skills-wrapper-grid-template: 1fr / 1fr;
+    --appname-skills-card-padd: 30px 20px 20px 20px;
+    --appname-skills-card-1st-child-gridrow: unset;
 }
 
 @layer best-work {
@@ -21,47 +21,47 @@
 @layer section-introduction {
     .section-introduction {
         .card-group {
-            display: var(--appName-section-intro-card-display);
+            display: var(--appname-section-intro-card-display);
 
             .card {
-                margin: var(--appName-section-intro-card-marg);
+                margin: var(--appname-section-intro-card-marg);
 
                 .card-body {
-                    padding: var(--appName-section-intro-card-padd);
+                    padding: var(--appname-section-intro-card-padd);
                 }
             }
 
             // Extra Large screens ...
             @media (min-width: 1400px) {
                 // border: 4px solid purple;
-                --appName-section-intro-card-display: flex;
-                --appName-section-intro-card-padd: 45px 55px 40px 55px;
+                --appname-section-intro-card-display: flex;
+                --appname-section-intro-card-padd: 45px 55px 40px 55px;
             }
             
             // Large screens ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 4px solid violet;
-                --appName-section-intro-card-display: flex;
-                --appName-section-intro-card-padd: 45px 45px 35px 45px;
+                --appname-section-intro-card-display: flex;
+                --appname-section-intro-card-padd: 45px 45px 35px 45px;
             }
             
             // Large Medium screens ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 4px solid lime;
-                --appName-section-intro-card-display: flex;
-                --appName-section-intro-card-padd: 45px 30px 30px 30px;
+                --appname-section-intro-card-display: flex;
+                --appname-section-intro-card-padd: 45px 30px 30px 30px;
             }
 
             // Medium Medium screens ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 4px solid blue;
-                --appName-section-intro-card-padd: 45px 30px 30px 30px;
+                --appname-section-intro-card-padd: 45px 30px 30px 30px;
             }
 
             // Small Medium screens ...
             @media (min-width: 576px) and (max-width: (768px - 1)) {
                 // border: 4px solid turquoise;
-                --appName-section-intro-card-padd: 45px 30px 30px 30px;
+                --appname-section-intro-card-padd: 45px 30px 30px 30px;
             }
 
             // Smaller screens ...
@@ -71,31 +71,31 @@
         }
 
         &__header {
-            text-align: var(--appName-section-intro-h-textalign);
+            text-align: var(--appname-section-intro-h-textalign);
         }
 
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 3px solid purple;
-            --appName-section-intro-h-textalign: center;
+            --appname-section-intro-h-textalign: center;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 3px solid violet;
-            --appName-section-intro-h-textalign: center;
+            --appname-section-intro-h-textalign: center;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 3px solid lime;
-            --appName-section-intro-h-textalign: center;
+            --appname-section-intro-h-textalign: center;
         }
     
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 3px solid blue;
-            --appName-section-intro-h-textalign: center;
+            --appname-section-intro-h-textalign: center;
         }
     
         // // Small Medium screens ...
@@ -132,53 +132,53 @@
         }
         .section-skills__wrapper {
             display: grid;
-            grid-template: var(--appName-skills-wrapper-grid-template);
+            grid-template: var(--appname-skills-wrapper-grid-template);
             gap: 4px;
 
             .special-card { 
                 .card-body {
-                    padding: var(--appName-skills-card-padd);
+                    padding: var(--appname-skills-card-padd);
                 }
 
                 &:first-of-type { // Occupy 2 rows
-                    grid-row: var(--appName-skills-card-1st-child-gridrow);
+                    grid-row: var(--appname-skills-card-1st-child-gridrow);
                 }
             }
 
             // Extra Large screens ...
             @media (min-width: 1400px) {
                 // border: 4px solid purple;
-                --appName-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
-                --appName-skills-card-1st-child-gridrow: span 2;
-                --appName-skills-card-padd: 40px 40px 40px 85px;
+                --appname-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --appname-skills-card-1st-child-gridrow: span 2;
+                --appname-skills-card-padd: 40px 40px 40px 85px;
             }
             
             // Large screens ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 4px solid violet;
-                --appName-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
-                --appName-skills-card-1st-child-gridrow: span 2;
-                --appName-skills-card-padd: 40px 40px 40px 65px;
+                --appname-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --appname-skills-card-1st-child-gridrow: span 2;
+                --appname-skills-card-padd: 40px 40px 40px 65px;
             }
             
             // Large Medium screens ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 4px solid lime;
-                --appName-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
-                --appName-skills-card-1st-child-gridrow: span 2;
-                --appName-skills-card-padd: 30px 30px 30px 55px;
+                --appname-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --appname-skills-card-1st-child-gridrow: span 2;
+                --appname-skills-card-padd: 30px 30px 30px 55px;
             }
     
             // Medium Medium screens ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 4px solid blue;
-                --appName-skills-card-padd: 45px 30px 30px 30px;
+                --appname-skills-card-padd: 45px 30px 30px 30px;
             }
     
             // // Small Medium screens ...
             // @media (min-width: 576px) and (max-width: (768px - 1)) {
             //     border: 4px solid turquoise;
-            //     --appName-skills-card-padd: 45px 30px 30px 30px;
+            //     --appname-skills-card-padd: 45px 30px 30px 30px;
             // }
     
             // // Smaller screens ...

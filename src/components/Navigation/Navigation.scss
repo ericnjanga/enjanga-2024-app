@@ -1,11 +1,11 @@
 :root {
   //navbar-nav
-  --appName-navbar-logo-width: 140px;
-  --appName-navbar-margin: 0;
-  --appName-navbar-gap: 0;
-  --appName-navbar-padding: 8px 0;
-  --appName-navbar-navitem-sep-display: none;
-  --appName-navbar-navitem-sep-right: -12px;
+  --appname-navbar-logo-width: 140px;
+  --appname-navbar-margin: 0;
+  --appname-navbar-gap: 0;
+  --appname-navbar-padding: 8px 0;
+  --appname-navbar-navitem-sep-display: none;
+  --appname-navbar-navitem-sep-right: -12px;
 
   --webite-navbar-collapse-padding: 15px 0;
 }
@@ -13,46 +13,46 @@
 @layer navbar {
   .Navigation {
     background-color: aquamarine;
-    padding: var(--appName-navbar-padding);
+    padding: var(--appname-navbar-padding);
     // // Extra Large screens ...
     @media (min-width: 1400px) {
       // border: 3px solid purple;
-      --appName-navbar-logo-width: 160px;
-      --appName-navbar-margin: 0 auto;
-      --appName-navbar-padding: 10px 0;
-      --appName-navbar-navitem-sep-display: block;
-      --appName-navbar-gap: 30px;
-      --appName-navbar-navitem-sep-right: -18px;
+      --appname-navbar-logo-width: 160px;
+      --appname-navbar-margin: 0 auto;
+      --appname-navbar-padding: 10px 0;
+      --appname-navbar-navitem-sep-display: block;
+      --appname-navbar-gap: 30px;
+      --appname-navbar-navitem-sep-right: -18px;
       --webite-navbar-collapse-padding: 0;
     }
 
     // Large screens ...
     @media (min-width: 1200px) and (max-width: (1400px - 1)) {
       // border: 3px solid violet;
-      --appName-navbar-logo-width: 140px;
-      --appName-navbar-margin: 0 auto;
-      --appName-navbar-padding: 10px 0;
-      --appName-navbar-navitem-sep-display: block;
-      --appName-navbar-gap: 30px;
-      --appName-navbar-navitem-sep-right: -18px;
+      --appname-navbar-logo-width: 140px;
+      --appname-navbar-margin: 0 auto;
+      --appname-navbar-padding: 10px 0;
+      --appname-navbar-navitem-sep-display: block;
+      --appname-navbar-gap: 30px;
+      --appname-navbar-navitem-sep-right: -18px;
       --webite-navbar-collapse-padding: 0;
     }
 
     // Large Medium screens ...
     @media (min-width: 992px) and (max-width: (1200px - 1)) {
       // border: 3px solid lime;
-      --appName-navbar-logo-width: 140px;
-      --appName-navbar-margin: 0 auto;
-      --appName-navbar-padding: 10px 0;
-      --appName-navbar-navitem-sep-display: block;
-      --appName-navbar-gap: 20px;
+      --appname-navbar-logo-width: 140px;
+      --appname-navbar-margin: 0 auto;
+      --appname-navbar-padding: 10px 0;
+      --appname-navbar-navitem-sep-display: block;
+      --appname-navbar-gap: 20px;
       --webite-navbar-collapse-padding: 0;
     }
 
     // Medium Medium screens ...
     @media (min-width: 768px) and (max-width: (992px - 1)) {
       // border: 3px solid blue;
-      --appName-navbar-padding: 10px 0;
+      --appname-navbar-padding: 10px 0;
     }
 
     // // Small Medium screens ...
@@ -75,7 +75,7 @@
     }
 
     .navbar-nav {
-      gap: var(--appName-navbar-gap);
+      gap: var(--appname-navbar-gap);
     }
 
     .nav-item {
@@ -83,10 +83,10 @@
 
       // separator between links
       &::after {
-        display: var(--appName-navbar-navitem-sep-display);
+        display: var(--appname-navbar-navitem-sep-display);
         position: absolute;
         top: 30%;
-        right: var(--appName-navbar-navitem-sep-right);
+        right: var(--appname-navbar-navitem-sep-right);
         content: "";
         width: 1px;
         height: 20px;
@@ -107,7 +107,7 @@
       }
 
       &.active {
-        text-shadow: 0 0 7px var(--appName-clr-col1-accent-xx1);
+        text-shadow: 0 0 7px var(--appname-clr-col1-accent-xx1);
         text-decoration: underline;
       }
 
@@ -133,7 +133,7 @@
 
     .navbar-brand {
       img {
-        width: var(--appName-navbar-logo-width);
+        width: var(--appname-navbar-logo-width);
         height: inherit;
       }
 

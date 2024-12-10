@@ -1,5 +1,5 @@
 :root {
-    --appName-section-footer-cta-marg: 20px 0 0 0;
+    --appname-section-footer-cta-marg: 20px 0 0 0;
 }
 
 @layer jumbotron {
@@ -10,25 +10,25 @@
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;
-            --appName-section-footer-cta-marg: 35px 0 0 0;
+            --appname-section-footer-cta-marg: 35px 0 0 0;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;
-            --appName-section-footer-cta-marg: 35px 0 0 0;
+            --appname-section-footer-cta-marg: 35px 0 0 0;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;
-            --appName-section-footer-cta-marg: 30px 0 0 0;
+            --appname-section-footer-cta-marg: 30px 0 0 0;
         }
 
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 10px solid blue;
-            --appName-section-footer-cta-marg: 25px 0 0 0;
+            --appname-section-footer-cta-marg: 25px 0 0 0;
         }
 
         // // Small Medium screens ...

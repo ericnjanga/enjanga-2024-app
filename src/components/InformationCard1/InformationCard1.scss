@@ -1,21 +1,25 @@
 :root {
-  --appName-ExpertiseSpec-padd: 24px;
-  --appName-ExpertiseSpec-padd-left: 60px;
+  --appname-ExpertiseSpec-padd: 24px;
+  --appname-ExpertiseSpec-padd-top: 60px;
+  --appname-ExpertiseSpec-padd-left: 24px;
 }
 
 .InformationCard1.card {
   display: block;
   width: 100%;
-  border-radius: var(--appName-bdr-radius-0);
+  border-radius: var(--appname-bdr-radius-0);
   border-width: 0;
-  background-color: var(--appName-theme-light-cccc-2a);
-  padding: var(--appName-ExpertiseSpec-padd);
-  padding-left: var(--appName-ExpertiseSpec-padd-left);
+  background-color: var(--appname-theme-light-cccc-2a);
+  padding: var(--appname-ExpertiseSpec-padd);
+  padding-top: var(--appname-ExpertiseSpec-padd-top);
+  padding-left: var(--appname-ExpertiseSpec-padd-left);
 
   cursor: pointer;
 
+
+
   &:hover {
-    background-color: var(--appName-theme-light-aaaa-3x);
+    background-color: var(--appname-theme-light-aaaa-3x);
   }
 
   .card-body {
@@ -23,13 +27,58 @@
 
     .icon {
       position: absolute;
-      top: var(--appName-ExpertiseSpec-padd);
-      left: var(--appName-ExpertiseSpec-padd);
+      top: var(--appname-ExpertiseSpec-padd);
+      left: var(--appname-ExpertiseSpec-padd);
     }
   }
   .btn {
     padding-left: 0;
+    padding-bottom: 0;
     font-size: 1rem;
-    color: var(--appName-theme-light-eee-1);
+    color: var(--appname-theme-light-eee-1);
+  }
+
+
+
+
+
+  // Extra Large screens ...
+  @media (min-width: 1400px) {
+    border: 4px dashed chocolate;
+    --appname-ExpertiseSpec-padd-top: 24px;
+    --appname-ExpertiseSpec-padd-left: 60px;
+  }
+
+  // Large screens ...
+  @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+    border: 4px dashed turquoise;
+    --appname-ExpertiseSpec-padd-top: 24px;
+    --appname-ExpertiseSpec-padd-left: 60px;
+  }
+
+  // Large Medium screens ...
+  @media (min-width: 992px) and (max-width: (1200px - 1)) {
+    border: 4px dashed blue;
+    --appname-ExpertiseSpec-padd-top: 24px;
+    --appname-ExpertiseSpec-padd-left: 60px;
+  }
+
+  // Medium Medium screens ...
+  @media (min-width: 768px) and (max-width: (992px - 1)) {
+    border: 4px dashed lime;
+    // --appname-ExpertiseSpec-padd-top: 24px;
+    // --appname-ExpertiseSpec-padd-left: 60px;
+  }
+
+  // Small Medium screens ...
+  @media (min-width: 576px) and (max-width: (768px - 1)) {
+    border: 4px dashed violet;
+    --appname-ExpertiseSpec-padd-top: 24px;
+    --appname-ExpertiseSpec-padd-left: 60px;
+  }
+
+  // Smaller screens ...
+  @media (max-width: (576px - 1px)) {
+    border: 4px dashed purple;
   }
 }

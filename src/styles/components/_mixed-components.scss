@@ -7,14 +7,14 @@
 **/
 
 :root {
-    --appName-anchors-scrollto-top: -80px; 
-    --appName-btnscrolltop-font-size: 0.8rem;
-    --appName-btnscrolltop-x-pos: 10px; 
+    --appname-anchors-scrollto-top: -80px; 
+    --appname-btnscrolltop-font-size: 0.8rem;
+    --appname-btnscrolltop-x-pos: 10px; 
 
-    --appName-hero-elts-spacer: 20px 0 0 0;
+    --appname-hero-elts-spacer: 20px 0 0 0;
 
     // Special card
-    --appName-special-card-padd: 30px 20px 20px 20px;
+    --appname-special-card-padd: 30px 20px 20px 20px;
 }
 
 
@@ -25,7 +25,7 @@
 
     .anchors-scrollto {
         position: absolute;
-        top: var(--appName-anchors-scrollto-top);  
+        top: var(--appname-anchors-scrollto-top);  
         display: block;
         width: 100px;
         height: 20px; 
@@ -33,25 +33,25 @@
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 4px dashed purple;
-            --appName-anchors-scrollto-top: -160px;
+            --appname-anchors-scrollto-top: -160px;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 4px dashed violet;
-            --appName-anchors-scrollto-top: -160px;
+            --appname-anchors-scrollto-top: -160px;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 4px dashed lime;
-            --appName-anchors-scrollto-top: -140px;
+            --appname-anchors-scrollto-top: -140px;
         }
 
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 4px dashed blue;
-            --appName-anchors-scrollto-top: -130px;
+            --appname-anchors-scrollto-top: -130px;
         }
 
         // Small Medium screens ...
@@ -74,24 +74,24 @@
         position: fixed;
         z-index: 999;
         bottom: 30px;  
-        left: var(--appName-btnscrolltop-x-pos); 
+        left: var(--appname-btnscrolltop-x-pos); 
 
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;  
-            --appName-btnscrolltop-x-pos: 50px;
+            --appname-btnscrolltop-x-pos: 50px;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;  
-            --appName-btnscrolltop-x-pos: 90px;
+            --appname-btnscrolltop-x-pos: 90px;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;  
-            --appName-btnscrolltop-x-pos: 90px;
+            --appname-btnscrolltop-x-pos: 90px;
         }
 
         // Medium Medium screens ...
@@ -116,30 +116,30 @@
     .icon-list,
     .section-footer-cta,
     .site-carousel {
-        // margin: var(--appName-hero-elts-spacer);
+        // margin: var(--appname-hero-elts-spacer);
 
         // Extra Large screens ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;
-            --appName-hero-elts-spacer: 35px 0 0 0;
+            --appname-hero-elts-spacer: 35px 0 0 0;
         }
         
         // Large screens ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;
-            --appName-hero-elts-spacer: 35px 0 0 0;
+            --appname-hero-elts-spacer: 35px 0 0 0;
         }
         
         // Large Medium screens ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;
-            --appName-hero-elts-spacer: 30px 0 0 0;
+            --appname-hero-elts-spacer: 30px 0 0 0;
         }
 
         // Medium Medium screens ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 10px solid blue;
-            --appName-hero-elts-spacer: 25px 0 0 0;
+            --appname-hero-elts-spacer: 25px 0 0 0;
         }
 
         // // Small Medium screens ...
@@ -157,7 +157,7 @@
 @layer special-card {
     .special-card {
         // .card-body {
-        //     padding: var(--appName-special-card-padd);
+        //     padding: var(--appname-special-card-padd);
         // }
 
         // &__title {}

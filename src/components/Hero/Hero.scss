@@ -1,48 +1,48 @@
 :root { 
-  --appName-hero-height: auto; // 270px; 
-  --appName-hero-container-paddtop: 90px;
+  --appname-hero-height: auto; // 270px; 
+  --appname-hero-container-paddtop: 90px;
 
-  --appName-hero-persona-position: relative;
-  --appName-hero-persona-pos-bottom: 0;
-  --appName-hero-persona-pos-right: 0;
-  --appName-hero-persona-position: relative;
-  --appName-hero-persona-width: 50%;
-  --appName-hero-persona-margin: 0 auto;
+  --appname-hero-persona-position: relative;
+  --appname-hero-persona-pos-bottom: 0;
+  --appname-hero-persona-pos-right: 0;
+  --appname-hero-persona-position: relative;
+  --appname-hero-persona-width: 50%;
+  --appname-hero-persona-margin: 0 auto;
   
-  --appName-hero-subtitle: 1.188rem;
-  --appName-hero-subtitle-lineheight: 1.75rem;
+  --appname-hero-subtitle: 1.188rem;
+  --appname-hero-subtitle-lineheight: 1.75rem;
 
-  --appName-hero-decoration-display: none;
-  --appName-hero-decoration-height: 400px;
-  --appName-hero-decoration-right: 0;
+  --appname-hero-decoration-display: none;
+  --appname-hero-decoration-height: 400px;
+  --appname-hero-decoration-right: 0;
 
-  --appName-jumbotron-textwrapper-width: unset;
-  --appName-hero-jumbotron-margin: 0 0 20px 0;
+  --appname-jumbotron-textwrapper-width: unset;
+  --appname-hero-jumbotron-margin: 0 0 20px 0;
 }
 
 
 @layer hero {
   .Hero {
       position: relative;
-      height: var(--appName-hero-height); 
+      height: var(--appname-hero-height); 
       overflow: hidden;
 
       &-subtitle { 
-          font-size: var(--appName-hero-subtitle);
-          line-height: var(--appName-hero-subtitle-lineheight); 
+          font-size: var(--appname-hero-subtitle);
+          line-height: var(--appname-hero-subtitle-lineheight); 
       }
 
       &-content-wrapper {
-          padding-top: var(--appName-hero-container-paddtop);
+          padding-top: var(--appname-hero-container-paddtop);
       }
 
       &-persona {
           display: block;
-          position: var(--appName-hero-persona-position);
-          bottom: var(--appName-hero-persona-pos-bottom);
-          right: var(--appName-hero-persona-pos-right);
-          width: var(--appName-hero-persona-width);
-          margin: var(--appName-hero-persona-margin);
+          position: var(--appname-hero-persona-position);
+          bottom: var(--appname-hero-persona-pos-bottom);
+          right: var(--appname-hero-persona-pos-right);
+          width: var(--appname-hero-persona-width);
+          margin: var(--appname-hero-persona-margin);
           transform: scaleX(-1); // Mirroring an Image Horizontally
           z-index: 2;
       }
@@ -50,104 +50,104 @@
       &-decoration {
           position: absolute;
           z-index: 1;
-          display: var(--appName-hero-decoration-display);
+          display: var(--appname-hero-decoration-display);
           // width: inherit;
-          height: var(--appName-hero-decoration-height);
-          right: var(--appName-hero-decoration-right);
+          height: var(--appname-hero-decoration-height);
+          right: var(--appname-hero-decoration-right);
           bottom: 0;
       }
      
       &-jumbotron {
           position: relative;
-          width: var(--appName-jumbotron-textwrapper-width);
-          margin: var(--appName-hero-jumbotron-margin);
+          width: var(--appname-jumbotron-textwrapper-width);
+          margin: var(--appname-hero-jumbotron-margin);
           z-index: 3;
       }
 
       // Extra Large screens ...
       @media (min-width: 1400px) {
           // border: 3px solid purple; 
-          --appName-hero-height: 560px; 
-          --appName-hero-container-paddtop: 150px; 
-          --appName-hero-persona-width: 400px;
-          --appName-jumbotron-textwrapper-width: 620px;
-          --appName-hero-persona-margin: 0;
-          --appName-hero-persona-position: absolute;
-          --appName-hero-persona-pos-right: 40px;
+          --appname-hero-height: 560px; 
+          --appname-hero-container-paddtop: 150px; 
+          --appname-hero-persona-width: 400px;
+          --appname-jumbotron-textwrapper-width: 620px;
+          --appname-hero-persona-margin: 0;
+          --appname-hero-persona-position: absolute;
+          --appname-hero-persona-pos-right: 40px;
 
-          --appName-hero-subtitle: 1.48rem;
-          --appName-hero-subtitle-lineheight: 2.05rem;
+          --appname-hero-subtitle: 1.48rem;
+          --appname-hero-subtitle-lineheight: 2.05rem;
 
-          --appName-hero-decoration-height: 100%;
-          --appName-hero-decoration-right: -5%;
-          --appName-hero-decoration-display: block;
+          --appname-hero-decoration-height: 100%;
+          --appname-hero-decoration-right: -5%;
+          --appname-hero-decoration-display: block;
       }
       
       // Large screens ...
       @media (min-width: 1200px) and (max-width: (1400px - 1)) {
           // border: 3px solid violet; 
-          --appName-hero-height: 560px; 
-          --appName-hero-container-paddtop: 150px;
-          --appName-hero-persona-width: 400px;
-          --appName-jumbotron-textwrapper-width: 550px;
-          --appName-hero-persona-margin: 0;
-          --appName-hero-persona-position: absolute;
-          --appName-hero-persona-pos-right: 40px;
+          --appname-hero-height: 560px; 
+          --appname-hero-container-paddtop: 150px;
+          --appname-hero-persona-width: 400px;
+          --appname-jumbotron-textwrapper-width: 550px;
+          --appname-hero-persona-margin: 0;
+          --appname-hero-persona-position: absolute;
+          --appname-hero-persona-pos-right: 40px;
 
-          --appName-hero-subtitle: 1.38rem;
-          --appName-hero-subtitle-lineheight: 1.95rem;
+          --appname-hero-subtitle: 1.38rem;
+          --appname-hero-subtitle-lineheight: 1.95rem;
           
-          --appName-hero-decoration-height: 100%;
-          --appName-hero-decoration-right: -5%;
-          --appName-hero-decoration-display: block;
+          --appname-hero-decoration-height: 100%;
+          --appname-hero-decoration-right: -5%;
+          --appname-hero-decoration-display: block;
       }
       
       // Large Medium screens ...
       @media (min-width: 992px) and (max-width: (1200px - 1)) {
           // border: 3px solid lime; 
-          --appName-hero-height: 430px; 
-          --appName-hero-container-paddtop: 120px;
-          --appName-hero-persona-width: 300px;
-          --appName-jumbotron-textwrapper-width: 500px;
-          --appName-hero-persona-margin: 0;
-          --appName-hero-persona-position: absolute;
-          --appName-hero-persona-pos-right: 40px;
+          --appname-hero-height: 430px; 
+          --appname-hero-container-paddtop: 120px;
+          --appname-hero-persona-width: 300px;
+          --appname-jumbotron-textwrapper-width: 500px;
+          --appname-hero-persona-margin: 0;
+          --appname-hero-persona-position: absolute;
+          --appname-hero-persona-pos-right: 40px;
 
-          --appName-hero-subtitle: 1.38rem;
-          --appName-hero-subtitle-lineheight: 1.95rem;
+          --appname-hero-subtitle: 1.38rem;
+          --appname-hero-subtitle-lineheight: 1.95rem;
           
-          --appName-hero-decoration-height: 100%;
-          --appName-hero-decoration-right: -10%;
-          --appName-hero-decoration-display: block;
+          --appname-hero-decoration-height: 100%;
+          --appname-hero-decoration-right: -10%;
+          --appname-hero-decoration-display: block;
       }
 
       // Medium Medium screens ...
       @media (min-width: 768px) and (max-width: (992px - 1)) {
           // border: 3px solid blue; 
-          --appName-hero-height: 430px; 
-          --appName-hero-container-paddtop: 130px;
-          --appName-hero-persona-width: 300px;
-          --appName-jumbotron-textwrapper-width: 400px;
-          --appName-hero-persona-margin: 0;
-          --appName-hero-persona-position: absolute;
-          --appName-hero-persona-pos-right: 60px;
+          --appname-hero-height: 430px; 
+          --appname-hero-container-paddtop: 130px;
+          --appname-hero-persona-width: 300px;
+          --appname-jumbotron-textwrapper-width: 400px;
+          --appname-hero-persona-margin: 0;
+          --appname-hero-persona-position: absolute;
+          --appname-hero-persona-pos-right: 60px;
 
-          --appName-hero-subtitle: 1.288rem;
-          --appName-hero-subtitle-lineheight: 1.85rem;
+          --appname-hero-subtitle: 1.288rem;
+          --appname-hero-subtitle-lineheight: 1.85rem;
           
-          --appName-hero-decoration-height: 100%;
-          --appName-hero-decoration-right: -20%;
-          --appName-hero-decoration-display: block;
+          --appname-hero-decoration-height: 100%;
+          --appname-hero-decoration-right: -20%;
+          --appname-hero-decoration-display: block;
       }
 
       // Small Medium screens ...
       @media (min-width: 576px) and (max-width: (768px - 1)) {
           // border: 3px solid turquoise;
-          --appName-hero-persona-width: 45%;
+          --appname-hero-persona-width: 45%;
           
-          --appName-hero-decoration-height: 100%;
-          --appName-hero-decoration-right: -20%;
-          --appName-hero-decoration-display: block;
+          --appname-hero-decoration-height: 100%;
+          --appname-hero-decoration-right: -20%;
+          --appname-hero-decoration-display: block;
       }
 
       // Smaller screens ...

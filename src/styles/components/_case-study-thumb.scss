@@ -1,6 +1,6 @@
 :root{
-    --appName-case-study-thumb--img-marg: 0 0 10px 0;
-    --appName-case-study-thumb--title-pad: 0 0 0 20px;
+    --appname-case-study-thumb--img-marg: 0 0 10px 0;
+    --appname-case-study-thumb--title-pad: 0 0 0 20px;
 }
 
 
@@ -13,10 +13,10 @@
             text-decoration: none;
 
             img {
-                margin: var(--appName-case-study-thumb--img-marg);
+                margin: var(--appname-case-study-thumb--img-marg);
             }
             h3 {
-                padding: var(--appName-case-study-thumb--title-pad);
+                padding: var(--appname-case-study-thumb--title-pad);
             }
 
             // @container (min-width: 1141px) {
@@ -33,8 +33,8 @@
         
             @container (min-width: 541px) and (max-width: 720px) {
                 // border: 10px solid blue;
-                --appName-case-study-thumb--img-marg: 0 0 20px 0;
-                --appName-case-study-thumb--title-pad: 0 0 0 40px;
+                --appname-case-study-thumb--img-marg: 0 0 20px 0;
+                --appname-case-study-thumb--title-pad: 0 0 0 40px;
             }
 
             // @container (max-width: 540px) {
