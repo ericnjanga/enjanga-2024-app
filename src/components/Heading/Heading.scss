@@ -1,39 +1,166 @@
-:root {
+:root { 
+  // Font sizes and line heights ...
+  --appname-fs-h1: 3rem; // 48px;
+  --appname-ln-h1: 3.375rem; // 54px; 
+
+  --appname-fs-h2: 2.125rem; // 34px;
+  --appname-ln-h2: 2.150rem; // 39px;   
+
+  --appname-fs-h3: 1.625rem; // 26px;
+  --appname-ln-h3: 1.875rem; // 30px; 
+
+  --appname-fs-h4: 1.438rem; // 23px;
+  --appname-ln-h4: 1.296rem; // 27px
+ 
+  // Bottom margins
+  --appname-mb-h1: 0.938rem; // 15px;
+  --appname-mb-h2: 0.938rem; // 15px;
+  --appname-mb-h3: 0.625rem; // 10px;
+  --appname-mb-h4: 0.625rem; // 10px;
+
   --appname-Heading-font-size: 28px;
   --appname-Heading-line-height: 30px;
 }
 
-.Heading {
-  font-size: var(--appname-Heading-font-size);
-  line-height: var(--appname-Heading-line-height);
+ 
 
+.Heading--1 {
+  margin-bottom: var(--appname-mb-h1);
+  font-size: var(--appname-fs-h1);
+  line-height: var(--appname-ln-h1);
+  letter-spacing: -0.66px;
+}
+
+.Heading--2 {
+  margin-bottom: var(--appname-mb-h2);
+  font-size: var(--appname-fs-h2); 
+  line-height: var(--appname-ln-h2);
+  letter-spacing: -0.28px;
+  font-weight: 350;
+} 
+
+.Heading--3 {
+  margin-bottom: var(--appname-mb-h3);
+  font-size: var(--appname-fs-h3); 
+  line-height: var(--appname-ln-h3);
+  letter-spacing: -0.46px;
+}
+
+.Heading--4 {
+  margin-bottom: var(--appname-mb-h4);
+  font-size: var(--appname-fs-h4); 
+  line-height: var(--appname-ln-h4);
+  letter-spacing: -0.46px;
+}
+
+.Heading--3, 
+.Heading--4 {
+  font-weight: 450;
+}
+
+.Heading {
+  font-weight: 500;
+  font-variation-settings: "slnt" 0;
+ 
   // Extra Large screen ...
   @media (min-width: 1400px) {
-    border: 1.5px dashed chocolate; 
-  }
+    // border: 3px solid purple;
+    // Font sizes and line heights ...
+    --appname-fs-h1: 5rem; //80px;
+    --appname-ln-h1: 79px; 
+    --appname-mb-h1: 30px;
 
+    --appname-fs-h2: 3rem; // 48px;
+    --appname-ln-h2: 3.25rem; // 52px; 
+
+    --appname-fs-h3: 30px;
+    --appname-ln-h3: 2.188rem; // 35px;
+
+    --appname-fs-h4: 1.625rem; // 26px;
+    --appname-ln-h4: 1.875rem; // 30px; 
+
+    // Margins ...
+    --appname-mb-h2: 1.25rem; // 20px
+    --appname-mb-h3: 0.813rem; // 13px;
+    --appname-mb-h4: 0.813rem; // 13
+  }
+  
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-    border: 1.5px dashed turquoise; 
-  }
+    // border: 3px solid violet;
+    // Font sizes and line heights ...
+    --appname-fs-h1: 72px;
+    --appname-ln-h1: 70px; 
+    --appname-mb-h1: 30px;
 
+    --appname-fs-h2: 2.875rem; // 46px;
+    --appname-ln-h2: 3.25rem; // 52px; 
+
+    --appname-fs-h3: 1.75rem; // 28px;
+    --appname-ln-h3: 2rem; // 32px; 
+
+    --appname-fs-h4: 1.625rem; // 26px;
+    --appname-ln-h4: 1.875rem; // 30px; 
+
+    // Margins ...
+    --appname-mb-h2: 1.25rem; // 20px
+    --appname-mb-h3: 0.625rem; // 10px;
+    --appname-mb-h4: 0.813rem; // 13
+  }
+  
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
-    border: 1.5px dashed blue; 
+    // border: 3px solid lime;
+    // Font sizes and line heights ... 
+    --appname-fs-h1: 68px;
+    --appname-ln-h1: 64px; 
+    --appname-mb-h1: 22px;
+
+    --appname-fs-h2: 2.625rem; // 42px;  
+    --appname-ln-h2: 2.938rem; // 47px
+
+    --appname-fs-h3: 1.625rem; // 26px;
+    --appname-ln-h3: 2rem; // 32px; 
+
+    --appname-fs-h4: 1.438rem; // 23px;
+    --appname-ln-h4: 1.296rem; // 27px
+
+    // Margins ...
+    --appname-mb-h2: 1.25rem; // 20px
+    --appname-mb-h3: 0.625rem; // 10px;
+    --appname-mb-h4: 0.813rem; // 13
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
-    border: 1.5px dashed lime; 
+    // border: 3px solid blue;
+    // Font sizes and line heights ...  
+    --appname-fs-h1: 58px;
+    --appname-ln-h1: 56px; 
+    --appname-mb-h1: 22px;
+
+    --appname-fs-h2: 2.375rem; // 38px;
+    --appname-ln-h2: 2.625rem; // 42px;  
+
+    --appname-fs-h3: 1.625rem; // 26px;
+    --appname-ln-h3: 1.875rem; // 30px; 
+
+    --appname-fs-h4: 1.438rem; // 23px;
+    --appname-ln-h4: 1.296rem; // 27px
+
+    // Margins ...
+      --appname-mb-h2: 1.25rem; // 20
+      --appname-mb-h3: 0.625rem; // 10px;
+      --appname-mb-h4: 0.813rem; // 13
   }
 
-  // Small Screen ...
-  @media (min-width: 576px) and (max-width: (768px - 1)) {
-    border: 1.5px dashed violet; 
-  }
+  // // Small Screen ...
+  // @media (min-width: 576px) and (max-width: (768px - 1)) {
+  //     border: 3px solid turquoise;
+  // }
 
-  // Smaller Screen ...
-  @media (max-width: (576px - 1px)) {
-    border: 1.5px dashed purple;
-  }
+  // // Smaller Screen ...
+  // @media (max-width: (576px - 1px)) {
+  //     border: 3px solid chocolate;
+  // }
 }

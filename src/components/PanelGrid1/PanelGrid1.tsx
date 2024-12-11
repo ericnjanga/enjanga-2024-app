@@ -16,12 +16,13 @@ const PanelGrid1 = ({ pageSectionId }: { pageSectionId: string }) => {
           {!sectionData ? "..." : sectionData.title}
         </Heading>
         <div
+          className="pageSection-intro-text"
           dangerouslySetInnerHTML={{
             __html: sectionData ? sectionData.description : "",
           }}
         ></div>
       </header>
-
+      
       <div className="content-grid">
         {expertiseList &&
           expertiseList.map((expertise, index) => {

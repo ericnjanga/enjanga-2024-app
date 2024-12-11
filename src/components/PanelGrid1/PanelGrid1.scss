@@ -1,8 +1,8 @@
 :root {
   --appname-PanelGrid1-gap: 4px;
   --appname-PanelGrid1-column-count: 1;
-  --appname-pageSection-hero-marg-bottom: 20px;
-  --appname-pageSection-header-marg-bottom: 20px;
+  --appname-pageSection-hero-marg-bottom: 15px;
+  --appname-pageSection-header-marg-bottom: 15px;
 }
 
 .PanelGrid1 {
@@ -21,6 +21,9 @@
   }
   .pageSection-title {
     margin-bottom: var(--appname-pageSection-header-marg-bottom);
+  }
+  .pageSection-intro-text {
+    max-width: 744px;
   }
 
   // Extra Large screen ...

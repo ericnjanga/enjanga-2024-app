@@ -57,8 +57,7 @@ const addFont = () => {
 const bodyStyles = () => {
   const style = document.createElement('style');
   style.innerHTML = `
-    body {
-      padding: 0 !important;
+    body { 
       margin: 0 !important;
     }
   `;
