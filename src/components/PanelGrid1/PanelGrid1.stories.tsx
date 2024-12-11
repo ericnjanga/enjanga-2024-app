@@ -1,8 +1,8 @@
 // PanelGrid1.stories.tsx
-import React from "react";
 import { Meta, StoryFn } from "@storybook/react";  
+import { http, HttpResponse, delay } from 'msw';
 import PanelGrid1 from "./PanelGrid1";
-// import { mockPageSectionProps, mockInformationCard1DataArray } from "../../models/mockupData"; 
+import { mockPageSectionProps, mockInformationCard1DataArray } from "../../models/mockupData"; 
 
 export default {
   title: "Large Components/PanelGrid1",  // The category and name of the component
@@ -12,8 +12,29 @@ export default {
     // For this case, we will leave it static since the PanelGrid1 is pretty straightforward.
   },
 } as Meta;
-
  
+
+const id = '1';
+
+// MockedSuccess story for mocking network requests
+export const MockedSuccess: StoryFn<{ pageSectionId: string }> = (args) => <PanelGrid1 {...args} />;
+MockedSuccess.parameters = {
+  msw: {
+    handlers: [
+      // Mocking the first API request
+      http.get(`/api/pageSection/${id}`, () => {
+        return HttpResponse.json(mockPageSectionProps);  // Return mock data
+      }),
+      // Mocking the second API request
+      http.get(`/api/expertiseSpecsByParent/${id}`, () => {
+        return HttpResponse.json(mockInformationCard1DataArray);  // Return mock data
+      }),
+    ],
+  },
+};
+MockedSuccess.args = {
+  pageSectionId: id,
+};
 
 
 const Template: StoryFn<{ pageSectionId: string }> = (args) => { 
@@ -24,5 +45,5 @@ const Template: StoryFn<{ pageSectionId: string }> = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   // Component props ...
-  pageSectionId: '1',
+  pageSectionId: id,
 };
