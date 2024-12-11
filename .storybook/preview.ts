@@ -6,10 +6,17 @@ import { mockPageSectionProps, mockInformationCard1DataArray } from "./../src/mo
 
 
 
-// Initialize MirageJS server
+/**
+ * MirageJS server for Storybook environment
+ * -------------------
+ * 1) Initializing the server, which exposes the fake API to all stories
+ * 2) Declaring custom routes, so that API calls will hit expected endpoints 
+ * 3) Returning mocked data for each endpoints to simplify test cases
+ */
 if (typeof window !== 'undefined') {
   createServer({
 
+    // Declaring the routes we know will be used by tested components
     routes() {
       this.namespace = 'api';
 

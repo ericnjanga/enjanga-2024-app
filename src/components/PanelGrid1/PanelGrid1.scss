@@ -6,13 +6,6 @@
 
 
 .PanelGrid1 {
-  border: 10px solid #9695bf;
- 
-  // background-color: var(--appname-theme-light-bbbb-8);
-
-
-
-
   .content-grid { 
     column-count: var(--appname-PanelGrid1-column-count);
     column-gap: var(--appname-PanelGrid1-gap); /* Consistent gap */
@@ -31,35 +24,35 @@
 
   // Extra Large screens ...
   @media (min-width: 1400px) {
-    border: 10px solid purple;
+    // border: 10px solid purple;
     --appname-PanelGrid1-column-count: 2;
   }
 
   // Large screens ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-    border: 10px solid violet;
+    // border: 10px solid violet;
     --appname-PanelGrid1-column-count: 2;
   }
 
   // Large Medium screens ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
-    border: 10px solid lime;
+    // border: 10px solid lime;
     --appname-PanelGrid1-column-count: 2;
   }
 
   // Medium Medium screens ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
-    border: 10px solid blue;
+    // border: 10px solid blue;
     --appname-PanelGrid1-column-count: 2;
   }
 
   // Small Medium screens ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
-    border: 10px solid turquoise;
+    // border: 10px solid turquoise;
   }
 
   // Smaller screens ...
   @media (max-width: (576px - 1px)) {
-    border: 10px solid chocolate;
+    // border: 10px solid chocolate;
   }
 }
