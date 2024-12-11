@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Navigation from "./Navigation";
 
 export default {
-  title: "Large Components/Navigation",  // The category and name of the component
+  title: "A) Page Section/Navigation",  // The category and name of the component
   component: Navigation,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

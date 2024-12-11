@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import About from "./About";
 
 export default {
-  title: "Large Components/About",  // The category and name of the component
+  title: "A) Page Section/About",  // The category and name of the component
   component: About,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

@@ -1,6 +1,7 @@
 import Navigation from "../Navigation/Navigation";
 import './Hero.scss'; 
 import { usePageSection } from "../../hooks/useAPI";
+import Heading from "../Heading/Heading";
 
 const Hero = () => {
 
@@ -13,7 +14,7 @@ const Hero = () => {
         <div className="Hero-jumbotron jumbotron__textwrapper">
           {hero && 
             <>
-              <h1>{hero.title}</h1>
+              <Heading h="1">{hero.title}</Heading>
               <p className="Hero-subtitle">{hero.description}</p>
             </>
           }

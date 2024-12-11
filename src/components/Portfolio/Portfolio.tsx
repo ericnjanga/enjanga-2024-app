@@ -1,6 +1,7 @@
 import "./Portfolio.scss";
 import { usePageSection, useProjects } from "../../hooks/useAPI";
 import ProjectThumb from "../ProjectThumb/ProjectThumb";
+import Heading from "../Heading/Heading";
 
 const Portfolio = () => {
   const sectionData = usePageSection("3");
@@ -9,9 +10,9 @@ const Portfolio = () => {
   return (
     <section className="Portfolio">
       <div className="container">
-        <h2 className="name mb-0">
+        <Heading h='2' className="name mb-0">
           {!sectionData ? "..." : sectionData.title}
-        </h2>
+        </Heading>
         <div
           dangerouslySetInnerHTML={{
             __html: sectionData ? sectionData.description : "",

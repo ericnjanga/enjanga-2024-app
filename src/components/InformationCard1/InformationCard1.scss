@@ -42,43 +42,43 @@
 
 
 
-  // Extra Large screens ...
+  // Extra Large screen ...
   @media (min-width: 1400px) {
-    border: 4px dashed chocolate;
+    // border: 4px dashed chocolate;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
   }
 
-  // Large screens ...
+  // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-    border: 4px dashed turquoise;
+    // border: 4px dashed turquoise;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
   }
 
-  // Large Medium screens ...
+  // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
-    border: 4px dashed blue;
+    // border: 4px dashed blue;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
   }
 
-  // Medium Medium screens ...
+  // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
-    border: 4px dashed lime;
+    // border: 4px dashed lime;
     // --appname-ExpertiseSpec-padd-top: 24px;
     // --appname-ExpertiseSpec-padd-left: 60px;
   }
 
-  // Small Medium screens ...
+  // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
-    border: 4px dashed violet;
+    // border: 4px dashed violet;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
   }
 
-  // Smaller screens ...
+  // Smaller Screen ...
   @media (max-width: (576px - 1px)) {
-    border: 4px dashed purple;
+    // border: 4px dashed purple;
   }
 }

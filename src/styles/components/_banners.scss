@@ -92,7 +92,7 @@
 
              
 
-            // Extra Large screens ...
+            // Extra Large screen ...
             @media (min-width: 1400px) {
                 // border: 10px solid purple;
                 --appname-banner-shine-msg-marg: 0 auto;
@@ -104,7 +104,7 @@
                 --appname-banner-shine-cta-mrg: 40px 0 0 0;
             }
             
-            // Large screens ...
+            // Large screen ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 10px solid violet;
                 --appname-banner-shine-msg-marg: 0 auto;
@@ -116,7 +116,7 @@
                 --appname-banner-shine-cta-mrg: 40px 0 0 0;
             }
             
-            // Large Medium screens ...
+            // Large Medium screen ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 10px solid lime;
                 --appname-banner-shine-msg-marg: 0 auto;
@@ -128,18 +128,18 @@
                 --appname-banner-shine-cta-mrg: 35px 0 0 0;
             }
 
-            // Medium Medium screens ...
+            // Medium Medium screen ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 10px solid blue;
                 --appname-banner-shine-msg-marg: 0 auto;
                 --appname-banner-shine-msg-txtalign: center;
                 --appname-banner-shine-cta-mrg: 25px 0 0 0;
             }
-            // // Small Medium screens ...
+            // // Small Screen ...
             // @media (min-width: 576px) and (max-width: (768px - 1)) {
             //     border: 10px solid turquoise;
             // }
-            // // Smaller screens ...
+            // // Smaller Screen ...
             // @media (max-width: (576px - 1px)) {
             //     border: 10px solid chocolate;
             // }
@@ -176,7 +176,7 @@
             }
 
 
-            // Extra Large screens ...
+            // Extra Large screen ...
             @media (min-width: 1400px) {
                 // border: 10px solid purple;
                 --appname-banner-feature-display: flex;
@@ -187,7 +187,7 @@
                 --appname-banner-feature-img-obj-orientation: left;
             }
             
-            // Large screens ...
+            // Large screen ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 10px solid violet;
                 --appname-banner-feature-display: flex;
@@ -198,7 +198,7 @@
                 --appname-banner-feature-img-obj-orientation: left;
             }
             
-            // Large Medium screens ...
+            // Large Medium screen ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 10px solid lime;
                 --appname-banner-feature-display: flex;
@@ -209,19 +209,19 @@
                 --appname-banner-feature-img-obj-orientation: left;
             }
 
-            // Medium Medium screens ...
+            // Medium Medium screen ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 10px solid blue;
                 --appname-banner-feature-padd: 50px;
                 --appname-banner-feature-img-height: 350px;
             }
 
-            // // Small Medium screens ...
+            // // Small Screen ...
             // @media (min-width: 576px) and (max-width: (768px - 1)) {
             //     border: 10px solid turquoise;
             // }
 
-            // // Smaller screens ...
+            // // Smaller Screen ...
             // @media (max-width: (576px - 1px)) {
             //     border: 10px solid chocolate;
             // }

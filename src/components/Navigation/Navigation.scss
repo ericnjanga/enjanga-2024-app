@@ -14,7 +14,7 @@
   .Navigation {
     background-color: aquamarine;
     padding: var(--appname-navbar-padding);
-    // // Extra Large screens ...
+    // // Extra Large screen ...
     @media (min-width: 1400px) {
       // border: 3px solid purple;
       --appname-navbar-logo-width: 160px;
@@ -26,7 +26,7 @@
       --webite-navbar-collapse-padding: 0;
     }
 
-    // Large screens ...
+    // Large screen ...
     @media (min-width: 1200px) and (max-width: (1400px - 1)) {
       // border: 3px solid violet;
       --appname-navbar-logo-width: 140px;
@@ -38,7 +38,7 @@
       --webite-navbar-collapse-padding: 0;
     }
 
-    // Large Medium screens ...
+    // Large Medium screen ...
     @media (min-width: 992px) and (max-width: (1200px - 1)) {
       // border: 3px solid lime;
       --appname-navbar-logo-width: 140px;
@@ -49,18 +49,18 @@
       --webite-navbar-collapse-padding: 0;
     }
 
-    // Medium Medium screens ...
+    // Medium Medium screen ...
     @media (min-width: 768px) and (max-width: (992px - 1)) {
       // border: 3px solid blue;
       --appname-navbar-padding: 10px 0;
     }
 
-    // // Small Medium screens ...
+    // // Small Screen ...
     // @media (min-width: 576px) and (max-width: (768px - 1)) {
     //     // border: 3px solid turquoise;
     // }
 
-    // // Smaller screens ...
+    // // Smaller Screen ...
     // @media (max-width: (576px - 1px)) {
     //     // border: 3px solid chocolate;
     // }

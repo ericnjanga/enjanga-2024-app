@@ -1,0 +1,39 @@
+:root {
+  --appname-Heading-font-size: 28px;
+  --appname-Heading-line-height: 30px;
+}
+
+.Heading {
+  font-size: var(--appname-Heading-font-size);
+  line-height: var(--appname-Heading-line-height);
+
+  // Extra Large screen ...
+  @media (min-width: 1400px) {
+    border: 1.5px dashed chocolate; 
+  }
+
+  // Large screen ...
+  @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+    border: 1.5px dashed turquoise; 
+  }
+
+  // Large Medium screen ...
+  @media (min-width: 992px) and (max-width: (1200px - 1)) {
+    border: 1.5px dashed blue; 
+  }
+
+  // Medium Medium screen ...
+  @media (min-width: 768px) and (max-width: (992px - 1)) {
+    border: 1.5px dashed lime; 
+  }
+
+  // Small Screen ...
+  @media (min-width: 576px) and (max-width: (768px - 1)) {
+    border: 1.5px dashed violet; 
+  }
+
+  // Smaller Screen ...
+  @media (max-width: (576px - 1px)) {
+    border: 1.5px dashed purple;
+  }
+}

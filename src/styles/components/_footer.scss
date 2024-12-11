@@ -64,7 +64,7 @@
             text-align: var(--appname-footer-copyright-text-align);
         }
 
-        // Extra Large screens ...
+        // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 3px solid purple;
             --appname-footer-container-gap: 30px;
@@ -74,7 +74,7 @@
             --appname-footer-copyright-text-align: center;
         }
         
-        // Large screens ...
+        // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 3px solid violet;
             --appname-footer-container-gap: 30px;
@@ -84,7 +84,7 @@
             --appname-footer-copyright-text-align: center;
         }
         
-        // Large Medium screens ...
+        // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 3px solid lime;
             --appname-footer-container-gap: 30px;
@@ -94,7 +94,7 @@
             --appname-footer-copyright-text-align: center;
         }
 
-        // Medium Medium screens ...
+        // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 3px solid blue;
             --appname-footer-container-grid-template: auto auto / auto auto auto;
@@ -102,12 +102,12 @@
             --appname-footer-copyright-text-align: center;
         }
 
-        // // Small Medium screens ...
+        // // Small Screen ...
         // @media (min-width: 576px) and (max-width: (768px - 1)) {
         //     // border: 3px solid turquoise;
         // }
 
-        // // Smaller screens ...
+        // // Smaller Screen ...
         // @media (max-width: (576px - 1px)) {
         //     // border: 3px solid chocolate;
         // }

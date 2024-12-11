@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Footer from "./Footer";
 
 export default {
-  title: "Large Components/Footer",  // The category and name of the component
+  title: "A) Page Section/Footer",  // The category and name of the component
   component: Footer,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

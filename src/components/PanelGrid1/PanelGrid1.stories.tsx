@@ -3,7 +3,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import PanelGrid1 from "./PanelGrid1";
 
 export default {
-  title: "Large Components/PanelGrid1",  // The category and name of the component
+  title: "B) Panels/PanelGrid1",  // The category and name of the component
   component: PanelGrid1,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

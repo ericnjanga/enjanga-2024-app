@@ -83,3 +83,8 @@ export type InputFieldProps = {
 };
 
 
+export type HeadingProps = { 
+  h: '1' | '2' | '3' | '4' | '5' | '6', 
+  className?: string,
+  children: ReactNode 
+};

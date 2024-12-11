@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Header } from './Header';
 import './page.css';
+import Heading from '../components/Heading/Heading';
 
 type User = {
   name: string;
@@ -20,7 +21,7 @@ export const Page: React.FC = () => {
       />
 
       <section className="storybook-page">
-        <h2>Pages in Storybook</h2>
+        <Heading h="2">Pages in Storybook</Heading>
         <p>
           We recommend building UIs with a{' '}
           <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">

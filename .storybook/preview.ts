@@ -70,6 +70,23 @@ addFont();
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: [
+          'A) Page Section/Navigation',
+          'A) Page Section/Hero',
+          'A) Page Section/Caroussel', 
+          'A) Page Section/Portfolio',
+          'A) Page Section/About', 
+          'A) Page Section/Footer',
+          'B) Panels/PanelGrid1',
+        ], // Custom order of story groups
+        method: 'alphabetical', // Sort alphabetically
+        locales: 'en-US', // Optional locale for sorting
+        default: 'story' // Default sorting behavior for unknown cases
+      },
+    },
+
     // Responsiveness: Configuring the default viewport globally
     viewport: {
       // List of all viewports

@@ -30,36 +30,36 @@
         width: 100px;
         height: 20px; 
 
-        // Extra Large screens ...
+        // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 4px dashed purple;
             --appname-anchors-scrollto-top: -160px;
         }
         
-        // Large screens ...
+        // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 4px dashed violet;
             --appname-anchors-scrollto-top: -160px;
         }
         
-        // Large Medium screens ...
+        // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 4px dashed lime;
             --appname-anchors-scrollto-top: -140px;
         }
 
-        // Medium Medium screens ...
+        // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 4px dashed blue;
             --appname-anchors-scrollto-top: -130px;
         }
 
-        // Small Medium screens ...
+        // Small Screen ...
         @media (min-width: 576px) and (max-width: (768px - 1)) {
             // border: 4px dashed turquoise;
         }
 
-        // Smaller screens ...
+        // Smaller Screen ...
         @media (max-width: (576px - 1px)) {
             // border: 4px dashed chocolate;
         }
@@ -76,35 +76,35 @@
         bottom: 30px;  
         left: var(--appname-btnscrolltop-x-pos); 
 
-        // Extra Large screens ...
+        // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;  
             --appname-btnscrolltop-x-pos: 50px;
         }
         
-        // Large screens ...
+        // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;  
             --appname-btnscrolltop-x-pos: 90px;
         }
         
-        // Large Medium screens ...
+        // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;  
             --appname-btnscrolltop-x-pos: 90px;
         }
 
-        // Medium Medium screens ...
+        // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 10px solid blue;  
         }
 
-        // // Small Medium screens ...
+        // // Small Screen ...
         // @media (min-width: 576px) and (max-width: (768px - 1)) {
         //     border: 10px solid turquoise;
         // }
 
-        // // Smaller screens ...
+        // // Smaller Screen ...
         // @media (max-width: (576px - 1px)) {
         //     border: 10px solid chocolate;
         // }
@@ -118,36 +118,36 @@
     .site-carousel {
         // margin: var(--appname-hero-elts-spacer);
 
-        // Extra Large screens ...
+        // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;
             --appname-hero-elts-spacer: 35px 0 0 0;
         }
         
-        // Large screens ...
+        // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;
             --appname-hero-elts-spacer: 35px 0 0 0;
         }
         
-        // Large Medium screens ...
+        // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;
             --appname-hero-elts-spacer: 30px 0 0 0;
         }
 
-        // Medium Medium screens ...
+        // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 10px solid blue;
             --appname-hero-elts-spacer: 25px 0 0 0;
         }
 
-        // // Small Medium screens ...
+        // // Small Screen ...
         // @media (min-width: 576px) and (max-width: (768px - 1)) {
         //     border: 10px solid turquoise;
         // }
 
-        // // Smaller screens ...
+        // // Smaller Screen ...
         // @media (max-width: (576px - 1px)) {
         //     border: 10px solid chocolate;
         // }

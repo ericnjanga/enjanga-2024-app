@@ -4,7 +4,7 @@ import { Meta, StoryFn } from "@storybook/react";
 import Portfolio from "./Portfolio";
 
 export default {
-  title: "Large Components/Portfolio",  // The category and name of the component
+  title: "A) Page Section/Portfolio",  // The category and name of the component
   component: Portfolio,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.

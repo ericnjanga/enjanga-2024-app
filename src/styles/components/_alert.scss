@@ -26,37 +26,37 @@
 
 
 
-        // Extra Large screens ...
+        // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;
             --appname-alert-padding: 16px 16px 16px 76px;
         }
         
-        // Large screens ...
+        // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;
             --appname-alert-padding: 16px 16px 16px 76px;
         }
         
-        // Large Medium screens ...
+        // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;
             --appname-alert-padding: 16px 16px 16px 76px;
         }
 
-        // Medium Medium screens ...
+        // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 10px solid blue;
             --appname-alert-padding: 16px 16px 16px 76px;
         }
 
-        // Small Medium screens ...
+        // Small Screen ...
         @media (min-width: 576px) and (max-width: (768px - 1)) {
             // border: 10px solid turquoise;
             --appname-alert-padding: 16px 16px 16px 76px;
         }
 
-        // // Smaller screens ...
+        // // Smaller Screen ...
         // @media (max-width: (576px - 1px)) {
         //     border: 10px solid chocolate;
         // }

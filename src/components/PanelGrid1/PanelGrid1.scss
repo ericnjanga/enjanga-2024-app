@@ -1,57 +1,63 @@
-
 :root {
   --appname-PanelGrid1-gap: 4px;
   --appname-PanelGrid1-column-count: 1;
+  --appname-pageSection-hero-marg-bottom: 20px;
+  --appname-pageSection-header-marg-bottom: 20px;
 }
 
-
 .PanelGrid1 {
-  .content-grid { 
+  .content-grid {
     column-count: var(--appname-PanelGrid1-column-count);
     column-gap: var(--appname-PanelGrid1-gap); /* Consistent gap */
 
-    @container (min-width: 140px) {
-      .card {
-        border: 5px dashed rgb(168, 64, 224);
-      }
-    } 
-      
     .card {
       break-inside: avoid; /* Prevent item splitting */
       margin-bottom: var(--appname-PanelGrid1-gap); /* Gap between rows */
     }
   }
 
-  // Extra Large screens ...
+  .pageSection-hero {
+    margin-bottom: var(--appname-pageSection-hero-marg-bottom);
+  }
+  .pageSection-title {
+    margin-bottom: var(--appname-pageSection-header-marg-bottom);
+  }
+
+  // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 10px solid purple;
     --appname-PanelGrid1-column-count: 2;
+    --appname-pageSection-hero-marg-bottom: 45px;
   }
 
-  // Large screens ...
+  // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 10px solid violet;
     --appname-PanelGrid1-column-count: 2;
+    --appname-pageSection-hero-marg-bottom: 35px;
   }
 
-  // Large Medium screens ...
+  // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 10px solid lime;
     --appname-PanelGrid1-column-count: 2;
+    --appname-pageSection-hero-marg-bottom: 30px;
   }
 
-  // Medium Medium screens ...
+  // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 10px solid blue;
     --appname-PanelGrid1-column-count: 2;
+    --appname-pageSection-hero-marg-bottom: 30px;
   }
 
-  // Small Medium screens ...
+  // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
     // border: 10px solid turquoise;
+    --appname-pageSection-hero-marg-bottom: 25px;
   }
 
-  // Smaller screens ...
+  // Smaller Screen ...
   @media (max-width: (576px - 1px)) {
     // border: 10px solid chocolate;
   }

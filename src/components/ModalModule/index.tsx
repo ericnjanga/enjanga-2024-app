@@ -10,6 +10,7 @@ import "./modal.scss";
 import { fetchAPIData } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import ContactForm from "../ContactForm/ContactForm";
+import Heading from "../Heading/Heading";
 
 /**
  * 2) Modal Provider:
@@ -96,7 +97,7 @@ const Modal = () => {
         <section className="appname-modal modal-wrapper" tabIndex={-1}>
           <div className="modal-content"> 
             {/* <header className="modal-header"> 
-                <h3 className={!modalData ? 'placeholder heading' : ''}>{modalData && modalData.title}</h3>
+                <Heading h='3' className={!modalData ? 'placeholder heading' : ''}>{modalData && modalData.title}</Heading>
               </header> */}
 
             <main className="modal-body">

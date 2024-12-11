@@ -173,7 +173,7 @@
     
     
     
-        // Extra Large screens ...
+        // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 3px solid purple;
             --appname-site-carousel-btnnext-y: -70px;
@@ -183,7 +183,7 @@
             --appname-carousel-controls-flexdir: row;
         }
         
-        // Large screens ...
+        // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 3px solid violet;
             --appname-site-carousel-btnnext-y: -70px;
@@ -193,7 +193,7 @@
             --appname-carousel-controls-flexdir: row;
         }
         
-        // Large Medium screens ...
+        // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 3px solid lime;
             --appname-site-carousel-btnprev-y: -70px;  
@@ -202,7 +202,7 @@
             --appname-carousel-controls-flexdir: row;
         }
 
-        // Medium Medium screens ...
+        // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 3px solid blue;
             --appname-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
@@ -210,14 +210,14 @@
             --appname-carousel-controls-flexdir: row;
         }
 
-        // Small Medium screens ...
+        // Small Screen ...
         @media (min-width: 576px) and (max-width: (768px - 1)) {
             // border: 3px solid turquoise;
             --appname-carousel-controls-top: -100px;
             --appname-carousel-card-padd: 1.25rem 1.875rem 1.875rem 1.875rem;
         }
 
-        // Smaller screens ...
+        // Smaller Screen ...
         @media (max-width: (576px - 1px)) {
             // border: 3px solid chocolate;
         }

@@ -2,6 +2,7 @@ import "./Footer.scss";
 import { usePageSection } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
+import Heading from "../Heading/Heading";
 
 const Footer = () => {
   const sectionData = usePageSection("5");
@@ -19,13 +20,13 @@ const Footer = () => {
   return (
     <footer className="Footer">
       <div className="container text-center">
-        <h4 className="name mb-0">
+        <Heading h='4' className="name mb-0">
           {!sectionData ? (
             <div className="placeholder">... placeholder ...</div>
           ) : (
             sectionData.title
           )}
-        </h4>
+        </Heading>
 
         <div
           className="title mb-0"
