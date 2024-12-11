@@ -63,6 +63,55 @@ addFont();
 
 const preview: Preview = {
   parameters: {
+    // Responsiveness: Configuring the default viewport globally
+    viewport: {
+      // List of all viewports
+      viewports: {
+        smallerScreen: {
+          name: 'Smaller Screen',
+          styles: {
+            width: '320px',
+            height: '668px',
+          },
+        },
+        smallScreen: {
+          name: 'Small Screen',
+          styles: {
+            width: '576px',
+            height: '668px',
+          },
+        },
+        MinMediumScreen: {
+          name: 'Min Medium Screen',
+          styles: {
+            width: '768px',
+            height: '768px',
+          },
+        },
+        LarMediumScreen: {
+          name: 'Large Medium Screen',
+          styles: {
+            width: '992px',
+            height: '768px',
+          },
+        },
+        largeScreen: {
+          name: 'Large Screen',
+          styles: {
+            width: '1200px',
+            height: '1080px',
+          },
+        },
+        extraLargeScreen: {
+          name: 'Extra Large Screen',
+          styles: {
+            width: '1400px',
+            height: '1080px',
+          },
+        },
+      }, 
+      defaultViewport: 'Large Medium Screen', 
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
