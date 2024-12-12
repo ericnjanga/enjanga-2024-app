@@ -2,6 +2,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Caroussel from "./Caroussel";
+import PanelGrid1 from "../PanelGrid1/PanelGrid1";
 
 export default {
   title: "A) Page Section/Caroussel",  // The category and name of the component
@@ -12,10 +13,20 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn = (args) => <Caroussel {...args} />;
+const Template: StoryFn = (args) => {
+
+  return (
+    <section className="Caroussel sc-block">
+      <div className="container">
+        
+        <PanelGrid1 pageSectionId={args.slide1Id} />
+     
+      </div>
+    </section>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  // Here you can set props if Caroussel had any dynamic inputs. 
-  // Since the Caroussel is a static component, no arguments are needed for this example.
+  slide1Id: '1'
 };
