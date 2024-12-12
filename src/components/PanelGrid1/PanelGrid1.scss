@@ -10,7 +10,7 @@
     column-count: var(--appname-PanelGrid1-column-count);
     column-gap: var(--appname-PanelGrid1-gap); /* Consistent gap */
 
-    .card {
+    .content-grid-item {
       break-inside: avoid; /* Prevent item splitting */
       margin-bottom: var(--appname-PanelGrid1-gap); /* Gap between rows */
     }
