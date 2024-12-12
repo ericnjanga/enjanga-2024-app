@@ -91,42 +91,42 @@ const preview: Preview = {
       // List of all viewports
       viewports: {
         smallerScreen: {
-          name: 'Smaller Screen',
+          name: 'XS Screen (max w: 320px)',
           styles: {
             width: '320px',
             height: '668px',
           },
         },
         smallScreen: {
-          name: 'Small Screen',
+          name: 'SM Screen (max w: 576px)',
           styles: {
             width: '576px',
             height: '668px',
           },
         },
         MinMediumScreen: {
-          name: 'Min Medium Screen',
+          name: 'MD Screen (max w: 768px)',
           styles: {
             width: '768px',
             height: '768px',
           },
         },
         LarMediumScreen: {
-          name: 'Large Medium Screen',
+          name: 'LMD Screen (max w: 992px)',
           styles: {
             width: '992px',
             height: '768px',
           },
         },
         largeScreen: {
-          name: 'Large Screen',
+          name: 'LG Screen (m.w: 1200px)',
           styles: {
             width: '1200px',
             height: '1080px',
           },
         },
         extraLargeScreen: {
-          name: 'Extra Large Screen',
+          name: 'XL Screen (1400px up)',
           styles: {
             width: '1400px',
             height: '1080px',
