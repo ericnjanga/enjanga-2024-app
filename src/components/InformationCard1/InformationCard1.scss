@@ -15,11 +15,13 @@
   padding-left: var(--appname-ExpertiseSpec-padd-left);
 
   cursor: pointer;
-
-
-
+ 
   &:hover {
     background-color: var(--appname-theme-light-aaaa-3x);
+
+    .btn {
+      text-decoration: none;
+    }
   }
 
   .card-body {

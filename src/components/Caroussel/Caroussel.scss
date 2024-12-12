@@ -3,4 +3,13 @@
 
 .Caroussel {
   background-color: var(--appname-theme-light-bbbb-8);
+
+  a {
+    color: var(--appname-theme-light-bbbb-1);
+
+    &:hover {
+      color: var(--appname-theme-light-eee-1);
+      text-decoration: none;
+    }
+  }
 }
