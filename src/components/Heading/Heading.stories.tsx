@@ -25,6 +25,13 @@ export default {
       control: 'radio', 
       options: ['small', 'medium', 'long', 'veryLong'],
       defaultValue: 'medium'
+    },
+    // Adding the 'icon' control to toggle the icon visibility
+    // Adding the 'iconName' control to select the icon
+    iconName: {
+      control: 'select',  // Use a select control to pick an icon
+      options: [undefined, 'cube', 'hand'],  // The possible icon values
+      defaultValue: 'cube'  // Default icon
     }
   },
 } as Meta;
@@ -33,8 +40,7 @@ const Template: StoryFn<HeadingProps & { textLength: TextLength }> = (args) => {
   // Ensure that args.textLength is a valid key of loremText
   const text = loremText[args.textLength];
 
-  console.log('......', args );
-  console.log('.....qq.', text );
+  console.log('***** args = ', args);
 
   return (
     <Heading {...args}>
@@ -45,6 +51,7 @@ const Template: StoryFn<HeadingProps & { textLength: TextLength }> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = { 
-  textLength: 'long'
+  textLength: 'long',
+  iconName: undefined
 };
 

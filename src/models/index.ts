@@ -83,8 +83,16 @@ export type InputFieldProps = {
 };
 
 
+export type IconProps = { 
+  size?: string, 
+  className: string,
+  name: 'cube' | 'hand',
+};
+
+
 export type HeadingProps = { 
   h: '1' | '2' | '3' | '4' | '5' | '6', 
+  iconName?: 'cube' | 'hand',
   className?: string,
   children: ReactNode 
 };

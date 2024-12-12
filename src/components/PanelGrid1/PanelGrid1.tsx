@@ -12,7 +12,7 @@ const PanelGrid1 = ({ pageSectionId }: { pageSectionId: string }) => {
   return (
     <section className="PanelGrid1">
       <header className="pageSection-hero">
-        <Heading h='2' className="pageSection-title">
+        <Heading h='2' iconName="hand" className="pageSection-title">
           {!sectionData ? "..." : sectionData.title}
         </Heading>
         <div
