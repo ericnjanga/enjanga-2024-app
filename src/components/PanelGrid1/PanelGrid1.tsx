@@ -7,8 +7,6 @@ const PanelGrid1 = ({ pageSectionId }: { pageSectionId: string }) => {
   const sectionData = usePageSection(pageSectionId);
   const expertiseList = useExpertises(pageSectionId);
 
-  console.log("======>>pageSectionId>", pageSectionId, expertiseList);
-
   return (
     <section className="PanelGrid1">
       <header className="pageSection-hero">
@@ -26,7 +24,13 @@ const PanelGrid1 = ({ pageSectionId }: { pageSectionId: string }) => {
       <div className="content-grid">
         {expertiseList &&
           expertiseList.map((expertise, index) => {
-            return <InformationCard1 key={index} {...expertise} />;
+            return (
+              <InformationCard1 
+                key={index} 
+                {...expertise} 
+                className="content-grid-item" 
+              />
+            );
           })}
       </div>
     </section>
