@@ -78,32 +78,7 @@
             }
         } 
     }
-
-    @layer color-mix {
-        .light-block-txt-col {
-            h1, h2, h3, h4, h5, h6 {
-                color: var(--appname-theme-light-bbbb-1);
-            }
-            ul, p, a {
-                color: var(--appname-theme-light-bbbb-5);
-            }
-            a {
-                &:hover {
-                    text-decoration: none;
-                    color: var(--appname-theme-light-cccc-0);
-                }
-            }
-        }
-    
-        .dark-block-txt-col {
-            h1, h2, h3, h4, h5, h6 {
-                color: var(--appname-theme-light-bbbb-6);
-            }
-            ul, p, a {
-                color: var(--appname-theme-light-bbbb-9);
-            }
-        }
-    }
+ 
 
     @layer hero {
         .hero {
@@ -237,32 +212,8 @@
             }
         }
     }
-
-    @layer footer {
-        .global-footer {
-            background-color: var(--appname-theme-light-xxxx-0);
-        }
-    } 
-
-    @layer modal {
-        .modal { 
-            .modal-body {
-                a {
-                    color: var(--appname-theme-light-bbbb-3);
-                }
-            }
-            .bi-check-circle-fill {
-                &:before{
-                    color: var(--appname-theme-light-bbbb-2);
-                }
-            }
-            .light-color-icon { 
-                &:before{
-                    color: var(--appname-theme-light-bbbb-10);
-                }
-            }
-        }
-    }
+ 
+ 
 
     @layer utilities { 
         .txt-highlight1 { 

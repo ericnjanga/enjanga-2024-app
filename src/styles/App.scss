@@ -14,26 +14,7 @@
     @import './base/initialization';
     @import './base/variables';
     @import './base/utilities';
-}
-
-@layer layouts {
-    @import './layouts/index';
-}
-
-@layer vendors {
-    @import './vendors/modal.scss';
-}
-
-@layer components {
-    @import './components/icons-and-more';
-    @import './components/form-elts';
-    @import './components/jumbotron'; 
-    @import './components/icon-list';
-    @import './components/speech-bubble'; 
-    @import './components/site-carousel.scss';
-    @import './components/mixed-components';
-    @import './components/footer';
-}
+} 
 
 @layer theming {
     @import './theming/light-mode';
