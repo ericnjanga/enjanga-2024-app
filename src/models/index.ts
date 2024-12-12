@@ -35,6 +35,7 @@ export type InformationCard1Props = {
   parentId: string
   blurb: string
   description: string
+  className?: string
 };
 
 export type ProjectProps = {
