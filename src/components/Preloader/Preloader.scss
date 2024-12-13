@@ -1,0 +1,30 @@
+
+.Preloader {
+  display: flex;
+  gap: 10px;
+  justify-content: center; 
+
+  p {
+    margin: 0;
+  }
+}
+
+
+
+/* This will center the icon and apply the spinning animation */
+.spinner {
+  display: inline-block; /* Ensures it's inline, like an icon */
+  width: 24px;           /* Icon size */
+  height: 24px;          /* Icon size */
+  animation: spin 1s linear infinite; /* Spins the icon */
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

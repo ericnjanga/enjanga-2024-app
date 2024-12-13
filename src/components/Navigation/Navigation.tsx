@@ -2,6 +2,7 @@ import "./Navigation.scss";
 import { useNavOptions } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
+import Preloader from "../Preloader/Preloader";
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
@@ -9,11 +10,11 @@ const Navigation = () => {
 
   if (!context) {
     // return if the context is empty
-    return <div className="placeholder">... placeholder ...</div>;
+    return <Preloader />;
   }
 
   // Otherwise, destructure the context
-  const { openModal } = context; 
+  const { openModal } = context;
 
   return (
     <nav
@@ -56,9 +57,13 @@ const Navigation = () => {
             <li className="nav-item">
               <button
                 className="btn btn-primary item-icon-material item-icon-material-after chat-bubble js-chat-button"
-          aria-label="Open contact form to get in touch with Eric Njanga"
+                aria-label="Open contact form to get in touch with Eric Njanga"
                 onClick={() => {
-                  openModal({ renderingType: 'contact', dataType: '', dataId: '' });
+                  openModal({
+                    renderingType: "contact",
+                    dataType: "",
+                    dataId: "",
+                  });
                 }}
               >
                 Get in touch with me

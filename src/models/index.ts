@@ -87,7 +87,7 @@ export type InputFieldProps = {
 export type IconProps = { 
   size?: string, 
   className: string,
-  name: 'cube' | 'hand',
+  name: 'cube' | 'hand' | 'spinner',
 };
 
 

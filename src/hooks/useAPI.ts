@@ -151,14 +151,14 @@ export const useDefinition = () => {
 
 export const fetchAPIData = async(dataType: string, dataId: string) => {
   let queryString = '';
-  let stateProps = '';
+  let stateProps = ''; // Property name of the data we expect from the API response
   // `/api/definition/${dataId}` 
 
   // ...
   switch(dataType) {
     case 'InformationCard1 item':
-      queryString = `/api/InformationCard1/${dataId}`;
-      stateProps = 'InformationCard1';
+      queryString = `/api/expertiseSpec/${dataId}`;
+      stateProps = 'expertiseSpec';
     break;
 
     case 'ProjectThumb item':

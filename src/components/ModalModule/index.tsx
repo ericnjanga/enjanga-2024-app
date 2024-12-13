@@ -10,7 +10,7 @@ import "./modal.scss";
 import { fetchAPIData } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import ContactForm from "../ContactForm/ContactForm";
-import Heading from "../Heading/Heading";
+import Preloader from "../Preloader/Preloader";
 
 /**
  * 2) Modal Provider:
@@ -85,7 +85,7 @@ const Modal = () => {
 
   if (!context) {
     // return if the context is empty
-    return <div className="placeholder">... placeholder ...</div>;
+    return <Preloader />;
   }
 
   // Otherwise, destructure the context
@@ -103,7 +103,7 @@ const Modal = () => {
             <main className="modal-body">
               {renderingType === "data" && (
                 !modalData ? 
-                  (<p>... placehodler ...</p>) :
+                  (<Preloader />) :
                   (
                     <div
                       dangerouslySetInnerHTML={{ __html: modalData.description }}

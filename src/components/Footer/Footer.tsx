@@ -3,6 +3,7 @@ import { usePageSection } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Heading from "../Heading/Heading";
+import Preloader from "../Preloader/Preloader";
 
 const Footer = () => {
   const sectionData = usePageSection("5");
@@ -10,7 +11,7 @@ const Footer = () => {
 
   if (!context) {
     // return if the context is empty
-    return <div className="placeholder">... placeholder ...</div>;
+    return <Preloader />;
   }
 
   // Otherwise, destructure the context
@@ -22,7 +23,7 @@ const Footer = () => {
       <div className="container text-center">
         <Heading h='4' className="name mb-0">
           {!sectionData ? (
-            <div className="placeholder">... placeholder ...</div>
+            <Preloader />
           ) : (
             sectionData.title
           )}

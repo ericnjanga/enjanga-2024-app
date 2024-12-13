@@ -2,13 +2,14 @@ import { ProjectProps } from "../../models";
 import './ProjectThumb.scss';
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
+import Preloader from "../Preloader/Preloader";
 
 const ProjectThumb = ({ id, title, blurb }: ProjectProps) => {
   const context = useContext(ModalContext);
 
   if (!context) { // return if the context is empty
     return (
-      <div className="placeholder">... placeholder ...</div>
+      <Preloader />
     );
   }
 
