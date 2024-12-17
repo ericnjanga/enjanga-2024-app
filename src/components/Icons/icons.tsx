@@ -4,7 +4,7 @@
 import { IconProps } from "../../models";
 
 export default function Icon({ size, className, name }: IconProps) {
-  const dim = { width: "inherit", height: "inherit" };
+  const dim = { width: "10px", height: "10px" };
 
   // ...
   if (size) {
