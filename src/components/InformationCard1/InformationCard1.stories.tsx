@@ -17,13 +17,20 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<InformationCard1Props> = (args) => (
+const WithData_Template: StoryFn<InformationCard1Props> = (args) => (
   <ModalContext.Provider value={mockModalContext}>
     <InformationCard1 {...args} />
   </ModalContext.Provider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+const NoData_Template: StoryFn<InformationCard1Props> = (args) => ( 
+    <InformationCard1 {...args} /> 
+);
+
+export const WithData = WithData_Template.bind({}); // Story 1
+export const NoData = NoData_Template.bind({});     // Story 2
+
+NoData.args = {};
+WithData.args = {
   ...mockInformationCard1DataArray[0]
 };
