@@ -2,7 +2,7 @@ import "./Navigation.scss";
 import { useNavOptions } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../Preloader/Preloader"; 
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
@@ -19,12 +19,12 @@ const Navigation = () => {
   return (
     <nav
       id="main-nav"
-      className="Navigation navbar navbar-expand-lg w-100 fixed-top"
+      className="Navigation navbar navbar-expand-lg w-100 fixed-top dark"
     >
       <div className="container">
         <a className="navbar-brand" href="#welcome">
           <img
-            src="./images/logo-light.png"
+            src="/images/logo-light.png"
             className="img-fluid"
             alt="Eric Njanga"
           />

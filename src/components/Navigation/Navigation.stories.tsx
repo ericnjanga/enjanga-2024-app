@@ -2,6 +2,8 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Navigation from "./Navigation";
+import { mockModalContext } from "../../models/mockupData";
+import { ModalContext } from "../../utils/contexts";
 
 export default {
   title: "A) Page Section/Navigation",  // The category and name of the component
@@ -12,7 +14,25 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn = (args) => <Navigation {...args} />;
+/**
+ * 1) We need to force to window's heigh, otherwise the Nav won't be properly on display
+ */
+const customStyles = `
+  #anchor--a-page-section-navigation--default .css-xzp052 {
+    min-height: 200px;
+  }
+`;
+
+const Template: StoryFn = (args) => { 
+  return (
+    <>
+      <style>{customStyles}</style> {/* Injecting custom styles */}
+    <ModalContext.Provider value={mockModalContext}>
+      <Navigation {...args} />
+    </ ModalContext.Provider>
+    </>
+  )
+};
 
 export const Default = Template.bind({});
 Default.args = {

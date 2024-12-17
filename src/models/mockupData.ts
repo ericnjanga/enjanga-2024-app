@@ -1,4 +1,22 @@
 
+export const mockNavOptions = [
+  {
+    id: '1',
+    name: 'Nav item 1', 
+    url: '#nav-item-1',
+    description: '....', 
+  }, {
+    id: '2',
+    name: 'Nav item 2', 
+    url: '#nav-item-2',
+    description: '....', 
+  }, {
+    id: '3',
+    name: 'Nav item 3', 
+    url: '#nav-item-3',
+    description: '....', 
+  }
+];
 
 export const mockInformationCard1DataArray = [
   {

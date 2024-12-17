@@ -2,7 +2,7 @@ import type { Preview } from "@storybook/react";
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { createServer } from "miragejs"; 
 import './../src/styles/App.scss';
-import { mockPageSectionProps, mockInformationCard1DataArray } from "./../src/models/mockupData"; 
+import { mockPageSectionProps, mockInformationCard1DataArray, mockNavOptions } from "./../src/models/mockupData"; 
 
 
 
@@ -22,12 +22,18 @@ if (typeof window !== 'undefined') {
 
       this.get("/pageSection/1", () => {
         return {
-          pageSection: { ...mockPageSectionProps }
+          pageSection: {...mockPageSectionProps}
         };  
       });
       this.get("/expertiseSpecsByParent/1", () => {
         return { 
-          expertiseSpecs: [ ...mockInformationCard1DataArray ]
+          expertiseSpecs: [...mockInformationCard1DataArray]
+        };
+      }); 
+      // navOptions ...
+      this.get("/navOptions", () => { 
+        return {
+          navOptions: [...mockNavOptions]
         };
       });
     }

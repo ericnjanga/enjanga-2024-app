@@ -16,19 +16,19 @@ function makeMirageServer() {
       // Nav Options
       server.create('navOption', {
         id: '1',
-        name: 'Scope of Expertise ...', 
+        name: 'Scope of Expertise', 
         url: '#scope-of-expertise',
         description: '....', 
       });
       server.create('navOption', {
         id: '2',
-        name: 'Some work ...', 
+        name: 'Some work', 
         url: '#some-work',
         description: '....', 
       });
       server.create('navOption', {
         id: '3',
-        name: 'About me...', 
+        name: 'About me', 
         url: '#about',
         description: '....', 
       });
