@@ -8,6 +8,8 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import About from "./components/About/About";
 import Modal from "./components/ModalModule";
 import { ModalProvider } from "./components/ModalModule";
+// Ensuring that Bootstrap's JavaScript is globally available across all components.
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Home = () => <p>Home</p>;
 

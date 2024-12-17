@@ -4,6 +4,9 @@ import { createServer } from "miragejs";
 import './../src/styles/App.scss';
 import { mockPageSectionProps, mockInformationCard1DataArray, mockNavOptions } from "./../src/models/mockupData"; 
 
+// Ensuring that Bootstrap's JavaScript is globally available across all stories.
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 
 /**
