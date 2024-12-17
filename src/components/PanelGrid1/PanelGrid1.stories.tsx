@@ -1,6 +1,10 @@
 // PanelGrid1.stories.tsx
 import { Meta, StoryFn } from "@storybook/react";  
 import PanelGrid1 from "./PanelGrid1";
+import PanelHero from "../PanelHero/PanelHero";
+import { ModalContext } from "../../utils/contexts";
+import { mockInformationCard1DataArray, mockModalContext } from "../../models/mockupData";
+import InformationCard1 from "../InformationCard1/InformationCard1";
 
 export default {
   title: "B) Panels/PanelGrid1",  // The category and name of the component
@@ -13,7 +17,31 @@ export default {
  
 
 
-const Template: StoryFn<{ pageSectionId: string }> = (args) => <PanelGrid1 {...args} />;
+const Template: StoryFn<{ pageSectionId: string }> = (args) => {
+  const mockDataList = [...mockInformationCard1DataArray];
+
+  return (
+    <section className="PanelGrid1">
+      <PanelHero id={ args.pageSectionId } />
+      
+      <div className="content-grid">
+        {mockDataList &&
+          mockDataList.map((data, index) => {
+            return (
+              <ModalContext.Provider value={mockModalContext}>
+                <InformationCard1 
+                  key={index} 
+                  {...data} 
+                  className="content-grid-item" 
+                />
+              </ ModalContext.Provider>
+            );
+          })}
+      </div>
+    </section>
+    // <PanelGrid1 {...args} />
+  );
+};
 
 export const Default = Template.bind({});
 const id = '1';

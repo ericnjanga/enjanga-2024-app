@@ -1,25 +1,14 @@
-import { usePageSection, useExpertises } from "../../hooks/useAPI";
+import { useExpertises } from "../../hooks/useAPI";
 import InformationCard1 from "../InformationCard1/InformationCard1";
 import "./PanelGrid1.scss";
-import Heading from "../Heading/Heading";
+import PanelHero from "../PanelHero/PanelHero";
 
 const PanelGrid1 = ({ pageSectionId }: { pageSectionId: string }) => {
-  const sectionData = usePageSection(pageSectionId);
   const expertiseList = useExpertises(pageSectionId);
 
   return (
     <section className="PanelGrid1">
-      <header className="pageSection-hero">
-        <Heading h='2' iconName="hand" className="pageSection-title">
-          {!sectionData ? "..." : sectionData.title}
-        </Heading>
-        <div
-          className="pageSection-intro-text"
-          dangerouslySetInnerHTML={{
-            __html: sectionData ? sectionData.description : "",
-          }}
-        ></div>
-      </header>
+      <PanelHero id={ pageSectionId } />
       
       <div className="content-grid">
         {expertiseList &&
