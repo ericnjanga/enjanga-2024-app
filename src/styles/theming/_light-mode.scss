@@ -166,52 +166,6 @@
             }
         }
     }
-
-    @layer buttons {
-        .btn {
-            &:disabled {
-                opacity: 0.5;
-            }
-        }
-        .btn-primary {
-            color: var(--appname-theme-light-bbbb-0);
-            background-color: var(--appname-theme-light-aaaa-y);
-            border-color: var(--appname-theme-light-aaaa-2);
-
-            &:hover {
-                background-color: var(--appname-theme-light-aaaa-x);
-                border-color: var(--appname-theme-light-aaaa-7);
-            }
-            &:active {
-                background-color: var(--appname-theme-light-aaaa-7);
-            }
-        }
-
-
-        .slick-arrow, // Set carousel buttons as 2nd btns
-        .btn-secondary {
-            color: var(--appname-theme-light-bbbb-0);
-            background-color: transparent;
-            border-color: var(--appname-theme-light-bbbb-5); 
-
-            &.btn-neon {
-                color: var(--appname-theme-light-aaaa-y); 
-                border-color: var(--appname-theme-light-aaaa-y); 
-
-                &:hover {
-                    color: var(--appname-theme-light-bbbb-5);
-                }
-            }
-
-            &:hover {
-                background-color: var(--appname-theme-light-aaaa-x);
-                border-color: var(--appname-theme-light-aaaa-x);
-            }
-            &:active {
-                background-color: var(--appname-theme-light-cccc-10);
-            }
-        }
-    }
  
  
 

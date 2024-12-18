@@ -47,19 +47,13 @@
     .banner-shine, .banner-feature {
         p, ul {
             &+ .btn {
-                margin: var(--appname-banner-shine-cta-mrg);
-                // border: 20px solid palevioletred;
+                margin: var(--appname-banner-shine-cta-mrg); 
             }
         }
     }
 
     @layer banner-shine {
-        .banner-shine {
-
-            // h1, h2, h3, h4, h5, p {
-            //     color: var(--appname-clr-fff);
-            // }
-
+        .banner-shine { 
             .container {
                 display: var(--appname-banner-shine-display);
                 gap: var(--appname-banner-shine-gap);

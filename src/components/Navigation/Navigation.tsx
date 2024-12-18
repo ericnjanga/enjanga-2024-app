@@ -3,6 +3,7 @@ import { useNavOptions } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
+import Button from "../Button/Button";
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
@@ -55,19 +56,19 @@ const Navigation = () => {
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button
-                className="btn btn-primary item-icon-material item-icon-material-after chat-bubble js-chat-button"
-                aria-label="Open contact form to get in touch with Eric Njanga"
-                onClick={() => {
+              <Button 
+                icon='chat'
+                ariaLabel="Open contact form to get in touch with Eric Njanga" 
+                onClickHandler={() => {
                   openModal({
                     renderingType: "contact",
                     dataType: "",
                     dataId: "",
                   });
-                }}
+                }} 
               >
                 Get in touch with me
-              </button>
+              </Button>
             </li>
           </ul>
         </div>

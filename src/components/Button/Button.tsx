@@ -1,16 +1,44 @@
 import { ButtonProps } from "../../models";
+import Icon from "../Icons/icons";
+import './Button.scss';
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
   size = "md",
-  label = "Button",
   neonVersion = false,
+  children = "Button",
+  href,
+  ariaLabel,
+  onClickHandler,
+  icon
 }) => {
-  const classNames = `btn btn-${variant} btn-${size} ${
-    neonVersion ? "btn-neon" : ""
-  }`;
+  const baseClass = `btn btn-${variant} btn-${size}`;
+  const classNames = neonVersion ? `${baseClass} btn-neon` : baseClass;
 
-  return <button className={classNames}>{label}</button>;
+  const commonProps = {
+    className: classNames,
+    "aria-label": ariaLabel,
+    onClick: onClickHandler,
+  };
+
+  return href ? (
+    <a 
+      href={href} 
+      {...commonProps}
+    >
+      {children}
+      {icon && 
+      <Icon name={icon} className="icon" size="tiny" />}
+    </a>
+  ) : (
+    <button {...commonProps}>
+      {children}
+      {icon && 
+      <Icon name={icon} className="icon" size="tiny" />}
+    </button>
+  );
 };
 
 export default Button;
+
+ 

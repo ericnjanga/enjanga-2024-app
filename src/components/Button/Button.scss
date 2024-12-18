@@ -1,0 +1,176 @@
+:root {
+  // Normal buttons ...
+  --appname-btn-md-padding: 8px 16px;
+  --appname-btn-fontsize: 1.15rem;
+  // Normal buttons + icon
+  --appname-btn-icon-before-padding: 10px 20px 10px 40px;
+  --appname-btn-icon-after-padding: 10px 40px 10px 20px;
+  --appname-btn-icon-icon-size: 1.5rem;
+  --appname-btn-icon-icon-top: 5px;
+  --appname-btn-icon-icon-left: 9px;
+  --appname-btn-icon-icon-right: 17px;
+
+  // Small buttons ...
+  --appname-btn-sm-padding: 0.25rem 0.75rem;
+  --appname-btn-sm-fontsize: 0.875rem;
+
+  // large buttons ...
+  --appname-btn-lg-padding: 14px 25px;
+  --appname-btn-lg-fontsize: 1.4rem;
+
+  // Small buttons + icon
+  --appname-btn-icon-before-sm-padding: 0.25rem 0.75rem 0.25rem 2rem; // icon before
+  --appname-btn-icon-after-sm-padding: 0.25rem 2rem 0.25rem 0.75rem; // icon after
+  --appname-btn-icon-sm-icon-size: 1.1rem;
+  --appname-btn-icon-sm-icon-top: 2px;
+  --appname-btn-icon-sm-icon-right: 10px;
+
+  // btn icon ...
+  --appname-btnicon-padding: 10px 45px 10px 20px;
+  --appname-btnicon-icon-top: 6px;
+  --appname-btnicon-icon-right: 20px;
+}
+
+@layer button {
+  .btn {
+    border-radius: var(--appname-bdr-radius-0);
+    border-width: 2px;
+    padding: var(--appname-btn-md-padding);
+    font-weight: 500;
+    font-size: var(--appname-btn-fontsize);
+
+    // ...
+    &.item-icon-bootstrap,
+    &.item-icon-material {
+      position: relative;
+
+      &.item-icon-material-before {
+        padding: var(--appname-btn-icon-before-padding);
+
+        &::before {
+          left: var(--appname-btn-icon-icon-left);
+        }
+      }
+      &.item-icon-material-after {
+        padding: var(--appname-btn-icon-after-padding);
+
+        &::after {
+          left: unset;
+          right: var(--appname-btn-icon-icon-right);
+        }
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+
+        font-size: var(--appname-btn-icon-icon-size);
+        top: var(--appname-btn-icon-icon-top);
+      }
+    }
+
+    &.btn-sm {
+      padding: var(--appname-btn-sm-padding);
+      font-size: var(--appname-btn-sm-fontsize);
+
+      &.item-icon-bootstrap,
+      &.item-icon-material {
+        &.item-icon-material-before {
+          padding: var(--appname-btn-icon-before-sm-padding);
+
+          &::before {
+            left: var(--appname-btn-icon-sm-icon-right);
+          }
+        }
+        &.item-icon-material-after {
+          padding: var(--appname-btn-icon-after-sm-padding);
+
+          &::after {
+            right: var(--appname-btn-icon-sm-icon-right);
+          }
+        }
+
+        &::before,
+        &::after {
+          font-size: var(--appname-btn-icon-sm-icon-size);
+          top: var(--appname-btn-icon-sm-icon-top);
+        }
+      }
+    }
+
+    &.btn-lg {
+      padding: var(--appname-btn-lg-padding);
+      font-size: var(--appname-btn-lg-fontsize);
+    }
+  }
+}
+
+@layer button {
+  .btn {
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    .icon {
+      margin-left: 0.7rem;
+    }
+
+    &.btn-md,
+    &.btn-lg {
+      .icon {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+    }
+
+    &-primary {
+      color: var(--appname-theme-light-bbbb-0);
+      background-color: var(--appname-theme-light-aaaa-y);
+      border-color: var(--appname-theme-light-aaaa-2);
+
+      &:hover {
+        background-color: var(--appname-theme-light-aaaa-x);
+        border-color: var(--appname-theme-light-aaaa-7);
+      }
+      &:active {
+        background-color: var(--appname-theme-light-aaaa-7);
+      }
+      .icon path { 
+        fill: var(--appname-theme-light-bbbb-0);
+      }
+    }
+
+    // .slick-arrow, // Set carousel buttons as 2nd btns
+    &-secondary {
+      color: var(--appname-theme-light-bbbb-0);
+      background-color: transparent;
+      border-color: var(--appname-theme-light-bbbb-5);
+  
+      &.btn-neon {
+        color: var(--appname-theme-light-aaaa-y);
+        border-color: var(--appname-theme-light-aaaa-y);
+  
+        &:hover {
+          color: var(--appname-theme-light-bbbb-5);
+          .icon path { 
+            fill: var(--appname-theme-light-bbbb-5);
+          }
+        }
+
+        .icon path { 
+          fill: var(--appname-theme-light-aaaa-y);
+        }
+      }
+  
+      &:hover {
+        background-color: var(--appname-theme-light-aaaa-x);
+        border-color: var(--appname-theme-light-aaaa-x);
+      }
+      &:active {
+        background-color: var(--appname-theme-light-cccc-10);
+      }
+    }
+  }
+
+  
+}

@@ -11,6 +11,7 @@ import { fetchAPIData } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import ContactForm from "../ContactForm/ContactForm";
 import Preloader from "../Preloader/Preloader";
+import Button from "../Button/Button";
 
 /**
  * 2) Modal Provider:
@@ -116,9 +117,12 @@ const Modal = () => {
             </main>
             
             <footer className="modal-footer">
-              <button className="btn btn-secondary" onClick={closeModal}>
+              <Button  
+                variant='secondary'
+                onClickHandler={closeModal} 
+              >
                 Close
-              </button>
+              </Button>
             </footer>
           </div>
 
