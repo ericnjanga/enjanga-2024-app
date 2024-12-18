@@ -55,10 +55,15 @@ export type NavOptionProps = {
 
 
 export interface ButtonProps {
-  variant: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
-  label: string;
+  label?: string;
   neonVersion?: boolean
+  children: ReactNode
+  href?: string
+  ariaLabel?: string
+  onClickHandler?: () => void
+  icon?: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat'
 };
 
 
@@ -87,13 +92,13 @@ export type InputFieldProps = {
 export type IconProps = { 
   size?: string, 
   className: string,
-  name: 'cube' | 'hand' | 'spinner',
+  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat',
 };
 
 
 export type HeadingProps = { 
   h: '1' | '2' | '3' | '4' | '5' | '6', 
-  iconName?: 'cube' | 'hand',
+  iconName?: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat',
   className?: string,
   children: ReactNode 
 };
