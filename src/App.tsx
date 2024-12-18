@@ -8,6 +8,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import About from "./components/About/About";
 import Modal from "./components/ModalModule";
 import { ModalProvider } from "./components/ModalModule";
+import Navigation from "./components/Navigation/Navigation";
 // Ensuring that Bootstrap's JavaScript is globally available across all components.
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -18,6 +19,8 @@ function App() {
     <ModalProvider>
       <div className="App">
         <Modal />
+
+        <Navigation />
 
         <div id="welcome">
           <Hero />
