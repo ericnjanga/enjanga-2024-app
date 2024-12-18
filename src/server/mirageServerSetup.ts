@@ -75,7 +75,7 @@ function makeMirageServer() {
       server.create('pageSection', {
         id: '1',
         title: 'Software Design & Engineering', 
-        description: 'I excel at creating custom software for web applications, and web platforms. I have a taste for visual aesthetics and user-friendliness, and enjoy designing as much as coding.', 
+        description: 'I excel at creating custom software for web applications, and have a taste for visual aesthetics and user-friendliness.', 
       }); 
       server.create('pageSection', { // Expertise specification 1
         id: '2',
