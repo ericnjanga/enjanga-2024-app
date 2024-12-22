@@ -14,32 +14,47 @@ export default {
   },
 } as Meta;
 
-// Modifying mock data to:
-const mockOpenModalContext = {
-  ...mockModalContext,
-  isOpen: true, // opening the modal
-};
+
 
 /**
  * 1) We need to force to window's heigh, otherwise the modal won't be visible
  */
 const customStyles = `
-  #story--medium-components-modal--default--primary {
+  #story--medium-components-modal--api-fetched-data--primary,
+  #story--medium-components-modal--api-fetched-data {
     min-height: 400px;
+  }
+  #story--medium-components-modal--with-contact-form {
+    min-height: 550px;
   }
 `;
 
 const Template: StoryFn = (args) => (
   <>
     <style>{customStyles}</style> {/* Injecting custom styles */}
-    <ModalContext.Provider value={mockOpenModalContext}>
+    <ModalContext.Provider value={args.mockOpenModalContext}>
       <Modal {...args} />
     </ModalContext.Provider>
   </>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  // Here you can set props if Modal had any dynamic inputs.
-  // Since the Modal is a static component, no arguments are needed for this example.
+export const APIFetchedData = Template.bind({});
+APIFetchedData.args = {
+  // Modifying mock data to:
+  mockOpenModalContext: {
+    ...mockModalContext,
+    childComponent: '',
+    isOpen: true, // opening the modal
+  }
 };
+
+export const WithContactForm = Template.bind({});
+WithContactForm.args = {
+  // Modifying mock data to:
+  mockOpenModalContext: {
+    ...mockModalContext,
+    childComponent: 'contact',
+    isOpen: true, // opening the modal
+  }
+};
+
