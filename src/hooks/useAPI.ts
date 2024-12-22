@@ -56,7 +56,7 @@ export const usePageSection = (id: string): PageSectionProps | null => {
   const [pageSection, setPageSection] = useState(null); 
 
   useEffect(() => {
-    fetchData('pageSection', setPageSection, `/api/pageSection/${id}`);
+    fetchData('pageSection', setPageSection, `/api/pageSections/${id}`);
   }, [id]);
   return pageSection;
 };
@@ -156,14 +156,19 @@ export const fetchAPIData = async(dataType: string, dataId: string) => {
 
   // ...
   switch(dataType) {
-    case 'InformationCard1 item':
-      queryString = `/api/expertiseSpec/${dataId}`;
+    case 'expertiseSpecs':
+      queryString = `/api/expertiseSpecs/${dataId}`;
       stateProps = 'expertiseSpec';
     break;
 
-    case 'ProjectThumb item':
+    case 'projects':
       queryString = `/api/projects/${dataId}`;
       stateProps = 'project';
+    break;
+
+    case 'pageSections':
+      queryString = `/api/pageSections/${dataId}`;
+      stateProps = 'pageSection';
     break;
   }
 
