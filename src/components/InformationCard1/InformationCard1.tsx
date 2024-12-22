@@ -21,8 +21,7 @@ const InformationCard1 = ({ blurb, className, id }: InformationCard1Props) => {
       className={`InformationCard1 card ${className}`}
       onClick={() => {
         openModal({
-          renderingType: 'data',
-          dataType: 'InformationCard1 item',
+          dataType: 'expertiseSpecs',
           dataId: id,
         });
       }}

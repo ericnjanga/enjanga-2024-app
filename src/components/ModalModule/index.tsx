@@ -12,6 +12,7 @@ import { ModalContext } from "../../utils/contexts";
 import ContactForm from "../ContactForm/ContactForm";
 import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
+import Heading from "../Heading/Heading";
 
 /**
  * 2) Modal Provider:
@@ -25,46 +26,44 @@ import Button from "../Button/Button";
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalData, setModalContent] = useState(null);
-  const [renderingType, setRenderingType] = useState("data"); // Renders data by default
+  const [childComponent, setChildComponent] = useState('');
   // const { fetchDefinition } = useDefinition();
 
   // Function to close the modal
   function closeModal() {
     setIsOpen(false);
     setModalContent(null);
-    setRenderingType("data");
+    setChildComponent('');
   }
 
   // Function to open the modal
   function openModal({
-    renderingType,
     dataType,
     dataId,
   }: {
-    renderingType: string;
     dataType: string;
     dataId: string;
   }) {
-    // Setting rendering type
-    setRenderingType(renderingType);
-
-    // Only fetch API data if required
-    if (renderingType === "data") {
-      /**
-       * TODO:
-       * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
-       * */
-      fetchAPIData(dataType, dataId).then((result) => {
-        setModalContent(result);
-      });
+    // Determining which child component should be rendered
+    if (dataType === 'pageSections' && dataId === '7') {
+      setChildComponent('contact');
     }
+
+    /**
+     * TODO:
+     * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
+     * -- NOTE: The modal is always fetching something
+     * */
+    fetchAPIData(dataType, dataId).then((result) => {
+      setModalContent(result);
+    });
 
     setIsOpen(true);
   }
 
   return (
     <ModalContext.Provider
-      value={{ isOpen, renderingType, openModal, closeModal, modalData }}
+      value={{ isOpen, childComponent, openModal, closeModal, modalData }}
     >
       {children}
     </ModalContext.Provider>
@@ -90,30 +89,28 @@ const Modal = () => {
   }
 
   // Otherwise, destructure the context
-  const { isOpen, renderingType, closeModal, modalData } = context;
+  const { isOpen, childComponent, closeModal, modalData } = context;
 
   return (
     <>
       {isOpen && (
         <section className="appname-modal modal-wrapper" tabIndex={-1}>
           <div className="modal-content"> 
-            {/* <header className="modal-header"> 
-                <Heading h='3' className={!modalData ? 'placeholder heading' : ''}>{modalData && modalData.title}</Heading>
-              </header> */}
+            <header className="modal-header"> 
+              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData && modalData.title}</Heading>
+            </header>
 
             <main className="modal-body">
-              {renderingType === "data" && (
-                !modalData ? 
-                  (<Preloader />) :
-                  (
-                    <div
-                      dangerouslySetInnerHTML={{ __html: modalData.description }}
-                    ></div>
-                  )
-                )
+              {!modalData ? 
+                (<Preloader />) :
+                (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: modalData.description }}
+                  ></div>
+                ) 
               }  
 
-              {renderingType === "contact" && <ContactForm />  }
+              {childComponent === "contact" && <ContactForm />  }
             </main>
             
             <footer className="modal-footer">
@@ -122,6 +119,12 @@ const Modal = () => {
                 onClickHandler={closeModal} 
               >
                 Close
+              </Button>
+              <Button  
+                variant='primary'
+                onClickHandler={closeModal} 
+              >
+                Submit
               </Button>
             </footer>
           </div>

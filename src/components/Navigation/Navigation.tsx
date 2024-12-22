@@ -61,9 +61,8 @@ const Navigation = () => {
                 ariaLabel="Open contact form to get in touch with Eric Njanga" 
                 onClickHandler={() => {
                   openModal({
-                    renderingType: "contact",
-                    dataType: "",
-                    dataId: "",
+                    dataType: 'pageSections',
+                    dataId: "7",
                   });
                 }} 
               >

@@ -38,23 +38,13 @@ const Footer = () => {
           ariaLabel="Open contact form to get in touch with Eric Njanga"
           onClickHandler={() => {
             openModal({
-              renderingType: "contact",
-              dataType: "",
-              dataId: "",
+              dataType: 'pageSections',
+              dataId: "7",
             });
           }}
         >
           Get in touch with me
         </Button>
-        {/* <button
-          className="btn btn-link btn-sm item-icon-material item-icon-material-after chat-bubble js-chat-button"
-          aria-label="Open contact form to get in touch with Eric Njanga"
-                onClick={() => { 
-                  openModal({ renderingType: 'contact', dataType: '', dataId: '' });
-                }}
-        >
-          Get in touch with me
-        </button> */}
       </div>
     </footer>
   );

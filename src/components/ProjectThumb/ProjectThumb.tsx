@@ -20,7 +20,10 @@ const ProjectThumb = ({ id, title, blurb }: ProjectProps) => {
     <div
       className="ProjectThumb card"
       onClick={() => {
-        openModal({ renderingType: 'data', dataType: 'ProjectThumb item', dataId: id });
+        openModal({ 
+          dataType: 'projects', 
+          dataId: id 
+        });
       }}
     >
       <div className="card-body">
