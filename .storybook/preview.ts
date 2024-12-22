@@ -23,12 +23,12 @@ if (typeof window !== 'undefined') {
     routes() {
       this.namespace = 'api';
 
-      this.get("/pageSection/1", () => {
+      this.get("/pageSections/1", () => {
         return {
           pageSection: {...mockPageSectionsProps[0]}
         };  
       });
-      this.get("/pageSection/2", () => {
+      this.get("/pageSections/2", () => {
         return {
           pageSection: {...mockPageSectionsProps[1]}
         };  
