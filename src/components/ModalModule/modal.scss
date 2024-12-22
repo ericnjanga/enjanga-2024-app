@@ -27,8 +27,16 @@
     box-shadow: inset 0 0 0 1px var(--appname-theme-light-cccc-8);
     background-color: var(--appname-theme-light-bbbb-8);
   }
+  .modal-header {
+    padding: var(--appname-modal-body-padd);
+    
+    .modal-header-heading {
+      margin: 0;
+    }
+  }
   .modal-body {
     padding: var(--appname-modal-body-padd);
+    padding-top: 0;
 
     p:last-of-type {
       margin-bottom: 0;
@@ -36,6 +44,8 @@
   }
 
   .modal-footer {
+    display: flex;
+    gap: 10px;
     padding: var(--appname-modal-footer-padd);
     border-top: 1px solid var(--appname-theme-light-cccc-8); 
   }
