@@ -212,6 +212,8 @@ function makeMirageServer() {
 
 
     routes() {
+      this.passthrough("https://formspree.io/**"); // Allow requests to Formspree
+      
       this.namespace = 'api';
 
       // navOptions ...
