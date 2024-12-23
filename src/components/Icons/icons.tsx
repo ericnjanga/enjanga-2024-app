@@ -3,7 +3,7 @@
 // 2) https://reactsvgicons.com/
 import { IconProps } from "../../models";
 
-export default function Icon({ size, className, name }: IconProps) {
+export default function Icon({ size = 'tiny', className, name }: IconProps) {
   const dim = { width: "10px", height: "10px" };
 
   // ...
@@ -84,6 +84,18 @@ export default function Icon({ size, className, name }: IconProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M0.46875 64.8554V6.63319C0.46875 4.85418 1.10219 3.33124 2.36906 2.06437C3.63593 0.797498 5.15887 0.164062 6.93788 0.164062H58.6909C60.4699 0.164062 61.9929 0.797498 63.2597 2.06437C64.5266 3.33124 65.16 4.85418 65.16 6.63319V45.448C65.16 47.227 64.5266 48.7499 63.2597 50.0168C61.9929 51.2837 60.4699 51.9171 58.6909 51.9171H13.407L0.46875 64.8554ZM13.407 38.9788H39.2835V32.5097H13.407V38.9788ZM13.407 29.2751H52.2218V22.806H13.407V29.2751ZM13.407 19.5715H52.2218V13.1023H13.407V19.5715Z" />
+      </svg>
+    );
+  } else if (name === 'close') {
+    return ( 
+      <svg
+        className={className}
+        width={dim.width}
+        height={dim.height}
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M6.376 63.76L0 57.384L25.504 31.88L0 6.376L6.376 0L31.88 25.504L57.384 0L63.76 6.376L38.256 31.88L63.76 57.384L57.384 63.76L31.88 38.256L6.376 63.76Z" fill="#010023"/>
       </svg>
     );
   }

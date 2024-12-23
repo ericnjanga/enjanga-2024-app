@@ -4,7 +4,7 @@ import Icon from "../Icons/icons";
 const Preloader = () => {
   return (
     <div className="Preloader">
-      <Icon name="spinner" className="icon spinner" size="tiny" />
+      <Icon name="spinner" className="icon spinner" />
       <p>Loading content ...</p>
     </div>
   );

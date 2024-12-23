@@ -27,7 +27,7 @@ const InformationCard1 = ({ blurb, className, id }: InformationCard1Props) => {
       }}
     >
       <div className="card-body">
-        <Icon name='cube' className="icon" size="tiny" />
+        <Icon name='cube' className="icon" />
         <p className="mb-0">{blurb}</p>
         <span className="btn btn-link">Learn more ...</span>
       </div>

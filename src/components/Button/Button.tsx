@@ -28,13 +28,13 @@ const Button: React.FC<ButtonProps> = ({
     >
       {children}
       {icon && 
-      <Icon name={icon} className="icon" size="tiny" />}
+      <Icon name={icon} className="icon" />}
     </a>
   ) : (
     <button {...commonProps}>
       {children}
       {icon && 
-      <Icon name={icon} className="icon" size="tiny" />}
+      <Icon name={icon} className="icon" />}
     </button>
   );
 };
