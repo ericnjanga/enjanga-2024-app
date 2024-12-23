@@ -1,6 +1,7 @@
 import { Registry, Model } from "miragejs";
 import { Server } from "miragejs";
 import { ReactNode } from "react";
+import { FieldInputProps, FieldMetaProps } from "formik";
 
 
 /**
@@ -81,17 +82,25 @@ export type ModalContextProps = {
   closeModal: () => void        // Responsible for losing the modal
 };
 
-export type InputFieldProps = {
-  id: string
-  type: string
-  description: string
+export interface InputFieldProps extends FieldInputProps<string> { 
+  meta: FieldMetaProps<string> // Meta props from Formik for validation state
+  type?: string
+  className: string
+  description?: string
+  elementType?: "input" | "textarea" | "select" // Render as input, textarea, or select
+  options?: { value: string; label: string }[]; // Options for select inputs
 };
 
 
+export interface ContactFormRef {
+  submitForm: () => void;
+}
+
+
 export type IconProps = { 
-  size?: string, 
+  size?: 'tiny' | 'medium' | 'large', 
   className: string,
-  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat',
+  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat' | 'close',
 };
 
 

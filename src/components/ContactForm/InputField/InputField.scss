@@ -15,3 +15,7 @@ textarea {
 .form-label { 
   margin-bottom: 0.25rem;
 }
+.form-control.is-invalid, .was-validated .form-control:invalid,
+.form-select.is-invalid, .was-validated .form-select:invalid {
+  border-color: var(--bs-form-invalid-border-color)!important;
+}

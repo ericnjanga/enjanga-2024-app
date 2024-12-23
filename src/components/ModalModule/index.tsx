@@ -5,6 +5,7 @@
  * 2) Modal Provider: Global provider of the Modal functionality, it defines the state and logic, and encapsulates "Modal Context"
  * 3) Modal Component: Renders the component according to the state and logic
  */
+import { useRef } from "react";
 import { useContext, useState, ReactNode } from "react";
 import "./modal.scss";
 import { fetchAPIData } from "../../hooks/useAPI";
@@ -13,6 +14,8 @@ import ContactForm from "../ContactForm/ContactForm";
 import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
 import Heading from "../Heading/Heading";
+import { ContactFormRef } from "../../models";
+import Icon from "../Icons/icons";
 
 /**
  * 2) Modal Provider:
@@ -82,10 +85,17 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
  */
 const Modal = () => {
   const context = useContext(ModalContext);
+  const formRef = useRef<ContactFormRef>(null);
 
   if (!context) {
     // return if the context is empty
     return <Preloader />;
+  }
+
+  function submitForm () {
+    if (formRef.current) {
+      formRef.current.submitForm();
+    }
   }
 
   // Otherwise, destructure the context
@@ -96,6 +106,12 @@ const Modal = () => {
       {isOpen && (
         <section className="appname-modal modal-wrapper" tabIndex={-1}>
           <div className="modal-content"> 
+            <button className="modal-btn-close" onClick={closeModal}>
+              <Icon
+                name='close'
+                className="icon" 
+              />
+            </button>
             <header className="modal-header"> 
               <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData && modalData.title}</Heading>
             </header>
@@ -110,7 +126,11 @@ const Modal = () => {
                 ) 
               }  
 
-              {childComponent === "contact" && <ContactForm />  }
+              {childComponent === "contact" && (
+                <ContactForm
+                  ref={formRef}
+                />
+              )}
             </main>
             
             <footer className="modal-footer">
@@ -120,12 +140,14 @@ const Modal = () => {
               >
                 Close
               </Button>
-              <Button  
-                variant='primary'
-                onClickHandler={closeModal} 
-              >
-                Submit
-              </Button>
+              {childComponent === "contact" && ( 
+                <Button  
+                  variant='primary'
+                  onClickHandler={submitForm} 
+                >
+                  Submit
+                </Button>
+              )}
             </footer>
           </div>
 
