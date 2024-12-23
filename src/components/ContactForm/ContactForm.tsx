@@ -3,6 +3,8 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import InputField from "./InputField/InputField";
 import { ContactFormRef } from "../../models";
+import { mockContactForm } from "../../models/mockupData";
+import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
 
 /**
  * 1) We use Formik to manage the form's state and handle submission
@@ -11,12 +13,7 @@ import { ContactFormRef } from "../../models";
  */
 
 const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
-  const initialValues ={
-    name: "",
-    email: "",
-    category: "",
-    details: "",
-  };
+
 
   // Validation Schema
   const validationSchema = Yup.object({
@@ -38,25 +35,33 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
 
   const formikRef = useRef<any>(null);
 
-  const handleFormSubmit = (values: typeof initialValues) => {
-    // Construct the mailto URL
-    const subject = encodeURIComponent("New Contact Form Submission");
-    const body = encodeURIComponent(
-      `Name: ${values.name}\nEmail: ${values.email}\nCategory: ${values.category}\nDetails: ${values.details}`
-    );
-    const mailtoUrl = `mailto:eric.njanga@gmail.com?subject=${subject}&body=${body}`;
+  // const handleContactFormSubmit = async(values: typeof mockContactForm.initValues) => {
+  //   try {
+  //     const response = await fetch('https://formspree.io/f/movvqplj', {
+  //       method: 'POST',
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(values),
+  //     });
 
-    // Redirect to the mailto URL
-    window.location.href = mailtoUrl;
-  };
+  //     if (response.ok) {
+  //       alert("Form submitted successfully!");
+  //     } else {
+  //       alert("Failed to submit the form.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //   }
+  // };
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={mockContactForm.initValues}
       validationSchema={validationSchema}
       innerRef={formikRef}
       onSubmit={(values, { resetForm }) => {
-        handleFormSubmit(values);
+        handleContactFormSubmit(values);
         // console.log("Form submitted with values:", values);
         resetForm();
       }}

@@ -101,4 +101,31 @@ export const mockPageSectionsProps = [
   }
 ];
 
- 
+export const mockContactForm = {
+  initValues: {
+    name: "",
+    email: "",
+    category: "",
+    details: "",
+  },
+  submissionEndpoint: 'https://formspree.io/f/movvqplj',
+  submissionDefault: {
+    title: '',
+    description: ''
+  },
+  submissionSuccess: { 
+    title: `Form submitted successfully!`,
+    description: `Thank you for reaching out! Your message has been received, and I'll get back to you shortly. Feel free to explore more on my site in the meantime.`,
+  },
+  submissionFailure: { 
+    title: `Failed to submit the form.`,
+    description: `Something went wrong during submission, but I'm not sure what. Oh boy, this must be frustrating! Please try again later and thank you for your patience.`,
+  },
+  submissionError: { 
+    title: `Error submitting form.`,
+    description: `Something went wrong during submission, but I'm not sure what: `,
+  },
+
+};
+
+  
