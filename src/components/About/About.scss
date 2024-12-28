@@ -1,6 +1,4 @@
-:root {
-  // Font sizes and line heights ...
-  // --appname-about-container-flex-dir: column-reverse;
+:root { 
   --appname-about-container-display: block;
   --appname-about-container-padd-bott: 0;
   --appname-about-img-position: absolute;
@@ -60,8 +58,7 @@
 
   .container {
     position: relative;
-    display: var(--appname-about-container-display);
-  //   // flex-direction: var(--appname-about-container-flex-dir);
+    display: var(--appname-about-container-display); 
     overflow: var(--appname-about-container-overflow);
     padding-bottom: var(--appname-about-container-padd);
   }
@@ -139,8 +136,7 @@
 
     --appname-about-container-padd-bott: var(--appname-spacing-section-h-small);
     --appname-about-img-bottom: -60px;
-    --appname-about-article-padding: 15px;
-    // --appname-about-container-flex-dir: row;
+    --appname-about-article-padding: 15px; 
   }
 
   // Small Screen ...
