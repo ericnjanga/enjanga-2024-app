@@ -1,13 +1,14 @@
 :root { 
   --appname-about-container-display: block;
+  --appname-about-container-padd-top: var(--appname-spacing-section-h-small);
   --appname-about-container-padd-bott: 0;
   --appname-about-img-position: absolute;
   --appname-about-img-left: 0;
   --appname-about-img-width: 100%;
-  --appname-about-img-height: 200px;
-  --appname-about-container-padd: 200px;
+  --appname-about-img-height: 250px;
+  --appname-about-container-padd: 250px;
   --appname-about-container-overflow: hidden;
-  --appname-about-img-obj-pos: 0 -20px; 
+  --appname-about-img-obj-pos: 0 0;
   --appname-about-article-display: block;
   --appname-about-article-flex-dir: column; 
   --appname-about-article-justify-cont: center;
@@ -20,6 +21,7 @@
 
 .About {
   overflow: hidden;
+  padding-top: var(--appname-about-container-padd-top);
   padding-bottom: var(--appname-about-container-padd-bott);
   background-color: var(--appname-theme-light-bbbb-0);
 
@@ -67,20 +69,18 @@
   @media (min-width: 1400px) {
     // border: 10px solid purple;
     --appname-about-container-display: flex;
-    --appname-about-img-position: static;
-
-
-
+    --appname-about-img-position: static; 
     --appname-about-article-display: flex;
     --appname-about-img-left: -90px;
     --appname-about-img-width: 600px; 
-    --appname-about-img-height: 700px;
+    --appname-about-img-height: 600px;
     --appname-about-container-padd: 0;
 
     --appname-about-article-marg: auto;
     --appname-about-article-width: 560px;
     --appname-about-container-overflow: visible;
 
+    --appname-about-container-padd-top: 40px;
     --appname-about-container-padd-bott: 0;
     --appname-about-img-bottom: unset;
     --appname-about-img-top: -140px;
@@ -99,7 +99,9 @@
     --appname-about-article-width: 560px;
     --appname-about-container-overflow: visible;
 
+    --appname-about-container-padd-top: 90px;
     --appname-about-container-padd-bott: var(--appname-spacing-section-h-small);
+    --appname-about-img-obj-pos: 0 70px;
     --appname-about-img-bottom: unset;
     --appname-about-img-top: -140px;
     --appname-about-article-padding: 15px;
@@ -117,6 +119,7 @@
     --appname-about-article-width: 460px;
     --appname-about-container-overflow: visible;
 
+    --appname-about-container-padd-top: 70px;
     --appname-about-container-padd-bott: var(--appname-spacing-section-h-small);
     --appname-about-img-bottom: -72px;
     --appname-about-article-padding: 15px;
@@ -131,12 +134,13 @@
     --appname-about-container-padd: 0;
 
     --appname-about-article-marg: auto;
-    --appname-about-article-width: 400px;
+    --appname-about-article-width: 450px;
     --appname-about-container-overflow: visible;
 
+    --appname-about-container-padd-top: 60px;
     --appname-about-container-padd-bott: var(--appname-spacing-section-h-small);
     --appname-about-img-bottom: -60px;
-    --appname-about-article-padding: 15px; 
+    --appname-about-article-padding: 25px; 
   }
 
   // Small Screen ...
@@ -144,7 +148,7 @@
     // border: 10px solid turquoise;
     --appname-about-img-height: 380px;
     --appname-about-container-padd: 380px;
-    --appname-about-img-obj-pos: 0px -60px;
+    --appname-about-img-obj-pos: 0 0;
   }
 
   // Smaller Screen ...

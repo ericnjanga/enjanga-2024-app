@@ -6,7 +6,7 @@ const About = () => {
   const sectionData = usePageSection("4");
 
   return (
-    <section className="About sc-block-pd-top">
+    <section className="About">
       <div className="container"> 
         <img className="About-img img-fluid img-poster" src="images/eric-njanga-2.png" alt="" /> 
 
