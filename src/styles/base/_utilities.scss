@@ -5,6 +5,14 @@
 
 
 @layer utilities {
+
+    // Will force the image to behave like it's being cropped:
+    // Whenever the size of the image varies, the picture remains constant
+    .img-poster {
+        object-fit: cover;
+        width: 100%;
+    } 
+    
     .is-fixed {
         position: fixed;
         top: 0;

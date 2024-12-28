@@ -8,7 +8,7 @@
 import { useRef } from "react";
 import { useContext, useState, ReactNode } from "react";
 import "./modal.scss";
-import { fetchAPIData } from "../../hooks/useAPI";
+import { fetchData } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import ContactForm from "../ContactForm/ContactForm";
 import Preloader from "../Preloader/Preloader";
@@ -16,6 +16,9 @@ import Button from "../Button/Button";
 import Heading from "../Heading/Heading";
 import { ContactFormRef } from "../../models";
 import Icon from "../Icons/icons";
+import { mockContactForm } from "../../models/mockupData";
+import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
+import { PageSectionProps, InformationCard1Props, ProjectProps } from "../../models";
 
 /**
  * 2) Modal Provider:
@@ -28,19 +31,12 @@ import Icon from "../Icons/icons";
  */
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalData, setModalContent] = useState(null);
+  const [modalData, setModalContent] = useState<InformationCard1Props | ProjectProps | PageSectionProps | null>(null);
   const [childComponent, setChildComponent] = useState('');
-  // const { fetchDefinition } = useDefinition();
+  const { formSubmit } = useThirdPartyFormSubmission();
 
-  // Function to close the modal
-  function closeModal() {
-    setIsOpen(false);
-    setModalContent(null);
-    setChildComponent('');
-  }
-
-  // Function to open the modal
-  function openModal({
+  // [Core LOGIC] ...
+  function openModal({ // Function to open the modal
     dataType,
     dataId,
   }: {
@@ -57,16 +53,29 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
      * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
      * -- NOTE: The modal is always fetching something
      * */
-    fetchAPIData(dataType, dataId).then((result) => {
-      setModalContent(result);
+    fetchData(dataType, dataId).then((response) => {
+      setModalContent(response);
     });
 
     setIsOpen(true);
   }
 
+  function closeModal() { // Function to close the modal
+    setIsOpen(false);
+    setModalContent(null);
+    setChildComponent('');
+  }
+
+  // [CUSTOM LOGIC] ...
+  function submitModalForm(submittedData: typeof mockContactForm.initValues) {
+    formSubmit(submittedData).then((response) => {
+      setModalContent(response);
+    });
+  }
+
   return (
     <ModalContext.Provider
-      value={{ isOpen, childComponent, openModal, closeModal, modalData }}
+      value={{ isOpen, openModal, closeModal, childComponent, submitModalForm, modalData }}
     >
       {children}
     </ModalContext.Provider>

@@ -34,7 +34,7 @@ const Hero = () => {
 
         <img
           className="Hero-persona img-fluid"
-          src="/images/hero-persona.png"
+          src="/images/eric-njanga-1.png"
           alt=""
         />
         <img

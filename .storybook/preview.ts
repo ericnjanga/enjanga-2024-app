@@ -33,6 +33,11 @@ if (typeof window !== 'undefined') {
           pageSection: {...mockPageSectionsProps[1]}
         };  
       });
+      this.get("/pageSections/4", () => {
+        return {
+          pageSection: {...mockPageSectionsProps[2]}
+        };  
+      });
       this.get("/expertiseSpecsByParent/1", () => {
         return { 
           expertiseSpecs: [...mockInformationCard1DataArray]

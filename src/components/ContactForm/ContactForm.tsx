@@ -1,10 +1,11 @@
-import { useRef, forwardRef, useImperativeHandle } from "react";
+import { useContext, useRef, forwardRef, useImperativeHandle } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import InputField from "./InputField/InputField";
 import { ContactFormRef } from "../../models";
 import { mockContactForm } from "../../models/mockupData";
-import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
+import { ModalContext } from "../../utils/contexts";
+import Preloader from "../Preloader/Preloader";
 
 /**
  * 1) We use Formik to manage the form's state and handle submission
@@ -13,6 +14,25 @@ import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
  */
 
 const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
+  const context = useContext(ModalContext);
+
+  useImperativeHandle(ref, () => ({
+    submitForm: () => {
+      if (formikRef.current) {
+        formikRef.current.submitForm();
+      }
+    },
+  }));
+
+  const formikRef = useRef<any>(null);
+
+  if (!context) {
+    // return if the context is empty
+    return <Preloader />;
+  }
+
+  // Otherwise, destructure the context
+  const { submitModalForm } = context;
 
 
   // Validation Schema
@@ -25,43 +45,14 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
     details: Yup.string().required("Details are required"),
   });
 
-  useImperativeHandle(ref, () => ({
-    submitForm: () => {
-      if (formikRef.current) {
-        formikRef.current.submitForm();
-      }
-    },
-  }));
-
-  const formikRef = useRef<any>(null);
-
-  // const handleContactFormSubmit = async(values: typeof mockContactForm.initValues) => {
-  //   try {
-  //     const response = await fetch('https://formspree.io/f/movvqplj', {
-  //       method: 'POST',
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(values),
-  //     });
-
-  //     if (response.ok) {
-  //       alert("Form submitted successfully!");
-  //     } else {
-  //       alert("Failed to submit the form.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error submitting form:", error);
-  //   }
-  // };
-
   return (
     <Formik
       initialValues={mockContactForm.initValues}
       validationSchema={validationSchema}
       innerRef={formikRef}
       onSubmit={(values, { resetForm }) => {
-        handleContactFormSubmit(values);
+        submitModalForm(values);
+        // handleContactFormSubmit(values);
         // console.log("Form submitted with values:", values);
         resetForm();
       }}

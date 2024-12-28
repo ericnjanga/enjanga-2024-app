@@ -85,7 +85,8 @@ export const mockModalContext = {
   },
   closeModal: () => {
     console.log(`Modal closed`);
-  }
+  },
+  submitModalForm: () => {}
 };
 
 
@@ -98,6 +99,18 @@ export const mockPageSectionsProps = [
     id: '2',
     title: 'Writing custom code', 
     description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>', 
+  }, { // Expertise specification 1
+    id: '4',
+    title: 'A little bit about me :)', 
+    description: `
+      <p>I’m a passionate of web technologies - Lorem ipsum dolor sit amet consectetur. Eget id nisl amet consectetur nulla elementum lacus vehicula odio. </p>
+      <p>Rhoncus vulputate et nisl etiam faucibus dui. Interdum mollis sit quam sodales posuere lorem purus ipsum. Fermentum urna ullamcorper fermentum semper vel convallis ac orci. Viverra vitae dignissim cum erat facilisis sit massa ornare.</p>
+      <ul>
+        <li>15+ years in the tech industry</li>
+        <li>Computer science Bachelor degree</li>
+        <li>Have a keep eye for aesthetics</li>
+      </ul>
+    `, 
   }
 ];
 
@@ -108,6 +121,10 @@ export const mockContactForm = {
     category: "",
     details: "",
   },
+  /**
+   * Third-party form submission:
+   * https://formspree.io/forms/movvqplj/submissions
+   */
   submissionEndpoint: 'https://formspree.io/f/movvqplj',
   submissionDefault: {
     title: '',

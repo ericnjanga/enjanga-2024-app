@@ -2,6 +2,7 @@ import { Registry, Model } from "miragejs";
 import { Server } from "miragejs";
 import { ReactNode } from "react";
 import { FieldInputProps, FieldMetaProps } from "formik";
+import { mockContactForm } from "./mockupData";
 
 
 /**
@@ -71,15 +72,16 @@ export interface ButtonProps {
 export type ModalContextProps = {
   isOpen: boolean               // Is the modal window open?
   childComponent: string          // Type of information being rendered: "data" or "another component"?
-  modalData: InformationCard1Props | ProjectProps | null             // Data rendered by the modal
+  modalData: InformationCard1Props | ProjectProps | PageSectionProps | null             // Data rendered by the modal
   openModal: ({ 
     dataType, 
     dataId 
   } : { 
       dataType: string, 
       dataId: string 
-  }) => void     // Responsible for opening the modal
-  closeModal: () => void        // Responsible for losing the modal
+  })                   => void     // Responsible for opening the modal
+  closeModal:       () => void        // Responsible for losing the modal
+  submitModalForm:  (data: typeof mockContactForm.initValues) => void
 };
 
 export interface InputFieldProps extends FieldInputProps<string> { 

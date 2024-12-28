@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
+import { mockContactForm } from "../models/mockupData";
 
 
 /**
@@ -13,50 +14,87 @@ import { logErrorMessage } from "../utils/functions";
  * - CODE EFFICIENCY
  */
 
-/**
- * Fetch server data, handle errors, and save response using a state provided function
- * @param stateProps It has to match the database record property
- * @param setStateFct 
- * @param queryUrl 
- */
-const fetchData = async(
-    stateProps: string, 
-    setStateFct: React.Dispatch<React.SetStateAction<null>>, 
-    queryUrl: string
-  ) => {
-  try {
-    const response = await fetch(queryUrl);
+export const fetchData = async(dataType: string, dataId: string | null) => {
+  let queryString = '';
+  let stateProps = ''; // Property name of the data we expect from the API response
 
-    // Handle HTTP Errors (500, 400, ...)
+  switch(dataType) {
+    case 'expertiseSpecs':
+      queryString = `/api/expertiseSpecs/${dataId}`;
+      stateProps = 'expertiseSpec';
+    break;
+
+    case 'expertiseSpecsParent':
+      queryString = `/api/expertiseSpecsByParent/${dataId}`;
+      stateProps = 'expertiseSpecs';
+    break;
+
+    case 'projects':
+      queryString = `/api/projects/${dataId}`;
+      stateProps = 'project';
+    break;
+
+    case 'all projects':
+      queryString = `/api/projects`;
+      stateProps = 'projects';
+    break;
+
+    case 'pageSections':
+      queryString = `/api/pageSections/${dataId}`;
+      stateProps = 'pageSection';
+    break;
+
+    case 'navOptions':
+      queryString = `/api/navOptions`;
+      stateProps = 'navOptions';
+    break; 
+  }
+
+  try {
+    // Issue the API request and wait for the response ...
+    const response = await fetch(queryString);
+
+    // console.log('>>>>>(244) data fetch', dataId); // [Mode Troubleshooting] ...
+
+    // Handle http errors ...
     if (!response.ok) {
       throw new Error(`HTTP Error. Status: ${response.status}`);
     }
 
-    // Parse data to JSON
+    // Once the response is available, parse it to json ...
     const data = await response.json();
 
-    // Handle invalid data structure
-    if (!data && !data[stateProps]) {
-      throw new Error('Invalid data structure');
+    // console.log('.....1***', data); // [Mode Troubleshooting] ...
+    // console.log('.....2***', stateProps); // [Mode Troubleshooting] ...
+
+    // Handle data structure errors ...
+    if (!data || !data[stateProps]) {
+      throw new Error("The expected data structure was not received. Please try another query.");
     }
 
-    console.log(`**** data[${stateProps}]>>>`, data[stateProps]);
-    // Save data
-    setStateFct(data[stateProps]);
-  }
-  catch(error) {
-    // Handle all errors
-    logErrorMessage(error); 
+    // Place the result inside the returned promise ...
+    return data[stateProps];
+  } 
+  
+  // Place the error object inside the returned promise ...
+  catch (error: unknown) { 
+    const errorMsg = { title:'Oups, something went wrong!', description: 'An unknown error occurred.' };
+    if (error instanceof Error) {
+      errorMsg.description = error.message; 
+    } 
+    logErrorMessage(error); // Display the errpr in the console anyway
+    return errorMsg;
   }
 };
+
 
  
 // Returns a database record of type "PageSectionProps"
 export const usePageSection = (id: string): PageSectionProps | null => {
   const [pageSection, setPageSection] = useState(null); 
 
-  useEffect(() => {
-    fetchData('pageSection', setPageSection, `/api/pageSections/${id}`);
+  useEffect(() => {  
+    fetchData('pageSections', id).then(response => setPageSection(response));
   }, [id]);
   return pageSection;
 };
@@ -65,8 +103,10 @@ export const usePageSection = (id: string): PageSectionProps | null => {
 export const useExpertises = (parentId: string): InformationCard1Props[] | null => {
   const [InformationCard1s, setPanelGrid1] = useState(null); 
   
-  useEffect(() => {
-    fetchData('expertiseSpecs', setPanelGrid1, `/api/expertiseSpecsByParent/${parentId}`);
+  useEffect(() => { 
+    fetchData('expertiseSpecsParent', parentId).then((response) => { 
+      setPanelGrid1(response);
+    }); 
   }, [parentId]);
   return InformationCard1s;
 };
@@ -75,8 +115,8 @@ export const useExpertises = (parentId: string): InformationCard1Props[] | null 
 export const useExpertise = (id: string): InformationCard1Props | null => {
   const [InformationCard1s, setPanelGrid1] = useState(null); 
   
-  useEffect(() => {
-    fetchData('InformationCard1s', setPanelGrid1, `/api/InformationCard1/${id}`);
+  useEffect(() => { 
+    fetchData('expertiseSpecs', id).then((response) => setPanelGrid1(response)); 
   }, [id]);
   return InformationCard1s;
 };
@@ -85,8 +125,8 @@ export const useExpertise = (id: string): InformationCard1Props | null => {
 export const useProjects = (): ProjectProps[] | null => {
   const [projects, setPanelGrid1] = useState(null); 
   
-  useEffect(() => {
-    fetchData('projects', setPanelGrid1, `/api/projects`);
+  useEffect(() => { 
+    fetchData('all projects', null).then((response) => setPanelGrid1(response)); 
   }, []);
   return projects;
 };
@@ -95,8 +135,8 @@ export const useProjects = (): ProjectProps[] | null => {
 export const useNavOptions = (): NavOptionProps[] | null => {
   const [navOptions, setNavOptions] = useState(null); 
   
-  useEffect(() => {
-    fetchData('navOptions', setNavOptions, `/api/navOptions`);
+  useEffect(() => { 
+    fetchData('navOptions', null).then((response) => setNavOptions(response)); 
   }, []);
   return navOptions;
 };
@@ -114,7 +154,7 @@ export const useDefinition = () => {
       // Issue the API request and wait for the response ...
       const response = await fetch(`/api/definition/${id}`);
 
-      console.log('>>>>>(244) data fetch', id);
+      // console.log('>>>>>(244) data fetch', id); // [Mode Troubleshooting] ...
 
       // Handle http errors ...
       if (!response.ok) {
@@ -139,74 +179,47 @@ export const useDefinition = () => {
       if (error instanceof Error) {
         errorMsg.description = error.message; 
       } 
+      logErrorMessage(error); // Display the errpr in the console anyway
       return errorMsg;
     }
   }, []);
 
-  return {
-    fetchDefinition,
-  };
+  return { fetchDefinition };
 };
 
 
-export const fetchAPIData = async(dataType: string, dataId: string) => {
-  let queryString = '';
-  let stateProps = ''; // Property name of the data we expect from the API response
-  // `/api/definition/${dataId}` 
+export const useThirdPartyFormSubmission = () => {
+  const formSubmit = useCallback(async(values: typeof mockContactForm.initValues) => {
 
-  // ...
-  switch(dataType) {
-    case 'expertiseSpecs':
-      queryString = `/api/expertiseSpecs/${dataId}`;
-      stateProps = 'expertiseSpec';
-    break;
-
-    case 'projects':
-      queryString = `/api/projects/${dataId}`;
-      stateProps = 'project';
-    break;
-
-    case 'pageSections':
-      queryString = `/api/pageSections/${dataId}`;
-      stateProps = 'pageSection';
-    break;
-  }
-
-
+    let message = { ...mockContactForm.submissionDefault };
+   
+    try {
+      const response = await fetch(mockContactForm.submissionEndpoint, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
   
-
-  try {
-    // Issue the API request and wait for the response ...
-    const response = await fetch(queryString);
-
-    console.log('>>>>>(244) data fetch', dataId);
-
-    // Handle http errors ...
-    if (!response.ok) {
-      throw new Error(`HTTP Error. Status: ${response.status}`);
+      if (response.ok) {
+        message = { ...mockContactForm.submissionSuccess };
+      } else {
+        message = { ...mockContactForm.submissionFailure };
+      }
+    } catch (error) {
+      message = { ...mockContactForm.submissionError };
+      message.description = `${message.description} ${error}`; 
     }
-
-    // Once the response is available, parse it to json ...
-    const data = await response.json();
-
-    // Handle data structure errors ...
-    if (!data || !data[stateProps]) {
-      throw new Error("The expected data structure was not received. Please try another query.");
-    }
-
-    // Place the result inside the returned promise ...
-    return data[stateProps];
-  } 
   
-  // Place the error object inside the returned promise ...
-  catch (error: unknown) { 
-    const errorMsg = { title:'Oups, something went wrong!', description: 'An unknown error occurred.' };
-    if (error instanceof Error) {
-      errorMsg.description = error.message; 
-    } 
-    return errorMsg;
-  }
+    return message;
+  }, []);
+
+  return { formSubmit };
 };
+
+
+
 
 
 /*
@@ -234,7 +247,7 @@ export const useCardDetails = (): HeroProps | null => {
       setCar(data.car);
     }
     catch (error) {
-      logErrorMessage(error); 
+      logErrorMessage(error); // Display the errpr in the console anyway
     }
   }, [id]);
 

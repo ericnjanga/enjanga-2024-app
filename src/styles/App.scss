@@ -1,23 +1,38 @@
-
 /**
  * NOTE ON BACKGROUND IMAGES
  * ------
  They have to be referrenced relative to this file (_index.scss), so url(./_img/...)
 */
 
+
+
+
+// Refactor this later *****
+// --------------
+:root {
+  --appname-pageSection-header-marg-bottom: 15px;
+}
+.pageSection-title {
+  margin-bottom: var(--appname-pageSection-header-marg-bottom)!important;
+}
+// Refactor this later *****
+// --------------
+
+
+
+
+
 // Using layers to override bootstrap features without using "!important"
 @layer vendors {
-    @import './vendors/_bootstrap@5.3.3.min';
+  @import "./vendors/_bootstrap@5.3.3.min";
 }
 
 @layer base {
-    @import './base/initialization';
-    @import './base/variables';
-    @import './base/utilities';
-} 
-
-@layer theming {
-    @import './theming/light-mode';
+  @import "./base/initialization";
+  @import "./base/variables";
+  @import "./base/utilities";
 }
 
-  
+@layer theming {
+  @import "./theming/light-mode";
+}
