@@ -3,6 +3,8 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import ProjectThumb from "./ProjectThumb";
 import { ProjectProps } from "../../models";
+import { ModalContext } from "../../utils/contexts";
+import { mockProjectThumbDataArray, mockModalContext } from "../../models/mockupData";
 
 export default {
   title: "Medium Components/ProjectThumb",  // The category and name of the component
@@ -13,10 +15,16 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<ProjectProps> = (args) => <ProjectThumb {...args} />;
+const Template: StoryFn<ProjectProps> = (args) => {
+
+  return (
+    <ModalContext.Provider value={mockModalContext}>
+      <ProjectThumb {...args} />
+    </ModalContext.Provider>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  // Here you can set props if ProjectThumb had any dynamic inputs. 
-  // Since the ProjectThumb is a static component, no arguments are needed for this example.
+  ...mockProjectThumbDataArray[0]
 };

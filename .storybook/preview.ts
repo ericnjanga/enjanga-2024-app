@@ -1,60 +1,71 @@
 import type { Preview } from "@storybook/react";
-import { initialize, mswLoader } from 'msw-storybook-addon';
-import { createServer } from "miragejs"; 
-import './../src/styles/App.scss';
-import { mockPageSectionsProps, mockInformationCard1DataArray, mockNavOptions } from "./../src/models/mockupData"; 
+import { initialize, mswLoader } from "msw-storybook-addon";
+import { createServer } from "miragejs";
+import "./../src/styles/App.scss";
+import {
+  mockPageSectionsProps,
+  mockInformationCard1DataArray,
+  mockNavOptions,
+  mockProjectThumbDataArray
+} from "./../src/models/mockupData";
 
 // Ensuring that Bootstrap's JavaScript is globally available across all stories.
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
-
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 /**
  * MirageJS server for Storybook environment
  * -------------------
  * 1) Initializing the server, which exposes the fake API to all stories
- * 2) Declaring custom routes, so that API calls will hit expected endpoints 
+ * 2) Declaring custom routes, so that API calls will hit expected endpoints
  * 3) Returning mocked data for each endpoints to simplify test cases
  */
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   createServer({
-
     // Declaring the routes we know will be used by tested components
     routes() {
-      this.namespace = 'api';
+      this.namespace = "api";
 
       this.get("/pageSections/1", () => {
         return {
-          pageSection: {...mockPageSectionsProps[0]}
-        };  
+          pageSection: { ...mockPageSectionsProps[0] },
+        };
       });
       this.get("/pageSections/2", () => {
         return {
-          pageSection: {...mockPageSectionsProps[1]}
-        };  
+          pageSection: { ...mockPageSectionsProps[1] },
+        };
+      });
+      this.get("/pageSections/3", () => {
+        return {
+          pageSection: { ...mockPageSectionsProps[2] },
+        };
       });
       this.get("/pageSections/4", () => {
         return {
-          pageSection: {...mockPageSectionsProps[2]}
-        };  
+          pageSection: { ...mockPageSectionsProps[2] },
+        };
       });
       this.get("/expertiseSpecsByParent/1", () => {
-        return { 
-          expertiseSpecs: [...mockInformationCard1DataArray]
-        };
-      }); 
-      // navOptions ...
-      this.get("/navOptions", () => { 
         return {
-          navOptions: [...mockNavOptions]
+          expertiseSpecs: [...mockInformationCard1DataArray],
         };
       });
-    }
-
+      // navOptions ...
+      this.get("/navOptions", () => {
+        return {
+          navOptions: [...mockNavOptions],
+        };
+      });
+      // Projects list ...
+      this.get("/projects", () => {
+        return {
+          projects: [...mockProjectThumbDataArray],
+        };
+      });
+    },
   });
 }
 
- 
 /*
  * Initializes MSW (For mocking network requests)
  * See https://github.com/mswjs/msw-storybook-addon#configuring-msw
@@ -74,7 +85,7 @@ const addFont = () => {
 
 // Remove padding from the Storybook preview's body tag
 const bodyStyles = () => {
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.innerHTML = `
     body { 
       margin: 0 !important;
@@ -83,7 +94,7 @@ const bodyStyles = () => {
   document.head.appendChild(style);
 };
 
-bodyStyles(); 
+bodyStyles();
 addFont();
 
 const preview: Preview = {
@@ -91,17 +102,17 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          'A) Page Section/Navigation',
-          'A) Page Section/Hero',
-          'A) Page Section/Caroussel', 
-          'A) Page Section/Portfolio',
-          'A) Page Section/About', 
-          'A) Page Section/Footer',
-          'B) Panels/PanelGrid1',
+          "A) Page Section/Navigation",
+          "A) Page Section/Hero",
+          "A) Page Section/Caroussel",
+          "A) Page Section/Portfolio",
+          "A) Page Section/About",
+          "A) Page Section/Footer",
+          "B) Panels/PanelGrid1",
         ], // Custom order of story groups
-        method: 'alphabetical', // Sort alphabetically
-        locales: 'en-US', // Optional locale for sorting
-        default: 'story' // Default sorting behavior for unknown cases
+        method: "alphabetical", // Sort alphabetically
+        locales: "en-US", // Optional locale for sorting
+        default: "story", // Default sorting behavior for unknown cases
       },
     },
 
@@ -110,49 +121,49 @@ const preview: Preview = {
       // List of all viewports
       viewports: {
         smallerScreen: {
-          name: 'XS Screen (max w: 320px)',
+          name: "XS Screen (max w: 320px)",
           styles: {
-            width: '320px',
-            height: '668px',
+            width: "320px",
+            height: "668px",
           },
         },
         smallScreen: {
-          name: 'SM Screen (max w: 576px)',
+          name: "SM Screen (max w: 576px)",
           styles: {
-            width: '576px',
-            height: '668px',
+            width: "576px",
+            height: "668px",
           },
         },
         MinMediumScreen: {
-          name: 'MD Screen (max w: 768px)',
+          name: "MD Screen (max w: 768px)",
           styles: {
-            width: '768px',
-            height: '768px',
+            width: "768px",
+            height: "768px",
           },
         },
         LarMediumScreen: {
-          name: 'LMD Screen (max w: 992px)',
+          name: "LMD Screen (max w: 992px)",
           styles: {
-            width: '992px',
-            height: '768px',
+            width: "992px",
+            height: "768px",
           },
         },
         largeScreen: {
-          name: 'LG Screen (m.w: 1200px)',
+          name: "LG Screen (m.w: 1200px)",
           styles: {
-            width: '1200px',
-            height: '1080px',
+            width: "1200px",
+            height: "1080px",
           },
         },
         extraLargeScreen: {
-          name: 'XL Screen (1400px up)',
+          name: "XL Screen (1400px up)",
           styles: {
-            width: '1400px',
-            height: '1080px',
+            width: "1400px",
+            height: "1080px",
           },
         },
-      }, 
-      defaultViewport: 'Large Medium Screen', 
+      },
+      defaultViewport: "Large Medium Screen",
     },
     controls: {
       matchers: {
@@ -161,10 +172,10 @@ const preview: Preview = {
       },
     },
     // Adding the MSW loader to all stories
-    loaders: [mswLoader], 
+    loaders: [mswLoader],
   },
 
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 };
 
 export default preview;

@@ -66,6 +66,46 @@ export const mockInformationCard1DataArray = [
     `, 
   }
 ];
+
+export const mockProjectThumbDataArray = [
+  {
+    id: '1',
+    title: 'Design and UI Development of a comprehensive De ...', 
+    blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+    image: 'images/project-1.png',
+    description: `<h3> (Project 1)</h3>
+      <p><b>Description ..</b></p>
+      <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+    `, 
+  },{
+    id: '2',
+    title: `Front-end Dev and prototyping for a large website's design system`, 
+    blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+    image: 'images/project-2.png',
+    description: `<h3> (Project 2)</h3>
+      <p><b>Description ..</b></p>
+      <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+    `, 
+  },{
+    id: '3',
+    title: `Front-end Dev, research, and prototyping for a website rebranding`, 
+    blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+    image: 'images/project-3.png',
+    description: `<h3> (Project 3)</h3>
+      <p><b>Description ..</b></p>
+      <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+    `, 
+  },{
+    id: '4',
+    title: `Design Prototypes for improving Government services delivery`, 
+    blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+    image: 'images/project-4.png',
+    description: `<h3> (Project 4)</h3>
+      <p><b>Description ..</b></p>
+      <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+    `, 
+  }
+];
  
 
 export const mockModalContext = {
@@ -99,6 +139,10 @@ export const mockPageSectionsProps = [
     id: '2',
     title: 'Writing custom code', 
     description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>', 
+  }, { // Portfolio
+    id: '3',
+    title: 'Some of my work', 
+    description: 'I’ve wrote code for hundreds of web applications over my 15+ years of experience. Below is some of my work.', 
   }, { // Expertise specification 1
     id: '4',
     title: 'A little bit about me :)', 

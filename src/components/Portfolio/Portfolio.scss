@@ -1,5 +1,34 @@
+:root {
+  --appname-carousel-hover-state: 35%; 
+  --appname-carousel-btnprev-y: -60px; 
+  --appname-carousel-item-gap: 20px;
+
+  --appname-carousel-controls-top: -110px;
+  --appname-carousel-controls-flexdir: column;
+  --appname-carousel-controls-width: min-content;
+  --appname-carousel-controls-gap: 5px;
+}
+
 
 
 .Portfolio {
   background-color: var(--appname-theme-light-xxxx-0);
+}
+
+.site-carousel__items-list {
+  list-style: none;    
+  margin: 0;
+  padding: 0;
+  
+  // Hide default carousel controls
+  .slick-arrow {
+      display: none!important;
+  }
+
+  // TEMPORARY
+  // -------------------
+  display: flex;
+  gap: 20px;
+  // -------------------
+
 }

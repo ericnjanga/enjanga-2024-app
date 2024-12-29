@@ -36,8 +36,9 @@ function makeMirageServer() {
       // Projects ...
       server.create('project', {
         id: '1',
-        title: 'project 1 title', 
-        blurb: `project 1 blurb ...`,
+        title: 'Design and UI Development of a comprehensive De ...', 
+        blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+        image: 'images/project-1.png',
         description: `<h3> (Project 1)</h3>
           <p><b>Description ..</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
@@ -45,8 +46,9 @@ function makeMirageServer() {
       });
       server.create('project', {
         id: '2',
-        title: 'project 2 title', 
-        blurb: `project 2 blurb ...`,
+        title: `Front-end Dev and prototyping for a large website's design system`, 
+        blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+        image: 'images/project-2.png',
         description: `<h3> (Project 2)</h3>
           <p><b>Description ..</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
@@ -54,8 +56,9 @@ function makeMirageServer() {
       });
       server.create('project', {
         id: '3',
-        title: 'project 3 title', 
-        blurb: `project 3 blurb ...`,
+        title: `Front-end Dev, research, and prototyping for a website rebranding`, 
+        blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+        image: 'images/project-3.png',
         description: `<h3> (Project 3)</h3>
           <p><b>Description ..</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
@@ -63,8 +66,9 @@ function makeMirageServer() {
       });
       server.create('project', {
         id: '4',
-        title: 'project 4 title', 
-        blurb: `project 4 blurb ...`,
+        title: `Design Prototypes for improving Government services delivery`, 
+        blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+        image: 'images/project-4.png',
         description: `<h3> (Project 4)</h3>
           <p><b>Description ..</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>

@@ -44,7 +44,9 @@ export type ProjectProps = {
   id: string
   title: string 
   blurb: string
+  image: string
   description: string
+  className?: string
 };
 
 export type NavOptionProps = {

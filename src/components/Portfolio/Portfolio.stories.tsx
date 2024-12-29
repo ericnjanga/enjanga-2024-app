@@ -2,6 +2,8 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Portfolio from "./Portfolio";
+import { ModalContext } from "../../utils/contexts";
+import { mockModalContext } from "../../models/mockupData";
 
 export default {
   title: "A) Page Section/Portfolio",  // The category and name of the component
@@ -12,7 +14,11 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn = (args) => <Portfolio {...args} />;
+const Template: StoryFn = (args) => (
+  <ModalContext.Provider value={mockModalContext}>
+    <Portfolio {...args} />
+  </ModalContext.Provider>
+);
 
 export const Default = Template.bind({});
 Default.args = {

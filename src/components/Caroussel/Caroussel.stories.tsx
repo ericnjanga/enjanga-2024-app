@@ -3,9 +3,11 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Caroussel from "./Caroussel";
 import PanelGrid1 from "../PanelGrid1/PanelGrid1";
+import { ModalContext } from "../../utils/contexts";
+import { mockModalContext } from "../../models/mockupData";
 
 export default {
-  title: "A) Page Section/Caroussel",  // The category and name of the component
+  title: "A) Page Section/Caroussel", // The category and name of the component
   component: Caroussel,
   argTypes: {
     // You can define any args here if you want to make the story dynamic.
@@ -14,19 +16,18 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args) => {
-
   return (
-    <section className="Caroussel sc-block">
-      <div className="container">
-        
-        <PanelGrid1 pageSectionId={args.slide1Id} />
-     
-      </div>
-    </section>
+    <ModalContext.Provider value={mockModalContext}>
+      <section className="Caroussel sc-block">
+        <div className="container">
+          <PanelGrid1 pageSectionId={args.slide1Id} />
+        </div>
+      </section>
+    </ModalContext.Provider>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  slide1Id: '1'
+  slide1Id: "1",
 };

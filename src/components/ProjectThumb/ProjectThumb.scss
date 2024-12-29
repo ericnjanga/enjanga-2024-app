@@ -1,14 +1,77 @@
-
+:root { 
+  --appname-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
+}
 
 .ProjectThumb.card {
+  position: relative;
   display: block;
-  width: 100%; 
+  text-decoration: none;
+  display: block;
+  width: 100%;
   background-color: transparent;
-  border: 2px solid rgb(128, 0, 255); 
+  border-width: 0px; 
+
+  border-radius: var(--appname-bdr-radius-0);
+  overflow: hidden;
 
   cursor: pointer;
 
-  &:hover {
-    background-color: rgba($color: #000000, $alpha: 0.2);
+  .img-fluid {
+    background-color: var(--appname-theme-light-cccc-2);
   }
+
+  &:hover {
+    background-color: var(--appname-theme-light-cccc-11);
+
+    .img-fluid {
+      background-color: transparent;
+    }
+
+    .ProjectThumb-description {
+      color: var(--appname-theme-light-xxxx-0);
+    } 
+  }
+
+  .card-body {
+    background-color: transparent;
+    padding: var(--appname-carousel-card-padd);
+  }
+
+  .ProjectThumb-description {
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+
+  // // Overlay screen designed to blur the content on hover ...
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: 1;
+  //   opacity: 0; // hidden by default
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   transition: all 0.3s ease; // ensures a smooth transition
+  // }
+
+  // .hover-btn {
+  //   position: absolute;
+  //   z-index: 2;
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   box-shadow: 0 1px 3px rgb(19, 63, 0);
+  //   top: 20px;
+  //   right: 20px;
+  //   width: 41.34px;
+  //   height: 41.34px;
+
+  //   &::after {
+  //     font-size: 1.5rem;
+  //     left: 0.7rem;
+  //   }
+  // }
+
+
 }
