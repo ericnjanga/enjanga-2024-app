@@ -9,8 +9,14 @@ import About from "./components/About/About";
 import Modal from "./components/ModalModule";
 import { ModalProvider } from "./components/ModalModule";
 import Navigation from "./components/Navigation/Navigation";
+
 // Ensuring that Bootstrap's JavaScript is globally available across all components.
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+// We'll use slick-carousel in two compoment, so we might as well import it globally
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 const Home = () => <p>Home</p>;
 
