@@ -6,7 +6,9 @@ const Caroussel = () => {
     <section className="Caroussel sc-block">
       <div className="container">
         
-        <PanelGrid1 pageSectionId={'2'} />
+      <PanelGrid1 pageSectionId={'2'} />
+      <PanelGrid1 pageSectionId={'2'} />
+      <PanelGrid1 pageSectionId={'2'} />
         {/* <PanelGrid1 pageSectionId={'6'} /> */}
      
       </div>
