@@ -12,7 +12,7 @@ export const useSliderOps = (
   sliderRef: React.RefObject<HTMLDivElement>,
   config: SliderConfig,
   setReadyState: React.Dispatch<React.SetStateAction<boolean>>,
-  listOfItems: ProjectProps[] | null 
+  listOfItems: ProjectProps[] | string[] | null 
 ) => {
 
   useEffect(() => {

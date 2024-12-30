@@ -3,11 +3,11 @@ import InformationCard1 from "../InformationCard1/InformationCard1";
 import "./PanelGrid1.scss";
 import PanelHero from "../PanelHero/PanelHero";
 
-const PanelGrid1 = ({ pageSectionId }: { pageSectionId: string }) => {
+const PanelGrid1 = ({ pageSectionId, className }: { pageSectionId: string, className?: string }) => {
   const expertiseList = useExpertises(pageSectionId);
 
   return (
-    <section className="PanelGrid1">
+    <section className={`PanelGrid1 ${className}`}>
       <PanelHero id={ pageSectionId } />
       
       <div className="content-grid">

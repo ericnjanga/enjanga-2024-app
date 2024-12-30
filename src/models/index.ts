@@ -122,7 +122,7 @@ export interface SliderConfig {
   infinite: boolean;
   slidesToShow: number;
   slidesToScroll: number;
-  responsive: {
+  responsive?: {
     breakpoint: number;
     settings: {
       slidesToShow: number;

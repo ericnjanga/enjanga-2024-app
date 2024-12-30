@@ -10,17 +10,17 @@ import { useSliderOps } from "../../hooks/helpers";
 
 const Portfolio = () => {
   const [sliderReady, setSliderReady] = useState(true);
-  const projectList = useProjects();
+  const slidesList = useProjects();
   const carouselRef = useRef<HTMLDivElement | null>(null); // Use referrencing the carousel element
 
-  // Memoize projectList to prevent unnecessary recomputations
-  const memoizedProjectList = useMemo(() => projectList, [projectList]);
+  // Memoize slidesList to prevent unnecessary recomputations
+  const memoizedslidesList = useMemo(() => slidesList, [slidesList]);
 
   useSliderOps( // Setup slider ...
     carouselRef, 
     sliderPortfolioConfig, 
     setSliderReady, 
-    memoizedProjectList
+    memoizedslidesList
   );
 
   return (
@@ -29,11 +29,11 @@ const Portfolio = () => {
         <div className="PanelGrid1">
           <PanelHero id="3" />
 
-          {!projectList || projectList.length === 0 || !sliderReady ? (
+          {!slidesList || slidesList.length === 0 || !sliderReady ? (
             <Preloader />
           ) : (
-            <div className="site-carousel__items-list" ref={carouselRef}> 
-              {projectList.map((project, index) => {
+            <div className="slider" ref={carouselRef}> 
+              {slidesList.map((project, index) => {
                 return (
                   <ProjectThumb
                     key={index}
