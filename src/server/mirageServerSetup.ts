@@ -139,8 +139,8 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '1', 
         parentId: '2',
-        blurb: `Translating visual designs into responsive and interactive User Interfaces.`,
-        title: 'Expertise 1',
+        blurb: `Creating single page applications that are optimized for performance, high traffic, and optimal User Experience.`,
+        title: 'High performance web apps',
         description: ` 
           <p><b>Description 2 ...</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
@@ -149,17 +149,17 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '2', 
         parentId: '2',
-        blurb: `Ensuring Accessibility compliance ...`,
-        title: 'Expertise 2',
+        blurb: `WCAG and AODA Accessibility compliance.`,
+        title: 'Accessibility Compliance',
         description: ` 
-          <p><b>Description 4 ...</b></p>
+          <p><b>Optimizing the code structure for optimal (WCAG and AODA) ...</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `,  
       });
       server.create('expertiseSpec', {
         id: '3', 
         parentId: '2', 
-        blurb: `Solving complex and unusual coding problems and communication effectively with stakeholders`,
+        blurb: `***Solving complex and unusual coding problems and communication effectively with stakeholders`,
         title: 'Expertise 3',
         description: ` 
           <p><b>Description 5 ...</b></p>
@@ -169,7 +169,7 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '4', 
         parentId: '2',
-        blurb: `Ensuring Accessibility compliance ...`,
+        blurb: `Translating visual designs into responsive and interactive User Interfaces.`,
         title: 'Expertise 4',
         description: ` 
           <p><b>Description 4 ...</b></p>

@@ -1,6 +1,7 @@
 import "./About.scss";
 import { usePageSection } from "../../hooks/useAPI";
 import Heading from "../Heading/Heading";
+import Button from "../Button/Button";
 
 const About = () => {
   const sectionData = usePageSection("4");
@@ -20,6 +21,17 @@ const About = () => {
               __html: sectionData ? sectionData.description : "",
             }}
           ></div>
+          <footer>
+            <Button 
+              icon='chat'
+              variant="secondary" 
+              neonVersion={true}
+              href="#scope-of-expertise"
+            >
+              Find me on LinkedIn
+            </Button>
+
+          </footer>
         </article>
       </div>
     </section>
