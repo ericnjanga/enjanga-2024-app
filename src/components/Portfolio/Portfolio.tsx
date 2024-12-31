@@ -18,12 +18,13 @@ const Portfolio = () => {
   // Memoize slidesList to prevent unnecessary recomputations
   const memoizedslidesList = useMemo(() => slidesList, [slidesList]);
 
-  useSliderInit( // Setup slider ...
-    carouselRef, 
+  useSliderInit(
+    // Setup slider ...
+    carouselRef,
     prevBtnRef,
     nextBtnRef,
     memoizedslidesList,
-    setSliderReady, 
+    setSliderReady,
     sliderPortfolioConfig
   );
 
@@ -36,17 +37,34 @@ const Portfolio = () => {
           {!slidesList || slidesList.length === 0 || !sliderReady ? (
             <Preloader />
           ) : (
-            <div className="slider" ref={carouselRef}> 
-              {slidesList.map((project, index) => {
-                return (
-                  <ProjectThumb
-                    key={index}
-                    {...project}
-                    className="site-carousel-item"
-                  />
-                );
-              })}
-            </div>
+            <section className="slider-container">
+              <nav className="slider-controls">
+                {/* Custom prev and next buttons */}
+                <button
+                  ref={prevBtnRef}
+                  className="btn btn-secondary slick-prev"
+                >
+                  Prev
+                </button>
+                <button
+                  ref={nextBtnRef}
+                  className="btn btn-secondary slick-next"
+                >
+                  Next
+                </button>
+              </nav>
+              <section className="slider" ref={carouselRef}>
+                {slidesList.map((project, index) => {
+                  return (
+                    <ProjectThumb
+                      key={index}
+                      {...project}
+                      className="site-carousel-item"
+                    />
+                  );
+                })}
+              </section>
+            </section>
           )}
         </div>
       </div>
