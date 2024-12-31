@@ -17,11 +17,20 @@
   }
 
 
+  a { 
+    &:hover { 
+      text-decoration: none;
+    }
+  }
+
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 10px solid purple;
     --appname-PanelGrid1-column-count: 2;
     --appname-pageSection-hero-marg-bottom: 45px;
+
+
+    min-height: 800px;
   }
 
   // Large screen ...
@@ -54,5 +63,30 @@
   // Smaller Screen ...
   @media (max-width: (576px - 1px)) {
     // border: 10px solid chocolate;
+  }
+
+
+
+
+
+  &.theme-1 {
+    color: var(--appname-theme-light-bbbb-1);
+    background-color: var(--appname-theme-light-bbbb-8);
+
+    a {
+      color: var(--appname-theme-light-bbbb-1);
+  
+      &:hover {
+        color: var(--appname-theme-light-eee-1); 
+      }
+    }
+  }
+  &.theme-2 {
+    color: var(--appname-theme-light-xxxx-0);
+    background-color: var(--appname-theme-light-bbbb-2);
+  }
+  &.theme-3 {
+    color: var(--appname-theme-light-xxxx-0);
+    background-color: var(--appname-theme-light-bbbb-01);
   }
 }

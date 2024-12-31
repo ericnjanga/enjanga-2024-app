@@ -8,28 +8,61 @@ import "slick-carousel"; // Slick JS (must be available after jQuery)
 
 import { ProjectProps, SliderConfig } from "../models"; 
 
-export const useSliderOps = (
+
+// TypeScript type for slick methods 
+declare global {
+  interface JQuery {
+    slickPrev(): void;
+    slickNext(): void;
+  }
+}
+
+/**
+ * Initialize a target component with a slick-slider plugin, and enable button controls
+ * @param sliderRef 
+ * @param prevBtnRef 
+ * @param nextBtnRef 
+ * @param listOfItems 
+ * @param setReadyState 
+ * @param config 
+ */
+export const useSliderInit = (
   sliderRef: React.RefObject<HTMLDivElement>,
-  config: SliderConfig,
+  prevBtnRef: React.RefObject<HTMLButtonElement>, 
+  nextBtnRef: React.RefObject<HTMLButtonElement>, 
+  listOfItems: ProjectProps[] | string[] | null,
   setReadyState: React.Dispatch<React.SetStateAction<boolean>>,
-  listOfItems: ProjectProps[] | string[] | null 
+  config: SliderConfig,
 ) => {
 
   useEffect(() => {
-    const $slider = sliderRef.current;
-    
-    if ($slider) { // Only initialize Slick if the DOM element is loaded.
-      if (!$slider.classList.contains("slick-initialized")) { // Initialize slick only once
-        $($slider).slick(config); // Initialize Slick carousel when component mounts
-        setReadyState(true); // Wait for slick to finish initializing before showing the slider
-      }
-    }
+    // Ensure the sliderRef, prevBtnRef, and nextBtnRef are available
+    if (sliderRef.current && prevBtnRef.current && nextBtnRef.current) {
+      const sliderElement = sliderRef.current;
 
-    // Cleanup Slick when the component unmounts
-    return () => {
-      if ($slider && $slider.classList.contains("slick-initialized")) {
-        $($slider).slick("unslick");
-      }
-    };
+      // Initialize the slider only if it's not already initialized (when component mounts)
+      if (!$(sliderElement).hasClass("slick-initialized")) {
+        // Initialize Slick carousel 
+        const slick = $(sliderElement).slick(config);
+
+        // Bind custom prev/next buttons to slick actions
+        $(prevBtnRef.current).on('click', () => { slick.slick('slickPrev'); }); 
+        $(nextBtnRef.current).on('click', () => { slick.slick('slickNext'); });
+
+        // Wait for slick to finish initializing before showing the slider
+        setReadyState(true); 
+
+        // Cleanup Slick when the component unmounts or re-runs
+        return () => {
+          if (prevBtnRef.current && nextBtnRef.current && sliderElement) {
+            $(prevBtnRef.current).off('click');
+            $(nextBtnRef.current).off('click'); 
+            $(sliderElement).slick("unslick"); // Destroy the Slick slider instance 
+          }
+        };
+      } 
+    }
   }, [config, listOfItems]); // No need for setReadyState or sliderRef here, as they are stable references
 };
+
+

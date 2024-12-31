@@ -6,21 +6,25 @@ import ProjectThumb from "../ProjectThumb/ProjectThumb";
 import PanelHero from "../PanelHero/PanelHero";
 import Preloader from "../Preloader/Preloader";
 import { sliderPortfolioConfig } from "./sliderConfig";
-import { useSliderOps } from "../../hooks/helpers";
+import { useSliderInit } from "../../hooks/helpers";
 
 const Portfolio = () => {
   const [sliderReady, setSliderReady] = useState(true);
   const slidesList = useProjects();
   const carouselRef = useRef<HTMLDivElement | null>(null); // Use referrencing the carousel element
+  const prevBtnRef = useRef<HTMLButtonElement | null>(null); // Ref for prev button
+  const nextBtnRef = useRef<HTMLButtonElement | null>(null); // Ref for next button
 
   // Memoize slidesList to prevent unnecessary recomputations
   const memoizedslidesList = useMemo(() => slidesList, [slidesList]);
 
-  useSliderOps( // Setup slider ...
+  useSliderInit( // Setup slider ...
     carouselRef, 
-    sliderPortfolioConfig, 
+    prevBtnRef,
+    nextBtnRef,
+    memoizedslidesList,
     setSliderReady, 
-    memoizedslidesList
+    sliderPortfolioConfig
   );
 
   return (

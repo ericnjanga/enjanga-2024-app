@@ -84,7 +84,20 @@ function makeMirageServer() {
       server.create('pageSection', { // Expertise specification 1
         id: '2',
         title: 'Writing custom code', 
-        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>', 
+        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
+        className: 'theme1' 
+      });
+      server.create('pageSection', { // Expertise specification 1
+        id: '8',
+        title: 'Designing User Interfaces', 
+        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
+        className: 'theme1' 
+      });
+      server.create('pageSection', { // Expertise specification 1
+        id: '9',
+        title: 'Consulting, Vision, structure, and planning', 
+        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
+        className: 'theme1' 
       });
       server.create('pageSection', { // Portfolio
         id: '3',

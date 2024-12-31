@@ -118,10 +118,13 @@ export type HeadingProps = {
 
 
 export interface SliderConfig {
+  dots?: boolean;
   speed: number;
   infinite: boolean;
   slidesToShow: number;
   slidesToScroll: number;
+  prevArrow?: string;
+  nextArrow?: string;
   responsive?: {
     breakpoint: number;
     settings: {

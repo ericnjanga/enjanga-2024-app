@@ -12,6 +12,7 @@
     --appname-theme-light-aaaa-7: #80AA27; 
 
     --appname-theme-light-bbbb-0: #010023;
+    --appname-theme-light-bbbb-01: #020023;
     --appname-theme-light-bbbb-1: #323069;
     --appname-theme-light-bbbb-2: #3B27BE;
     --appname-theme-light-bbbb-3: #4934d5;
@@ -52,33 +53,33 @@
         }
     }
 
-    @layer site-carousel {
-        .site-carousel-item {  
-            .card { 
-                background-color: var(--appname-theme-light-cccc-2);
+    // @layer site-carousel {
+    //     .site-carousel-item {  
+    //         .card { 
+    //             background-color: var(--appname-theme-light-cccc-2);
 
-                // Overlay screen designed to blur the content on hover ...
-                &::before { 
-                    background-color: var(--appname-theme-light-aaaa-0);
-                }
+    //             // Overlay screen designed to blur the content on hover ...
+    //             &::before { 
+    //                 background-color: var(--appname-theme-light-aaaa-0);
+    //             }
 
-                &-body {
-                    background-color: var(--appname-theme-light-xxxx-0);
-                }
-                &:hover { 
-                    background-color: var(--appname-theme-light-cccc-8);
+    //             &-body {
+    //                 background-color: var(--appname-theme-light-xxxx-0);
+    //             }
+    //             &:hover { 
+    //                 background-color: var(--appname-theme-light-cccc-8);
 
-                    color: var(--appname-theme-light-bbbb-4)!important;
+    //                 color: var(--appname-theme-light-bbbb-4)!important;
 
-                    .card-body {
-                        h3, p {
-                            color: var(--appname-theme-light-bbbb-4)!important;
-                        }
-                    }
-                }
-            }
-        } 
-    }
+    //                 .card-body {
+    //                     h3, p {
+    //                         color: var(--appname-theme-light-bbbb-4)!important;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     } 
+    // }
  
 
     @layer hero {

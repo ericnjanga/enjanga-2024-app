@@ -1,44 +1,57 @@
 import React, { useState, useRef } from "react";
 
-import "./Caroussel.scss"; 
+import "./Caroussel.scss";
 import PanelGrid1 from "../PanelGrid1/PanelGrid1";
 import { sliderPortfolioConfig } from "./sliderConfig";
-import { useSliderOps } from "../../hooks/helpers";
+import { useSliderInit } from "../../hooks/helpers";
 import Preloader from "../Preloader/Preloader";
 
 const Caroussel = () => {
   const [sliderReady, setSliderReady] = useState(true);
-  const slidesList = ['2','2', '2'];
+  const slidesList = ["2", "8", "9"];
   const carouselRef = useRef<HTMLDivElement | null>(null); // Use referrencing the carousel element
+  const prevBtnRef = useRef<HTMLButtonElement | null>(null); // Ref for prev button
+  const nextBtnRef = useRef<HTMLButtonElement | null>(null); // Ref for next button
 
-  useSliderOps( // Setup slider ...
-    carouselRef, 
-    sliderPortfolioConfig, 
-    setSliderReady, 
-    slidesList
+  // Setup slider ...
+  useSliderInit(
+    carouselRef,
+    prevBtnRef,
+    nextBtnRef,
+    slidesList,
+    setSliderReady,
+    sliderPortfolioConfig
   );
 
   return (
-    <section className="Caroussel sc-block">
-      <div className="container">
-
-        {!slidesList || slidesList.length === 0 || !sliderReady ? (
-          <Preloader />
-        ) : (
-          <div className="slider" ref={carouselRef}> 
+    <>
+      {!slidesList || slidesList.length === 0 || !sliderReady ? (
+        <Preloader />
+      ) : (
+        <section className="slider-container">
+          <nav className="slider-controls">
+            {/* Custom prev and next buttons */}
+            <button ref={prevBtnRef} className="btn btn-secondary slick-prev">
+              Prev
+            </button>
+            <button ref={nextBtnRef} className="btn btn-secondary slick-next">
+              Next
+            </button>
+          </nav>
+          <section className="slider" ref={carouselRef}>
             {slidesList.map((id, index) => {
               return (
                 <PanelGrid1
                   key={index}
                   pageSectionId={id}
-                  className="site-carousel-item"
+                  className={`sc-block site-carousel-item theme-${index + 1}`}
                 />
               );
             })}
-          </div>
-        )}  
-      </div>
-    </section>
+          </section>
+        </section>
+      )}
+    </>
   );
 };
 

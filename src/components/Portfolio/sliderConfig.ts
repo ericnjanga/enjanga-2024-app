@@ -1,7 +1,7 @@
 import { SliderConfig } from "../../models";
 
 export const sliderPortfolioConfig: SliderConfig = {
-  // dots: true,
+  dots: true,
   speed: 300,
   infinite: false,
   slidesToShow: 3,
