@@ -34,25 +34,30 @@ const Portfolio = () => {
         <div className="PanelGrid1">
           <PanelHero id="3" />
 
+          {slidesList && slidesList.length && sliderReady && (
+            <nav className="slider-controls">
+            {/* Custom prev and next buttons */}
+            <button
+              ref={prevBtnRef}
+              className="btn btn-secondary slick-prev"
+            >
+              Prev
+            </button>
+            <button
+              ref={nextBtnRef}
+              className="btn btn-secondary slick-next"
+            >
+              Next
+            </button>
+          </nav>
+          )}
+
+
           {!slidesList || slidesList.length === 0 || !sliderReady ? (
             <Preloader />
           ) : (
             <section className="slider-container">
-              <nav className="slider-controls">
-                {/* Custom prev and next buttons */}
-                <button
-                  ref={prevBtnRef}
-                  className="btn btn-secondary slick-prev"
-                >
-                  Prev
-                </button>
-                <button
-                  ref={nextBtnRef}
-                  className="btn btn-secondary slick-next"
-                >
-                  Next
-                </button>
-              </nav>
+              
               <section className="slider" ref={carouselRef}>
                 {slidesList.map((project, index) => {
                   return (

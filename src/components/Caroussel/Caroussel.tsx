@@ -5,6 +5,7 @@ import PanelGrid1 from "../PanelGrid1/PanelGrid1";
 import { sliderPortfolioConfig } from "./sliderConfig";
 import { useSliderInit } from "../../hooks/helpers";
 import Preloader from "../Preloader/Preloader";
+import Icon from "../Icons/icons";
 
 const Caroussel = () => {
   const [sliderReady, setSliderReady] = useState(true);
@@ -31,11 +32,13 @@ const Caroussel = () => {
         <section className="slider-container">
           <nav className="slider-controls">
             {/* Custom prev and next buttons */}
-            <button ref={prevBtnRef} className="btn btn-secondary slick-prev">
-              Prev
+            <button ref={prevBtnRef} className="btn btn-secondary slick-prev"> 
+              <Icon name='slider-arrow-left' size='medium' className='icon' />
+              <span>Prev</span>
             </button>
             <button ref={nextBtnRef} className="btn btn-secondary slick-next">
-              Next
+              <span>Next</span> 
+              <Icon name='slider-arrow-right' size='medium' className='icon' />
             </button>
           </nav>
           <section className="slider" ref={carouselRef}>

@@ -102,9 +102,9 @@ export interface ContactFormRef {
 
 
 export type IconProps = { 
-  size?: 'tiny' | 'medium' | 'large', 
+  size?: 'small' | 'medium' | 'large', 
   className: string,
-  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat' | 'close',
+  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat' | 'close' | 'slider-arrow-left' | 'slider-arrow-right',
 };
 
 

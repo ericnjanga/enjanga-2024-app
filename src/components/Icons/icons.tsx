@@ -3,15 +3,20 @@
 // 2) https://reactsvgicons.com/
 import { IconProps } from "../../models";
 
-export default function Icon({ size = 'tiny', className, name }: IconProps) {
+export default function Icon({ size = 'small', className, name }: IconProps) {
   const dim = { width: "10px", height: "10px" };
 
   // ...
   if (size) {
     switch (size) {
-      case "tiny":
+      case "small":
         dim.width = "23px";
         dim.height = "23px";
+      break;
+      case "medium":
+        dim.width = "46px";
+        dim.height = "46px";
+      break;
     }
   } 
 
@@ -96,6 +101,30 @@ export default function Icon({ size = 'tiny', className, name }: IconProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M6.376 63.76L0 57.384L25.504 31.88L0 6.376L6.376 0L31.88 25.504L57.384 0L63.76 6.376L38.256 31.88L63.76 57.384L57.384 63.76L31.88 38.256L6.376 63.76Z" fill="#010023"/>
+      </svg>
+    );
+  } else if (name === 'slider-arrow-left') {
+    return ( 
+      <svg
+        className={className}
+        width={dim.width}
+        height={dim.height}
+        viewBox="0 0 46 45"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M30.0938 3.75L33.4219 7.07812L18 22.5L33.4219 37.9219L30.0937 41.25L11.3437 22.5L30.0938 3.75Z" fill="#323069"/>
+      </svg>
+    );
+  } else if (name === 'slider-arrow-right') {
+    return ( 
+      <svg
+        className={className}
+        width={dim.width}
+        height={dim.height}
+        viewBox="0 0 45 45"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M15.0469 41.25L11.7188 37.9219L27.1406 22.5L11.7188 7.07812L15.0469 3.75L33.7969 22.5L15.0469 41.25Z" fill="#323069"/>
       </svg>
     );
   }
