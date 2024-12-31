@@ -108,13 +108,9 @@ function makeMirageServer() {
         id: '4',
         title: 'A little bit about me :)', 
         description: `
-          <p>I’m a passionate of web technologies - Lorem ipsum dolor sit amet consectetur. Eget id nisl amet consectetur nulla elementum lacus vehicula odio. </p>
-          <p>Rhoncus vulputate et nisl etiam faucibus dui. Interdum mollis sit quam sodales posuere lorem purus ipsum. Fermentum urna ullamcorper fermentum semper vel convallis ac orci. Viverra vitae dignissim cum erat facilisis sit massa ornare.</p>
-          <ul>
-            <li>15+ years in the tech industry</li>
-            <li>Computer science Bachelor degree</li>
-            <li>Have a keep eye for aesthetics</li>
-          </ul>
+          <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
+          <p>I am also a self-thought Design Thinker and User Experience specialist. I focus my attention on <a href="#">Usability</a> and <a href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
+          <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
         `, 
       });
       server.create('pageSection', { // Footer
