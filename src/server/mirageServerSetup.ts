@@ -170,7 +170,7 @@ function makeMirageServer() {
         id: '4', 
         parentId: '2',
         blurb: `Translating visual designs into responsive and interactive User Interfaces.`,
-        title: 'Expertise 4',
+        title: 'Coding visual designs',
         description: ` 
           <p><b>Description 4 ...</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
@@ -186,10 +186,10 @@ function makeMirageServer() {
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
-      // parentId: '2' ...
+      // parentId: '8' ...
       server.create('expertiseSpec', {
         id: '6', 
-        parentId: '6',
+        parentId: '8',
         blurb: `Expertise specification 2 - blurb 1`,
         title: 'Expertise 6',
         description: `
@@ -199,7 +199,7 @@ function makeMirageServer() {
       });
       server.create('expertiseSpec', {
         id: '7', 
-        parentId: '6',
+        parentId: '8',
         blurb: `Expertise specification 2 - blurb 2`,
         title: 'Expertise 7',
         description: ` 
@@ -209,7 +209,58 @@ function makeMirageServer() {
       });
       server.create('expertiseSpec', {
         id: '8', 
-        parentId: '6',
+        parentId: '8',
+        blurb: `Expertise specification 2 - blurb 3`,
+        title: 'Expertise 8',
+        description: ` 
+          <p><b>Description 3 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
+      });
+      server.create('expertiseSpec', {
+        id: '9', 
+        parentId: '8',
+        blurb: `Expertise specification 2 - blurb 3`,
+        title: 'Expertise 8',
+        description: ` 
+          <p><b>Description 3 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
+      });
+      // parentId: '9' ...
+      server.create('expertiseSpec', {
+        id: '10', 
+        parentId: '9',
+        blurb: `Expertise specification 2 - blurb 1`,
+        title: 'Expertise 6',
+        description: `
+          <p><b>Description 1 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
+      });
+      server.create('expertiseSpec', {
+        id: '11', 
+        parentId: '9',
+        blurb: `Expertise specification 2 - blurb 2`,
+        title: 'Expertise 7',
+        description: ` 
+          <p><b>Description 2 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
+      });
+      server.create('expertiseSpec', {
+        id: '12', 
+        parentId: '9',
+        blurb: `Expertise specification 2 - blurb 3`,
+        title: 'Expertise 8',
+        description: ` 
+          <p><b>Description 3 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
+      });
+      server.create('expertiseSpec', {
+        id: '13', 
+        parentId: '9',
         blurb: `Expertise specification 2 - blurb 3`,
         title: 'Expertise 8',
         description: ` 
