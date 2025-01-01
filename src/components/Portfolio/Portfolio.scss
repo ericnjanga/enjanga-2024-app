@@ -1,15 +1,16 @@
 :root {
-  --appname-carousel-hover-state: 35%; 
-  --appname-carousel-btnprev-y: -60px; 
+  --appname-carousel-hover-state: 35%;
+  --appname-carousel-btnprev-y: -60px;
   --appname-carousel-item-gap: 20px;
 
   --appname-carousel-controls-top: -110px;
   --appname-carousel-controls-flexdir: column;
   --appname-carousel-controls-width: min-content;
   --appname-carousel-controls-gap: 5px;
+
+  // Special card
+  --website-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
 }
-
-
 
 .Portfolio {
   position: relative;
@@ -17,19 +18,79 @@
 }
 
 .slider {
-  list-style: none;    
+  list-style: none;
   margin: 0;
   padding: 0;
-  
+
   // Hide default carousel controls
   .slick-arrow {
-      display: none!important;
+    display: none !important;
   }
 
-  // TEMPORARY
-  // -------------------
-  // display: flex;
-  // gap: 20px;
-  // -------------------
+  .slider-item {
+    max-width: 360px;
+  }
 
+  .slick-track {
+    /**
+     * Styling the 3 active items .......
+     * ----------------------------------
+    */
+    @media (min-width: 1400px) { 
+      --appname-carousel-item-gap: 70px!important;
+    }
+
+    @media (min-width: 1200px) {
+      --appname-carousel-item-gap: 25px;
+
+      .slick-active {
+        // 1st element ...
+        &:has(+ .slick-active + .slick-active) {
+          .card {
+            margin-left: 0;
+            margin-right: var(--appname-carousel-item-gap);
+          }
+        }
+        // 2nd element ...
+        &:has(+ .slick-active),
+        &.slick-current + .slick-active {
+          .card {
+            margin-left: calc(var(--appname-carousel-item-gap) / 2);
+            margin-right: calc(var(--appname-carousel-item-gap) / 2);
+          }
+        }
+        // 3rd element ...
+        &.slick-current + .slick-active + .slick-active,
+        &:last-of-type.slick-current {
+          .card {
+            margin-left: var(--appname-carousel-item-gap);
+          }
+        }
+      }
+    }
+
+    /**
+     * Styling the 2 active items .......
+     * ----------------------------------
+    */
+    @media (min-width: 768px) and (max-width: (1200px - 1)) {
+      --appname-carousel-item-gap: 20px;
+
+      .slick-active {
+        // 1st element ...
+        &:has(+ .slick-active) {
+          .card {
+            margin-right: var(--appname-carousel-item-gap);
+          }
+        }
+        // 2nd element ...
+        &.slick-current + .slick-active,
+        &:last-of-type.slick-current {
+          .card {
+            margin-left: var(--appname-carousel-item-gap);
+          }
+        }
+      }
+    }
+  }
 }

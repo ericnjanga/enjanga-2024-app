@@ -57,14 +57,13 @@ const Portfolio = () => {
             <Preloader />
           ) : (
             <section className="slider-container">
-              
               <section className="slider" ref={carouselRef}>
                 {slidesList.map((project, index) => {
                   return (
                     <ProjectThumb
                       key={index}
                       {...project}
-                      className="site-carousel-item"
+                      className="slider-item"
                     />
                   );
                 })}
