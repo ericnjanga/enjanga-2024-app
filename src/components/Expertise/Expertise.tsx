@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
 
-import "./Caroussel.scss";
+import "./Expertise.scss";
 import PanelGrid1 from "../PanelGrid1/PanelGrid1";
 import { sliderPortfolioConfig } from "./sliderConfig";
 import { useSliderInit } from "../../hooks/helpers";
 import Preloader from "../Preloader/Preloader";
 import Icon from "../Icons/icons";
 
-const Caroussel = () => {
+const Expertise = () => {
   const [sliderReady, setSliderReady] = useState(true);
   const slidesList = ["2", "8", "9"];
   const carouselRef = useRef<HTMLDivElement | null>(null); // Use referrencing the carousel element
@@ -58,4 +58,4 @@ const Caroussel = () => {
   );
 };
 
-export default Caroussel;
+export default Expertise;

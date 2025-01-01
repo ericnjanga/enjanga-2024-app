@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles/App.scss";
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
-import Caroussel from "./components/Caroussel/Caroussel";
+import Expertise from "./components/Expertise/Expertise";
 import Portfolio from "./components/Portfolio/Portfolio";
 import About from "./components/About/About";
 import Modal from "./components/ModalModule";
@@ -33,7 +33,7 @@ function App() {
         </div>
 
         <div id="scope-of-expertise">
-          <Caroussel />
+          <Expertise />
         </div>
 
         <div id="some-work">
