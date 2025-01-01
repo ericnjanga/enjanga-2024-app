@@ -29,7 +29,7 @@ const Caroussel = () => {
       {!slidesList || slidesList.length === 0 || !sliderReady ? (
         <Preloader />
       ) : (
-        <section className="slider-container">
+        <section className="scope-of-expertise slider-container">
           <nav className="slider-controls">
             {/* Custom prev and next buttons */}
             <button ref={prevBtnRef} className="btn btn-secondary slick-prev"> 
@@ -47,7 +47,7 @@ const Caroussel = () => {
                 <PanelGrid1
                   key={index}
                   pageSectionId={id}
-                  className={`sc-block site-carousel-item theme-${index + 1}`}
+                  className={`sc-block slide-item theme-${index + 1}`}
                 />
               );
             })}
