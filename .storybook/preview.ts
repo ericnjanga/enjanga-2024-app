@@ -104,7 +104,7 @@ const preview: Preview = {
         order: [
           "A) Page Section/Navigation",
           "A) Page Section/Hero",
-          "A) Page Section/Caroussel",
+          "A) Page Section/Carrousel",
           "A) Page Section/Portfolio",
           "A) Page Section/About",
           "A) Page Section/Footer",
