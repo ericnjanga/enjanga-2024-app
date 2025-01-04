@@ -2,21 +2,17 @@ import React, { useState, ChangeEvent, useRef } from "react";
 import "./withCarrousel.scss";
 import { useSliderInit } from "../../hooks/helpers";
 import Preloader from "../../components/Preloader/Preloader";
-import { ProjectProps, SliderConfig } from "../../models";
+import { SliderConfig } from "../../models";
 import CarrouselControls from "./CarrouselControls";
+import { ProjectProps } from "../../models";
 
 
 
-
-// Define a type for the props that the wrapped component will receive
-export interface withCarrouselProps {
-  // sliderValue: number;
-  // onSliderChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}
+ 
 
 // Define the type for the HOC itself
 function withCarrousel<P extends object>(
-  WrappedComponent: React.ComponentType<P & withCarrouselProps>,
+  WrappedComponent: React.ComponentType<P>,
   slidesList: string[] | ProjectProps[] | null,
   configObj: SliderConfig
 ): React.FC<P> {

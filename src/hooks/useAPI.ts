@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 import { mockContactForm } from "../models/mockupData";
+import { PortfolioListProps } from "../models";
 
 
 /**

@@ -1,37 +1,27 @@
 import "./Expertise.scss";
-import { sliderPortfolioConfig } from "./sliderConfig";
-import withCarrousel, {
-  withCarrouselProps,
-} from "../../HOC/withCarrousel/withCarrousel";
+import { sliderExpertiseConfig } from "./sliderConfig";
+import withCarrousel from "../../HOC/withCarrousel/withCarrousel";
 import { PanelGridList } from "../../utils/functions";
 
-interface SliderExpertiseProps {
+interface SliderSingleViewProps {
   slidesList: string[];
 }
 
-const SliderSingleView: React.FC<SliderExpertiseProps & withCarrouselProps> = ({
-  slidesList,
-}) => {
+//...
+const SliderSingleView: React.FC<SliderSingleViewProps> = ({ slidesList }) => (
+  <PanelGridList itemsList={slidesList} />
+);
 
-  return (
-    <PanelGridList panelList={slidesList} />
-  );
-};
- 
-
-
+//...
 const CarrouselExpertise = () => {
-  const itemsList = ["2", "8", "9"]; 
+  const itemsList = ["2", "8", "9"];
   const ExpertiseSliderWithSingleView = withCarrousel(
     SliderSingleView,
     itemsList,
-    sliderPortfolioConfig
+    sliderExpertiseConfig
   );
 
-  return (
-    <ExpertiseSliderWithSingleView slidesList={itemsList} />
-  );
+  return <ExpertiseSliderWithSingleView slidesList={itemsList} />;
 };
 
 export default CarrouselExpertise;
-

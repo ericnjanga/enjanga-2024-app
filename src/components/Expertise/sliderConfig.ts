@@ -1,6 +1,6 @@
 import { SliderConfig } from "../../models";
 
-export const sliderPortfolioConfig: SliderConfig = {
+export const sliderExpertiseConfig: SliderConfig = {
   dots: false,
   speed: 300,
   infinite: false,

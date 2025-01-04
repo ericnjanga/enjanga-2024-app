@@ -133,3 +133,9 @@ export interface SliderConfig {
     };
   }[];
 }
+export interface PanelGridListProps {
+  itemsList: string[];
+}
+export interface PortfolioListProps {
+  itemsList: ProjectProps[] | null;
+}
