@@ -3,6 +3,8 @@ import { sliderExpertiseConfig } from "./sliderConfig";
 import withCarrousel from "../../HOC/withCarrousel/withCarrousel";
 import { PanelGridList } from "../../utils/functions";
 
+
+// The slider will contain an array of strings ...
 interface SliderSingleViewProps {
   slidesList: string[];
 }
