@@ -5,25 +5,27 @@ import { PanelGridList } from "../../utils/functions";
 
 
 // The slider will contain an array of strings ...
-interface SliderSingleViewProps {
+interface PanelCollectionProps {
   slidesList: string[];
 }
 
-//...
-const SliderSingleView: React.FC<SliderSingleViewProps> = ({ slidesList }) => (
-  <PanelGridList itemsList={slidesList} />
+// Wraps the list of items ...
+const PanelCollection: React.FC<PanelCollectionProps> = ({ slidesList }) => (
+  <PanelGridList idsList={slidesList} />
 );
 
 //...
 const CarrouselExpertise = () => {
-  const itemsList = ["2", "8", "9"];
+  const listOfIds = ["2", "8", "9"];
+
+  // Turns the list of items into a carrousel according to @sliderExpertiseConfig object ...
   const ExpertiseSliderWithSingleView = withCarrousel(
-    SliderSingleView,
-    itemsList,
+    PanelCollection,
+    listOfIds,
     sliderExpertiseConfig
   );
 
-  return <ExpertiseSliderWithSingleView slidesList={itemsList} />;
+  return <ExpertiseSliderWithSingleView slidesList={listOfIds} />;
 };
 
 export default CarrouselExpertise;

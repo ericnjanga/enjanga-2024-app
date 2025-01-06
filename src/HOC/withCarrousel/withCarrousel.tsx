@@ -3,7 +3,7 @@ import "./withCarrousel.scss";
 import { useSliderInit } from "../../hooks/helpers";
 import Preloader from "../../components/Preloader/Preloader";
 import { SliderConfig } from "../../models";
-import CarrouselControls from "./CarrouselControls";
+import CarrouselControls from "./CarrouselControls/CarrouselControls";
 import { ProjectProps } from "../../models";
 
 

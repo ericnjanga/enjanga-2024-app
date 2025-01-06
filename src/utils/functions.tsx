@@ -16,12 +16,12 @@ export const logErrorMessage = (error: unknown) => {
 
 
 
-export const PanelGridList: React.FC<PanelGridListProps> = ({ itemsList }) => {
-  const availableThemes = ["theme-1", "theme-2", "theme-3"]; // Example themes
+export const PanelGridList: React.FC<PanelGridListProps> = ({ idsList }) => {
+  const availableThemes = ["theme-1", "theme-2", "theme-3"];
 
   return (
     <>
-      {itemsList.map((id, index) => {
+      {idsList.map((id, index) => {
         const themeClass = availableThemes[index] || "default-theme";
 
         return (

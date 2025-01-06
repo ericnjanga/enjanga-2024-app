@@ -1,5 +1,6 @@
 
-import Icon from "../../components/Icons/icons";
+import Icon from "../../../components/Icons/icons";
+import './CarrouselControls.scss';
 
 const CarrouselControls = ({
   prevBtn,
@@ -9,7 +10,7 @@ const CarrouselControls = ({
   nextBtn: React.RefObject<HTMLButtonElement>;
 }) => {
   return (
-    <nav className="slider-controls">
+    <nav className="carrousel-controls">
       {prevBtn && (
         <button ref={prevBtn} className="btn btn-secondary slick-prev">
           <Icon name="slider-arrow-left" size="medium" className="icon" />

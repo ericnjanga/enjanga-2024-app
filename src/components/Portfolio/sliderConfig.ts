@@ -1,5 +1,10 @@
 import { SliderConfig } from "../../models";
 
+/**
+ * - Large screens: 3 slides
+ * - Medium screens: 2 slides
+ * - Small screens: 1 slide
+ */
 export const sliderPortfolioConfig: SliderConfig = {
   dots: false,
   speed: 300,

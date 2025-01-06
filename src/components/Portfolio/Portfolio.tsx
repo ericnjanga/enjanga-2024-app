@@ -17,9 +17,10 @@ const PortfolioCollection: React.FC<PortfolioCollectionProps> = ({ slidesList })
   <PortfolioList itemsList={slidesList} />
 );
 
-// Turns the list of items into a carrousel ...
 const CarrouselPortfolio = () => {
   const itemsList = useProjects();
+
+  // Turns the list of items into a carrousel according to @sliderPortfolioConfig object ...
   const PortfolioPortfolioCollection = withCarrousel(
     PortfolioCollection,
     itemsList,

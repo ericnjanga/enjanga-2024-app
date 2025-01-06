@@ -1,0 +1,25 @@
+
+.carrousel-controls {
+  display: flex;
+  gap: 40px;
+
+  // Cancel slick-slider styles
+  .btn {
+    position: relative;
+    left: unset;
+    right: unset;
+    font-size: inherit;
+    line-height: inherit;
+    width: inherit;
+    height: inherit;
+    padding: inherit;
+    top: unset;
+    color: inherit;
+    border: 0;
+    transform: unset;
+
+    &::before {
+      display: none;
+    }
+  }
+}

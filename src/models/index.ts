@@ -134,7 +134,7 @@ export interface SliderConfig {
   }[];
 }
 export interface PanelGridListProps {
-  itemsList: string[];
+  idsList: string[]; // An array of ids
 }
 export interface PortfolioListProps {
   itemsList: ProjectProps[] | null;

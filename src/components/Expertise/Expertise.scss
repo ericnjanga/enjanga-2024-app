@@ -1,28 +1,77 @@
 :root {
+  --appname-expertise-PanelGrid1-height: unset;
 }
 
-.scope-of-expertise {
+#scope-of-expertise {
+  // // NOTE: Insuring all slides have the same height
+  // // (The height of the highest slide will be matched by the others)
+  // .slick-track {
+  //   display: flex;
 
-  // NOTE: Insuring all slides have the same height 
-  // (The height of the highest slide will be matched by the others)
-  .slick-track {
-    display: flex;
+  //   .slick-slide {
+  //     height: auto;
 
-    .slick-slide {
-      height: auto;
+  //     > div {
+  //       height: 100%;
 
-      > div {
-        height: 100%;
+  //       > .slide-item {
+  //         height: 100%;
+  //       }
+  //     }
+  //   }
+  // }
 
-        > .slide-item {
-          height: 100%;
-        }
-      }
+  .slider {
+    position: relative;
+    border: 4px solid red;
+
+    // ...
+    .carrousel-controls {
+      border: 4px solid blue;
+      position: absolute;
+      top: 110px;
+      right: 60px;
+      z-index: 10;
     }
-  }
-}
 
-.slider-container {
-  position: relative;
-  border: 4px solid red;
+    .PanelGrid1 {
+      border: 4px dashed blue;
+      min-height: var(--appname-expertise-PanelGrid1-height);
+    }
+
+  }
+
+  // ...
+
+
+  // Extra Large screen ...
+  @media (min-width: 1400px) {
+    // border: 10px solid purple;
+    --appname-expertise-PanelGrid1-height: 800px;
+  }
+
+  // Large screen ...
+  @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+    // border: 10px solid violet;
+  }
+
+  // Large Medium screen ...
+  @media (min-width: 992px) and (max-width: (1200px - 1)) {
+    // border: 10px solid lime;
+  }
+
+  // Medium Medium screen ...
+  @media (min-width: 768px) and (max-width: (992px - 1)) {
+    // border: 10px solid blue;
+  }
+
+  // Small Screen ...
+  @media (min-width: 576px) and (max-width: (768px - 1)) {
+    // border: 10px solid turquoise;
+  }
+
+  // Smaller Screen ...
+  @media (max-width: (576px - 1px)) {
+    // border: 10px solid chocolate;
+  }
 }

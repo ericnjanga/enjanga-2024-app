@@ -1,3 +1,6 @@
+/**
+ * Fetches
+ */
 import { useExpertises } from "../../hooks/useAPI";
 import InformationCard1 from "../InformationCard1/InformationCard1";
 import "./PanelGrid1.scss";
