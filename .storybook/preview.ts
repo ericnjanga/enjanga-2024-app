@@ -108,7 +108,7 @@ const preview: Preview = {
           "A) Page Section/Portfolio",
           "A) Page Section/About",
           "A) Page Section/Footer",
-          "B) Panels/PanelGrid1",
+          "B) Panels/PanelFrame",
         ], // Custom order of story groups
         method: "alphabetical", // Sort alphabetically
         locales: "en-US", // Optional locale for sorting

@@ -1,5 +1,5 @@
 :root {
-  --appname-expertise-PanelGrid1-height: unset;
+  --appname-expertise-PanelFrame-height: unset;
 }
 
 #scope-of-expertise {
@@ -34,9 +34,9 @@
       z-index: 10;
     }
 
-    .PanelGrid1 {
+    .PanelFrame {
       border: 4px dashed blue;
-      min-height: var(--appname-expertise-PanelGrid1-height);
+      min-height: var(--appname-expertise-PanelFrame-height);
     }
 
   }
@@ -47,7 +47,7 @@
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 10px solid purple;
-    --appname-expertise-PanelGrid1-height: 800px;
+    --appname-expertise-PanelFrame-height: 800px;
   }
 
   // Large screen ...

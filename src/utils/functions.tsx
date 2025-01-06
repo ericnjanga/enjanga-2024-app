@@ -1,4 +1,4 @@
-import PanelGrid1 from "../components/PanelGrid1/PanelGrid1";
+import PanelFrame from "../components/PanelFrame/PanelFrame"; 
 import ProjectThumb from "../components/ProjectThumb/ProjectThumb";
 import { PanelGridListProps, PortfolioListProps } from "../models";
 
@@ -25,7 +25,7 @@ export const PanelGridList: React.FC<PanelGridListProps> = ({ idsList }) => {
         const themeClass = availableThemes[index] || "default-theme";
 
         return (
-          <PanelGrid1
+          <PanelFrame
             key={id}
             pageSectionId={id}
             className={`sc-block slide-item ${themeClass}`}

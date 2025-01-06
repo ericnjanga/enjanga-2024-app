@@ -30,7 +30,7 @@ const CarrouselPortfolio = () => {
   return (
     <section className="Portfolio sc-block">
       <div className="container">
-        <div className="PanelGrid1">
+        <div className="PanelFrame">
           <PanelHero id="3" />
           <PortfolioPortfolioCollection slidesList={itemsList} />
         </div>

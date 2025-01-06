@@ -1,18 +1,18 @@
 :root {
-  --appname-PanelGrid1-gap: 4px;
-  --appname-PanelGrid1-column-count: 1;
+  --appname-PanelFrame-gap: 4px;
+  --appname-PanelFrame-column-count: 1;
   --appname-pageSection-hero-marg-bottom: 15px; 
 }
 
 
-.PanelGrid1 {
+.PanelFrame {
   .content-grid {
-    column-count: var(--appname-PanelGrid1-column-count);
-    column-gap: var(--appname-PanelGrid1-gap); /* Consistent gap */
+    column-count: var(--appname-PanelFrame-column-count);
+    column-gap: var(--appname-PanelFrame-gap); /* Consistent gap */
 
     .content-grid-item {
       break-inside: avoid; /* Prevent item splitting */
-      margin-bottom: var(--appname-PanelGrid1-gap); /* Gap between rows */
+      margin-bottom: var(--appname-PanelFrame-gap); /* Gap between rows */
     }
   }
 
@@ -26,28 +26,28 @@
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 10px solid purple;
-    --appname-PanelGrid1-column-count: 2;
+    --appname-PanelFrame-column-count: 2;
     --appname-pageSection-hero-marg-bottom: 45px;
   }
 
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 10px solid violet;
-    --appname-PanelGrid1-column-count: 2;
+    --appname-PanelFrame-column-count: 2;
     --appname-pageSection-hero-marg-bottom: 35px;
   }
 
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 10px solid lime;
-    --appname-PanelGrid1-column-count: 2;
+    --appname-PanelFrame-column-count: 2;
     --appname-pageSection-hero-marg-bottom: 30px;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 10px solid blue;
-    --appname-PanelGrid1-column-count: 2;
+    --appname-PanelFrame-column-count: 2;
     --appname-pageSection-hero-marg-bottom: 30px;
   }
 

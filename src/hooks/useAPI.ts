@@ -102,11 +102,11 @@ export const usePageSection = (id: string): PageSectionProps | null => {
 
 // Returns a database record of type "InformationCard1Props[]"
 export const useExpertises = (parentId: string): InformationCard1Props[] | null => {
-  const [InformationCard1s, setPanelGrid1] = useState(null); 
+  const [InformationCard1s, setPanelFrame] = useState(null); 
   
   useEffect(() => { 
     fetchData('expertiseSpecsParent', parentId).then((response) => { 
-      setPanelGrid1(response);
+      setPanelFrame(response);
     }); 
   }, [parentId]);
   return InformationCard1s;
@@ -114,20 +114,20 @@ export const useExpertises = (parentId: string): InformationCard1Props[] | null 
 
 // Returns a database record of type "InformationCard1Props"
 export const useExpertise = (id: string): InformationCard1Props | null => {
-  const [InformationCard1s, setPanelGrid1] = useState(null); 
+  const [InformationCard1s, setPanelFrame] = useState(null); 
   
   useEffect(() => { 
-    fetchData('expertiseSpecs', id).then((response) => setPanelGrid1(response)); 
+    fetchData('expertiseSpecs', id).then((response) => setPanelFrame(response)); 
   }, [id]);
   return InformationCard1s;
 };
 
 // Returns a database record of type "InformationCard1Props[]"
 export const useProjects = (): ProjectProps[] | null => {
-  const [projects, setPanelGrid1] = useState(null); 
+  const [projects, setPanelFrame] = useState(null); 
   
   useEffect(() => { 
-    fetchData('all projects', null).then((response) => setPanelGrid1(response)); 
+    fetchData('all projects', null).then((response) => setPanelFrame(response)); 
   }, []);
   return projects;
 };

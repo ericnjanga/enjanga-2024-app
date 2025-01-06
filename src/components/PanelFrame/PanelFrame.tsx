@@ -3,23 +3,23 @@
  */
 import { useExpertises } from "../../hooks/useAPI";
 import InformationCard1 from "../InformationCard1/InformationCard1";
-import "./PanelGrid1.scss";
+import "./PanelFrame.scss";
 import PanelHero from "../PanelHero/PanelHero";
 
-interface PanelGrid1Props {
+interface PanelFrameProps {
   pageSectionId: string;
   className?: string;
 }
 
 
-const PanelGrid1: React.FC<PanelGrid1Props> = ({
+const PanelFrame: React.FC<PanelFrameProps> = ({
   pageSectionId,
   className,
 }) => {
   const expertiseList = useExpertises(pageSectionId);
 
   return (
-    <section className={`PanelGrid1 ${className}`}>
+    <section className={`PanelFrame ${className}`}>
       <div className="container">
         <PanelHero id={pageSectionId} />
 
@@ -40,4 +40,4 @@ const PanelGrid1: React.FC<PanelGrid1Props> = ({
   );
 };
 
-export default PanelGrid1;
+export default PanelFrame;

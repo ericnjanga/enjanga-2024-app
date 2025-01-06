@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Expertise from "./Expertise";
-import PanelGrid1 from "../PanelGrid1/PanelGrid1";
+import PanelFrame from "../PanelFrame/PanelFrame";
 import { ModalContext } from "../../utils/contexts";
 import { mockModalContext } from "../../models/mockupData";
 
@@ -20,7 +20,7 @@ const Template: StoryFn = (args) => {
     <ModalContext.Provider value={mockModalContext}>
       <section className="Expertise sc-block">
         <div className="container">
-          <PanelGrid1 pageSectionId={args.slide1Id} />
+          <PanelFrame pageSectionId={args.slide1Id} />
         </div>
       </section>
     </ModalContext.Provider>
