@@ -1,4 +1,6 @@
-import PanelFrame from "../components/PanelFrame/PanelFrame"; 
+
+import PanelFrame from "../components/PanelFrame/PanelFrame";
+
 import ProjectThumb from "../components/ProjectThumb/ProjectThumb";
 import { PanelGridListProps, PortfolioListProps } from "../models";
 
