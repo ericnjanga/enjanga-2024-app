@@ -32,7 +32,7 @@ const Template: StoryFn<{ pageSectionId: string }> = (args) => {
                 <InformationCard1 
                   key={index} 
                   {...data} 
-                  className="content-grid-item" 
+                  className="PanelFrame-item" 
                 />
               </ ModalContext.Provider>
             );

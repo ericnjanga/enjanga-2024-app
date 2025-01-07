@@ -30,7 +30,7 @@ const PanelFrame: React.FC<PanelFrameProps> = ({
                 <InformationCard1
                   key={index}
                   {...expertise}
-                  className="content-grid-item"
+                  className="PanelFrame-item"
                 />
               );
             })}

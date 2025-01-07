@@ -58,6 +58,12 @@
     justify-content: var(--appname-about-article-justify-cont);
   }
 
+  &-description {
+    a {
+      color: var(--appname-theme-light-eee-2);
+    }
+  }
+
   .container {
     position: relative;
     display: var(--appname-about-container-display); 

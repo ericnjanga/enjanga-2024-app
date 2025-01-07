@@ -1,24 +1,22 @@
 :root {
   --appname-PanelFrame-gap: 4px;
   --appname-PanelFrame-column-count: 1;
-  --appname-pageSection-hero-marg-bottom: 15px; 
+  --appname-pageSection-hero-marg-bottom: 15px;
 }
-
 
 .PanelFrame {
   .content-grid {
     column-count: var(--appname-PanelFrame-column-count);
     column-gap: var(--appname-PanelFrame-gap); /* Consistent gap */
 
-    .content-grid-item {
+    .PanelFrame-item {
       break-inside: avoid; /* Prevent item splitting */
       margin-bottom: var(--appname-PanelFrame-gap); /* Gap between rows */
     }
   }
 
-
-  a { 
-    &:hover { 
+  a {
+    &:hover {
       text-decoration: none;
     }
   }
@@ -62,30 +60,70 @@
     // border: 10px solid chocolate;
   }
 
-
-
-
-
   &.theme-1 {
     color: var(--appname-theme-light-bbbb-1);
     background-color: var(--appname-theme-light-bbbb-8);
 
-    a {
-      color: var(--appname-theme-light-bbbb-1);
-  
-      &:hover {
-        color: var(--appname-theme-light-eee-1); 
+    .pageSection-intro-text {
+      a {
+        color: var(--appname-theme-light-eee-1);
       }
     }
   }
+
   &.theme-2 {
     color: var(--appname-theme-light-xxxx-0);
     background-color: var(--appname-theme-light-bbbb-2);
 
-    
+    .pageSection-intro-text {
+      a {
+        color: var(--appname-theme-light-eee-2);
+      }
+    }
+
+    .PanelFrame-item {
+      color: var(--appname-theme-light-xxxx-0);
+      background-color: var(--appname-theme-light-bbbb-3);
+
+      .icon {
+        color: var(--appname-theme-light-bbbb-10);
+      }
+
+      .btn-link {
+        color: var(--appname-theme-light-eee-2);
+      }
+
+      // ...
+      &:hover {
+        border-color: var(--appname-theme-light-aaaa-7);
+        background-color: var(--appname-theme-light-bbbb-3a);
+      }
+    }
   }
+
   &.theme-3 {
     color: var(--appname-theme-light-xxxx-0);
     background-color: var(--appname-theme-light-bbbb-01);
+
+    .pageSection-intro-text {
+      a {
+        color: var(--appname-theme-light-eee-1);
+      }
+    }
+
+    .PanelFrame-item {
+      color: var(--appname-theme-light-xxxx-0);
+      background-color: var(--appname-theme-light-bbbb-02);
+
+      .icon {
+        color: var(--appname-theme-light-bbbb-10);
+      }
+
+      // ...
+      &:hover {
+        border-color: var(--appname-theme-light-aaaa-7);
+        background-color: var(--appname-theme-light-bbbb-03);
+      }
+    }
   }
 }

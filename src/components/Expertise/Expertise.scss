@@ -5,7 +5,6 @@
 #scope-of-expertise {
   .slider {
     position: relative;
-    border: 4px solid red;
 
     // ...
     .carrousel-controls {
@@ -33,13 +32,10 @@
     }
 
     .PanelFrame {
-      border: 4px dashed blue;
       min-height: var(--appname-expertise-PanelFrame-height);
     }
-
   }
 
-  // ...
 
 
   // Extra Large screen ...
