@@ -17,30 +17,29 @@ function withCarrousel<P extends object>(
   configObj: SliderConfig
 ): React.FC<P> {
   return (props: P) => {
-    const [sliderReady, setSliderReady] = useState(true);
-    //...
-    const refs = {
+    const [sliderReady, setSliderReady] = useState(true); 
+    const [activeIndex, setActiveIndex] = useState(0);      // Tracking active slide index
+    const totalSlides = slidesList ? slidesList.length : 0; // Tracking the number of slides used
+    
+    const refs = { // ...
       carousel: useRef<HTMLDivElement | null>(null), // Use referrencing the carousel element
       prevBtn: useRef<HTMLButtonElement | null>(null), // Ref for prev button
       nextBtn: useRef<HTMLButtonElement | null>(null), // Ref for next button
     };
 
-    // Basic state for the slider
-    const [value, setValue] = useState<number>(0);
+    // Keeping track of which control will be disabled ...
+    const isPrevDisabled = activeIndex === 0;
+    const isNextDisabled = activeIndex === totalSlides - 1;
 
-    // Handle slider value change
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(Number(e.target.value));
-    };
-
-    // Setup slider ...
+    // Initializing the carrousel ...
     useSliderInit(
       refs.carousel,
       refs.prevBtn,
       refs.nextBtn,
       slidesList,
       setSliderReady,
-      configObj
+      configObj,
+      setActiveIndex
     );
 
     return (
@@ -49,13 +48,15 @@ function withCarrousel<P extends object>(
           <Preloader />
         ) : (
           <>
-            <CarrouselControls {...refs} />
+            <CarrouselControls 
+              {...refs} 
+              activeIndex={activeIndex}
+              totalSlides={totalSlides}
+              isPrevDisabled={isPrevDisabled}
+              isNextDisabled={isNextDisabled}
+            />
             <section className="slider" ref={refs.carousel}>
-              <WrappedComponent
-                {...props}
-                sliderValue={value}
-                onSliderChange={handleChange}
-              />
+              <WrappedComponent {...props} />
             </section>
           </>
         )}

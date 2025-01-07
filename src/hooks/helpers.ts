@@ -25,6 +25,7 @@ declare global {
  * @param listOfItems 
  * @param setReadyState 
  * @param config 
+ * @param setActiveIndex
  */
 export const useSliderInit = (
   sliderRef: React.RefObject<HTMLDivElement>,
@@ -33,6 +34,7 @@ export const useSliderInit = (
   listOfItems: ProjectProps[] | string[] | null,
   setReadyState: React.Dispatch<React.SetStateAction<boolean>>,
   config: SliderConfig,
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>
 ) => {
 
   useEffect(() => {
@@ -49,6 +51,12 @@ export const useSliderInit = (
         $(prevBtnRef.current).on('click', () => { slick.slick('slickPrev'); }); 
         $(nextBtnRef.current).on('click', () => { slick.slick('slickNext'); });
 
+        // Track the active slide index
+        $(sliderElement).on("afterChange", (_, __, currentIndex: number) => {
+          console.log('.....currentIndex = ', currentIndex);
+          setActiveIndex(currentIndex);
+        });
+
         // Wait for slick to finish initializing before showing the slider
         setReadyState(true); 
 
@@ -57,12 +65,13 @@ export const useSliderInit = (
           if (prevBtnRef.current && nextBtnRef.current && sliderElement) {
             $(prevBtnRef.current).off('click');
             $(nextBtnRef.current).off('click'); 
+            $(sliderElement).off('afterChange'); 
             $(sliderElement).slick("unslick"); // Destroy the Slick slider instance 
           }
         };
       } 
     }
-  }, [config, listOfItems]); // No need for setReadyState or sliderRef here, as they are stable references
+  }, [config, listOfItems, setActiveIndex]); // No need for setReadyState or sliderRef here, as they are stable references
 };
 
 

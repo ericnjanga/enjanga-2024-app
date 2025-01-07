@@ -3,35 +3,33 @@
 }
 
 #scope-of-expertise {
-  // // NOTE: Insuring all slides have the same height
-  // // (The height of the highest slide will be matched by the others)
-  // .slick-track {
-  //   display: flex;
-
-  //   .slick-slide {
-  //     height: auto;
-
-  //     > div {
-  //       height: 100%;
-
-  //       > .slide-item {
-  //         height: 100%;
-  //       }
-  //     }
-  //   }
-  // }
-
   .slider {
     position: relative;
     border: 4px solid red;
 
     // ...
     .carrousel-controls {
-      border: 4px solid blue;
+      // border: 4px solid blue;
       position: absolute;
-      top: 110px;
+      top: 130px;
       right: 60px;
       z-index: 10;
+
+      &.slide-index-1,
+      &.slide-index-2 { 
+        .btn {
+          color: var(--appname-theme-light-xxxx-0); 
+          &:hover {
+            color: var(--appname-theme-light-aaaa-x);
+            background-color: var(--appname-theme-light-cccc-11);
+          }
+          &:active {
+            color: var(--appname-theme-light-xxxx-0); 
+            background-color: var(--appname-theme-light-eee-1);
+            border-color: var(--appname-theme-light-eee-1);
+          }
+        }
+      }
     }
 
     .PanelFrame {

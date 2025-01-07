@@ -1,7 +1,7 @@
 
 .carrousel-controls {
   display: flex;
-  gap: 40px;
+  gap: 20px;
 
   // Cancel slick-slider styles
   .btn {
@@ -20,6 +20,34 @@
 
     &::before {
       display: none;
+    }
+  }
+
+  // Proper styling ... 
+  .btn {
+    border: 2px solid transparent;
+
+    &.slick-prev {
+      padding-right: 0.7rem;
+
+      .icon {
+        margin-left: 0;
+        margin-right: 0.7rem;
+      }
+    }
+
+    &.slick-next {
+      padding-left: 0.7rem;
+    }
+
+    &:hover {
+      background-color: var(--appname-theme-light-aaaa-3x); 
+      border-color: var(--appname-theme-light-aaaa-2);
+    }
+    &:active {
+      color: var(--appname-theme-light-xxxx-0); 
+      background-color: var(--appname-theme-light-eee-1);
+      border-color: var(--appname-theme-light-eee-1);
     }
   }
 }
