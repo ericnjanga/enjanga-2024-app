@@ -59,7 +59,7 @@ export type NavOptionProps = {
 
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'transparent';
   size?: 'sm' | 'md' | 'lg';
   label?: string;
   neonVersion?: boolean

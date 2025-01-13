@@ -20,7 +20,7 @@ const Footer = () => {
 
   // Otherwise, destructure the context
   return (
-    <footer className="Footer">
+    <footer className="Footer sc-block">
       <div className="container text-center">
         <Heading h="4" className="name mb-0">
           {!sectionData ? <Preloader /> : sectionData.title}
@@ -34,6 +34,7 @@ const Footer = () => {
         ></div>
 
         <Button
+          variant="transparent"
           icon='chat'
           ariaLabel="Open contact form to get in touch with Eric Njanga"
           onClickHandler={() => {

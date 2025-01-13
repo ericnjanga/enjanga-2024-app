@@ -18,7 +18,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-const Home = () => <p>Home</p>;
+const Home = () => <p>*** Routes setup ***</p>;
 
 function App() {
   return (
