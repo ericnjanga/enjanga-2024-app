@@ -95,7 +95,7 @@ function makeMirageServer() {
       });
       server.create('pageSection', { // Expertise specification 1
         id: '9',
-        title: 'Consulting, Vision, structure, and planning', 
+        title: 'Consulting, Vision, and Culture', 
         description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
         className: 'theme1' 
       });
@@ -173,7 +173,7 @@ function makeMirageServer() {
         title: 'Coding visual designs',
         description: ` 
           <p><b>Description 4 ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>Implementing the visual design aesthetic design system, and front-end processes and app architecture.</p>
         `,  
       });
       server.create('expertiseSpec', {
@@ -193,7 +193,7 @@ function makeMirageServer() {
         blurb: `Expertise specification 2 - blurb 1`,
         title: 'Expertise 6',
         description: `
-          <p><b>Description 1 ...</b></p>
+          <p><b>Description 1 a ***</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
@@ -220,7 +220,7 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '9', 
         parentId: '8',
-        blurb: `Expertise specification 2 - blurb 3`,
+        blurb: `Being actively involved in all aspects pf the research, prototyping and implementation of user interfaces that solve users/customers problems.`,
         title: 'Expertise 8',
         description: ` 
           <p><b>Description 3 ...</b></p>
@@ -231,27 +231,28 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '10', 
         parentId: '9',
-        blurb: `Expertise specification 2 - blurb 1`,
-        title: 'Expertise 6',
+        blurb: `Mentoring other developers as a subject matter expert in Front-end technologies and general best practices.`,
+        title: 'Mentoring and coaching',
         description: `
-          <p><b>Description 1 ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p><b>Description 1 b ...</b></p>
+          <p>Contribute to the growth and mentorship of other team members.</p>
+          <p>...</p>
         `, 
       });
       server.create('expertiseSpec', {
         id: '11', 
         parentId: '9',
-        blurb: `Expertise specification 2 - blurb 2`,
-        title: 'Expertise 7',
+        blurb: `Embracing company culture, sharing, connecting and helping fellow colleagues. Being part of Hackathons, R&D demos, and more.`,
+        title: 'A culture of collaboration',
         description: ` 
-          <p><b>Description 2 ...</b></p>
+          <p><b>Socializing, and helping around for the good of the organization.</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `, 
       });
       server.create('expertiseSpec', {
         id: '12', 
         parentId: '9',
-        blurb: `Expertise specification 2 - blurb 3`,
+        blurb: `Contributing to research and development by helping bridge the gap between UX Design and Agile Development.`,
         title: 'Expertise 8',
         description: ` 
           <p><b>Description 3 ...</b></p>
