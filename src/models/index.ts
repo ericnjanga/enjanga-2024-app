@@ -65,6 +65,7 @@ export interface ButtonProps {
   neonVersion?: boolean
   children: ReactNode
   href?: string
+  target?: string
   ariaLabel?: string
   onClickHandler?: () => void
   icon?: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat'

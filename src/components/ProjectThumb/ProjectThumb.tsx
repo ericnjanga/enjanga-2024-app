@@ -28,7 +28,7 @@ const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
       <img className="img-fluid" src={image} alt={title} />
       <div className="card-body">
         {/* <h3 className="ProjectThumb-title">{title}</h3> */}
-        <p className="ProjectThumb-description mb-0">{blurb}</p>
+        <p className="ProjectThumb-description mb-0">{title}</p>
       </div>
     </div>
   );

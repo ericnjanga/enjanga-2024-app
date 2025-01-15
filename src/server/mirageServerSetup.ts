@@ -36,7 +36,7 @@ function makeMirageServer() {
       // Projects ...
       server.create('project', {
         id: '1',
-        title: 'Design and UI Development of a comprehensive De ...', 
+        title: `A WordPress theme designed and custom-coded to fit business rules`, 
         blurb: `Design and UI Development of a comprehensive Design System for a government website`,
         image: 'images/project-1.png',
         description: `<h3> (Project 1)</h3>
@@ -46,7 +46,7 @@ function makeMirageServer() {
       });
       server.create('project', {
         id: '2',
-        title: `Front-end Dev and prototyping for a large website's design system`, 
+        title: `A UI kit designed and developed for a CMS-based enterprise website`, 
         blurb: `Design and UI Development of a comprehensive Design System for a government website`,
         image: 'images/project-2.png',
         description: `<h3> (Project 2)</h3>
@@ -56,7 +56,7 @@ function makeMirageServer() {
       });
       server.create('project', {
         id: '3',
-        title: `Front-end Dev, research, and prototyping for a website rebranding`, 
+        title: `Using engineering knowledge to inform Design decisions`, 
         blurb: `Design and UI Development of a comprehensive Design System for a government website`,
         image: 'images/project-3.png',
         description: `<h3> (Project 3)</h3>
@@ -66,8 +66,8 @@ function makeMirageServer() {
       });
       server.create('project', {
         id: '4',
-        title: `Design Prototypes for improving Government services delivery`, 
-        blurb: `Design and UI Development of a comprehensive Design System for a government website`,
+        title: `Bridging the gap between Design Systems and Agile Development`, 
+        blurb: `Design Prototypes for improving Government services delivery --- Design and UI Development of a comprehensive Design System for a government website`,
         image: 'images/project-4.png',
         description: `<h3> (Project 4)</h3>
           <p><b>Description ..</b></p>
@@ -84,32 +84,41 @@ function makeMirageServer() {
       server.create('pageSection', { // Expertise specification 1
         id: '2',
         title: 'Writing custom code', 
-        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
+        description: `<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
+        <p>My coding expertise includes, but is not limited to:</p>
+        `,
         className: 'theme1' 
       });
       server.create('pageSection', { // Expertise specification 1
         id: '8',
         title: 'Designing User Interfaces', 
-        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
+        description: `<p>I excel at using my engineering knowledge to help multi-disciplinary teams make well-informed design decisions.
+        I combine <a href="#">Usability</a> and <a href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
+        <p>My design expertise includes, but is not limited to:</p>`,
         className: 'theme1' 
       });
       server.create('pageSection', { // Expertise specification 1
         id: '9',
         title: 'Consulting, Vision, and Culture', 
-        description: '<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page. My expertise includes, but is not limited to:</p>',
+        description: `<p>I am a team player, and believe in purposeful collective effort. I thrive in cross-functional teams and agile environments. I have excellent stakeholders communication skills and can show leadership when necessary.</p>
+        <p>My soft skills includes, but is not limited to:</p>
+        `,
         className: 'theme1' 
       });
       server.create('pageSection', { // Portfolio
         id: '3',
         title: 'Some of my work', 
-        description: 'I’ve wrote code for hundreds of web applications over my 15+ years of experience. Below is some of my work.', 
+        description: `
+        <p>I’ve contributed to every aspect of a software lifecycle, from business requirements gathering, visual design, and codign to deployment. 
+          Below is some of my work:</p>
+        `, 
       });
       server.create('pageSection', { // About
         id: '4',
         title: 'A little bit about me :)', 
         description: `
           <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
-          <p>I am also a self-thought Design Thinker and User Experience specialist. I focus my attention on <a href="#">Usability</a> and <a href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
+          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a href="#">Usability</a> and <a href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
           <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
         `, 
       });
@@ -139,17 +148,19 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '1', 
         parentId: '2',
-        blurb: `Creating single page applications that are optimized for performance, high traffic, and optimal User Experience.`,
+        blurb: `Writing production code with a focus on user's experience, performance, and easy maintenance.`,
         title: 'High performance web apps',
         description: ` 
           <p><b>Description 2 ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>Writing production code with a focus on user's experience, crafting interaction patterns 
+          that are reusable and inclusive. Ensuring the code is easy maintainable, and optimized 
+          for high-traffic and performance.</p>
         `, 
       });
       server.create('expertiseSpec', {
         id: '2', 
         parentId: '2',
-        blurb: `WCAG and AODA Accessibility compliance.`,
+        blurb: `Optimizing the code for WCAG and AODA Accessibility compliance.`,
         title: 'Accessibility Compliance',
         description: ` 
           <p><b>Optimizing the code structure for optimal (WCAG and AODA) ...</b></p>
@@ -159,7 +170,7 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '3', 
         parentId: '2', 
-        blurb: `***Solving complex and unusual coding problems and communication effectively with stakeholders`,
+        blurb: `Using analytial and problem soving skills to address complex and unusual coding problems.`,
         title: 'Expertise 3',
         description: ` 
           <p><b>Description 5 ...</b></p>
@@ -179,7 +190,7 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '5', 
         parentId: '2',
-        blurb: `Solving complex and unusual coding problems and communication effectively with stakeholders`,
+        blurb: `Translating business/technical specifications into working, tested applications.`,
         title: 'Expertise 5',
         description: ` 
           <p><b>Description 5 ...</b></p>
@@ -190,7 +201,7 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '6', 
         parentId: '8',
-        blurb: `Expertise specification 2 - blurb 1`,
+        blurb: `Using my engineering knowledge to support Design Thinking processes and make well-informed design decisions.`,
         title: 'Expertise 6',
         description: `
           <p><b>Description 1 a ***</b></p>
@@ -231,6 +242,16 @@ function makeMirageServer() {
       server.create('expertiseSpec', {
         id: '10', 
         parentId: '9',
+        blurb: `Developing and presenting new ideas and conceptualizing new approaches and solutions.`,
+        title: 'Expertise 8',
+        description: ` 
+          <p><b>Description 3 ...</b></p>
+          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+        `, 
+      });
+      server.create('expertiseSpec', {
+        id: '11', 
+        parentId: '9',
         blurb: `Mentoring other developers as a subject matter expert in Front-end technologies and general best practices.`,
         title: 'Mentoring and coaching',
         description: `
@@ -240,9 +261,9 @@ function makeMirageServer() {
         `, 
       });
       server.create('expertiseSpec', {
-        id: '11', 
+        id: '12', 
         parentId: '9',
-        blurb: `Embracing company culture, sharing, connecting and helping fellow colleagues. Being part of Hackathons, R&D demos, and more.`,
+        blurb: `Supporting my organiation's growth by contributung to the culture.`,
         title: 'A culture of collaboration',
         description: ` 
           <p><b>Socializing, and helping around for the good of the organization.</b></p>
@@ -250,7 +271,7 @@ function makeMirageServer() {
         `, 
       });
       server.create('expertiseSpec', {
-        id: '12', 
+        id: '13', 
         parentId: '9',
         blurb: `Contributing to research and development by helping bridge the gap between UX Design and Agile Development.`,
         title: 'Expertise 8',
@@ -260,9 +281,9 @@ function makeMirageServer() {
         `, 
       });
       server.create('expertiseSpec', {
-        id: '13', 
+        id: '14', 
         parentId: '9',
-        blurb: `Expertise specification 2 - blurb 3`,
+        blurb: `Effective communication with stakeholders.`,
         title: 'Expertise 8',
         description: ` 
           <p><b>Description 3 ...</b></p>
@@ -270,6 +291,10 @@ function makeMirageServer() {
         `, 
       });
     },
+
+
+
+    
 
 
 

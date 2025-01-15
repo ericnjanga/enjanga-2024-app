@@ -26,7 +26,8 @@ const About = () => {
               icon='chat'
               variant="secondary" 
               neonVersion={true}
-              href="#scope-of-expertise"
+              target="_blank"
+              href="https://www.linkedin.com/in/ericnjanga/"
             >
               Find me on LinkedIn
             </Button>

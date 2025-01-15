@@ -9,6 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   children = "Button",
   href,
   ariaLabel,
+  target,
   onClickHandler,
   icon
 }) => {
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   return href ? (
     <a 
       href={href} 
+      target={target}
       {...commonProps}
     >
       {children}

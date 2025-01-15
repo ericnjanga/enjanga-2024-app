@@ -43,9 +43,11 @@ export const PanelGridList: React.FC<PanelGridListProps> = ({ idsList }) => {
 
 export const PortfolioList: React.FC<PortfolioListProps> = ({ itemsList }) => { 
 
+  const sortedList = itemsList?.slice().sort((a, b) => b.id.localeCompare(a.id));
+
   return (
     <>
-      {itemsList && itemsList.map((project, index) => { 
+      {sortedList && sortedList.map((project, index) => { 
 
         return (
           <ProjectThumb
