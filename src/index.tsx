@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import makeMirageServer from './server/mirageServerSetup';
 import reportWebVitals from './reportWebVitals';
+import './config/i18n'; // i18n configuration
 
 const rootElement = document.getElementById('root');
 

@@ -3,11 +3,14 @@ import { useNavOptions } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
-import Button from "../Button/Button";
+import Button from "../Button/Button"; 
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from "../LanguageToggle/LanguageToggle";
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
   const context = useContext(ModalContext);
+  const { t } = useTranslation();
 
   if (!context) {
     // return if the context is empty
@@ -54,6 +57,9 @@ const Navigation = () => {
                 );
               })}
           </ul>
+          <div>
+              <LanguageToggle />
+          </div>
           <ul className="navbar-nav">
             <li className="nav-item">
               <Button 
@@ -66,7 +72,7 @@ const Navigation = () => {
                   });
                 }} 
               >
-                Get in touch with me
+                { t('contactBtn') }
               </Button>
             </li>
           </ul>
