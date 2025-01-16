@@ -51,9 +51,9 @@ export type ProjectProps = {
 
 export type NavOptionProps = {
   id: string
-  name: string 
+  name: { [key: string]: string }; // name in different languages
   url: string 
-  description: string
+  description: { [key: string]: string }; // description in different languages
 };
  
 
