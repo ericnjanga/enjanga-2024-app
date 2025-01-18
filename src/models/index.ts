@@ -51,8 +51,12 @@ export type ProjectProps = {
 
 export type NavOptionProps = {
   id: string
-  // name: string
-  // description: string
+  name: string
+  description: string
+  url: string 
+};
+export type NavOptionPropsActiveLang = { // With properties from the active language
+  id: string
   url: string 
   description: { [key: string]: string }; // description in different languages
   name: { [key: string]: string }; // name in different languages

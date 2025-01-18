@@ -1,7 +1,7 @@
 // import { createServer } from 'miragejs';
 import { createServer, Model, Request, Server } from "miragejs";
 import { AppRegistry } from "./../models"; // Import schema and types
-import { NavOptionProps } from "./../models";
+import { NavOptionPropsActiveLang } from "./../models";
 import { getCurrentLanguage } from "../utils/functions";
 
 
@@ -634,11 +634,13 @@ function makeMirageServer() {
       this.get("/navOptions", (schema: AppRegistry, request: Request) => {
         const lang = getCurrentLanguage();
 
-        return this.schema.navOptions.all().models.map((option: NavOptionProps) => ({
-          id: option.id,
-          name: option.name[lang],
-          description: option.description[lang]
-        }));
+        return {
+          navOptions: this.schema.navOptions.all().models.map((option: NavOptionPropsActiveLang) => ({
+            id: option.id,
+            name: option.name[lang],
+            description: option.description[lang]
+          }))
+        };
       });
 
       // PageSection ...
