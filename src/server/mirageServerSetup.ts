@@ -1,7 +1,11 @@
 // import { createServer } from 'miragejs';
 import { createServer, Model, Request, Server } from "miragejs";
 import { AppRegistry } from "./../models"; // Import schema and types
-import { NavOptionPropsActiveLang } from "./../models";
+import { 
+  NavOptionPropsActiveLang, 
+  ExpertiseSpecPropsActiveLang,
+  ProjectPropsActiveLang
+} from "./../models";
 import { getCurrentLanguage } from "../utils/functions";
 
 
@@ -635,49 +639,110 @@ function makeMirageServer() {
         const lang = getCurrentLanguage();
 
         return {
-          navOptions: this.schema.navOptions.all().models.map((option: NavOptionPropsActiveLang) => ({
-            id: option.id,
-            name: option.name[lang],
-            description: option.description[lang]
+          navOptions: this.schema.navOptions.all().models.map((data: NavOptionPropsActiveLang) => ({
+            id: data.id,
+            name: data.name[lang],
+            description: data.description[lang]
           }))
         };
       });
 
+
       // PageSection ...
       this.get("/pageSections/:id", (schema: AppRegistry, request: Request) => {
         const lang = getCurrentLanguage();
-        const pageSection = this.schema.pageSections.find(request.params.id);
+        const data = this.schema.pageSections.find(request.params.id);
+
         return {
-          title: pageSection.title[lang],
-          description: pageSection.description[lang]
+          pageSection: {
+            title: data.title[lang],
+            description: data.description[lang]
+          }
         };
       });
 
+
       // Expertise Specification ...
-      this.get("/expertiseSpecs", () => {
-        return this.schema.expertiseSpecs.all();
+      this.get("/expertiseSpecs", (schema: AppRegistry, request: Request) => {
+        const lang = getCurrentLanguage();
+
+        return {
+          expertiseSpecs: this.schema.expertiseSpecs.all().models.map((data: ExpertiseSpecPropsActiveLang) => ({
+            id: data.id,
+            parentId: data.parentId,
+            blurb: data.blurb[lang],
+            title: data.title[lang],
+            description: data.description[lang] 
+          })) 
+        };
       });
-      this.get(
-        "/expertiseSpecsByParent/:id",
-        (schema: AppRegistry, request: Request) => {
-          return this.schema.expertiseSpecs.where({
-            parentId: request.params.id,
-          });
-        }
-      );
-      this.get(
-        "/expertiseSpecs/:id",
-        (schema: AppRegistry, request: Request) => {
-          return this.schema.expertiseSpecs.find(request.params.id);
-        }
-      );
+
+
+      this.get("/expertiseSpecsByParent/:id", (schema: AppRegistry, request: Request) => {
+        const lang = getCurrentLanguage();
+        const data = this.schema.expertiseSpecs.where({
+          parentId: request.params.id,
+        });
+
+        return {
+          expertiseSpecs: data.models.map((data: ExpertiseSpecPropsActiveLang) => ({
+            id: data.id,
+            parentId: data.parentId,
+            blurb: data.blurb[lang],
+            title: data.title[lang],
+            description: data.description[lang] 
+          })) 
+        };
+      });
+
+
+      this.get( "/expertiseSpecs/:id", (schema: AppRegistry, request: Request) => {
+        const lang = getCurrentLanguage();
+        const data = this.schema.expertiseSpecs.find(request.params.id);
+
+        return {
+          expertiseSpecs: {
+            id: data.id,
+            parentId: data.parentId,
+            blurb: data.blurb[lang],
+            title: data.title[lang],
+            description: data.description[lang] 
+          }
+        };
+      });
+
 
       // Projects ...
-      this.get("/projects", () => {
-        return this.schema.projects.all();
+      this.get("/projects", (schema: AppRegistry, request: Request) => {
+        const lang = getCurrentLanguage();
+
+        return {
+          projects: this.schema.projects.all().models.map((data: ProjectPropsActiveLang) => ({
+            id: data.id,
+            title: data.title[lang],
+            image: data.image,
+            className: data.className,
+            blurb: data.blurb[lang],
+            description: data.description[lang]
+          }))
+        }; 
       });
+
+
       this.get("/projects/:id", (schema: AppRegistry, request: Request) => {
-        return this.schema.projects.find(request.params.id);
+        const lang = getCurrentLanguage();
+        const data = this.schema.projects.find(request.params.id);
+
+        return {
+          projects: {
+            id: data.id,
+            title: data.title[lang],
+            image: data.image,
+            className: data.className,
+            blurb: data.blurb[lang],
+            description: data.description[lang]
+          }
+        };
       });
     },
   });

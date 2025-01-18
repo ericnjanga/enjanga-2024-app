@@ -5,7 +5,6 @@ import { useCallback, useEffect, useState } from "react";
 import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 import { mockContactForm } from "../models/mockupData";
-import { PortfolioListProps } from "../models";
 
 
 /**
@@ -66,7 +65,7 @@ export const fetchData = async(dataType: string, dataId: string | null) => {
     const data = await response.json();
 
     // // [Mode Troubleshooting] ...
-    // if (dataType === 'navOptions') { 
+    // if (dataType === 'expertiseSpecsParent') { 
     //   console.log('.....1***', data); 
     //   console.log('.....2***', stateProps); 
     //   console.log('.....3***', !data); 

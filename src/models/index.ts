@@ -43,11 +43,21 @@ export type InformationCard1Props = {
 export type ProjectProps = {
   id: string
   title: string 
-  blurb: string
   image: string
-  description: string
   className?: string
+  blurb: string
+  description: string
 };
+export type ProjectPropsActiveLang = { // With properties from the active language
+  id: string
+  image: string
+  className?: string
+  // description in different languages ...
+  title: { [key: string]: string };
+  blurb: { [key: string]: string };
+  description: { [key: string]: string }; 
+};
+
 
 export type NavOptionProps = {
   id: string
@@ -58,10 +68,28 @@ export type NavOptionProps = {
 export type NavOptionPropsActiveLang = { // With properties from the active language
   id: string
   url: string 
-  description: { [key: string]: string }; // description in different languages
-  name: { [key: string]: string }; // name in different languages
+  // description in different languages ...
+  description: { [key: string]: string }; 
+  name: { [key: string]: string }; 
 };
- 
+
+
+export type ExpertiseSpecProps = {
+  id: string
+  parentId: string
+  blurb: string
+  title: string 
+  description: string 
+};
+export type ExpertiseSpecPropsActiveLang = { // With properties from the active language
+  id: string
+  parentId: string
+  // description in different languages ...
+  blurb: { [key: string]: string };
+  title: { [key: string]: string };
+  description: { [key: string]: string };
+};
+
 
 
 export interface ButtonProps {
