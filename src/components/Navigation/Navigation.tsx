@@ -12,6 +12,10 @@ const Navigation = () => {
   const context = useContext(ModalContext);
   const { t } = useTranslation();
 
+  // getCurrentLanguage
+
+  console.log('.....navItemsList =', navItemsList);
+
   if (!context) {
     // return if the context is empty
     return <Preloader />;

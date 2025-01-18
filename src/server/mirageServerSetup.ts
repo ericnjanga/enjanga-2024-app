@@ -2,20 +2,22 @@
 import { createServer, Model, Request, Server } from "miragejs";
 import { AppRegistry } from "./../models"; // Import schema and types
 import { NavOptionProps } from "./../models";
+import { getCurrentLanguage } from "../utils/functions";
 
 
-const getLang = (schema: AppRegistry, request: Request) => {
-  let lang: string = 'en'; // Default language is English
+// --- Delete this next time ---
+// const getLang = (schema: AppRegistry, request: Request) => {
+//   let lang: string = 'en'; // Default language is English
 
-  // Check if lang is an array, and if so, pick the first value
-  if (Array.isArray(request.queryParams.lang)) {
-    lang = request.queryParams.lang[0];
-  } else {
-    lang = request.queryParams.lang || 'en'; // Default to 'en' if not set
-  }
+//   // Check if lang is an array, and if so, pick the first value
+//   if (Array.isArray(request.queryParams.lang)) {
+//     lang = request.queryParams.lang[0];
+//   } else {
+//     lang = request.queryParams.lang || 'en'; // Default to 'en' if not set
+//   }
 
-  return lang;
-}
+//   return lang;
+// }
 
 function makeMirageServer() {
   return createServer({
@@ -31,7 +33,7 @@ function makeMirageServer() {
       server.create("navOption", {
         id: "1",
         name: {
-          en: "Scope of Expertise",
+          en: "***Scope of Expertise",
           fr: "[fr] Scope of Expertise",
         },
         url: "#scope-of-expertise",
@@ -630,7 +632,7 @@ function makeMirageServer() {
 
       // navOptions ...
       this.get("/navOptions", (schema: AppRegistry, request: Request) => {
-        const lang = getLang(schema, request);
+        const lang = getCurrentLanguage();
 
         return this.schema.navOptions.all().models.map((option: NavOptionProps) => ({
           id: option.id,
@@ -641,7 +643,7 @@ function makeMirageServer() {
 
       // PageSection ...
       this.get("/pageSections/:id", (schema: AppRegistry, request: Request) => {
-        const lang = getLang(schema, request);
+        const lang = getCurrentLanguage();
         const pageSection = this.schema.pageSections.find(request.params.id);
         return {
           title: pageSection.title[lang],

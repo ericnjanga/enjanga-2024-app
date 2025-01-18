@@ -1,12 +1,18 @@
-
+import i18n from 'i18next';
 import PanelFrame from "../components/PanelFrame/PanelFrame";
-
 import ProjectThumb from "../components/ProjectThumb/ProjectThumb";
 import { PanelGridListProps, PortfolioListProps } from "../models";
 
+// Returns the currently active language on the app
+export const getCurrentLanguage = (): string => {
+  return i18n.language || 'en'; // Default to 'en' if no language is set
+};
+
+// Activates navigation links by assigning a specific css class
 export const setLinkActive = ({ isActive }: { isActive: boolean }) =>
   isActive ? "link-active" : "";
 
+// Encapsulate the error feedback message
 export const logErrorMessage = (error: unknown) => {
   if (error instanceof Error) {
     console.error(error.message);
