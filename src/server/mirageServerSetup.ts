@@ -638,6 +638,8 @@ function makeMirageServer() {
       this.get("/navOptions", (schema: AppRegistry, request: Request) => {
         const lang = getCurrentLanguage();
 
+        console.log('...lang = ', lang);
+
         return {
           navOptions: this.schema.navOptions.all().models.map((data: NavOptionPropsActiveLang) => ({
             id: data.id,

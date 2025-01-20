@@ -64,12 +64,12 @@ export const fetchData = async(dataType: string, dataId: string | null) => {
     // Once the response is available, parse it to json ...
     const data = await response.json();
 
-    // // [Mode Troubleshooting] ...
-    // if (dataType === 'expertiseSpecsParent') { 
-    //   console.log('.....1***', data); 
-    //   console.log('.....2***', stateProps); 
-    //   console.log('.....3***', !data); 
-    // }
+    // [Mode Troubleshooting] ...
+    if (dataType === 'navOptions') { 
+      console.log('.....1***', data); 
+      console.log('.....2***', stateProps); 
+      console.log('.....3***', !data); 
+    }
 
     // Handle data structure errors ...
     if (!data || !data[stateProps]) {
