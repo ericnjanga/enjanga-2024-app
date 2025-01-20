@@ -5,10 +5,12 @@ import { useContext } from "react";
 import Heading from "../Heading/Heading";
 import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const sectionData = usePageSection("5");
   const context = useContext(ModalContext);
+  const { t } = useTranslation();
 
   if (!context) {
     // return if the context is empty
@@ -35,16 +37,16 @@ const Footer = () => {
 
         <Button
           variant="transparent"
-          icon='chat'
+          icon="chat"
           ariaLabel="Open contact form to get in touch with Eric Njanga"
           onClickHandler={() => {
             openModal({
-              dataType: 'pageSections',
+              dataType: "pageSections",
               dataId: "7",
             });
           }}
         >
-          Get in touch with me
+          {t("contactCTA")}
         </Button>
       </div>
     </footer>

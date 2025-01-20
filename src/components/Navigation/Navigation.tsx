@@ -57,9 +57,9 @@ const Navigation = () => {
                 );
               })}
           </ul>
-          <div>
-              <LanguageToggle />
-          </div>
+          
+          <LanguageToggle className="mx-auto" />
+
           <ul className="navbar-nav">
             <li className="nav-item">
               <Button 
@@ -72,7 +72,7 @@ const Navigation = () => {
                   });
                 }} 
               >
-                { t('contactBtn') }
+                { t('contactCTA') }
               </Button>
             </li>
           </ul>

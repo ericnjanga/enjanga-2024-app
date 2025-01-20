@@ -17,7 +17,7 @@ declare module "react-i18next" {
     resources: {
       translation: {
         welcome: string;
-        contactBtn: string;
+        contactCTA: string;
         key3: string;
         key4: string;
         key5: string;

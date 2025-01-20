@@ -1,0 +1,28 @@
+:root {
+  --appname-LanguageToggle-gap: 5px;
+}
+
+.LanguageToggle {
+  display: flex;
+  border: 1px solid var(--appname-theme-light-cccc-10);
+  padding: var(--appname-LanguageToggle-gap);
+  gap: var(--appname-LanguageToggle-gap);
+  border-radius: var(--appname-bdr-radius-0);
+
+  .btn {
+    color: var(--appname-theme-light-xxxx-0);
+    font-size: 14px;
+    border-width: 0px;
+    letter-spacing: 2px;
+    padding: 0.3rem 0.7rem;
+    line-height: 0.8rem;
+
+    &:hover {
+      background-color: var(--appname-theme-light-eee-0);
+    }
+
+    &.active {
+      background-color: var(--appname-theme-light-eee-1);
+    }
+  }
+}

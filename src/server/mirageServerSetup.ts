@@ -37,8 +37,8 @@ function makeMirageServer() {
       server.create("navOption", {
         id: "1",
         name: {
-          en: "***Scope of Expertise",
-          fr: "[fr] Scope of Expertise",
+          en: "Scope of Expertise",
+          fr: "Sommaire des compétances",
         },
         url: "#scope-of-expertise",
         description: "....",
@@ -47,7 +47,7 @@ function makeMirageServer() {
         id: "2",
         name: {
           en: "Some work",
-          fr: "[fr] Some work",
+          fr: "Récents travaux",
         },
         url: "#some-work",
         description: "....",
@@ -133,7 +133,7 @@ function makeMirageServer() {
         id: "4",
         title: {
           en: `Bridging the gap between Design Systems and Agile Development`,
-          fr: `Bridging the gap between Design Systems and Agile Development`
+          fr: `Combler le fossé entre les systèmes de Design et le développement Agile`
         },
         blurb: {
           en: `Design Prototypes for improving Government services delivery
@@ -162,13 +162,13 @@ function makeMirageServer() {
         id: "1",
         title: {
           en: "Software Design & Engineering",
-          fr: "Software Design & Engineering"
+          fr: "Conception du logiciel web"
         },
         description: {
           en: `I excel at creating custom software for web applications, and have a 
           taste for visual aesthetics and user-friendliness.`,
-          fr: `I excel at creating custom software for web applications, and have a 
-          taste for visual aesthetics and user-friendliness.`,
+          fr: `J'excelle dans la création de logiciel pour applications web, et j'ai un goût 
+          pour l'esthétique visuelle et convivialité.`,
         },
       });
       server.create("pageSection", {

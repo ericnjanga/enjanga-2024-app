@@ -6,19 +6,20 @@ const resources = {
   en: {
     translation: {
       welcome: "Welcome",
-      contactBtn: 'Get in touch with me',
-      key3: '[en] text',
-      key4: '[en] text',
-      key5: '[en] text',
+      contactCTA: 'Get in touch with me',
+      HeroCTA: 'Scope of expertise',
+      Next: 'Next', 
+      Prev: 'Prev', 
     },
   },
   fr: {
     translation: {
       welcome: "Bienvenue",
-      contactBtn: 'Me contacter',
-      key3: '[fr] text',
-      key4: '[fr] text',
-      key5: '[fr] text',
+      contactCTA: 'Me contacter',
+      HeroCTA: 'Mon expertise',
+      LinkedInCTA: 'Je suis sur LinkedIn', 
+      Next: 'Suivant', 
+      Prev: 'Précedant', 
     },
   },
 };

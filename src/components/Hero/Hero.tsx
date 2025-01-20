@@ -2,9 +2,11 @@ import "./Hero.scss";
 import { usePageSection } from "../../hooks/useAPI";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const hero = usePageSection("1");
+  const { t } = useTranslation();
 
   return (
     <header className="Hero">
@@ -28,7 +30,7 @@ const Hero = () => {
             neonVersion={true}
             href="#scope-of-expertise"
           >
-            How can I help?
+            { t('HeroCTA') }
           </Button>
         </footer>
 

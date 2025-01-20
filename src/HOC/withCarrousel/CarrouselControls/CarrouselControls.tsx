@@ -1,5 +1,6 @@
 import Icon from "../../../components/Icons/icons";
 import "./CarrouselControls.scss";
+import { useTranslation } from "react-i18next";
 
 type CarrouselControlsProps = {
   prevBtn: React.RefObject<HTMLButtonElement>;
@@ -18,6 +19,8 @@ const CarrouselControls = ({
   isPrevDisabled,
   isNextDisabled,
 }: CarrouselControlsProps) => {
+  const { t } = useTranslation();
+
   return (
     <nav className={`carrousel-controls slide-index-${activeIndex}`}>
       {prevBtn && (
@@ -27,7 +30,7 @@ const CarrouselControls = ({
         disabled={isPrevDisabled}
         >
           <Icon name="slider-arrow-left" size="medium" className="icon" />
-          <span>Prev</span>
+          <span>{ t('Prev') }</span> 
         </button>
       )}
       {nextBtn && (
@@ -35,8 +38,8 @@ const CarrouselControls = ({
         ref={nextBtn} 
         className={`btn btn-secondary slick-next ${isNextDisabled ? "disabled" : ""}`}
         disabled={isNextDisabled}
-        >
-          <span>Next</span>
+        > 
+          <span>{ t('Next') }</span>
           <Icon name="slider-arrow-right" size="medium" className="icon" />
         </button>
       )}
