@@ -5,7 +5,16 @@ import { PanelGridListProps, PortfolioListProps } from "../models";
 
 // Returns the currently active language on the app
 export const getCurrentLanguage = (): string => {
-  return i18n.language || 'en'; // Default to 'en' if no language is set
+  // Get the browser's language (might be in language-region format, e.g., 'en-US')
+  let language = i18n.language || 'en'; // Default to 'en' if no language is set
+
+  // Extract just the language code (e.g., 'en', 'fr', etc.)
+  language = language.split('-')[0];
+
+  // Update i18n.language to be just the language code
+  i18n.language = language;
+
+  return language;
 };
 
 // Activates navigation links by assigning a specific css class
