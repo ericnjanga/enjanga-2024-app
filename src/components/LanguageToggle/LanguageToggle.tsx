@@ -14,6 +14,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const handleLanguageChange = (lng: string) => {
       setCurrentLang(lng as "en" | "fr"); // Ensuring we only have 'en' or 'fr'
+      document.documentElement.setAttribute('lang', lng); // Update <html> lang attribute
     };
 
     i18n.on("languageChanged", handleLanguageChange);
