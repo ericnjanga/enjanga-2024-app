@@ -4,17 +4,18 @@ import ProjectThumb from "../components/ProjectThumb/ProjectThumb";
 import { PanelGridListProps, PortfolioListProps } from "../models";
 
 // Returns the currently active language on the app
-export const getCurrentLanguage = (): string => {
+export const getCurrentLanguage = (): 'en' | 'fr' => {
   // Get the browser's language (might be in language-region format, e.g., 'en-US')
   let language = i18n.language || 'en'; // Default to 'en' if no language is set
+  let currLang: 'en' | 'fr';  // Enforce the return value's nature
 
   // Extract just the language code (e.g., 'en', 'fr', etc.)
-  language = language.split('-')[0];
+  currLang = language.split('-')[0] !== 'en' ? 'fr' : 'en'; 
 
   // Update i18n.language to be just the language code
-  i18n.language = language;
+  i18n.language = currLang;
 
-  return language;
+  return currLang;
 };
 
 // Activates navigation links by assigning a specific css class

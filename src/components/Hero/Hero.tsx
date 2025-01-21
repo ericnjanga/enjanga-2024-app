@@ -3,10 +3,12 @@ import { usePageSection } from "../../hooks/useAPI";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import { useTranslation } from 'react-i18next';
+import { getCurrentLanguage } from "../../utils/functions";
 
 const Hero = () => {
   const hero = usePageSection("1");
   const { t } = useTranslation();
+  const currentLang = getCurrentLanguage();
 
   return (
     <header className="Hero">
@@ -15,9 +17,9 @@ const Hero = () => {
           {hero && (
             <>
               <Heading h="1" className="Hero-title">
-                {hero.title}
+                {hero.title[currentLang]}
               </Heading>
-              <p className="Hero-subtitle">{hero.description}</p>
+              <p className="Hero-subtitle">{hero.description[currentLang]}</p>
             </>
           )}
         </div>

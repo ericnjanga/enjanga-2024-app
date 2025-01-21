@@ -19,6 +19,7 @@ import Icon from "../Icons/icons";
 import { mockContactForm } from "../../models/mockupData";
 import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
 import { PageSectionProps, InformationCard1Props, ProjectProps } from "../../models";
+import { getCurrentLanguage } from "../../utils/functions";
 
 /**
  * 2) Modal Provider:
@@ -95,6 +96,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 const Modal = () => {
   const context = useContext(ModalContext);
   const formRef = useRef<ContactFormRef>(null);
+  const currentLang = getCurrentLanguage();
 
   if (!context) {
     // return if the context is empty
@@ -122,7 +124,7 @@ const Modal = () => {
               />
             </button>
             <header className="modal-header"> 
-              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData && modalData.title}</Heading>
+              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData && modalData.title && modalData.title[currentLang]}</Heading>
             </header>
 
             <main className="modal-body">
@@ -130,7 +132,7 @@ const Modal = () => {
                 (<Preloader />) :
                 (
                   <div
-                    dangerouslySetInnerHTML={{ __html: modalData.description }}
+                    dangerouslySetInnerHTML={{ __html: modalData.description[currentLang] }}
                   ></div>
                 ) 
               }  

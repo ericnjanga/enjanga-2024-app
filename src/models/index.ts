@@ -26,71 +26,82 @@ export type AppServer = Server<AppRegistry>;
  * Car properties: Enabling TypeScript to provide autocompletion and error-checking.
  */
 export type PageSectionProps = {
-  id?: string,
-  title: string, 
-  description: string, 
+  id?: string
+  title: {
+    en: string
+    fr: string
+  }
+  description: {
+    en: string
+    fr: string
+  }
 }; 
  
 export type InformationCard1Props = {
   id: string
-  title?: string
   parentId: string
-  blurb: string
-  description: string
   className?: string
+  title?: {
+    en: string
+    fr: string
+  }
+  blurb: {
+    en: string
+    fr: string
+  }
+  description: {
+    en: string
+    fr: string
+  }
 };
 
 export type ProjectProps = {
   id: string
-  title: string 
   image: string
   className?: string
-  blurb: string
-  description: string
+  title: {
+    en: string
+    fr: string
+  } 
+  blurb: {
+    en: string
+    fr: string
+  }
+  description: {
+    en: string
+    fr: string
+  }
 };
-export type ProjectPropsActiveLang = { // With properties from the active language
-  id: string
-  image: string
-  className?: string
-  // description in different languages ...
-  title: { [key: string]: string };
-  blurb: { [key: string]: string };
-  description: { [key: string]: string }; 
-};
-
 
 export type NavOptionProps = {
   id: string
-  name: string
-  description: string
   url: string 
+  name: {
+    en: string
+    fr: string
+  }
+  description: {
+    en: string
+    fr: string
+  }
 };
-export type NavOptionPropsActiveLang = { // With properties from the active language
-  id: string
-  url: string 
-  // description in different languages ...
-  description: { [key: string]: string }; 
-  name: { [key: string]: string }; 
-};
-
 
 export type ExpertiseSpecProps = {
   id: string
   parentId: string
-  blurb: string
-  title: string 
-  description: string 
+  blurb: {
+    en: string
+    fr: string
+  }
+  title: {
+    en: string
+    fr: string
+  }
+  description: {
+    en: string
+    fr: string
+  }
 };
-export type ExpertiseSpecPropsActiveLang = { // With properties from the active language
-  id: string
-  parentId: string
-  // description in different languages ...
-  blurb: { [key: string]: string };
-  title: { [key: string]: string };
-  description: { [key: string]: string };
-};
-
-
 
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'transparent';

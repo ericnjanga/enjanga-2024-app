@@ -6,11 +6,15 @@ import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button"; 
 import { useTranslation } from 'react-i18next';
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
+import { getCurrentLanguage } from "../../utils/functions";
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
   const context = useContext(ModalContext);
   const { t } = useTranslation();
+  const currentLang = getCurrentLanguage();
+
+  console.log('555555???>>>>>555555??', currentLang);
 
   if (!context) {
     // return if the context is empty
@@ -46,12 +50,12 @@ const Navigation = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto">
-            {navItemsList &&
+            {navItemsList.length &&
               navItemsList.map((navItem, index) => {
                 return (
                   <li className="nav-item" key={index}>
-                    <a className="nav-link" href={navItem.url}>
-                      {navItem.name}
+                    <a className="nav-link" href={navItem.url}> 
+                      {navItem.name[currentLang]}
                     </a>
                   </li>
                 );

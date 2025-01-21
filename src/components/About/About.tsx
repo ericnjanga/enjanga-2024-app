@@ -3,10 +3,12 @@ import { usePageSection } from "../../hooks/useAPI";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
+import { getCurrentLanguage } from "../../utils/functions";
 
 const About = () => {
   const sectionData = usePageSection("4");
   const { t } = useTranslation();
+  const currentLang = getCurrentLanguage();
 
   return (
     <section className="About">
@@ -19,12 +21,12 @@ const About = () => {
 
         <article className="About-article">
           <Heading h="2" className="name About-title pageSection-title">
-            {!sectionData ? "..." : sectionData.title}
+            {!sectionData ? "..." : sectionData.title[currentLang]}
           </Heading>
           <div
             className="About-description"
             dangerouslySetInnerHTML={{
-              __html: sectionData ? sectionData.description : "",
+              __html: sectionData ? sectionData.description[currentLang] : "",
             }}
           ></div>
           <footer>

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 import { mockContactForm } from "../models/mockupData";
+import { getCurrentLanguage } from "../utils/functions";
 
 
 /**
@@ -138,8 +139,8 @@ export const useProjects = (): ProjectProps[] | null => {
 };
 
 // Returns a database record of type "InformationCard1Props[]"
-export const useNavOptions = (): NavOptionProps[] | null => {
-  const [navOptions, setNavOptions] = useState(null); 
+export const useNavOptions = (): NavOptionProps[] | [] => {
+  const [navOptions, setNavOptions] = useState<NavOptionProps[]>([]); 
   
   useEffect(() => { 
     fetchData('navOptions', null).then((response) => setNavOptions(response)); 
@@ -196,8 +197,8 @@ export const useDefinition = () => {
 
 export const useThirdPartyFormSubmission = () => {
   const formSubmit = useCallback(async(values: typeof mockContactForm.initValues) => {
-
     let message = { ...mockContactForm.submissionDefault };
+    const currentLang = getCurrentLanguage();
    
     try {
       const response = await fetch(mockContactForm.submissionEndpoint, {
@@ -215,7 +216,7 @@ export const useThirdPartyFormSubmission = () => {
       }
     } catch (error) {
       message = { ...mockContactForm.submissionError };
-      message.description = `${message.description} ${error}`; 
+      message.description[currentLang] = `${message.description} ${error}`; 
     }
   
     return message;

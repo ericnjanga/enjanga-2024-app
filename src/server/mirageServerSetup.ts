@@ -2,26 +2,12 @@
 import { createServer, Model, Request, Server } from "miragejs";
 import { AppRegistry } from "./../models"; // Import schema and types
 import { 
-  NavOptionPropsActiveLang, 
-  ExpertiseSpecPropsActiveLang,
-  ProjectPropsActiveLang
+  NavOptionProps, 
+  ExpertiseSpecProps,
+  ProjectProps
 } from "./../models";
 import { getCurrentLanguage } from "../utils/functions";
 
-
-// --- Delete this next time ---
-// const getLang = (schema: AppRegistry, request: Request) => {
-//   let lang: string = 'en'; // Default language is English
-
-//   // Check if lang is an array, and if so, pick the first value
-//   if (Array.isArray(request.queryParams.lang)) {
-//     lang = request.queryParams.lang[0];
-//   } else {
-//     lang = request.queryParams.lang || 'en'; // Default to 'en' if not set
-//   }
-
-//   return lang;
-// }
 
 function makeMirageServer() {
   return createServer({
@@ -41,7 +27,10 @@ function makeMirageServer() {
           fr: "Sommaire des compétances",
         },
         url: "#scope-of-expertise",
-        description: "....",
+        description: {
+          en: "...",
+          fr: "...",
+        },
       });
       server.create("navOption", {
         id: "2",
@@ -50,7 +39,10 @@ function makeMirageServer() {
           fr: "Récents travaux",
         },
         url: "#some-work",
-        description: "....",
+        description: {
+          en: "...",
+          fr: "...",
+        },
       });
       server.create("navOption", {
         id: "3",
@@ -59,7 +51,10 @@ function makeMirageServer() {
           fr: "À propos",
         },
         url: "#about",
-        description: "....",
+        description: {
+          en: "...",
+          fr: "...",
+        },
       });
 
       // Projects ...
@@ -176,13 +171,13 @@ function makeMirageServer() {
         id: "2",
         title: {
           en: "Writing custom code",
-          fr: "Writing custom code"
+          fr: "[****** fr] Writing custom code"
         },
         description: {
           en: `<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
         <p>My coding expertise includes, but is not limited to:</p>
         `,
-        fr: `<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
+        fr: `<p>[****** fr] I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
         <p>My coding expertise includes, but is not limited to:</p>
         `
         },
@@ -366,7 +361,10 @@ function makeMirageServer() {
         fr: `Using analytial and problem soving skills to address 
         complex and unusual coding problems.`
         },
-        title: "Expertise 3",
+        title: {
+          en: "Expertise 3",
+          fr: "Expertise 3"
+        },
         description: {
           en: ` 
           <p><b>Description 5 ...</b></p>
@@ -407,7 +405,10 @@ function makeMirageServer() {
           en: `Translating business/technical specifications into working, tested applications.`,
           fr: `Translating business/technical specifications into working, tested applications.`
         },
-        title: "Expertise 5",
+        title: {
+          en: "Expertise 5",
+          fr: "Expertise 5"
+        },
         description: {
           en: ` 
           <p><b>Description 5 ...</b></p>
@@ -636,113 +637,101 @@ function makeMirageServer() {
 
       // navOptions ...
       this.get("/navOptions", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
-
-        console.log('...lang = ', lang);
-
         return {
-          navOptions: this.schema.navOptions.all().models.map((data: NavOptionPropsActiveLang) => ({
+          navOptions: this.schema.navOptions.all().models.map((data: NavOptionProps) => ({
             id: data.id,
-            name: data.name[lang],
-            description: data.description[lang]
+            name: data.name,
+            description: data.description,
           }))
         };
       });
 
 
       // PageSection ...
-      this.get("/pageSections/:id", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
+      this.get("/pageSections/:id", (schema: AppRegistry, request: Request) => { 
         const data = this.schema.pageSections.find(request.params.id);
 
         return {
           pageSection: {
-            title: data.title[lang],
-            description: data.description[lang]
+            title: data.title,
+            description: data.description
           }
         };
       });
 
 
       // Expertise Specification ...
-      this.get("/expertiseSpecs", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
-
+      this.get("/expertiseSpecs", (schema: AppRegistry, request: Request) => {  
         return {
-          expertiseSpecs: this.schema.expertiseSpecs.all().models.map((data: ExpertiseSpecPropsActiveLang) => ({
+          expertiseSpecs: this.schema.expertiseSpecs.all().models.map((data: ExpertiseSpecProps) => ({
             id: data.id,
             parentId: data.parentId,
-            blurb: data.blurb[lang],
-            title: data.title[lang],
-            description: data.description[lang] 
+            blurb: data.blurb,
+            title: data.title,
+            description: data.description 
           })) 
         };
       });
 
 
-      this.get("/expertiseSpecsByParent/:id", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
+      this.get("/expertiseSpecsByParent/:id", (schema: AppRegistry, request: Request) => { 
         const data = this.schema.expertiseSpecs.where({
           parentId: request.params.id,
         });
 
         return {
-          expertiseSpecs: data.models.map((data: ExpertiseSpecPropsActiveLang) => ({
+          expertiseSpecs: data.models.map((data: ExpertiseSpecProps) => ({
             id: data.id,
             parentId: data.parentId,
-            blurb: data.blurb[lang],
-            title: data.title[lang],
-            description: data.description[lang] 
+            blurb: data.blurb,
+            title: data.title,
+            description: data.description 
           })) 
         };
       });
 
 
-      this.get( "/expertiseSpecs/:id", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
+      this.get( "/expertiseSpecs/:id", (schema: AppRegistry, request: Request) => { 
         const data = this.schema.expertiseSpecs.find(request.params.id);
 
         return {
           expertiseSpecs: {
             id: data.id,
             parentId: data.parentId,
-            blurb: data.blurb[lang],
-            title: data.title[lang],
-            description: data.description[lang] 
+            blurb: data.blurb,
+            title: data.title,
+            description: data.description 
           }
         };
       });
 
 
       // Projects ...
-      this.get("/projects", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
-
+      this.get("/projects", (schema: AppRegistry, request: Request) => { 
         return {
-          projects: this.schema.projects.all().models.map((data: ProjectPropsActiveLang) => ({
+          projects: this.schema.projects.all().models.map((data: ProjectProps) => ({
             id: data.id,
-            title: data.title[lang],
+            title: data.title,
             image: data.image,
             className: data.className,
-            blurb: data.blurb[lang],
-            description: data.description[lang]
+            blurb: data.blurb,
+            description: data.description
           }))
         }; 
       });
 
 
-      this.get("/projects/:id", (schema: AppRegistry, request: Request) => {
-        const lang = getCurrentLanguage();
+      this.get("/projects/:id", (schema: AppRegistry, request: Request) => { 
         const data = this.schema.projects.find(request.params.id);
 
         return {
           projects: {
             id: data.id,
-            title: data.title[lang],
+            title: data.title,
             image: data.image,
             className: data.className,
-            blurb: data.blurb[lang],
-            description: data.description[lang]
+            blurb: data.blurb,
+            description: data.description
           }
         };
       });
