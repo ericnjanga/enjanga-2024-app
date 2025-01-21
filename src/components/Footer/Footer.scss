@@ -3,10 +3,11 @@
 .Footer {
   .Heading {
     font-weight: 700;
-    .title {
-      font-weight: 600;
-      margin-bottom: 0;
-    }
   }
-  // background-color: rgb(169, 220, 118);
+  .name, .title, .location {
+    margin-bottom: 0;
+  }
+  .title {
+    font-weight: 600;
+  }
 }

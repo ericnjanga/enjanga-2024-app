@@ -26,12 +26,12 @@ const Footer = () => {
   return (
     <footer className="Footer sc-block">
       <div className="container text-center">
-        <Heading h="4" className="name mb-0">
+        <Heading h="4" className="name">
           {!sectionData ? <Preloader /> : sectionData.title[currentLang]}
         </Heading>
 
         <div
-          className="title mb-0"
+          className="title"
           dangerouslySetInnerHTML={{
             __html: sectionData ? sectionData.description[currentLang] : "",
           }}
@@ -40,7 +40,7 @@ const Footer = () => {
         <Button
           variant="transparent"
           icon="chat"
-          ariaLabel="Open contact form to get in touch with Eric Njanga"
+          ariaLabel={t("contactCTAalt")}
           onClickHandler={() => {
             openModal({
               dataType: "pageSections",

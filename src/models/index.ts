@@ -116,6 +116,10 @@ export interface ButtonProps {
   icon?: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat'
 };
 
+export interface LanguageProps {
+  
+}
+
 
 export type ModalContextProps = {
   isOpen: boolean               // Is the modal window open?

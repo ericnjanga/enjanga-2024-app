@@ -4,10 +4,12 @@ import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader";
 import { getCurrentLanguage } from "../../utils/functions";
+import { LanguageContext } from "../../utils/contexts";
 
 const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
   const context = useContext(ModalContext);
   const currentLang = getCurrentLanguage();
+  const activeLang = useContext(LanguageContext);
 
   if (!context) {
     // return if the context is empty
@@ -27,10 +29,10 @@ const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
         });
       }}
     >
-      <img className="img-fluid" src={image} alt={title[currentLang]} />
+      <img className="img-fluid" src={image} alt={title[activeLang]} />
       <div className="card-body">
         {/* <h3 className="ProjectThumb-title">{title}</h3> */}
-        <p className="ProjectThumb-description mb-0">{title[currentLang]}</p>
+        <p className="ProjectThumb-description mb-0">{title[activeLang]}</p>
       </div>
     </div>
   );

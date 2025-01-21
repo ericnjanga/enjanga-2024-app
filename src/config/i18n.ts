@@ -7,7 +7,9 @@ const resources = {
     translation: {
       welcome: "Welcome",
       contactCTA: 'Get in touch with me',
+      contactCTAalt: 'Open contact form to get in touch with Eric Njanga',
       HeroCTA: 'Scope of expertise',
+      LinkedInCTA: `I'm on LinkedIn`, 
       Next: 'Next', 
       Prev: 'Prev', 
     },
@@ -16,6 +18,7 @@ const resources = {
     translation: {
       welcome: "Bienvenue",
       contactCTA: 'Me contacter',
+      contactCTAalt: 'Ouvrir le formulaire de contact pour entrer en contact avec Eric Njanga',
       HeroCTA: 'Mon expertise',
       LinkedInCTA: 'Je suis sur LinkedIn', 
       Next: 'Suivant', 

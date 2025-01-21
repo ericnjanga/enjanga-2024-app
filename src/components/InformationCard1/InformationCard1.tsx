@@ -4,11 +4,11 @@ import Icon from "../Icons/icons";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader";
-import { getCurrentLanguage } from "../../utils/functions";
+import { LanguageContext } from "../../utils/contexts";
 
 const InformationCard1 = ({ blurb, className, id }: InformationCard1Props) => {  
   const context = useContext(ModalContext);
-  const currentLang = getCurrentLanguage();
+  const activeLang = useContext(LanguageContext);
 
   if (!context) {
     // return if the context is empty
@@ -30,7 +30,7 @@ const InformationCard1 = ({ blurb, className, id }: InformationCard1Props) => {
     >
       <div className="card-body">
         <Icon name='cube' className="icon" />
-        <p className="mb-0">{blurb[currentLang]}</p>
+        <p className="mb-0">{blurb[activeLang]}</p>
         <span className="btn btn-link">Learn more ...</span>
       </div>
     </div>

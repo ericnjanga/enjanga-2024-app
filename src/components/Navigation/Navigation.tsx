@@ -68,7 +68,7 @@ const Navigation = () => {
             <li className="nav-item">
               <Button 
                 icon='chat'
-                ariaLabel="Open contact form to get in touch with Eric Njanga" 
+                ariaLabel={t("contactCTAalt")}
                 onClickHandler={() => {
                   openModal({
                     dataType: 'pageSections',
