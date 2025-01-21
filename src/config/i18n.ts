@@ -12,6 +12,8 @@ const resources = {
       LinkedInCTA: `I'm on LinkedIn`, 
       Next: 'Next', 
       Prev: 'Prev', 
+      SwitchEN: 'Switch to English',
+      SwitchFR: 'Switch to French',
     },
   },
   fr: {
@@ -23,6 +25,8 @@ const resources = {
       LinkedInCTA: 'Je suis sur LinkedIn', 
       Next: 'Suivant', 
       Prev: 'Précedant', 
+      SwitchEN: `Passer à l'Anglais`,
+      SwitchFR: 'Passer au Français',
     },
   },
 };
