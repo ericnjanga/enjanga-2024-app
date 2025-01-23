@@ -1,0 +1,15 @@
+
+
+.character-counter {
+  background-color: #d3d1e3;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 0.4rem;
+  line-height: 1.2rem;
+
+  .txt-warning,
+  .text-danger {
+    color: rgb(217 52 0) !important
+  } 
+}

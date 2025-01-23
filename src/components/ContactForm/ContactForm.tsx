@@ -6,6 +6,9 @@ import { ContactFormRef } from "../../models";
 import { mockContactForm } from "../../models/mockupData";
 import { ModalContext } from "../../utils/contexts";
 import Preloader from "../Preloader/Preloader";
+import { useTranslation } from 'react-i18next';
+import CharacterCounter from "../CharacterCounter/CharacterCounter";
+import './ContactForm.scss';
 
 /**
  * 1) We use Formik to manage the form's state and handle submission
@@ -15,6 +18,7 @@ import Preloader from "../Preloader/Preloader";
 
 const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
   const context = useContext(ModalContext);
+    const { t } = useTranslation();
 
   useImperativeHandle(ref, () => ({
     submitForm: () => {
@@ -34,15 +38,17 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
   // Otherwise, destructure the context
   const { submitModalForm } = context;
 
-
   // Validation Schema
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
+    name: Yup.string().required(t('Namerequired')),
     email: Yup.string()
-      .email("Invalid email format")
-      .required("Email is required"),
-    category: Yup.string().required("Please select an option"),
-    details: Yup.string().required("Details are required"),
+      .email(t('Invalidemail'))
+      .required(t('Emailquired')),
+    category: Yup.string().required(t('PleaseSelectoption')),
+    details: Yup.string()
+    .min(100, t('Details100Minchars')) // Require a minimum of characters
+    .max(280, t('Details280Maxchars')) // Maximum characters
+    .required(t('Detailsrequired')), // Ensure it's not empty
   });
 
   return (
@@ -57,12 +63,12 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
         resetForm();
       }}
     >
-      {() => (
-        <Form>
+      {({ values, handleChange, handleBlur, errors, touched }) => (
+        <Form className="ContactForm">
           <div className="row">
             <div className="col mb-3">
               <label htmlFor="name" className="form-label">
-                Your name
+              { t('Yourname') }
               </label>
               <Field name="name">
                 {({ field, meta }: { field: any; meta: any }) => (
@@ -79,7 +85,7 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
 
             <div className="col mb-3">
               <label htmlFor="email" className="form-label">
-                Your email
+              { t('Youremail') }
               </label>
               <Field name="email">
                 {({ field, meta }: { field: any; meta: any }) => (
@@ -97,7 +103,7 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
 
           <div className="col mb-3">
             <label htmlFor="select" className="form-label">
-              How can I help?
+            { t('HowcanIhelp') } 
             </label>
             <Field name="category">
               {({ field, meta }: { field: any; meta: any }) => (
@@ -107,11 +113,11 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
                   elementType="select"
                   id="category"
                   options={[
-                    { value: "", label: "Select an option" },
-                    { value: "consulting", label: "Technical consulting" },
-                    { value: "design", label: "Application design" },
-                    { value: "teaching", label: "Teaching/mentoring" },
-                    { value: "other", label: "Other ..." },
+                    { value: "", label: t('Selectoption') },
+                    { value: "consulting", label: t('Techconsulting') },
+                    { value: "design", label: t('Appdesign') },
+                    { value: "teaching", label: t('Teachmentor') },
+                    { value: "other", label: t('Other') }, 
                   ]}
                   // description="SelectHelp"
                 />
@@ -119,10 +125,19 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
             </Field> 
           </div>
 
-          <div className="col mb-3">
+          <div className="col mb-3 position-relative">
             <label htmlFor="textarea" className="form-label">
-              Care to give more details?
+            { t('Caregivedetails') } 
             </label>
+            
+            {values.details.length > 0 &&
+              <CharacterCounter
+                value={values.details}
+                minLength={100}
+                maxLength={280}
+              />
+            } 
+
             <Field name="details">
               {({ field, meta }: { field: any; meta: any }) => (
                 <InputField
@@ -134,8 +149,7 @@ const ContactForm = forwardRef<ContactFormRef>((props, ref) => {
                 />
               )}
             </Field> 
-          </div>
-
+          </div> 
         </Form>
       )}
     </Formik>

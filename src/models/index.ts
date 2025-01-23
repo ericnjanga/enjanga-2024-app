@@ -189,3 +189,9 @@ export interface PanelGridListProps {
 export interface PortfolioListProps {
   itemsList: ProjectProps[] | null;
 }
+
+export interface CharacterCounterProps {
+  value: string;
+  minLength: number;
+  maxLength: number;
+}
