@@ -15,6 +15,25 @@ const resources = {
       SwitchEN: 'Switch to English',
       SwitchFR: 'Switch to French',
       LangSelect: 'Language selection',
+
+      Yourname: 'Your name',
+      Youremail: 'Your email',
+      HowcanIhelp: 'How can I help?',
+      Caregivedetails: 'Care to give more details?', 
+
+      Selectoption: "Select an option",
+      Techconsulting: "Technical consulting",
+      Appdesign: "Software Design/Engineering",
+      Teachmentor: "Teaching/mentoring",
+      Other: "Other ...",
+
+      Namerequired: "Name is required",
+      Invalidemail: "Invalid email format",
+      Emailquired: "Email is required",
+      PleaseSelectoption: "Please select an option",
+      Detailsrequired: "More details about your request are required",
+      Details100Minchars: "A minimum of 100 characters is required",
+      Details280Maxchars: "The 280 characters limit has been reached",
     },
   },
   fr: {
@@ -28,7 +47,26 @@ const resources = {
       Prev: 'Précedant', 
       SwitchEN: `Passer à l'Anglais`,
       SwitchFR: 'Passer au Français',
-      LangSelect: 'Language selection',
+      LangSelect: 'Choix de la langue',
+
+      Yourname: 'Votre nom',
+      Youremail: 'Votre email',
+      HowcanIhelp: 'Que puis-je faire pour vous?',
+      Caregivedetails: 'Voulez-vous donner plus de détails?', 
+
+      Selectoption: "Choisissez une option",
+      Techconsulting: "Conseil technique",
+      Appdesign: `Design/ingénierie de logiciel`,
+      Teachmentor: "Enseignement/mentorat",
+      Other: "Autre choses ...",
+
+      Namerequired: "Le nom est requis",
+      Invalidemail: "Format d'e-mail invalide",
+      Emailquired: "L'e-mail est requis",
+      PleaseSelectoption: "Veuillez sélectionner une option",
+      Detailsrequired: "Des détails sur votre requête sont requis",
+      Details100Minchars: "Un minimum de 100 caractères est requis",
+      Details280Maxchars: "La limite de 280 caractères a été atteinte",
     },
   },
 };

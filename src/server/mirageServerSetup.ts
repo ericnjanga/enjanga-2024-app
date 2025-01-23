@@ -293,10 +293,12 @@ function makeMirageServer() {
           fr: "Que puis-je faire pour vous?"
         },
         description: {
-          en: `<p>(Contact introduction) Lorem ipsum dolor sit amet consectetur. Ut nisi 
-          risus duis a eget a velit. Sem sed at eu diam.</p>`,
-          fr: `<p>[****** fr] (Contact introduction) Lorem ipsum dolor sit amet consectetur. Ut nisi 
-          risus duis a eget a velit. Sem sed at eu diam.</p>`
+          en: `<p>I'm always excited about new challenges. 
+          Please take a moment to fill out the form below, and tell me 
+          how I can contribute to your organization's success.</p>`,
+          fr: `<p>J'aime les défis! Veuillez me dire, s'il 
+          vous plaît, en remplissant le formulaire ci-dessous, comment 
+          je peux contribuer au succès de votre organisation.</p>`
         },
       });
 
