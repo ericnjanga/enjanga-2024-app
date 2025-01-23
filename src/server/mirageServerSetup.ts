@@ -170,14 +170,14 @@ function makeMirageServer() {
         id: "2",
         title: {
           en: "Writing custom code",
-          fr: "[****** fr] Writing custom code"
+          fr: "Écriture personnalisée du code"
         },
         description: {
           en: `<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
         <p>My coding expertise includes, but is not limited to:</p>
         `,
-        fr: `<p>[****** fr] I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
-        <p>My coding expertise includes, but is not limited to:</p>
+        fr: `<p>J'écris du code personnalisé dans diverses <a href="#">technologies Web</a> pour façonner la solution sous la forme souhaitée. Par exemple, j'utilise une <a href="#">bibliothèque appelée React</a> pour créer des applications Web qui restituent rapidement des informations complexes, sans avoir à recharger la page.</p>
+        <p>Mon expertise en matière de codage comprend, sans s'y limiter :</p>
         `
         },
         className: "theme1",
@@ -310,25 +310,28 @@ function makeMirageServer() {
         blurb: {
           en: `Writing production code with a focus on user's experience,
          performance, and easy maintenance.`,
-         fr: `[****** fr] Writing production code with a focus on user's experience,
-         performance, and easy maintenance.`
+         fr: `Écrire du code de production en mettant l'accent sur l'expérience utilisateur,
+         performances et un entretien facile.`
         },
         title: {
-          en: "High performance web apps",
-          fr: "[****** fr] High performance web apps"
+          en: "Production code for better UX",
+          fr: "Code de production pour une meilleure UX"
         },
         description: {
           en: ` 
-          <p><b>Description 2 ...</b></p>
-          <p>Writing production code with a focus on user's experience, crafting interaction patterns 
-          that are reusable and inclusive. Ensuring the code is easy maintainable, and optimized 
-          for high-traffic and performance.</p>
+          <p>I write production code with a strong focus on delivering 
+          exceptional user experiences. I prioritize performance, ensuring
+           fast and efficient interactions, while also structuring code for 
+           ease of maintenance. Clean, scalable solutions are key 
+           to delivering long-term value.</p>
         `,
         fr: ` 
-          <p><b>[****** fr] Description 2 ...</b></p>
-          <p>[****** fr] Writing production code with a focus on user's experience, crafting interaction patterns 
-          that are reusable and inclusive. Ensuring the code is easy maintainable, and optimized 
-          for high-traffic and performance.</p>
+          <p>J'écris du code de production en mettant fortement l'accent sur 
+          la fourniture d'expériences utilisateur exceptionnelles. Je donne 
+          la priorité à la performance, en garantissant des interactions 
+          rapides et efficaces, tout en structurant le code pour faciliter 
+          la maintenance. Des solutions propres et évolutives sont 
+          essentielles pour générer de la valeur à long terme.</p>
         `
         },
       });
