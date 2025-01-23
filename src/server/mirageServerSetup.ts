@@ -289,8 +289,8 @@ function makeMirageServer() {
         // Contact
         id: "7",
         title: {
-          en: "(Contact title) ...",
-          fr: "[****** fr] (Contact title) ..."
+          en: "How can I help?",
+          fr: "Que puis-je faire pour vous?"
         },
         description: {
           en: `<p>(Contact introduction) Lorem ipsum dolor sit amet consectetur. Ut nisi 
