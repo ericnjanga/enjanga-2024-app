@@ -9,7 +9,7 @@ import About from "./components/About/About";
 import Modal from "./components/ModalModule";
 import { ModalProvider } from "./components/ModalModule";
 import Navigation from "./components/Navigation/Navigation";
-import { LanguageProvider } from "./components/LanguageToggle/LanguageToggle";
+import { LanguageProvider } from "./components/LanguageModule";
 
 // Ensuring that Bootstrap's JavaScript is globally available across all components.
 import "bootstrap/dist/js/bootstrap.bundle.min.js";

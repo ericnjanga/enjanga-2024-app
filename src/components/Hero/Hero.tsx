@@ -1,14 +1,15 @@
 import "./Hero.scss";
 import { usePageSection } from "../../hooks/useAPI";
+import React, { useContext } from "react";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
-import { useTranslation } from 'react-i18next';
-import { getCurrentLanguage } from "../../utils/functions";
+import { useTranslation } from "react-i18next";
+import { LanguageContext } from "../../utils/contexts";
 
 const Hero = () => {
   const hero = usePageSection("1");
   const { t } = useTranslation();
-  const currentLang = getCurrentLanguage();
+  const activeLang = useContext(LanguageContext);
 
   return (
     <header className="Hero">
@@ -17,22 +18,22 @@ const Hero = () => {
           {hero && (
             <>
               <Heading h="1" className="Hero-title">
-                {hero.title[currentLang]}
+                {hero.title[activeLang]}
               </Heading>
-              <p className="Hero-subtitle">{hero.description[currentLang]}</p>
+              <p className="Hero-subtitle">{hero.description[activeLang]}</p>
             </>
           )}
         </div>
 
-        <footer className="Hero-footer"> 
-          <Button 
-            icon='arrow down'
-            size="lg" 
-            variant="secondary" 
+        <footer className="Hero-footer">
+          <Button
+            icon="arrow down"
+            size="lg"
+            variant="secondary"
             neonVersion={true}
             href="#scope-of-expertise"
           >
-            { t('HeroCTA') }
+            {t("HeroCTA")}
           </Button>
         </footer>
 

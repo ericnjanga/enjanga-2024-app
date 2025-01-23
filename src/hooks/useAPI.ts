@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 import { mockContactForm } from "../models/mockupData";
-import { getCurrentLanguage } from "../utils/functions";
+import { getCurrentLanguage } from "../components/LanguageModule/utils";
 
 
 /**

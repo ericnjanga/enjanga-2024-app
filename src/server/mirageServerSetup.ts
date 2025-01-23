@@ -6,7 +6,6 @@ import {
   ExpertiseSpecProps,
   ProjectProps
 } from "./../models";
-import { getCurrentLanguage } from "../utils/functions";
 
 
 function makeMirageServer() {

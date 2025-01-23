@@ -1,14 +1,15 @@
 import "./About.scss";
+import React, { useContext } from "react";
 import { usePageSection } from "../../hooks/useAPI";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
-import { getCurrentLanguage } from "../../utils/functions";
+import { LanguageContext } from "../../utils/contexts";
 
 const About = () => {
   const sectionData = usePageSection("4");
   const { t } = useTranslation();
-  const currentLang = getCurrentLanguage();
+  const activeLang = useContext(LanguageContext);
 
   return (
     <section className="About">
@@ -21,12 +22,12 @@ const About = () => {
 
         <article className="About-article">
           <Heading h="2" className="name About-title pageSection-title">
-            {!sectionData ? "..." : sectionData.title[currentLang]}
+            {!sectionData ? "..." : sectionData.title[activeLang]}
           </Heading>
           <div
             className="About-description"
             dangerouslySetInnerHTML={{
-              __html: sectionData ? sectionData.description[currentLang] : "",
+              __html: sectionData ? sectionData.description[activeLang] : "",
             }}
           ></div>
           <footer>

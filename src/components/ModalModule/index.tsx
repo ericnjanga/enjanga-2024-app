@@ -19,7 +19,7 @@ import Icon from "../Icons/icons";
 import { mockContactForm } from "../../models/mockupData";
 import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
 import { PageSectionProps, InformationCard1Props, ProjectProps } from "../../models";
-import { getCurrentLanguage } from "../../utils/functions";
+import { getCurrentLanguage } from "../LanguageModule/utils";
 
 /**
  * 2) Modal Provider:

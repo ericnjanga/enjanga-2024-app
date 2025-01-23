@@ -14,6 +14,7 @@ const resources = {
       Prev: 'Prev', 
       SwitchEN: 'Switch to English',
       SwitchFR: 'Switch to French',
+      LangSelect: 'Language selection',
     },
   },
   fr: {
@@ -27,6 +28,7 @@ const resources = {
       Prev: 'Précedant', 
       SwitchEN: `Passer à l'Anglais`,
       SwitchFR: 'Passer au Français',
+      LangSelect: 'Language selection',
     },
   },
 };

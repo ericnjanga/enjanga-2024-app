@@ -1,20 +1,17 @@
 import "./Navigation.scss";
 import { useNavOptions } from "../../hooks/useAPI";
-import { ModalContext } from "../../utils/contexts";
+import { ModalContext, LanguageContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
 import Button from "../Button/Button"; 
 import { useTranslation } from 'react-i18next';
-import LanguageToggle from "../LanguageToggle/LanguageToggle";
-import { getCurrentLanguage } from "../../utils/functions";
+import LanguageToggle from "../LanguageModule/LanguageToggle/LanguageToggle"; 
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
   const context = useContext(ModalContext);
   const { t } = useTranslation();
-  const currentLang = getCurrentLanguage();
-
-  console.log('555555???>>>>>555555??', currentLang);
+  const activeLang = useContext(LanguageContext);
 
   if (!context) {
     // return if the context is empty
@@ -55,7 +52,7 @@ const Navigation = () => {
                 return (
                   <li className="nav-item" key={index}>
                     <a className="nav-link" href={navItem.url}> 
-                      {navItem.name[currentLang]}
+                      {navItem.name[activeLang]}
                     </a>
                   </li>
                 );

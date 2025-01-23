@@ -6,13 +6,13 @@ import Heading from "../Heading/Heading";
 import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
-import { getCurrentLanguage } from "../../utils/functions";
+import { LanguageContext } from "../../utils/contexts";
 
 const Footer = () => {
   const sectionData = usePageSection("5");
   const context = useContext(ModalContext);
+  const activeLang = useContext(LanguageContext);
   const { t } = useTranslation();
-  const currentLang = getCurrentLanguage();
 
   if (!context) {
     // return if the context is empty
@@ -27,13 +27,13 @@ const Footer = () => {
     <footer className="Footer sc-block">
       <div className="container text-center">
         <Heading h="4" className="name">
-          {!sectionData ? <Preloader /> : sectionData.title[currentLang]}
+          {!sectionData ? <Preloader /> : sectionData.title[activeLang]}
         </Heading>
 
         <div
           className="title"
           dangerouslySetInnerHTML={{
-            __html: sectionData ? sectionData.description[currentLang] : "",
+            __html: sectionData ? sectionData.description[activeLang] : "",
           }}
         ></div>
 

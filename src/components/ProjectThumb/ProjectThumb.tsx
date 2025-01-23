@@ -2,13 +2,11 @@ import { ProjectProps } from "../../models";
 import "./ProjectThumb.scss";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
-import Preloader from "../Preloader/Preloader";
-import { getCurrentLanguage } from "../../utils/functions";
-import { LanguageContext } from "../../utils/contexts";
+import Preloader from "../Preloader/Preloader"; 
+import { LanguageContext } from "../../utils/contexts"; 
 
 const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
-  const context = useContext(ModalContext);
-  const currentLang = getCurrentLanguage();
+  const context = useContext(ModalContext); 
   const activeLang = useContext(LanguageContext);
 
   if (!context) {

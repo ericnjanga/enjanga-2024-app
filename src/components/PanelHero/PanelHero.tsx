@@ -10,7 +10,6 @@ const PanelHero = ({ id }: { id: string }) => {
 
   return (
     <header className="pageSection-hero">
-      <p>?????</p>
       <Heading h="2" iconName="hand" className="pageSection-title">
         {!sectionData ? "..." : sectionData.title[activeLang]}
       </Heading>
