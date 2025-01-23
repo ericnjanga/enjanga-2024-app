@@ -70,7 +70,8 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   // [CUSTOM LOGIC] ...
   function submitModalForm(submittedData: typeof mockContactForm.initValues) {
     formSubmit(submittedData).then((response) => {
-      setModalContent(response);
+      setModalContent(response); // Display the form submission results
+      setChildComponent(''); // Hide the form anyway
     });
   }
 

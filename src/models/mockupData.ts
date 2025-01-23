@@ -253,11 +253,11 @@ export const mockContactForm = {
   submissionSuccess: { 
     title: {
       en: `Form submitted successfully!`,
-      fr: `Form submitted successfully!`
+      fr: `Formulaire soumis avec succès !`
     },
     description: {
-      en: `Thank you for reaching out! Your message has been received, and I'll get back to you shortly. Feel free to explore more on my site in the meantime.`,
-      fr: `Thank you for reaching out! Your message has been received, and I'll get back to you shortly. Feel free to explore more on my site in the meantime.`
+      en: `Your message has been received, and I'll get back to you shortly. Feel free to explore more on my site in the meantime.`,
+      fr: `Votre message a été reçu et je vous répondrai sous peu. N'hésitez pas à en explorer davantage sur mon site en attendant.`
     },
   },
   submissionFailure: { 
