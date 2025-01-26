@@ -15,6 +15,7 @@ function makeMirageServer() {
       expertiseSpec: Model,
       project: Model,
       navOption: Model,
+      conceptDef: Model,
     },
 
     seeds(server: Server) {
@@ -173,10 +174,10 @@ function makeMirageServer() {
           fr: "Écriture personnalisée du code"
         },
         description: {
-          en: `<p>I write custom code in various <a href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
+          en: `<p>I write custom code in various <a id="0" class="open-modal" href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a id="1" class="open-modal" href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
         <p>My coding expertise includes, but is not limited to:</p>
         `,
-        fr: `<p>J'écris du code personnalisé dans diverses <a href="#">technologies Web</a> pour façonner la solution sous la forme souhaitée. Par exemple, j'utilise une <a href="#">bibliothèque appelée React</a> pour créer des applications Web qui restituent rapidement des informations complexes, sans avoir à recharger la page.</p>
+        fr: `<p>J'écris du code personnalisé dans diverses <a id="0" class="open-modal" href="#">technologies Web</a> pour façonner la solution sous la forme souhaitée. Par exemple, j'utilise une <a id="1" class="open-modal" href="#">bibliothèque appelée React</a> pour créer des applications Web qui restituent rapidement des informations complexes, sans avoir à recharger la page.</p>
         <p>Mon expertise en matière de codage comprend, sans s'y limiter :</p>
         `
         },
@@ -191,10 +192,10 @@ function makeMirageServer() {
         },
         description: {
           en: `<p>I excel at using my engineering knowledge to help multi-disciplinary teams make well-informed design decisions.
-        I combine <a href="#">Usability</a> and <a href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
+        I combine <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
         <p>My design expertise includes, but is not limited to:</p>`,
         fr: `<p>[****** fr] I excel at using my engineering knowledge to help multi-disciplinary teams make well-informed design decisions.
-        I combine <a href="#">Usability</a> and <a href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
+        I combine <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
         <p>My design expertise includes, but is not limited to:</p>`
         },
         className: "theme1",
@@ -244,13 +245,13 @@ function makeMirageServer() {
         description: {
           en: `
           <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
-          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a href="#">Usability</a> and <a href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
+          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
           <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
         `,
         fr: `
         [****** fr] 
           <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
-          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a href="#">Usability</a> and <a href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
+          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
           <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
         `
         },
@@ -386,20 +387,26 @@ function makeMirageServer() {
         parentId: "2",
         blurb: {
           en: `Translating visual designs into responsive and interactive User Interfaces.`,
-          fr: `[****** fr] Translating visual designs into responsive and interactive User Interfaces.`
+          fr: `Conversion des Designs visuels en interfaces utilisateur réactives et interactives.`
         },
         title: {
-          en: "Coding visual designs",
-          fr: "[****** fr] Coding visual designs"
+          en: "Visual designs translation",
+          fr: "Conversion des Designs visuels"
         },
         description: {
           en: ` 
-          <p><b>Description 4 ...</b></p>
-          <p>Implementing the visual design aesthetic design system, and front-end processes and app architecture.</p>
+          <p>I excel at translating mockups from tools like Figma into HTML, CSS, and 
+          JavaScript. I ensure pixel-perfect layouts, responsiveness, and interactivity 
+          by using frameworks like React. This process is crucial for maintaining 
+          design consistency, user experience, and performance across different 
+          devices and screen sizes.</p>
         `,
         fr: ` 
-          <p><b>[****** fr] Description 4 ...</b></p>
-          <p>Implementing the visual design aesthetic design system, and front-end processes and app architecture.</p>
+          <p>J'excelle dans la traduction de maquettes à partir d'outils comme Figma en HTML, CSS et 
+          JavaScript. J'assure des mises en page au pixel près, une réactivité et une interactivité 
+          en utilisant des frameworks comme React. Ce processus est crucial pour maintenir 
+          cohérence de la conception, de l'expérience utilisateur et des performances dans différents 
+          appareils et tailles d'écran.</p>
         `
         },
       });
@@ -636,6 +643,78 @@ function makeMirageServer() {
         `
         },
       });
+
+      // Concept Definition ...
+      server.create("conceptDef", {
+        id: "0",
+        title: {
+          en: "Web Technologies",
+          fr: "Technologies du web"
+        },
+        description: {
+          en: ` 
+          <p>Web technologies go beyond writing coding. It's about the deep understanding 
+          of how the entire ecosystem works, user experience optimizing, and keeping up 
+          with innovation's fast pace.</p> 
+          <p>Here's a breakdown of some key areas where web technologies play a crucial role:</p>
+          <ul>
+            <li>HTML/CSS</li>
+            <li>JavaScript/TypeScript</li>
+            <li>Modern Frameworks and Libraries (like React)</li>
+            <li>Build Tools & Automation</li>
+            <li>Version Control and Collaboration</li>
+            <li>Performance Optimization</li>
+            <li>Cross-Browser Compatibility & Mobile-First Design</li>
+            <li>Testing</li>
+            <li>APIs and Data Fetching</li>
+            <li>Cloud & Deployment</li>
+            <li>Security Best Practices</li> 
+          </ul>
+        `,
+        fr: ` 
+          <p>Les technologies Web vont au-delà de l'écriture de code. Il s'agit d'une compréhension profonde 
+          du fonctionnement de l'ensemble de l'écosystème, de l'optimisation de l'expérience utilisateur et du suivi 
+          avec le rythme rapide de l'innovation.</p> 
+          <p>Voici quelques domaines clés dans lesquels les technologies Web jouent un rôle crucial :</p>
+          <ul>
+            <li>HTML/CSS</li>
+            <li>JavaScript/TypeScript</li>
+            <li>Frameworks et bibliothèques modernes (comme React)</li>
+            <li>Outils de création et automatisation</li>
+            <li>Contrôle des versions et collaboration</li>
+            <li>Optimisation des performances</li>
+            <li>Compatibilité multi-navigateurs et conception axée sur les mobiles</li>
+            <li>Tests</li>
+            <li>API et récupération de données</li>
+            <li>Cloud et déploiement</li>
+            <li>Bonnes pratiques de sécurité</li> 
+          </ul>
+        `
+        },
+      });
+      server.create("conceptDef", {
+        id: "1",
+        title: {
+          en: "React UI library",
+          fr: "La librairie UI React"
+        },
+        description: {
+          en: ` 
+          <p>React is a tool used to build websites and apps. It helps developers 
+          create interactive and dynamic user interfaces, like buttons or forms, 
+          by organizing them into reusable components. React makes it easier and 
+          faster to update websites, improving performance and user experience, 
+          which is crucial for modern web apps.</p> 
+        `,
+        fr: ` 
+          <p>React est un outil utilisé pour créer des sites Web et des applications. Cela aide les développeurs 
+          créer des interfaces utilisateur interactives et dynamiques, comme des boutons ou des formulaires, 
+          en les organisant en composants réutilisables. React rend les choses plus faciles et 
+          plus rapide pour mettre à jour les sites Web, améliorant ainsi les performances et l'expérience utilisateur, 
+          ce qui est crucial pour les applications Web modernes.</p>
+        `
+        },
+      });
     },
 
     routes() {
@@ -739,6 +818,18 @@ function makeMirageServer() {
             image: data.image,
             className: data.className,
             blurb: data.blurb,
+            description: data.description
+          }
+        };
+      });
+
+      // Concept Definition ... 
+      this.get("/conceptDefs/:id", (schema: AppRegistry, request: Request) => { 
+        const data = this.schema.conceptDefs.find(request.params.id);
+
+        return {
+          conceptDefs: {
+            title: data.title,
             description: data.description
           }
         };
