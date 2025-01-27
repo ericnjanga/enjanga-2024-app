@@ -341,20 +341,31 @@ function makeMirageServer() {
         parentId: "2",
         blurb: {
           en: `Optimizing the code for WCAG and AODA Accessibility compliance.`,
-          fr: `[****** fr] Optimizing the code for WCAG and AODA Accessibility compliance.`
+          fr: `Optimisation du code pour la conformité aux WCAG et AODA en matière d'accessibilité.`
         },
         title: {
-          en: "Accessibility Compliance",
-          fr: "[****** fr] Accessibility Compliance"
+          en: "Accessibility Compliance with WCAG and AODA",
+          fr: "Conformité en matière d'accessibilité aux WCAG et à l'AODA"
         },
         description: {
           en: ` 
-          <p><b>Optimizing the code structure for optimal (WCAG and AODA) ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>I ensure that the code structure adheres to WCAG and AODA by writing 
+          semantic HTML for accessibility, using ARIA roles where necessary, and 
+          maintaining the hierarchy of titles.</p> 
+          <p>I also optimize color contrast, keyboard navigation, and the focus state 
+          of form elements or interactive elements. I perform testing for assistive 
+          technologies and implement scalable and maintainable solutions code that 
+          ensures accessibility compliance while improving the user experience for everyone.</p>
         `,
         fr: ` 
-          <p><b>[****** fr] Optimizing the code structure for optimal (WCAG and AODA) ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>Je m'assure que la structure du code adhère aux WCAG et AODA en écrivant 
+          du HTML sémantique pour l'accessibilité, en utilisant les rôles ARIA si 
+          nécessaire et en maintenant la hiérarchie des titres.</p> 
+          <p>J'optimise également le contraste des couleurs, la navigation au clavier 
+          et l'état de focus des éléments de formulaire ou des éléments interactifs.
+          J'effectue des tests pour les technologies d'assistance et mets en œuvre 
+          des solutions évolutives et maintenables code qui garantit la conformité 
+          en matière d'accessibilité tout en améliorant l'expérience utilisateur pour tous.</p>
         `
         },
       });
