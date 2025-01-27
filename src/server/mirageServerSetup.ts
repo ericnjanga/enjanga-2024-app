@@ -384,7 +384,7 @@ function makeMirageServer() {
         },
         description: {
           en: ` 
-          <p><b>Description 5 ...</b></p>
+          <p><b>Description 5* ...</b></p>
           <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
         `,
         fr: ` 
@@ -429,17 +429,30 @@ function makeMirageServer() {
           fr: `[****** fr] Translating business/technical specifications into working, tested applications.`
         },
         title: {
-          en: "Expertise 5",
-          fr: "[****** fr] Expertise 5"
+          en: "Translating business/technical specifications",
+          fr: "Traduction de spécifications commerciales/techniques"
         },
         description: {
-          en: ` 
-          <p><b>Description 5 ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          en: `  
+          <p>I analyze business and technical specifications to translate them into design user-centric and  
+          responsive interfaces. I use my engineering knowledge to inform business stakeholders' decision process 
+          and I use modern frameworks like React to ensure scalability and performance.</p> 
+          <p>By writing clean, maintainable code, integrating APIs, and adhering to best practices, 
+          I build robust applications. I also use rigorous testing, including unit and integration tests 
+          to ensure functionality and reliability.</p> 
+          <p>I collaborate with stakeholders, designers, and back-end teams to aligns the final product with 
+          project goals and user expectations.</p>
         `,
         fr: ` 
-          <p><b>[****** fr] Description 5 ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>J'analyse les spécifications commerciales et techniques pour les traduire en design centrée utilisateur et
+          interfaces responsives. J'utilise mes connaissances d'ingénierieur pour éclairer les décisions des décideurs 
+          et j'utilise des frameworks modernes comme React pour garantir l'évolutivité et les performances des application 
+          créees.</p> 
+          <p>En écrivant du code propre et maintenable, en intégrant des API et en adhérant aux meilleures pratiques, 
+          Je crée des applications robustes. J'utilise également des tests rigoureux, notamment des tests unitaires et 
+          d'intégration. pour garantir la fonctionnalité et la fiabilité.</p> 
+          <p>Je collabore avec les parties prenantes, les designeurs et les équipes back-end pour aligner le produit 
+          final sur objectifs du projet et attentes des utilisateurs.</p>
         `
         },
       });
