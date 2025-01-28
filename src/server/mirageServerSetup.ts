@@ -174,10 +174,18 @@ function makeMirageServer() {
           fr: "Écriture personnalisée du code"
         },
         description: {
-          en: `<p>I write custom code in various <a id="0" class="open-modal" href="#">web technologies</a> to shape the solution in the desired form. For example, I use a <a id="1" class="open-modal" href="#">library called React</a> to create web applications that render complex information fast, without having to reload the page.</p>
+          en: `<p>I write custom code in various <a id="0" class="open-modal" href="#">
+          web technologies</a> to shape the solution in the desired form. For example, 
+          I use a <a id="1" class="open-modal" href="#">library called React</a> to create 
+          web applications that render complex information fast, without having to 
+          reload the page.</p>
         <p>My coding expertise includes, but is not limited to:</p>
         `,
-        fr: `<p>J'écris du code personnalisé dans diverses <a id="0" class="open-modal" href="#">technologies Web</a> pour façonner la solution sous la forme souhaitée. Par exemple, j'utilise une <a id="1" class="open-modal" href="#">bibliothèque appelée React</a> pour créer des applications Web qui restituent rapidement des informations complexes, sans avoir à recharger la page.</p>
+        fr: `<p>J'écris du code personnalisé dans diverses <a id="0" class="open-modal" 
+        href="#">technologies Web</a> pour façonner la solution sous la forme souhaitée. 
+        Par exemple, j'utilise une <a id="1" class="open-modal" href="#">bibliothèque 
+        appelée React</a> pour créer des applications Web qui restituent rapidement 
+        des informations complexes, sans avoir à recharger la page.</p>
         <p>Mon expertise en matière de codage comprend, sans s'y limiter :</p>
         `
         },
@@ -188,15 +196,22 @@ function makeMirageServer() {
         id: "8",
         title: {
           en: "Designing User Interfaces",
-          fr: "[****** fr] Designing User Interfaces"
+          fr: "Conception d'interfaces utilisateurs"
         },
         description: {
-          en: `<p>I excel at using my engineering knowledge to help multi-disciplinary teams make well-informed design decisions.
-        I combine <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
+          en: `<p>I excel at using my engineering knowledge to help multi-disciplinary 
+          teams make well-informed design decisions. I combine <a id="2" class="open-modal" 
+          href="#">Usability</a> and <a id="3" class="open-modal" href="#">Accessibility</a> 
+          skills to ensure design solutions fulfill users agenda and comply to WCAG 
+          and AODA regulations. </p>
         <p>My design expertise includes, but is not limited to:</p>`,
-        fr: `<p>[****** fr] I excel at using my engineering knowledge to help multi-disciplinary teams make well-informed design decisions.
-        I combine <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a> skills to ensure design solutions fulfill users agenda and comply to WCAG and AODA regulations. </p>
-        <p>My design expertise includes, but is not limited to:</p>`
+        fr: `<p>J'excelle dans l'utilisation de mes connaissances en ingénierie pour aider 
+        des équipes multidisciplinaires à prendre des décisions averties.
+        Je combine mes compétances dans le domaine de <a id="2" class="open-modal" href="#">
+        la Convivialité</a> et de <a id="3" class="open-modal" href="#">l'Accessibilité</a> 
+        pour garantir des solutions qui répondent aux objectifs des utilisateurs tout en
+        étant conformes aux réglementations WCAG et AODA. </p>
+        <p>Mon expertise en matière de conception comprend, sans s'y limiter :</p>`
         },
         className: "theme1",
       });
@@ -341,7 +356,7 @@ function makeMirageServer() {
         parentId: "2",
         blurb: {
           en: `Optimizing the code for WCAG and AODA Accessibility compliance.`,
-          fr: `L'optimisation du code pour la conformité aux WCAG et AODA en matière d'accessibilité.`
+          fr: `L'optimisation du code pour une Accessibilité conforme.`
         },
         title: {
           en: "Accessibility Compliance with WCAG and AODA",
@@ -358,7 +373,7 @@ function makeMirageServer() {
           ensures accessibility compliance while improving the user experience for everyone.</p>
         `,
         fr: ` 
-          <p>Je m'assure que la structure du code adhère aux WCAG et AODA en écrivant 
+          <p>Je m'assure que la structure du code adhère aux normes WCAG et AODA en écrivant 
           du HTML sémantique pour l'accessibilité, en utilisant les rôles ARIA si 
           nécessaire et en maintenant la hiérarchie des titres.</p> 
           <p>J'optimise également le contraste des couleurs, la navigation au clavier 
@@ -375,7 +390,7 @@ function makeMirageServer() {
         blurb: {
           en: `Using analytical and problem-solving skills to address 
         complex and unusual coding problems.`,
-        fr: `L'utilisation des compétences analytiques pour aborder des défis complèxes et inhabituels.`
+        fr: `L'utilisation des compétences analytiques face aux complexités.`
         },
         title: {
           en: "Using analytical and problem-solving skills",
@@ -477,8 +492,8 @@ function makeMirageServer() {
         blurb: {
           en: `Using my engineering knowledge to support Design Thinking
          processes and make well-informed design decisions.`,
-         fr: `[****** fr] Using my engineering knowledge to support Design Thinking
-         processes and make well-informed design decisions.`
+         fr: `L'utilisation de connaissances en ingénierie pour soutenir les 
+         processus de Design et aider à la prise de bonnes décisions.`
         },
         title: {
           en: "Expertise 6",
@@ -499,8 +514,8 @@ function makeMirageServer() {
         id: "7",
         parentId: "8",
         blurb: {
-          en: `Expertise specification 2 - blurb 2`,
-          fr: `[****** fr] Expertise specification 2 - blurb 2`
+          en: `Enhancing user experience through performance optimization.`,
+          fr: `L'amélioration de l'expérience utilisateur grâce à l'optimisation.`
         },
         title: {
           en: "Expertise 7",
@@ -521,8 +536,8 @@ function makeMirageServer() {
         id: "8",
         parentId: "8",
         blurb: {
-          en: `Expertise specification 2 - blurb 3`,
-          fr: `[****** fr] Expertise specification 2 - blurb 3`
+          en: `Bridging the gap between design and development.`,
+          fr: `L'aplanissement du fossé entre design et développement.`
         },
         title: {
           en: "Expertise 8",
@@ -543,12 +558,10 @@ function makeMirageServer() {
         id: "9",
         parentId: "8",
         blurb: {
-          en: `Being actively involved in all aspects pf the research, 
-        prototyping and implementation of user interfaces 
-        that solve users/customers problems.`,
-        fr: `[****** fr] Being actively involved in all aspects pf the research, 
-        prototyping and implementation of user interfaces 
-        that solve users/customers problems.`
+          en: `Being actively involved in all aspects of the research, 
+        prototyping and implementation of effective user interfaces.`,
+        fr: `L'implication dans tous les aspects de recherches, 
+        prototypages et mise en œuvre d’interfaces utilisateur efficaces.`
         },
         title: {
           en: "Expertise 8",
@@ -750,6 +763,36 @@ function makeMirageServer() {
           en les organisant en composants réutilisables. React rend les choses plus faciles et 
           plus rapide pour mettre à jour les sites Web, améliorant ainsi les performances et l'expérience utilisateur, 
           ce qui est crucial pour les applications Web modernes.</p>
+        `
+        },
+      });
+      server.create("conceptDef", {
+        id: "2",
+        title: {
+          en: "Usability",
+          fr: "[****** fr] Usability"
+        },
+        description: {
+          en: ` 
+          <p>.... Usability</p> 
+        `,
+        fr: ` 
+          <p>[****** fr] .... Usability</p> 
+        `
+        },
+      });
+      server.create("conceptDef", {
+        id: "3",
+        title: {
+          en: "Accessibility",
+          fr: "[****** fr] Accessibility"
+        },
+        description: {
+          en: ` 
+          <p>.... Accessibility</p> 
+        `,
+        fr: ` 
+          <p>[****** fr] .... Accessibility</p> 
         `
         },
       });
