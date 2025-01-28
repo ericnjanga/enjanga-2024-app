@@ -311,8 +311,8 @@ function makeMirageServer() {
         blurb: {
           en: `Writing production code with a focus on user's experience,
          performance, and easy maintenance.`,
-         fr: `Écrire du code de production en mettant l'accent sur l'expérience utilisateur,
-         performances et un entretien facile.`
+         fr: `L'écriture d'un code de production tout en mettant l'accent 
+         sur l'expérience utilisateur, les performances et l'entretien facile.`
         },
         title: {
           en: "Production code for better UX",
@@ -341,7 +341,7 @@ function makeMirageServer() {
         parentId: "2",
         blurb: {
           en: `Optimizing the code for WCAG and AODA Accessibility compliance.`,
-          fr: `Optimisation du code pour la conformité aux WCAG et AODA en matière d'accessibilité.`
+          fr: `L'optimisation du code pour la conformité aux WCAG et AODA en matière d'accessibilité.`
         },
         title: {
           en: "Accessibility Compliance with WCAG and AODA",
@@ -373,23 +373,37 @@ function makeMirageServer() {
         id: "3",
         parentId: "2",
         blurb: {
-          en: `Using analytial and problem soving skills to address 
+          en: `Using analytical and problem-solving skills to address 
         complex and unusual coding problems.`,
-        fr: `[****** fr] Using analytial and problem soving skills to address 
-        complex and unusual coding problems.`
+        fr: `L'utilisation des compétences analytiques pour aborder des défis complèxes et inhabituels.`
         },
         title: {
-          en: "Expertise 3",
-          fr: "[****** fr] Expertise 3"
+          en: "Using analytical and problem-solving skills",
+          fr: "Utilisation des compétences analytiques"
         },
         description: {
           en: ` 
-          <p><b>Description 5* ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>I'm leveraging  my analytical skills to break down complex coding issues 
+          into manageable parts, identifying root causes efficiently. I'm applying 
+          problem-solving strategies, including debugging, optimizing algorithms, 
+          and exploring alternative solutions, while adhering to best practices.</p>
+          <p>By leveraging experience, tools, and frameworks, I'm devising innovative, 
+          and scalable solutions.</p> 
+          <p>I favor team collaboration for research into emerging technologies, which 
+          ensures effective resolution of even the most unusual 
+          challenges, aligning with project goals and timelines.</p>
         `,
         fr: ` 
-          <p><b>[****** fr] Description 5 ...</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>Je mets à profit mes compétences analytiques pour rendre les problèmes de codage 
+          complexes plus gérables, en identifiant efficacement les causes profondes. J'applique 
+          des stratégies de résolution de problèmes, notamment le débogage, l'optimisation des 
+          algorithmes, tout en explorant des solutions alternatives et en adhérant aux meilleures 
+          pratiques.</p>
+          <p>En tirant parti de mon expérience, de mes outils et de mes frameworks, je conçois 
+          des solutions innovantes, et des solutions évolutives.</p> 
+          <p>Je privilégie la collaboration en équipe pour la recherche sur les technologies 
+          émergentes, ce qui assure une résolution efficace même des problèmes les plus inhabituels, 
+          tout en s'alignant sur les objectifs et les délais du projet.</p>
         `
         },
       });
@@ -398,7 +412,7 @@ function makeMirageServer() {
         parentId: "2",
         blurb: {
           en: `Translating visual designs into responsive and interactive User Interfaces.`,
-          fr: `Conversion des Designs visuels en interfaces utilisateur réactives et interactives.`
+          fr: `La conversion des Designs en interfaces utilisateur interactives.`
         },
         title: {
           en: "Visual designs translation",
@@ -426,7 +440,7 @@ function makeMirageServer() {
         parentId: "2",
         blurb: {
           en: `Translating business/technical specifications into working, tested applications.`,
-          fr: `[****** fr] Translating business/technical specifications into working, tested applications.`
+          fr: `La traduction de spécifications commerciales/techniques en applications fonctionnelles et testées.`
         },
         title: {
           en: "Translating business/technical specifications",
