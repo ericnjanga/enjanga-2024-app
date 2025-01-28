@@ -2,16 +2,34 @@ import "./Navigation.scss";
 import { useNavOptions } from "../../hooks/useAPI";
 import { ModalContext, LanguageContext } from "../../utils/contexts";
 import { useContext } from "react";
-import Preloader from "../Preloader/Preloader"; 
-import Button from "../Button/Button"; 
-import { useTranslation } from 'react-i18next';
-import LanguageToggle from "../LanguageModule/LanguageToggle/LanguageToggle"; 
+import Preloader from "../Preloader/Preloader";
+import Button from "../Button/Button";
+import { useTranslation } from "react-i18next";
+import LanguageToggle from "../LanguageModule/LanguageToggle/LanguageToggle";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
+import { NavRoutes } from "../../models";
 
 const Navigation = () => {
   const navItemsList = useNavOptions();
   const context = useContext(ModalContext);
   const { t } = useTranslation();
   const activeLang = useContext(LanguageContext);
+
+  const navigate = useNavigate();
+
+  const handleNavClick = (id: string, route: NavRoutes) => {
+    navigate(route); // Change the route
+    const section = document.getElementById(id); // Get the target section
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
+    }
+  };
 
   if (!context) {
     // return if the context is empty
@@ -27,13 +45,13 @@ const Navigation = () => {
       className="Navigation navbar navbar-expand-lg w-100 fixed-top dark"
     >
       <div className="container">
-        <a className="navbar-brand" href="#welcome">
+        <span className="navbar-brand" onClick={() => handleNavClick('welcome', '/welcome')}>
           <img
             src="/images/logo-light.png"
             className="img-fluid"
             alt="Eric Njanga"
           />
-        </a>
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -51,29 +69,29 @@ const Navigation = () => {
               navItemsList.map((navItem, index) => {
                 return (
                   <li className="nav-item" key={index}>
-                    <a className="nav-link" href={navItem.url}> 
+                    <span className="nav-link" onClick={() => handleNavClick(navItem.route, `${navItem.route}`)}>
                       {navItem.name[activeLang]}
-                    </a>
+                    </span>
                   </li>
                 );
               })}
           </ul>
-          
+
           <LanguageToggle className="mx-auto" />
 
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Button 
-                icon='chat'
+              <Button
+                icon="chat"
                 ariaLabel={t("contactCTAalt")}
                 onClickHandler={() => {
                   openModal({
-                    dataType: 'pageSections',
+                    dataType: "pageSections",
                     dataId: "7",
                   });
-                }} 
+                }}
               >
-                { t('contactCTA') }
+                {t("contactCTA")}
               </Button>
             </li>
           </ul>

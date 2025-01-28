@@ -73,9 +73,11 @@ export type ProjectProps = {
   }
 };
 
+export type NavRoutes = '/welcome' | '/scope-of-expertise' | '/some-work' | '/about';
+
 export type NavOptionProps = {
   id: string
-  url: string 
+  route: NavRoutes 
   name: {
     en: string
     fr: string

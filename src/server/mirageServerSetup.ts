@@ -26,7 +26,7 @@ function makeMirageServer() {
           en: "Scope of Expertise",
           fr: "Sommaire des compétances",
         },
-        url: "#scope-of-expertise",
+        route: "scope-of-expertise",
         description: {
           en: "...",
           fr: "...",
@@ -38,7 +38,7 @@ function makeMirageServer() {
           en: "Some work",
           fr: "Récents travaux",
         },
-        url: "#some-work",
+        route: "some-work",
         description: {
           en: "...",
           fr: "...",
@@ -50,7 +50,7 @@ function makeMirageServer() {
           en: "About me",
           fr: "À propos",
         },
-        url: "#about",
+        route: "about",
         description: {
           en: "...",
           fr: "...",
@@ -808,6 +808,7 @@ function makeMirageServer() {
         return {
           navOptions: this.schema.navOptions.all().models.map((data: NavOptionProps) => ({
             id: data.id,
+            route: data.route,
             name: data.name,
             description: data.description,
           }))

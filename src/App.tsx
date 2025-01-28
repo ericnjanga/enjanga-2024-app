@@ -24,6 +24,7 @@ function App() {
   return (
     <LanguageProvider>
       <ModalProvider>
+      <Router>
         <div className="App">
           <Modal />
 
@@ -47,13 +48,14 @@ function App() {
 
           <Footer />
 
-          <Router>
-            <Routes>
+            {/* <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-          </Router>
+              
+                <Route id="about" path="/about" element={<About />} />
+             
+            </Routes> */}
         </div>
+        </Router>
       </ModalProvider>
     </LanguageProvider>
   );
