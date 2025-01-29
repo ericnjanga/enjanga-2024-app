@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef, RefObject } from "react";
 
 // Slick carousel imports (in order of importance)
 import $ from "jquery"; // Import jQuery dependency
@@ -75,3 +75,31 @@ export const useSliderInit = (
 };
 
 
+
+
+/**
+ * NOTE: Was trying to lazy load components. I've abandonned this for now
+ * https://chatgpt.com/share/679a4407-76d8-8001-a137-2b1b3f11673a
+ */
+export const useInView = <T extends HTMLElement = HTMLDivElement>(
+  options: IntersectionObserverInit = {}
+): { ref: RefObject<T>; isInView: boolean } => {
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef<T>(null); // Ensure the ref is correctly typed
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      options
+    );
+
+    observer.observe(element);
+
+    return () => observer.unobserve(element);
+  }, [ref, options]);
+
+  return { ref, isInView };
+};

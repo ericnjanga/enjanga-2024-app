@@ -8,6 +8,9 @@ Clicking on any main navigation links:
 - Changes the route
 - Scrolls the page down to the appropriate position
 
+## Lazy loading components
+- Created useInView() custom hook, but haven't implemented it (too buggy).
+
 ## Multi-language
 English is the default language, and the parameter "&lang=url"
 
