@@ -496,18 +496,19 @@ function makeMirageServer() {
          processus de Design et aider à la prise de bonnes décisions.`
         },
         title: {
-          en: "Expertise 6",
-          fr: "[****** fr] Expertise 6"
+          en: "Supporting design decision with engineering knowledge",
+          fr: "Accompagner les choix de design grâce à l'expertise technique"
         },
         description: {
           en: `
-          <p><b>Description 1 a ***</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
+          <p>I leverage my engineering expertise to support the Design process by bridging the gap between design and development. I collaborate closely with designers, providing technical insights to ensure the solution's feasibility and accessibility.</p>
+          <p>By understanding user needs and constraints, I help refine designs early, reducing rework and improving efficiency.</p>
+          <p>My experience with modern frameworks and best practices enables me to prototype rapidly, validate concepts, and make data-driven decisions. This approach ensures that final implementations are both user-friendly and technically sound, creating seamless, scalable, and high-performing digital experiences.</p>
         `,
         fr: `
-          <p><b>[****** fr] Description 1 a ***</b></p>
-          <p>Macaroon croissant sesame snaps liquorice jelly-o toffee. Brownie marshmallow shortbread cake pudding liquorice dragée cupcake cake. Dragée jelly beans cake carrot cake dragée dessert apple pie. Dragée macaroon pie sugar plum wafer.</p>
-        `
+          <p>Je mets à profit mon expertise technique pour soutenir le processus de Design en comblant le fossé entre avec le développement. Je collabore étroitement avec les designers et leur fournit des informations techniques qui garantissent la faisabilité et l'accessibilité des solutions.</p>
+          <p>En comprenant les besoins et les contraintes des utilisateurs, j'aide à affiner les conceptions dès le début, réduisant ainsi les retouches et améliorant l'efficacité.</p> 
+          <p>Mon expérience des frameworks modernes et des meilleures pratiques me permet de créer rapidement des prototypes, de valider des concepts et de prendre des décisions basées sur les données. Cette approche garantit un produit final qui est à la fois convivial, techniquement solide et performant.</p>`
         },
       });
       server.create("expertiseSpec", {
