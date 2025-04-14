@@ -9,7 +9,7 @@ const rootElement = document.getElementById('root');
 
 // Initialize MirageJS server
 if (process.env.NODE_ENV === "development") {
-  makeMirageServer();
+  // makeMirageServer();
 } else {
   throw new Error("Root element not found. Make sure 'root' div exists in the HTML file.");
 }

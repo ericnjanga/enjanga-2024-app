@@ -801,6 +801,7 @@ function makeMirageServer() {
 
     routes() {
       this.passthrough("https://formspree.io/**"); // Allow requests to Formspree
+      this.passthrough("https://graphql.contentful.com/content/v1/spaces/"); // Allow requests to Formspree
 
       this.namespace = "api";
 
