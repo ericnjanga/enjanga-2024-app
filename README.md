@@ -25,6 +25,20 @@ I need to create a react app with the following stack:
 - React router
 - MirageJS
 
+## Data fetching
+- Axios: 
+  * Built-in JSON parsing — no need for .json() 
+  * Easier error handling (try/catch) 
+  * Cleaner syntax for headers and config
+- React Query:
+  * 🚀 Data caching – avoids unnecessary re-fetching. 
+  * 🔄 Automatic updates – refetches on focus or reconnect. 
+  * 🧪 Built-in loading & error states – simplifies UI logic. 
+  * 🎯 Background refetching – keeps data fresh without blocking UI. 
+  * 💾 Pagination & infinite scroll – handled out of the box. 
+  * 🔁 Deduplication – prevents multiple requests for the same data. 
+  * 💡 Declarative & scalable – perfect for growing apps.
+
 ## Directory Structure
 Project organized for scalability:
 
