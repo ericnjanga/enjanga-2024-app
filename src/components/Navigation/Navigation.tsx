@@ -16,6 +16,21 @@ import {
 import { NavRoutes } from "../../models";
 
 const Navigation = () => {
+
+  // GraphQL query for fetching a collection of nav items ...
+  const query = `
+  query GetNavItemCollection($locale: String!) {
+    pageSectionCollection(id: $sectionId, locale: $locale) { 
+      items {
+        title
+        description {
+          json
+        }
+      } 
+    }
+  }
+  `;
+
   const navItemsList = useNavOptions();
   const context = useContext(ModalContext);
   const { t } = useTranslation();

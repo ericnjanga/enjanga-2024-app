@@ -63,9 +63,7 @@ export function PagesssSections({ sectionId = '2IESwjrb2JUTQG0S8PZ65S', locale =
   if (error) return <p>Error loading blog posts.</p>;
 
   console.log('********** title = ', data.pageSection.title);
-  // console.log('********** title = ', data.pageSection.description.json);
   console.log('********** description = ', documentToReactComponents(data.pageSection.description.json));
-  // console.log('********** description = ', documentToReactComponents(data.description.json));
  
   return (
     <div>
@@ -93,9 +91,12 @@ function App() {
             <br /><br /><br />
             <PagesssSections />
             <br /><br /><br />
-            {/* <Modal />
-
+            <Modal />
             <Navigation />
+
+
+            {/* 
+
 
             <div id="welcome">
               <Hero />
