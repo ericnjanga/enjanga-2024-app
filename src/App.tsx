@@ -110,7 +110,7 @@ function App() {
               <CarrouselPortfolio />
             </div>
 
-            <div id="about">
+            <div id="about-me">
               <About />
             </div>
 

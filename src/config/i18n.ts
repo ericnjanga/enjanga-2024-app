@@ -34,6 +34,8 @@ const resources = {
       Detailsrequired: "More details about your request are required",
       Details100Minchars: "A minimum of 100 characters is required",
       Details280Maxchars: "The 280 characters limit has been reached",
+
+      ErrorLoadingPosts: 'Error loading blog posts.',
     },
   },
   fr: {
@@ -67,6 +69,8 @@ const resources = {
       Detailsrequired: "Des détails sur votre requête sont requis",
       Details100Minchars: "Un minimum de 100 caractères est requis",
       Details280Maxchars: "La limite de 280 caractères a été atteinte",
+
+      ErrorLoadingPosts: 'Erreur lors du chargement des articles de blog.',
     },
   },
 };

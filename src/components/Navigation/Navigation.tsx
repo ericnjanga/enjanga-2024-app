@@ -1,58 +1,63 @@
 import "./Navigation.scss";
-import { useNavOptions } from "../../hooks/useAPI";
+import { useCallback } from "react";
+import { useContentful } from "../../hooks/useContentful";
 import { ModalContext, LanguageContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader";
-import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "../LanguageModule/LanguageToggle/LanguageToggle";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
-import { NavRoutes } from "../../models";
+import { useNavigate } from "react-router-dom";
+import { 
+  LogoAndBrand,
+  ContactButton,
+  queryNavItems,
+  NavigationListOfItems,
+} from "./Navigation.shared";
 
+
+/**
+ *
+ * @returns
+ */
 const Navigation = () => {
-
-  // GraphQL query for fetching a collection of nav items ...
-  const query = `
-  query GetNavItemCollection($locale: String!) {
-    pageSectionCollection(id: $sectionId, locale: $locale) { 
-      items {
-        title
-        description {
-          json
-        }
-      } 
-    }
-  }
-  `;
-
-  const navItemsList = useNavOptions();
-  const context = useContext(ModalContext);
+  // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
+
+  // For getting modal-based fucnctionality
+  const modalContext = useContext(ModalContext);
+
+  // Getting the currently active locale...
   const activeLang = useContext(LanguageContext);
 
+  // Processing route nativation
   const navigate = useNavigate();
+  const handleNavClick = useCallback(
+    (route: string) => {
+      navigate(`${route}`); // Change the route
+      const section = document.getElementById(route); // Get the target section
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
+      }
+    },
+    [navigate]
+  );
 
-  const handleNavClick = (id: string, route: NavRoutes) => {
-    navigate(route); // Change the route
-    const section = document.getElementById(id); // Get the target section
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" }); // Scroll smoothly to the section
-    }
-  };
 
-  if (!context) {
-    // return if the context is empty
+  const { data, isLoading, error } = useContentful({
+    query: queryNavItems,
+    variables: { locale1: "en-CA", locale2: "fr" },
+    queryKey: `navigation-items`,
+  });
+
+  // Display a placeholder is there is no modal context or the data fetching is not yet completed
+  if (!modalContext || isLoading) {
     return <Preloader />;
   }
+  // Display an error messaye if there was problem fetching data
+  if (error) return <p>{t("ErrorLoadingPosts")}</p>;
 
   // Otherwise, destructure the context
-  const { openModal } = context;
+  const { openModal } = modalContext;
 
   return (
     <nav
@@ -60,13 +65,7 @@ const Navigation = () => {
       className="Navigation navbar navbar-expand-lg w-100 fixed-top dark"
     >
       <div className="container">
-        <span className="navbar-brand" onClick={() => handleNavClick('welcome', '/welcome')}>
-          <img
-            src="/images/logo-light.png"
-            className="img-fluid"
-            alt="Eric Njanga"
-          />
-        </span>
+        <LogoAndBrand onClick={() => handleNavClick("welcome")} />
         <button
           className="navbar-toggler"
           type="button"
@@ -79,37 +78,24 @@ const Navigation = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto">
-            {navItemsList.length &&
-              navItemsList.map((navItem, index) => {
-                return (
-                  <li className="nav-item" key={index}>
-                    <span className="nav-link" onClick={() => handleNavClick(navItem.route, `${navItem.route}`)}>
-                      {navItem.name[activeLang]}
-                    </span>
-                  </li>
-                );
-              })}
-          </ul>
+          {/** Conditionally renders the navigation based on the active language */}
+          {data && activeLang && data[activeLang]?.items?.length > 0 && (
+            <NavigationListOfItems
+              items={data[activeLang].items}
+              handleClick={handleNavClick}
+            />
+          )}
 
           <LanguageToggle className="mx-auto" />
 
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Button
-                icon="chat"
-                ariaLabel={t("contactCTAalt")}
-                onClickHandler={() => {
-                  openModal({
-                    dataType: "pageSections",
-                    dataId: "7",
-                  });
-                }}
-              >
-                {t("contactCTA")}
-              </Button>
-            </li>
-          </ul>
+          <ContactButton
+            onClick={() => {
+              openModal({
+                dataType: "pageSections",
+                dataId: "7",
+              });
+            }}
+          />
         </div>
       </div>
     </nav>

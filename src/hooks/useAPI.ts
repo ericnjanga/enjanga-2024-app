@@ -141,18 +141,7 @@ export const useProjects = (): ProjectProps[] | null => {
     fetchData('all projects', null).then((response) => setPanelFrame(response)); 
   }, []);
   return projects;
-};
-
-// Returns a database record of type "InformationCard1Props[]"
-export const useNavOptions = (): NavOptionProps[] | [] => {
-  const [navOptions, setNavOptions] = useState<NavOptionProps[]>([]); 
-  
-  useEffect(() => { 
-    fetchData('navOptions', null).then((response) => setNavOptions(response)); 
-  }, []);
-  return navOptions;
-};
-
+}; 
 
 
 /**
