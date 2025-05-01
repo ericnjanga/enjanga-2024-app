@@ -1,26 +1,88 @@
-import "./Hero.scss";
-import { usePageSection } from "../../hooks/useAPI";
+import "./Hero.scss"; 
 import React, { useContext } from "react";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
 import { LanguageContext } from "../../utils/contexts";
+import Preloader from "../Preloader/Preloader";
+  
+import { useContentful } from "../../hooks/useContentful";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { queryData, queryKeyData, sectionId } from "./Hero.shared";
+
+
+// export function PagesssSections({ sectionId = '2IESwjrb2JUTQG0S8PZ65S', locale = 'fr'}) {
+ 
+//   const { data, isLoading, error } = useContentful({
+//     query: queryData,
+//     variables: { sectionId, locale },
+//     queryKey: queryKeyData
+//   });
+
+//   if (isLoading) return <p>Loading...</p>;
+//   if (error) return <p>Error loading blog posts.</p>;
+
+//   console.log('********** title = ', data.pageSection.title);
+//   console.log('********** description = ', documentToReactComponents(data.pageSection.description.json));
+ 
+//   return (
+//     <div>
+//       <h3>{data.pageSection.title}</h3>
+//       <div>{documentToReactComponents(data.pageSection.description.json)}</div>
+//     </div>
+//   );
+
+// }
+
+
 
 const Hero = () => {
-  const hero = usePageSection("1");
+  // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
+  
+  // Getting the currently active locale...
   const activeLang = useContext(LanguageContext);
+
+  /** 
+   * Fetching ContentFul data in all languages, and handling errors and loading time 
+   * ----------------------
+  */
+  const { data, isLoading, error } = useContentful({
+    query: queryData,
+    variables: { sectionId, locale1: "en-CA", locale2: "fr" },
+    queryKey: queryKeyData,
+  });
+
+  // Display a placeholder is there is no modal context or the data fetching is not yet completed
+  if (isLoading) {
+    return <Preloader />;
+  }
+  // Display an error messaye if there was problem fetching data
+  if (error) return <p>{t("ErrorLoadingPosts")}</p>;
+  /** 
+   * Fetching ContentFul data in all languages, and handling errors and loading time 
+   * ----------------------
+  */
+  
 
   return (
     <header className="Hero">
       <div className="container Hero-content-wrapper">
         <div className="Hero-jumbotron jumbotron__textwrapper">
-          {hero && (
+          {data && activeLang && (
             <>
               <Heading h="1" className="Hero-title">
-                {hero.title[activeLang]}
+                {data[activeLang]?.title}
               </Heading>
-              <p className="Hero-subtitle">{hero.description[activeLang]}</p>
+              <div
+  className="Hero-subtitle"
+  dangerouslySetInnerHTML={{
+    __html: String(data[activeLang]?.description?.json ?? ''),
+  }}
+/>
+              {/* <div className="Hero-subtitle">
+                {data[activeLang]?.description?.json && documentToReactComponents(data[activeLang]?.description?.json)}
+              </div> */}
             </>
           )}
         </div>

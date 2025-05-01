@@ -3,6 +3,9 @@ import { useTranslation } from "react-i18next";
 import React from "react";
 import { NavRoutes } from "../../models";
 
+
+export const queryKeyData = `navigation-items`;
+
 // types/navigation.ts
 export interface NavigationItemProps {
   name: string;
@@ -10,8 +13,9 @@ export interface NavigationItemProps {
 }
 
 
-// GraphQL query for fetching a collection of nav items ...
-export const queryNavItems = `
+
+// "Fetching a collection of nav items" (GraphQL query) 
+export const queryData = `
 query GetNavItemCollection($locale1: String!, $locale2: String!) {
   en: navigationItemCollection(locale: $locale1) { 
     items {

@@ -8,6 +8,38 @@ import { mockContactForm } from "../models/mockupData";
 import { getCurrentLanguage } from "../components/LanguageModule/utils";
 
 
+
+
+
+
+
+/**
+ * TODO:
+ * MUST BE DELETED AFTER FULL CONTENTFULL INTEGRATION 
+ */
+// Returns a database record of type "PageSectionProps"
+export const usePageSection = (id: string): PageSectionProps | null => {
+  const [pageSection, setPageSection] = useState(null); 
+
+  useEffect(() => {  
+    fetchData('pageSections', id).then(response => setPageSection(response));
+  }, [id]);
+  return pageSection;
+}; 
+/**
+ * TODO:
+ * MUST BE DELETED AFTER FULL CONTENTFULL INTEGRATION 
+ */
+
+
+
+
+
+
+
+
+
+
 /**
  * TODO
  * THESE FUNCTIONS NEED TO BE OPTIMIZED FOR:
@@ -99,17 +131,6 @@ export const fetchData = async(dataType: string, dataId: string | null) => {
   }
 };
 
-
- 
-// Returns a database record of type "PageSectionProps"
-export const usePageSection = (id: string): PageSectionProps | null => {
-  const [pageSection, setPageSection] = useState(null); 
-
-  useEffect(() => {  
-    fetchData('pageSections', id).then(response => setPageSection(response));
-  }, [id]);
-  return pageSection;
-};
 
 // Returns a database record of type "InformationCard1Props[]"
 export const useExpertises = (parentId: string): InformationCard1Props[] | null => {

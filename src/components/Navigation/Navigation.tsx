@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { 
   LogoAndBrand,
   ContactButton,
-  queryNavItems,
+  queryData,
+  queryKeyData,
   NavigationListOfItems,
 } from "./Navigation.shared";
 
@@ -23,11 +24,11 @@ const Navigation = () => {
   // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
 
-  // For getting modal-based fucnctionality
-  const modalContext = useContext(ModalContext);
-
   // Getting the currently active locale...
   const activeLang = useContext(LanguageContext);
+
+  // For getting modal-based fucnctionality
+  const modalContext = useContext(ModalContext);
 
   // Processing route nativation
   const navigate = useNavigate();
@@ -42,11 +43,14 @@ const Navigation = () => {
     [navigate]
   );
 
-
+  /** 
+   * Fetching ContentFul data in all languages, and handling errors and loading time 
+   * ----------------------
+  */
   const { data, isLoading, error } = useContentful({
-    query: queryNavItems,
+    query: queryData,
     variables: { locale1: "en-CA", locale2: "fr" },
-    queryKey: `navigation-items`,
+    queryKey: queryKeyData,
   });
 
   // Display a placeholder is there is no modal context or the data fetching is not yet completed
@@ -55,6 +59,10 @@ const Navigation = () => {
   }
   // Display an error messaye if there was problem fetching data
   if (error) return <p>{t("ErrorLoadingPosts")}</p>;
+  /** 
+   * Fetching ContentFul data in all languages, and handling errors and loading time 
+   * ----------------------
+  */
 
   // Otherwise, destructure the context
   const { openModal } = modalContext;

@@ -27,7 +27,7 @@ const About = () => {
           <div
             className="About-description"
             dangerouslySetInnerHTML={{
-              __html: sectionData ? sectionData.description[activeLang] : "",
+              __html: sectionData ? sectionData.description[activeLang] : '',
             }}
           ></div>
           <footer>
