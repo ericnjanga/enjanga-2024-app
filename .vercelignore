@@ -1,2 +1,2 @@
-.storybook/
-*.stories.*
+ .storybook
+**/*.stories.*
