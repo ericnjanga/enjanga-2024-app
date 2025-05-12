@@ -17,7 +17,6 @@ English is the default language, and the parameter "&lang=url"
 ## Front-end Pipeline
 I need to create a react app with the following stack:
 - Typescript
-- Storybook
 - SCSS
 - Jest
 - React testing library
@@ -48,6 +47,5 @@ src/
 ├── styles/              # SCSS files
 ├── __tests__/           # Unit tests
 ├── server/              # MirageJS mock API
-├── stories/             # Storybook component stories
 ├── App.tsx              # Main app component
 ├── index.tsx            # Entry point
