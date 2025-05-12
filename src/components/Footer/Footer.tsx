@@ -7,7 +7,8 @@ import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
 
 import { useContentful } from "../../hooks/useContentful";
-import { queryData, queryKeyData, sectionId } from "./Footer.shared";
+import { queryKeyData, sectionId } from "./Footer.shared";
+import { queryData } from "../../libs/queries";
 
 const Footer = () => {
   // For extracting localised content from "i18n.ts" file based on the currently active locale
@@ -24,7 +25,7 @@ const Footer = () => {
    * ----------------------
    */
   const { data, isLoading, error } = useContentful({
-    query: queryData,
+    query: queryData.pageSection,
     variables: { sectionId, locale1: "en-CA", locale2: "fr" },
     queryKey: queryKeyData,
   });

@@ -7,7 +7,8 @@ import { LanguageContext } from "../../utils/contexts";
 import Preloader from "../Preloader/Preloader";
 
 import { useContentful } from "../../hooks/useContentful";
-import { queryData, queryKeyData, sectionId } from "./Hero.shared";
+import { queryKeyData, sectionId } from "./Hero.shared";
+import { queryData } from "../../libs/queries";
 // import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 
@@ -23,7 +24,7 @@ const Hero = () => {
    * ----------------------
    */
   const { data, isLoading, error } = useContentful({
-    query: queryData,
+    query: queryData.pageSection,
     variables: { sectionId, locale1: "en-CA", locale2: "fr" },
     queryKey: queryKeyData,
   });

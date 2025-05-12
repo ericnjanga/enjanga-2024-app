@@ -1,5 +1,5 @@
 import React from "react";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles/App.scss";
 import Hero from "./components/Hero/Hero";
@@ -13,7 +13,7 @@ import Navigation from "./components/Navigation/Navigation";
 import { LanguageProvider } from "./components/LanguageModule";
 
 import { useEffect, useState } from "react";
-import axios from 'axios'; 
+import axios from "axios";
 
 // Ensuring that Bootstrap's JavaScript is globally available across all components.
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -27,46 +27,33 @@ const Home = () => <p>*** Routes setup ***</p>;
 const queryClient = new QueryClient();
 
 function App() {
-
-
-
-
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <ModalProvider>
-        <Router>
-          <div className="App">
- 
-            <br /><br /><br />
-            <Modal />
-            <Navigation />
+          <Router>
+            <div className="App">
+              <Modal />
+              <Navigation />
 
-            <div id="welcome">
-              <Hero />
-            </div>
+              <div id="welcome">
+                <Hero />
+              </div>
 
-            {/* <div id="scope-of-expertise">
+              {/* <div id="scope-of-expertise">
               <CarrouselExpertise />
             </div> */}
 
-            {/* 
-
-
-
-            
-
+              {/* 
             <div id="some-work">
               <CarrouselPortfolio />
             </div>
-
-            <div id="about-me">
-              <About />
-            </div>
-
              */}
 
-<Footer />
+              <div id="about-me">
+                <About />
+              </div>
+              <Footer />
 
               {/* <Routes>
                 <Route path="/" element={<Home />} />
@@ -74,7 +61,7 @@ function App() {
                   <Route id="about" path="/about" element={<About />} />
               
               </Routes> */}
-          </div>
+            </div>
           </Router>
         </ModalProvider>
       </LanguageProvider>
