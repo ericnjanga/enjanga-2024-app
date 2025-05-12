@@ -1,41 +1,69 @@
 import "./Footer.scss";
-import { usePageSection } from "../../hooks/useAPI";
-import { ModalContext } from "../../utils/contexts";
+import { ModalContext, LanguageContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Heading from "../Heading/Heading";
 import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
-import { LanguageContext } from "../../utils/contexts";
+
+import { useContentful } from "../../hooks/useContentful";
+import { queryData, queryKeyData, sectionId } from "./Footer.shared";
 
 const Footer = () => {
-  const sectionData = usePageSection("5");
-  const context = useContext(ModalContext);
-  const activeLang = useContext(LanguageContext);
+  // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
 
-  if (!context) {
-    // return if the context is empty
+  // Getting the currently active locale...
+  const activeLang = useContext(LanguageContext);
+
+  // For getting modal-based fucnctionality
+  const modalContext = useContext(ModalContext);
+  
+  /**
+   * Fetching ContentFul data in all languages, and handling errors and loading time
+   * ----------------------
+   */
+  const { data, isLoading, error } = useContentful({
+    query: queryData,
+    variables: { sectionId, locale1: "en-CA", locale2: "fr" },
+    queryKey: queryKeyData,
+  });
+
+  // Display a placeholder is there is no modal context or the data fetching is not yet completed
+  if (!modalContext || isLoading) {
     return <Preloader />;
   }
+  // Display an error messaye if there was problem fetching data
+  if (error) return <p>{t("ErrorLoadingPosts")}</p>;
+  /**
+   * Fetching ContentFul data in all languages, and handling errors and loading time
+   * ----------------------
+   */
 
   // Otherwise, destructure the context
-  const { openModal } = context;
+  const { openModal } = modalContext;
 
   // Otherwise, destructure the context
   return (
     <footer className="Footer sc-block">
       <div className="container text-center">
-        <Heading h="4" className="name">
-          {!sectionData ? <Preloader /> : sectionData.title[activeLang]}
-        </Heading>
+        {data && activeLang && (
+            <>
+              <Heading h="1" className="Hero-title">
+                {data[activeLang]?.title}
+              </Heading>
+              <div
+                className="title"
+                dangerouslySetInnerHTML={{
+                  __html: String(
+                    data[activeLang]?.description?.json?.content[0]?.content[0]
+                      ?.value ?? ""
+                  ),
+                }}
+              />
+            </>
+          )}
 
-        <div
-          className="title"
-          dangerouslySetInnerHTML={{
-            __html: sectionData ? sectionData.description[activeLang] : "",
-          }}
-        ></div>
 
         <Button
           variant="transparent"

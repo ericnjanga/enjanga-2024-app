@@ -19,45 +19,35 @@ function makeMirageServer() {
     },
 
     seeds(server: Server) {
-      // Nav Options
-      server.create("navOption", {
-        id: "1",
-        name: {
-          en: "Scope of Expertise",
-          fr: "Sommaire des compétances",
+
+
+      /*
+      server.create("pageSection", {
+        // About
+        id: "4",
+        title: {
+          en: "A little bit about me :)",
+          fr: "[****** fr] A little bit about me :)"
         },
-        route: "scope-of-expertise",
         description: {
-          en: "...",
-          fr: "...",
+          en: `
+          <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
+          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
+          <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
+        `,
+        fr: `
+        [****** fr] 
+          <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
+          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
+          <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
+        `
         },
       });
-      server.create("navOption", {
-        id: "2",
-        name: {
-          en: "Some work",
-          fr: "Récents travaux",
-        },
-        route: "some-work",
-        description: {
-          en: "...",
-          fr: "...",
-        },
-      });
-      server.create("navOption", {
-        id: "3",
-        name: {
-          en: "About me",
-          fr: "À propos",
-        },
-        route: "about",
-        description: {
-          en: "...",
-          fr: "...",
-        },
-      });
+      */
+
 
       // Projects ...
+      /*
       server.create("project", {
         id: "1",
         title: {
@@ -80,6 +70,8 @@ function makeMirageServer() {
         `,
         },
       });
+
+
       server.create("project", {
         id: "2",
         title: {
@@ -102,6 +94,8 @@ function makeMirageServer() {
         `
         },
       });
+ 
+
       server.create("project", {
         id: "3",
         title: {
@@ -124,6 +118,7 @@ function makeMirageServer() {
         `
         },
       });
+
       server.create("project", {
         id: "4",
         title: {
@@ -151,6 +146,10 @@ function makeMirageServer() {
         },
       });
 
+      */
+
+
+
       // Page Sections ...
       server.create("pageSection", {
         // Hero
@@ -166,8 +165,9 @@ function makeMirageServer() {
           pour l'esthétique visuelle et convivialité.`,
         },
       });
+
+      // Expertise specification 1
       server.create("pageSection", {
-        // Expertise specification 1
         id: "2",
         title: {
           en: "Writing custom code",
@@ -191,8 +191,9 @@ function makeMirageServer() {
         },
         className: "theme1",
       });
-      server.create("pageSection", {
+
         // Expertise specification 1
+      server.create("pageSection", {
         id: "8",
         title: {
           en: "Designing User Interfaces",
@@ -215,8 +216,9 @@ function makeMirageServer() {
         },
         className: "theme1",
       });
+
+      // Expertise specification 1
       server.create("pageSection", {
-        // Expertise specification 1
         id: "9",
         title: {
           en: "Consulting, Vision, and Culture",
@@ -232,8 +234,9 @@ function makeMirageServer() {
         },
         className: "theme1",
       });
+
+      // Portfolio
       server.create("pageSection", {
-        // Portfolio
         id: "3",
         title: {
           en: "Some of my work",
@@ -250,27 +253,7 @@ function makeMirageServer() {
         `
         },
       });
-      server.create("pageSection", {
-        // About
-        id: "4",
-        title: {
-          en: "A little bit about me :)",
-          fr: "[****** fr] A little bit about me :)"
-        },
-        description: {
-          en: `
-          <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
-          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
-          <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
-        `,
-        fr: `
-        [****** fr] 
-          <p>I am a software engineer, and specialize in User Interfaces. These days, I work as web technology expert and assist in the design, coding, and management of large enterprise applications.</p>
-          <p>I am also a complete UX Designer as I master the design of wireframes and prototypes. But over time, my interest has shifted to UX Research as I was captivated with finding out what truly motivates users. These days, I focus my attention on <a class="open-modal" href="#">Usability</a> and <a class="open-modal" href="#">Accessibility</a>, ensuring web applications can be successfully operated by the largest possible number of users.</p>
-          <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
-        `
-        },
-      });
+      
       server.create("pageSection", {
         // Footer
         id: "5",

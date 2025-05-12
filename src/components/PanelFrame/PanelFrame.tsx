@@ -8,7 +8,6 @@ import "./PanelFrame.scss";
 import PanelHero from "../PanelHero/PanelHero";
 import { useEffect, useContext } from "react";
 import Preloader from "../Preloader/Preloader";
-import { event } from "jquery";
 import { ModalContext } from "../../utils/contexts";
 
 interface PanelFrameProps {

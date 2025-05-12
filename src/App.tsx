@@ -46,13 +46,15 @@ function App() {
               <Hero />
             </div>
 
+            {/* <div id="scope-of-expertise">
+              <CarrouselExpertise />
+            </div> */}
+
             {/* 
 
 
 
-            <div id="scope-of-expertise">
-              <CarrouselExpertise />
-            </div>
+            
 
             <div id="some-work">
               <CarrouselPortfolio />
@@ -62,7 +64,9 @@ function App() {
               <About />
             </div>
 
-            <Footer /> */}
+             */}
+
+<Footer />
 
               {/* <Routes>
                 <Route path="/" element={<Home />} />

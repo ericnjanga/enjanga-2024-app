@@ -1,5 +1,5 @@
 import "./Hero.scss";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
@@ -7,8 +7,8 @@ import { LanguageContext } from "../../utils/contexts";
 import Preloader from "../Preloader/Preloader";
 
 import { useContentful } from "../../hooks/useContentful";
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { queryData, queryKeyData, sectionId } from "./Hero.shared";
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 
 const Hero = () => {
