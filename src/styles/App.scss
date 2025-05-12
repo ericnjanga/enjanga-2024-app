@@ -1,19 +1,32 @@
+
+// Using layers to override bootstrap features without using "!important"
+
+@use "./vendors/_bootstrap-5.3.3.min";
+
+@use "./base/initialization";
+@use "./base/variables";
+@use "./base/utilities";
+
+@use "./theming/light-mode";
+
+
+
+
+
+
 /**
  * NOTE ON BACKGROUND IMAGES
  * ------
  They have to be referrenced relative to this file (_index.scss), so url(./_img/...)
 */
 
-
-
-
-// Refactor this later ***** (was associated to .PanelFrame) 
+// Refactor this later ***** (was associated to .PanelFrame)
 // --------------
 :root {
   --appname-pageSection-header-marg-bottom: 15px;
 }
 .pageSection-title {
-  margin-bottom: var(--appname-pageSection-header-marg-bottom)!important;
+  margin-bottom: var(--appname-pageSection-header-marg-bottom) !important;
 }
 
 .pageSection-hero {
@@ -24,22 +37,3 @@
 }
 // Refactor this later ***** (was associated to .PanelFrame)
 // --------------
-
-
-
-
-
-// Using layers to override bootstrap features without using "!important"
-@layer vendors {
-  @import "./vendors/_bootstrap@5.3.3.min";
-}
-
-@layer base {
-  @import "./base/initialization";
-  @import "./base/variables";
-  @import "./base/utilities";
-}
-
-@layer theming {
-  @import "./theming/light-mode";
-}

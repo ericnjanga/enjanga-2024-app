@@ -5,7 +5,7 @@
 }
 
 
-@import './sun-and-moon';
+@use './sun-and-moon';
 
 .theme-toggle {
   --size: 2rem;

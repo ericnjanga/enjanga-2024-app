@@ -1,158 +1,154 @@
 :root {
-    --appname-theme-light-xxxx-0: #fff;
-    
-    --appname-theme-light-aaaa-0: #E0FFF2; 
-    --appname-theme-light-aaaa-1: #C9FFE8; 
-    --appname-theme-light-aaaa-2: #A5FFD9; 
-    --appname-theme-light-aaaa-3x: #86F9C8;
-    --appname-theme-light-aaaa-x: #ADFF00;
-    --appname-theme-light-aaaa-y: #00ff94;
-    --appname-theme-light-aaaa-2: #4AC994;  
-    --appname-theme-light-aaaa-3: #80D1A5; 
-    --appname-theme-light-aaaa-7: #80AA27; 
+  --appname-theme-light-xxxx-0: #fff;
 
-    --appname-theme-light-bbbb-0: #010023;
-    --appname-theme-light-bbbb-01: #020023;
-    --appname-theme-light-bbbb-02: #1B1B39;
-    --appname-theme-light-bbbb-03: #2e2e53;
-    --appname-theme-light-bbbb-1: #323069;
-    --appname-theme-light-bbbb-2: #3423a0;
-    --appname-theme-light-bbbb-2a: #3B27BE;
-    --appname-theme-light-bbbb-3: #4934d5;
-    --appname-theme-light-bbbb-3a: #3e2cb1;
-    --appname-theme-light-bbbb-4: #5742d3;
-    --appname-theme-light-bbbb-5: #535273;
-    --appname-theme-light-bbbb-6: #DDDCF2;
-    --appname-theme-light-bbbb-7: #F0EFFB;
-    --appname-theme-light-bbbb-8: #EDEBF7;
-    --appname-theme-light-bbbb-9: #CCCCF5;
-    --appname-theme-light-bbbb-10: #C4C2FF;
+  --appname-theme-light-aaaa-0: #e0fff2;
+  --appname-theme-light-aaaa-1: #c9ffe8;
+  --appname-theme-light-aaaa-2: #a5ffd9;
+  --appname-theme-light-aaaa-3x: #86f9c8;
+  --appname-theme-light-aaaa-x: #adff00;
+  --appname-theme-light-aaaa-y: #00ff94;
+  --appname-theme-light-aaaa-2: #4ac994;
+  --appname-theme-light-aaaa-3: #80d1a5;
+  --appname-theme-light-aaaa-7: #80aa27;
 
+  --appname-theme-light-bbbb-0: #010023;
+  --appname-theme-light-bbbb-01: #020023;
+  --appname-theme-light-bbbb-02: #1b1b39;
+  --appname-theme-light-bbbb-03: #2e2e53;
+  --appname-theme-light-bbbb-1: #323069;
+  --appname-theme-light-bbbb-2: #3423a0;
+  --appname-theme-light-bbbb-2a: #3b27be;
+  --appname-theme-light-bbbb-3: #4934d5;
+  --appname-theme-light-bbbb-3a: #3e2cb1;
+  --appname-theme-light-bbbb-4: #5742d3;
+  --appname-theme-light-bbbb-5: #535273;
+  --appname-theme-light-bbbb-6: #dddcf2;
+  --appname-theme-light-bbbb-7: #f0effb;
+  --appname-theme-light-bbbb-8: #edebf7;
+  --appname-theme-light-bbbb-9: #ccccf5;
+  --appname-theme-light-bbbb-10: #c4c2ff;
 
-    --appname-theme-light-eee-0: #850c7d;
-    --appname-theme-light-eee-1: #BD0DB1;
-    --appname-theme-light-eee-2: #ff0bef;
+  --appname-theme-light-eee-0: #850c7d;
+  --appname-theme-light-eee-1: #bd0db1;
+  --appname-theme-light-eee-2: #ff0bef;
 
-    --appname-theme-light-cccc-0: #0066FF;
+  --appname-theme-light-cccc-0: #0066ff;
 
-    --appname-theme-light-cccc-2: #E0DCF6;
-    --appname-theme-light-cccc-2a: #DAD6EE;
-    --appname-theme-light-cccc-3: #d9caf2; 
-    --appname-theme-light-cccc-4: #AFAEDE;
-    --appname-theme-light-cccc-7: #B5AEE8;
-    --appname-theme-light-cccc-8: #ABA1EE;
-    --appname-theme-light-cccc-10: #8073D5;
-    --appname-theme-light-cccc-11: #5b4eb2;
-    --appname-theme-light-cccc-14: #9C8EFF; 
+  --appname-theme-light-cccc-2: #e0dcf6;
+  --appname-theme-light-cccc-2a: #dad6ee;
+  --appname-theme-light-cccc-3: #d9caf2;
+  --appname-theme-light-cccc-4: #afaede;
+  --appname-theme-light-cccc-7: #b5aee8;
+  --appname-theme-light-cccc-8: #aba1ee;
+  --appname-theme-light-cccc-10: #8073d5;
+  --appname-theme-light-cccc-11: #5b4eb2;
+  --appname-theme-light-cccc-14: #9c8eff;
 }
+@layer theming {
+  // html[data-theme="light"] {
+  body {
+    background-color: var(--appname-theme-light-bbbb-8);
+    color: var(--appname-theme-light-bbbb-5);
+  }
 
-// html[data-theme="light"] {
-    body {
-        background-color: var(--appname-theme-light-bbbb-8);
-        color: var(--appname-theme-light-bbbb-5);
+  @layer component-mix {
+    .section-introduction .card,
+    .site-carousel__items-list .card {
+      border: 1px solid var(--appname-theme-light-cccc-3);
     }
+  }
 
-    @layer component-mix {
-        .section-introduction .card,
-        .site-carousel__items-list .card {
-            border: 1px solid var(--appname-theme-light-cccc-3); 
+  @layer hero {
+    .hero {
+      background-color: var(--appname-theme-light-bbbb-0);
+    }
+  }
+
+  @layer navbar {
+    .navbar {
+      &.navbar-masked {
+        background-color: var(--appname-theme-light-bbbb-0);
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28200, 200, 200, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+      }
+      .navbar-toggler:focus {
+        box-shadow: 0px 0px 10px var(--appname-theme-light-xxxx-0);
+      }
+
+      .navbar-brand,
+      .nav-link {
+        &:hover,
+        &.active {
+          color: var(--appname-theme-light-aaaa-y);
         }
-    }
- 
- 
+      }
+      .navbar-collapse.collapse.show {
+        background-color: var(--appname-theme-light-bbbb-0);
+      }
 
-    @layer hero {
-        .hero {
-            background-color: var(--appname-theme-light-bbbb-0);
+      .nav-item {
+        // separator between links
+        &::after {
+          background-color: var(--appname-theme-light-bbbb-4);
         }
-    }
+      }
 
-    @layer navbar {
-        .navbar {
-
-            &.navbar-masked {
-                background-color: var(--appname-theme-light-bbbb-0);
-            }
-
-            .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28200, 200, 200, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
-            }
-            .navbar-toggler:focus { 
-                box-shadow: 0px 0px 10px var(--appname-theme-light-xxxx-0);
-            }
-
-            .navbar-brand, .nav-link {
-                &:hover, &.active {
-                    color: var(--appname-theme-light-aaaa-y);
-                } 
-            }
-            .navbar-collapse.collapse.show {
-                background-color: var(--appname-theme-light-bbbb-0);
-            }
-
-            .nav-item { 
-                // separator between links
-                &::after { 
-                    background-color: var(--appname-theme-light-bbbb-4);
-                }
-            }
-
-            .nav-link {
-                &.item-icon-material {
-                    &:hover {
-                        color: var(--appname-theme-light-aaaa-y);
-                    }
-                }
-            }
-
-
-            // Extra Large screen ...
-            @media (min-width: 1400px) {
-                // border: 10px solid purple;
-            }
-            
-            // Large screen ...
-            @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-                // border: 10px solid violet;
-            }
-            
-            // Large Medium screen ...
-            @media (min-width: 992px) and (max-width: (1200px - 1)) {
-                // border: 10px solid lime;
-            }
-
-            // Medium Medium screen ...
-            @media (min-width: 768px) and (max-width: (992px - 1)) {
-                // border: 10px solid blue;
-            }
-
-            // Small Screen ...
-            @media (min-width: 576px) and (max-width: (768px - 1)) {
-                // border: 10px solid turquoise;
-            }
-
-            // Smaller Screen ...
-            @media (max-width: (576px - 1px)) {
-                // border: 10px solid chocolate;
-            }
+      .nav-link {
+        &.item-icon-material {
+          &:hover {
+            color: var(--appname-theme-light-aaaa-y);
+          }
         }
-    }
+      }
 
-    @layer section-theme {
-        .section-theme1 {
-            background-color: var(--appname-theme-light-bbbb-2);
+      // Extra Large screen ...
+      @media (min-width: 1400px) {
+        // border: 10px solid purple;
+      }
 
-            .card {
-                background-color: var(--appname-theme-light-bbbb-3);
-            }
-        }
-    }
- 
- 
+      // Large screen ...
+      @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+        // border: 10px solid violet;
+      }
 
-    @layer utilities { 
-        .txt-highlight1 { 
-            color: var(--appname-theme-light-bbbb-1);
-        }
+      // Large Medium screen ...
+      @media (min-width: 992px) and (max-width: (1200px - 1)) {
+        // border: 10px solid lime;
+      }
+
+      // Medium Medium screen ...
+      @media (min-width: 768px) and (max-width: (992px - 1)) {
+        // border: 10px solid blue;
+      }
+
+      // Small Screen ...
+      @media (min-width: 576px) and (max-width: (768px - 1)) {
+        // border: 10px solid turquoise;
+      }
+
+      // Smaller Screen ...
+      @media (max-width: (576px - 1px)) {
+        // border: 10px solid chocolate;
+      }
     }
-// }
+  }
+
+  @layer section-theme {
+    .section-theme1 {
+      background-color: var(--appname-theme-light-bbbb-2);
+
+      .card {
+        background-color: var(--appname-theme-light-bbbb-3);
+      }
+    }
+  }
+
+  @layer utilities {
+    .txt-highlight1 {
+      color: var(--appname-theme-light-bbbb-1);
+    }
+  }
+  // }
+}

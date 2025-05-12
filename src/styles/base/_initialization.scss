@@ -1,10 +1,10 @@
 
-@import './body-spacing-and-gaps';
+@use './body-spacing-and-gaps';
 
 :root {
 }
 
-
+@layer base {
 /**
  * INITIALIZATION
  * ---------------------------------------------
@@ -69,4 +69,6 @@ h5, .btn, .navbar-brand, .logo {
   .global-footer--bg-aurora (2)
   .global-footer__quick-links (3)
   */
+}
+
 }

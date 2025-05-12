@@ -4,6 +4,7 @@
 // }
 
 
+@layer base {
 @layer utilities {
 
     // Will force the image to behave like it's being cropped:
@@ -28,4 +29,5 @@
     .list-bullets-vert-align {
         padding-left: 0.875rem;
     }
+}
 }
