@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 
-const SPACE_ID = process.env.REACT_APP_CONTENTFUL_SPACE_ID;
-const ENVIRONMENT = process.env.REACT_APP_CONTENTFUL_ENVIRONMENT;
-const ACCESS_TOKEN = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN;
+const SPACE_ID = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
+const ENVIRONMENT = import.meta.env.VITE_CONTENTFUL_ENVIRONMENT;
+const ACCESS_TOKEN = import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN;
 const GRAPHQL_ENDPOINT = `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/environments/${ENVIRONMENT}`;
 
 export const contentfulFetcher = async ({

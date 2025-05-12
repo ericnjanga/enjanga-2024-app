@@ -1,18 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import makeMirageServer from './server/mirageServerSetup';
 import reportWebVitals from './reportWebVitals';
 import './config/i18n'; // i18n configuration
 
 const rootElement = document.getElementById('root');
-
-// Initialize MirageJS server
-if (process.env.NODE_ENV === "development") {
-  // makeMirageServer();
-} else {
-  throw new Error("Root element not found. Make sure 'root' div exists in the HTML file.");
-}
 
 // Render the react app ...
 if (rootElement) {
