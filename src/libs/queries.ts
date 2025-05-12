@@ -16,17 +16,52 @@ export const queryData = {
       }
     }
   `,
+  projectsCollection: `
+    query getProjectCollection($locale1: String!, $locale2: String!) {
+      en: projectCollection(locale: $locale1) { 
+        items {
+          title
+          blurb
+          description {
+            json
+          }
+        } 
+      }
+      fr: projectCollection(locale: $locale2) { 
+        items {
+          title
+          blurb
+          description {
+            json
+          }
+        } 
+      }
+    }
+  `,
 };
 
-  // const collectionQuery = `
-  // query GetPageSectionCollection($sectionId: String, $locale1: String!, $locale2: String!) {
-  //   pageSectionCollection(id: $sectionId, locale: $locale) { 
-  //     items {
-  //       title
-  //       description {
-  //         json
-  //       }
-  //     } 
-  //   }
-  // }
-  // `;
+
+
+
+// projectsCollection: `
+// query getProjectCollection($locale1: String!, $locale2: String!) {
+//   en: projectCollection(locale: $locale1) { 
+//     items {
+//       title
+//       blurb
+//       description {
+//         json
+//       }
+//     } 
+//   }
+//   fr: projectCollection(locale: $locale2) { 
+//     items {
+//       title
+//       blurb
+//       description {
+//         json
+//       }
+//     } 
+//   }
+// }
+// `,

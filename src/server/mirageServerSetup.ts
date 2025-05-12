@@ -146,6 +146,25 @@ function makeMirageServer() {
         },
       });
 
+      // Portfolio
+      server.create("pageSection", {
+        id: "3",
+        title: {
+          en: "Some of my work",
+          fr: "[****** fr] Some of my work"
+        },
+        description: {
+          en: `
+        <p>I’ve contributed to every aspect of a software lifecycle, from business requirements gathering, visual design, and codign to deployment. 
+          Below is some of my work:</p>
+        `,
+        fr: `
+        <p>[****** fr] I’ve contributed to every aspect of a software lifecycle, from business requirements gathering, visual design, and codign to deployment. 
+          Below is some of my work:</p>
+        `
+        },
+      });
+
       */
 
 
@@ -235,24 +254,7 @@ function makeMirageServer() {
         className: "theme1",
       });
 
-      // Portfolio
-      server.create("pageSection", {
-        id: "3",
-        title: {
-          en: "Some of my work",
-          fr: "[****** fr] Some of my work"
-        },
-        description: {
-          en: `
-        <p>I’ve contributed to every aspect of a software lifecycle, from business requirements gathering, visual design, and codign to deployment. 
-          Below is some of my work:</p>
-        `,
-        fr: `
-        <p>[****** fr] I’ve contributed to every aspect of a software lifecycle, from business requirements gathering, visual design, and codign to deployment. 
-          Below is some of my work:</p>
-        `
-        },
-      });
+      
       
       server.create("pageSection", {
         // Footer

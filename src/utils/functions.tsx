@@ -2,6 +2,9 @@
 import PanelFrame from "../components/PanelFrame/PanelFrame";
 import ProjectThumb from "../components/ProjectThumb/ProjectThumb";
 import { PanelGridListProps, PortfolioListProps } from "../models";
+import { LanguageContext } from "./contexts";
+import { useContext } from "react";
+import { ProjectProps } from "../models";
 
 
 // Activates navigation links by assigning a specific css class
@@ -43,18 +46,22 @@ export const PanelGridList: React.FC<PanelGridListProps> = ({ idsList }) => {
 
 
 
-export const PortfolioList: React.FC<PortfolioListProps> = ({ itemsList }) => { 
+export const PortfolioList: React.FC<PortfolioListProps> = ({ itemsList }: PortfolioListProps) => { 
 
-  const sortedList = itemsList?.slice().sort((a, b) => b.id.localeCompare(a.id));
+  // Getting the currently active locale...
+  const activeLang = useContext(LanguageContext);
+
+  console.log('******** itemsList = ', itemsList);
+
+  // const sortedList = itemsList?.slice().sort((a, b) => b.id.localeCompare(a.id));
 
   return (
     <>
-      {sortedList && sortedList.map((project, index) => { 
-
+      {itemsList && activeLang && itemsList.map((project, index) => { 
         return (
           <ProjectThumb
             key={index}
-            {...project}
+            {...project[activeLang]}
             className="slider-item"
           />
         );

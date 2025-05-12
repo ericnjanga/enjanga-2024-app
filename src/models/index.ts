@@ -56,21 +56,12 @@ export type InformationCard1Props = {
 };
 
 export type ProjectProps = {
-  id: string
-  image: string
+  id?: string
+  image?: string
   className?: string
-  title: {
-    en: string
-    fr: string
-  } 
-  blurb: {
-    en: string
-    fr: string
-  }
-  description: {
-    en: string
-    fr: string
-  }
+  title: string
+  blurb: string
+  description: string
 };
 
 export type NavRoutes = '/welcome' | '/scope-of-expertise' | '/some-work' | '/about';
@@ -188,9 +179,18 @@ export interface SliderConfig {
 export interface PanelGridListProps {
   idsList: string[]; // An array of ids
 }
-export interface PortfolioListProps {
-  itemsList: ProjectProps[] | null;
-}
+// export interface PortfolioListProps {
+//   itemsList: ProjectProps[] | null;
+// }
+
+// ...
+type LocalizedProject = {
+  en: ProjectProps;
+  fr: ProjectProps;
+};
+export type PortfolioListProps = {
+  itemsList: LocalizedProject[];
+};
 
 export interface CharacterCounterProps {
   value: string;

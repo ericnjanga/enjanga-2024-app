@@ -44,11 +44,9 @@ function App() {
               <CarrouselExpertise />
             </div> */}
 
-              {/* 
-            <div id="some-work">
-              <CarrouselPortfolio />
-            </div>
-             */}
+              <div id="some-work">
+                <CarrouselPortfolio />
+              </div>
 
               <div id="about-me">
                 <About />
