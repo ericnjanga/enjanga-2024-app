@@ -39,45 +39,43 @@ const About = () => {
    */
 
   return (
-    <section className="About">
+    <section className="About sc-block">
       <div className="container">
-        <img
-          className="About-img img-fluid img-poster"
-          src="images/eric-njanga-2.png"
-          alt=""
-        />
+        <div className="row">
+          <div className="col">
+            <article className="About-article pageSection-intro-text">
+              {data && activeLang && (
+                <>
+                  <Heading h="1" className="Hero-title">
+                    {data[activeLang]?.title}
+                  </Heading>
+                  <div
+                    className="About-description"
+                    dangerouslySetInnerHTML={{
+                      __html: String(
+                        data[activeLang]?.description?.json?.content[0]
+                          ?.content[0]?.value ?? ""
+                      ),
+                    }}
+                  />
+                  {/* <div>{documentToReactComponents(data.pageSection.description.json)}</div> */}
+                </>
+              )}
 
-        <article className="About-article">
-          {data && activeLang && (
-            <>
-              <Heading h="1" className="Hero-title">
-                {data[activeLang]?.title}
-              </Heading>
-              <div
-                className="About-description"
-                dangerouslySetInnerHTML={{
-                  __html: String(
-                    data[activeLang]?.description?.json?.content[0]?.content[0]
-                      ?.value ?? ""
-                  ),
-                }}
-              />
-              {/* <div>{documentToReactComponents(data.pageSection.description.json)}</div> */}
-            </>
-          )}
-
-          <footer>
-            <Button
-              icon="chat"
-              variant="secondary"
-              neonVersion={true}
-              target="_blank"
-              href="https://www.linkedin.com/in/ericnjanga/"
-            >
-              {t("LinkedInCTA")}
-            </Button>
-          </footer>
-        </article>
+              <footer>
+                <Button
+                  icon="chat"
+                  variant="secondary"
+                  neonVersion={true}
+                  target="_blank"
+                  href="https://www.linkedin.com/in/ericnjanga/"
+                >
+                  {t("LinkedInCTA")}
+                </Button>
+              </footer>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
   );
