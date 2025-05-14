@@ -71,8 +71,12 @@ const CarrouselPortfolio = () => {
     <section className="Portfolio sc-block">
       <div className="container">
         <div className="PanelFrame">
-          <PanelHero id={heroSectionId} />
-          <PortfolioPortfolioCollection slidesList={itemsList} />
+          <div className="row">
+            <PanelHero id={heroSectionId} className="col" />
+          </div>
+          <div className="row">
+            <PortfolioPortfolioCollection slidesList={itemsList} />
+          </div>
         </div>
       </div>
     </section>
