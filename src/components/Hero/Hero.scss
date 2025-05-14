@@ -3,21 +3,13 @@
   --appname-hero-container-paddtop: 70px;
   --appname-hero-container-paddbot: 30px;
 
-  --appname-hero-persona-position: relative;
-  --appname-hero-persona-display: none;
-  --appname-hero-persona-pos-bottom: 0;
-  --appname-hero-persona-pos-right: 0;
-  --appname-hero-persona-width: 50%;
-  --appname-hero-persona-margin: 0 auto;
-
   --appname-hero-subtitle: 1.188rem;
   --appname-hero-subtitle-lineheight: 1.75rem;
 
-  --appname-hero-decoration-display: none;
+  --appname-hero-decoration-display: block;
   --appname-hero-decoration-height: 400px;
   --appname-hero-decoration-right: 0;
 
-  --appname-jumbotron-textwrapper-width: unset;
   --appname-hero-jumbotron-margin: 0;
 }
 
@@ -46,17 +38,6 @@
       padding-bottom: var(--appname-hero-container-paddbot);
     }
 
-    &-persona {
-      display: var(--appname-hero-persona-display);
-      position: var(--appname-hero-persona-position);
-      bottom: var(--appname-hero-persona-pos-bottom);
-      right: var(--appname-hero-persona-pos-right);
-      width: var(--appname-hero-persona-width);
-      margin: var(--appname-hero-persona-margin);
-      transform: scaleX(-1); // Mirroring an Image Horizontally
-      z-index: 2;
-    }
-
     &-decoration {
       position: absolute;
       z-index: 1;
@@ -69,7 +50,6 @@
 
     &-jumbotron {
       position: relative;
-      width: var(--appname-jumbotron-textwrapper-width);
       margin: var(--appname-hero-jumbotron-margin);
       z-index: 3;
     }
@@ -80,18 +60,12 @@
       --appname-hero-height: auto; // 640px;
       --appname-hero-container-paddtop: 150px;
       --appname-hero-container-paddbot: 120px;
-      --appname-hero-persona-width: 433px;
-      --appname-jumbotron-textwrapper-width: 700px;
-      --appname-hero-persona-margin: 0;
-      --appname-hero-persona-position: absolute;
-      --appname-hero-persona-display: block;
-      --appname-hero-persona-pos-right: 40px;
 
       --appname-hero-subtitle: 1.3rem;
       --appname-hero-subtitle-lineheight: 1.9rem;
 
       --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -5%;
+      --appname-hero-decoration-right: -15%;
       --appname-hero-decoration-display: block;
     }
 
@@ -101,18 +75,12 @@
       --appname-hero-height: auto; // 560px;
       --appname-hero-container-paddtop: 150px;
       --appname-hero-container-paddbot: 90px;
-      --appname-hero-persona-width: 400px;
-      --appname-jumbotron-textwrapper-width: 700px;
-      --appname-hero-persona-margin: 0;
-      --appname-hero-persona-position: absolute;
-      --appname-hero-persona-display: block;
-      --appname-hero-persona-pos-right: 40px;
 
       --appname-hero-subtitle: 1.38rem;
       --appname-hero-subtitle-lineheight: 1.95rem;
 
       --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -5%;
+      --appname-hero-decoration-right: -15%;
       --appname-hero-decoration-display: block;
     }
 
@@ -122,18 +90,12 @@
       --appname-hero-height: auto; // 430px;
       --appname-hero-container-paddtop: 120px;
       --appname-hero-container-paddbot: 70px;
-      --appname-hero-persona-width: 300px;
-      --appname-jumbotron-textwrapper-width: 700px;
-      --appname-hero-persona-margin: 0;
-      --appname-hero-persona-position: absolute;
-      --appname-hero-persona-display: none;
-      --appname-hero-persona-pos-right: 40px;
 
       --appname-hero-subtitle: 1.38rem;
       --appname-hero-subtitle-lineheight: 1.95rem;
 
       --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -10%;
+      --appname-hero-decoration-right: -15%;
       --appname-hero-decoration-display: block;
     }
 
@@ -143,12 +105,6 @@
       --appname-hero-height: auto; // 430px;
       --appname-hero-container-paddtop: 130px;
       --appname-hero-container-paddbot: 50px;
-      --appname-hero-persona-width: 300px;
-      --appname-jumbotron-textwrapper-width: 600px;
-      --appname-hero-persona-margin: 0;
-      --appname-hero-persona-position: absolute;
-      --appname-hero-persona-display: none;
-      --appname-hero-persona-pos-right: 60px;
 
       --appname-hero-subtitle: 1.288rem;
       --appname-hero-subtitle-lineheight: 1.85rem;
@@ -161,7 +117,6 @@
     // Small Screen ...
     @media (min-width: 576px) and (max-width: (768px - 1)) {
       // border: 3px solid turquoise;
-      --appname-hero-persona-width: 45%;
       --appname-hero-container-paddbot: 50px;
 
       --appname-hero-decoration-height: 100%;
@@ -172,6 +127,7 @@
     // Smaller Screen ...
     @media (max-width: (576px - 1px)) {
       // border: 3px solid chocolate;
+      --appname-hero-decoration-right: -40%;
     }
   }
 }

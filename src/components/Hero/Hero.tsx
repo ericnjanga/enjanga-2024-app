@@ -44,7 +44,7 @@ const Hero = () => {
       <div className="container Hero-content-wrapper">
         <div className="row">
           <div className="col">
-            <div className="Hero-jumbotron jumbotron__textwrapper">
+            <div className="Hero-jumbotron jumbotron__textwrapper pageSection-intro-text">
               {data && activeLang && (
                 <>
                   <Heading h="1" className="Hero-title">
@@ -55,7 +55,9 @@ const Hero = () => {
                       data[activeLang]?.description?.json
                     )}
                   </div>
-                  {/* <div
+                  {/* 
+                  -- Note: This form of extracting content is useful when the content field contains HTML
+                  <div
                 className="Hero-subtitle"
                 dangerouslySetInnerHTML={{
                   __html: String(
@@ -70,11 +72,6 @@ const Hero = () => {
           </div>
         </div>
 
-        <img
-          className="Hero-persona img-fluid"
-          src="/images/eric-njanga-1.png"
-          alt=""
-        />
         <img
           className="Hero-decoration img-fluid"
           src="/images/gradient-decoration.png"
