@@ -46,7 +46,7 @@ const About = () => {
             <article className="About-article pageSection-intro-text">
               {data && activeLang && (
                 <>
-                  <Heading h="1" className="Hero-title">
+                  <Heading h="2" className="Hero-title">
                     {data[activeLang]?.title}
                   </Heading>
                   <div
