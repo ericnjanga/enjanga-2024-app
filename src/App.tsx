@@ -11,6 +11,7 @@ import Modal from "./components/ModalModule";
 import { ModalProvider } from "./components/ModalModule";
 import Navigation from "./components/Navigation/Navigation";
 import { LanguageProvider } from "./components/LanguageModule";
+import ParallaxFrame from "./components/ParallaxFrame/ParallaxFrame";
 
 
 // Ensuring that Bootstrap's JavaScript is globally available across all components.
@@ -43,6 +44,12 @@ function App() {
               <div id="some-work">
                 <CarrouselPortfolio />
               </div>
+
+              <ParallaxFrame
+                img="/images/eric-njanga-3.jpg"
+                speed={20}
+                focus="top center"
+              />
 
               <div id="about-me">
                 <About />
