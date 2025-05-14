@@ -9,8 +9,7 @@ import Preloader from "../Preloader/Preloader";
 import { useContentful } from "../../hooks/useContentful";
 import { queryKeyData, sectionId } from "./Hero.shared";
 import { queryData } from "../../libs/queries";
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const Hero = () => {
   // For extracting localised content from "i18n.ts" file based on the currently active locale
@@ -43,13 +42,20 @@ const Hero = () => {
   return (
     <header className="Hero">
       <div className="container Hero-content-wrapper">
-        <div className="Hero-jumbotron jumbotron__textwrapper">
-          {data && activeLang && (
-            <>
-              <Heading h="1" className="Hero-title">
-                {data[activeLang]?.title}
-              </Heading>
-              <div
+        <div className="row">
+          <div className="col">
+            <div className="Hero-jumbotron jumbotron__textwrapper">
+              {data && activeLang && (
+                <>
+                  <Heading h="1" className="Hero-title">
+                    {data[activeLang]?.title}
+                  </Heading>
+                  <div className="Hero-subtitle">
+                    {documentToReactComponents(
+                      data[activeLang]?.description?.json
+                    )}
+                  </div>
+                  {/* <div
                 className="Hero-subtitle"
                 dangerouslySetInnerHTML={{
                   __html: String(
@@ -57,23 +63,12 @@ const Hero = () => {
                       ?.value ?? ""
                   ),
                 }}
-              />
-              {/* <div>{documentToReactComponents(data.pageSection.description.json)}</div> */}
-            </>
-          )}
+              /> */}
+                </>
+              )}
+            </div>
+          </div>
         </div>
-
-        <footer className="Hero-footer">
-          <Button
-            icon="arrow down"
-            size="lg"
-            variant="secondary"
-            neonVersion={true}
-            href="#scope-of-expertise"
-          >
-            {t("HeroCTA")}
-          </Button>
-        </footer>
 
         <img
           className="Hero-persona img-fluid"

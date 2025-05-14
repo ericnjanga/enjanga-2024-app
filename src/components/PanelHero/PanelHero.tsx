@@ -6,8 +6,14 @@ import Preloader from "../Preloader/Preloader";
 
 import { useContentful } from "../../hooks/useContentful";
 import { queryData } from "../../libs/queries";
+import clsx from 'clsx';
 
-const PanelHero = ({ id }: { id: string }) => {
+type PanelHeroProps = {
+  id: string;
+  className?:string;
+};
+
+const PanelHero = ({ id, className }: PanelHeroProps) => {
   const { t } = useTranslation();
 
   // Getting the currently active locale...
@@ -35,7 +41,7 @@ const PanelHero = ({ id }: { id: string }) => {
    */
 
   return (
-    <header className="pageSection-hero">
+    <header className={clsx('pageSection-hero', className)}>
       {data && activeLang && (
         <>
           <Heading h="2" className="pageSection-title">
