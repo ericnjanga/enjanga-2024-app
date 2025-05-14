@@ -1,0 +1,54 @@
+:root {
+  // --gs: grid system
+  --gs-override-col-padleft: 1.25rem; // 20px;
+  --gs-override-col-padright: 1.25rem; // 20px;
+}
+
+/**
+ * Overriding Bootstrap's grid system globally
+ * [For smaller screens only]: Increasing columns left and right padding to 20px for better content's readability
+*/
+.row > * {
+  padding-left: var(--gs-override-col-padleft);
+  padding-right: var(--gs-override-col-padright);
+
+  // Extra Large screen ...
+  @media (min-width: 1400px) {
+    // border: 10px solid purple;
+    --gs-override-col-padleft: calc(var(--bs-gutter-x) * 0.5);
+    --gs-override-col-padright: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  // Large screen ...
+  @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+    // border: 10px solid violet;
+    --gs-override-col-padleft: calc(var(--bs-gutter-x) * 0.5);
+    --gs-override-col-padright: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  // Large Medium screen ...
+  @media (min-width: 992px) and (max-width: (1200px - 1)) {
+    // border: 10px solid lime;
+    --gs-override-col-padleft: calc(var(--bs-gutter-x) * 0.5);
+    --gs-override-col-padright: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  // Medium Medium screen ...
+  @media (min-width: 768px) and (max-width: (992px - 1)) {
+    // border: 10px solid blue;
+    --gs-override-col-padleft: calc(var(--bs-gutter-x) * 0.5);
+    --gs-override-col-padright: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  // Small Screen ...
+  @media (min-width: 576px) and (max-width: (768px - 1)) {
+    // border: 10px solid turquoise;
+    --gs-override-col-padleft: calc(var(--bs-gutter-x) * 0.5);
+    --gs-override-col-padright: calc(var(--bs-gutter-x) * 0.5);
+  }
+
+  // Smaller Screen ...
+  @media (max-width: (576px - 1px)) {
+    // border: 10px solid chocolate;
+  }
+}
