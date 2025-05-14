@@ -1,11 +1,12 @@
 :root {
   --appname-hero-height: auto; // 270px;
-  --appname-hero-container-paddtop: 90px;
+  --appname-hero-container-paddtop: 70px;
+  --appname-hero-container-paddbot: 30px;
 
   --appname-hero-persona-position: relative;
+  --appname-hero-persona-display: none;
   --appname-hero-persona-pos-bottom: 0;
   --appname-hero-persona-pos-right: 0;
-  --appname-hero-persona-position: relative;
   --appname-hero-persona-width: 50%;
   --appname-hero-persona-margin: 0 auto;
 
@@ -17,7 +18,7 @@
   --appname-hero-decoration-right: 0;
 
   --appname-jumbotron-textwrapper-width: unset;
-  --appname-hero-jumbotron-margin: 0 0 20px 0;
+  --appname-hero-jumbotron-margin: 0;
 }
 
 @layer hero {
@@ -35,20 +36,18 @@
       color: var(--appname-theme-light-bbbb-6);
       font-size: var(--appname-hero-subtitle);
       line-height: var(--appname-hero-subtitle-lineheight);
-      margin-bottom: 30px;
+      p {
+        margin-bottom: 0;
+      }
     }
 
     &-content-wrapper {
       padding-top: var(--appname-hero-container-paddtop);
-    }
-
-    &-footer {
-      position: relative;
-      z-index: 4;
+      padding-bottom: var(--appname-hero-container-paddbot);
     }
 
     &-persona {
-      display: block;
+      display: var(--appname-hero-persona-display);
       position: var(--appname-hero-persona-position);
       bottom: var(--appname-hero-persona-pos-bottom);
       right: var(--appname-hero-persona-pos-right);
@@ -78,12 +77,14 @@
     // Extra Large screen ...
     @media (min-width: 1400px) {
       // border: 3px solid purple;
-      --appname-hero-height: 640px;
+      --appname-hero-height: auto; // 640px;
       --appname-hero-container-paddtop: 150px;
+      --appname-hero-container-paddbot: 120px;
       --appname-hero-persona-width: 433px;
-      --appname-jumbotron-textwrapper-width: 590px;
+      --appname-jumbotron-textwrapper-width: 700px;
       --appname-hero-persona-margin: 0;
       --appname-hero-persona-position: absolute;
+      --appname-hero-persona-display: block;
       --appname-hero-persona-pos-right: 40px;
 
       --appname-hero-subtitle: 1.3rem;
@@ -97,12 +98,14 @@
     // Large screen ...
     @media (min-width: 1200px) and (max-width: (1400px - 1)) {
       // border: 3px solid violet;
-      --appname-hero-height: 560px;
+      --appname-hero-height: auto; // 560px;
       --appname-hero-container-paddtop: 150px;
+      --appname-hero-container-paddbot: 90px;
       --appname-hero-persona-width: 400px;
-      --appname-jumbotron-textwrapper-width: 550px;
+      --appname-jumbotron-textwrapper-width: 700px;
       --appname-hero-persona-margin: 0;
       --appname-hero-persona-position: absolute;
+      --appname-hero-persona-display: block;
       --appname-hero-persona-pos-right: 40px;
 
       --appname-hero-subtitle: 1.38rem;
@@ -116,12 +119,14 @@
     // Large Medium screen ...
     @media (min-width: 992px) and (max-width: (1200px - 1)) {
       // border: 3px solid lime;
-      --appname-hero-height: 430px;
+      --appname-hero-height: auto; // 430px;
       --appname-hero-container-paddtop: 120px;
+      --appname-hero-container-paddbot: 70px;
       --appname-hero-persona-width: 300px;
-      --appname-jumbotron-textwrapper-width: 500px;
+      --appname-jumbotron-textwrapper-width: 700px;
       --appname-hero-persona-margin: 0;
       --appname-hero-persona-position: absolute;
+      --appname-hero-persona-display: none;
       --appname-hero-persona-pos-right: 40px;
 
       --appname-hero-subtitle: 1.38rem;
@@ -135,12 +140,14 @@
     // Medium Medium screen ...
     @media (min-width: 768px) and (max-width: (992px - 1)) {
       // border: 3px solid blue;
-      --appname-hero-height: 430px;
+      --appname-hero-height: auto; // 430px;
       --appname-hero-container-paddtop: 130px;
+      --appname-hero-container-paddbot: 50px;
       --appname-hero-persona-width: 300px;
-      --appname-jumbotron-textwrapper-width: 400px;
+      --appname-jumbotron-textwrapper-width: 600px;
       --appname-hero-persona-margin: 0;
       --appname-hero-persona-position: absolute;
+      --appname-hero-persona-display: none;
       --appname-hero-persona-pos-right: 60px;
 
       --appname-hero-subtitle: 1.288rem;
@@ -155,6 +162,7 @@
     @media (min-width: 576px) and (max-width: (768px - 1)) {
       // border: 3px solid turquoise;
       --appname-hero-persona-width: 45%;
+      --appname-hero-container-paddbot: 50px;
 
       --appname-hero-decoration-height: 100%;
       --appname-hero-decoration-right: -20%;
