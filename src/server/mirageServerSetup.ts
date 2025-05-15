@@ -42,12 +42,34 @@ function makeMirageServer() {
           <p>On my spare time, I advise small businesses and entrepreneurs, helping them make informed decisions on technical matters.</p>
         `
         },
+      }); 
+
+
+
+      
+      
+      server.create("pageSection", {
+        // Footer
+        id: "5",
+        title: {
+          en: "Eric Njanga",
+          fr: "Eric Njanga"
+        },
+        description: {
+          en: `
+        <p class="title">Software Engineer &amp; Designer</p>
+        <address class="location">Toronto, Canada</address>
+        `,
+        fr: `
+        <p class="title">Ingénieur &amp; Designer de logiciel</p>
+        <address class="location">Toronto, Canada</address>
+        `
+        },
       });
-      */
 
 
       // Projects ...
-      /*
+ 
       server.create("project", {
         id: "1",
         title: {
@@ -165,8 +187,6 @@ function makeMirageServer() {
         },
       });
 
-      */
-
 
 
       // Page Sections ...
@@ -235,6 +255,8 @@ function makeMirageServer() {
         },
         className: "theme1",
       });
+ 
+
 
       // Expertise specification 1
       server.create("pageSection", {
@@ -254,26 +276,13 @@ function makeMirageServer() {
         className: "theme1",
       });
 
-      
-      
-      server.create("pageSection", {
-        // Footer
-        id: "5",
-        title: {
-          en: "Eric Njanga",
-          fr: "Eric Njanga"
-        },
-        description: {
-          en: `
-        <p class="title">Software Engineer &amp; Designer</p>
-        <address class="location">Toronto, Canada</address>
-        `,
-        fr: `
-        <p class="title">Ingénieur &amp; Designer de logiciel</p>
-        <address class="location">Toronto, Canada</address>
-        `
-        },
-      });
+
+      */
+
+
+
+
+
       server.create("pageSection", {
         // Expertise specification 2
         id: "6",
@@ -680,6 +689,11 @@ function makeMirageServer() {
         `
         },
       });
+
+
+
+
+
 
       // Concept Definition ...
       server.create("conceptDef", {

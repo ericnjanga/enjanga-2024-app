@@ -2,6 +2,7 @@ import "./Expertise.scss";
 import { sliderExpertiseConfig } from "./sliderConfig";
 import withCarrousel from "../../HOC/withCarrousel/withCarrousel";
 import { PanelGridList } from "../../utils/functions";
+import { sectionIds } from "./Expertise.shared";
 
 
 // The slider will contain an array of strings ...
@@ -16,16 +17,16 @@ const PanelCollection: React.FC<PanelCollectionProps> = ({ slidesList }) => (
 
 //...
 const CarrouselExpertise = () => {
-  const listOfIds = ["2", "8", "9"];
+  // const listOfIds = sectionIds;
 
   // Turns the list of items into a carrousel according to @sliderExpertiseConfig object ...
   const ExpertiseSliderWithSingleView = withCarrousel(
     PanelCollection,
-    listOfIds,
+    sectionIds,
     sliderExpertiseConfig
   );
 
-  return <ExpertiseSliderWithSingleView slidesList={listOfIds} />;
+  return <ExpertiseSliderWithSingleView slidesList={sectionIds} />;
 };
 
 export default CarrouselExpertise;

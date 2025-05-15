@@ -4,7 +4,7 @@ import { BrowserRouter as Router /*, Route, Routes*/} from "react-router-dom";
 import "./styles/App.scss";
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
-// import CarrouselExpertise from "./components/Expertise/Expertise";
+import CarrouselExpertise from "./components/Expertise/Expertise";
 import CarrouselPortfolio from "./components/Portfolio/Portfolio";
 import About from "./components/About/About";
 import Modal from "./components/ModalModule";
@@ -37,12 +37,12 @@ function App() {
                 <Hero />
               </div>
 
-              {/* <div id="scope-of-expertise">
+              <div id="scope-of-expertise">
               <CarrouselExpertise />
-            </div> */}
+            </div>
 
-              <div id="some-work">
-                <CarrouselPortfolio />
+              <div id="best-work">
+                {/* <CarrouselPortfolio /> */}
               </div>
 
               <ParallaxFrame

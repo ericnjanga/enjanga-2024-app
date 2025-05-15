@@ -68,7 +68,8 @@ const PanelFrame: React.FC<PanelFrameProps> = ({
         <PanelHero id={pageSectionId} />
 
         <div className="content-grid">
-          {expertiseList &&
+          ???
+          {/* {expertiseList &&
             expertiseList.map((expertise, index) => {
               return (
                 <InformationCard1
@@ -77,7 +78,7 @@ const PanelFrame: React.FC<PanelFrameProps> = ({
                   className="PanelFrame-item"
                 />
               );
-            })}
+            })} */}
         </div>
       </div>
     </section>
