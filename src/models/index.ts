@@ -37,22 +37,13 @@ export type PageSectionProps = {
   }
 }; 
  
-export type InformationCard1Props = {
+export type ExpertiseSpecificationProps = {
   id: string
   parentId: string
   className?: string
-  title?: {
-    en: string
-    fr: string
-  }
-  blurb: {
-    en: string
-    fr: string
-  }
-  description: {
-    en: string
-    fr: string
-  }
+  title: string
+  blurb: string
+  description: string
 };
 
 export type ProjectProps = {
@@ -117,7 +108,7 @@ export interface LanguageProps {
 export type ModalContextProps = {
   isOpen: boolean               // Is the modal window open?
   childComponent: string          // Type of information being rendered: "data" or "another component"?
-  modalData: InformationCard1Props | ProjectProps | PageSectionProps | null             // Data rendered by the modal
+  modalData: ExpertiseSpecificationProps | ProjectProps | PageSectionProps | null             // Data rendered by the modal
   openModal: ({ 
     dataType, 
     dataId 

@@ -9,6 +9,13 @@ import PanelHero from "../PanelHero/PanelHero";
 import { useEffect, useContext } from "react";
 import Preloader from "../Preloader/Preloader";
 import { ModalContext } from "../../utils/contexts";
+import { LanguageContext } from "../../utils/contexts";
+import { useTranslation } from "react-i18next";
+
+import { useContentful } from "../../hooks/useContentful";
+import { queryData } from "../../libs/queries";
+import { ExpertiseSpecificationProps } from "../../models";
+import { dataReshaper } from "../../utils/functions";
 
 interface PanelFrameProps {
   pageSectionId: string;
@@ -19,48 +26,38 @@ const PanelFrame: React.FC<PanelFrameProps> = ({
   pageSectionId,
   className,
 }) => {
-  const expertiseList = useExpertises(pageSectionId);
-  const context = useContext(ModalContext);
+  const { t } = useTranslation();
 
-  /** 
-   * TODO
-   * --------------------
-   * - NEEDS TO BE OPTIMIZED FOR REUSE IN OTHER COMPONENTS
+  // Getting the currently active locale...
+  const activeLang = useContext(LanguageContext);
+
+  // // For getting modal-based fucnctionality
+  // const modalContext = useContext(ModalContext);
+
+  /**
+   * Fetching ContentFul data in all languages, and handling errors and loading time
+   * ----------------------
    */
-  // Assigning a click event listerner to all links of a specific class
-  useEffect(() => {
-    // Adding event listener to handle clicks on ...
-    const handleClickLinks = (event: MouseEvent) => {
-      const target = event.target as HTMLElement; // Typecast the target to HTMLElement(or more specifictype)
-      if (target && target.classList.contains("open-modal")) {
-        event.preventDefault(); // Prevent the default behavior (e.g., navigation) 
+  const { data, isLoading, error } = useContentful({
+    query: queryData.expertiseSpecificationCollection,
+    variables: { parentId: pageSectionId, locale1: "en-CA", locale2: "fr" },
+    queryKey: `expertiseCollection-${pageSectionId}`,
+  });
 
-        // Only trigger the modal if an ID is provided
-        if (target.id !== '') {
-          openModal({
-            dataType: "conceptDefs",
-            dataId: target.id, // Pass the id of the clicked element 
-          });
-        }
-      }
-    };
+  // // Display a placeholder is there is no modal context or the data fetching is not yet completed
+  // if (isLoading) {
+  //   return <Preloader />;
+  // }
+  // Display an error messaye if there was problem fetching data
+  if (error) return <p>{t("ErrorLoadingPosts")}</p>;
+  /**
+   * Fetching ContentFul data in all languages, and handling errors and loading time
+   * ----------------------
+   */
 
-    // Attach the event listener to the container
-    document.addEventListener('click', handleClickLinks);
+  // Data reshaped to group all translations into 1 object
+  const reshapedData = dataReshaper(data);
 
-    // Clean up the event listener when the component is unmounted
-    return () => {
-      document.removeEventListener('click', handleClickLinks);
-    };
-  }, []);
-
-  if (!context) {
-    // return if the context is empty
-    return <Preloader />;
-  }
-
-  // Otherwise, destructure the context
-  const { openModal } = context;
 
   return (
     <section className={`PanelFrame ${className}`}>
@@ -68,17 +65,16 @@ const PanelFrame: React.FC<PanelFrameProps> = ({
         <PanelHero id={pageSectionId} />
 
         <div className="content-grid">
-          ???
-          {/* {expertiseList &&
-            expertiseList.map((expertise, index) => {
+          {reshapedData &&
+            reshapedData.map((expertise, index: number) => {
               return (
                 <InformationCard1
                   key={index}
-                  {...expertise}
+                  {...expertise[activeLang]}
                   className="PanelFrame-item"
                 />
               );
-            })} */}
+            })}
         </div>
       </div>
     </section>

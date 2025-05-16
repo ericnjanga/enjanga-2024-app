@@ -4,7 +4,7 @@ import ProjectThumb from "../components/ProjectThumb/ProjectThumb";
 import { PanelGridListProps, PortfolioListProps } from "../models";
 import { LanguageContext } from "./contexts";
 import { useContext } from "react";
-import { ProjectProps } from "../models";
+import { ProjectProps, ExpertiseSpecificationProps } from "../models";
 
 
 // Activates navigation links by assigning a specific css class
@@ -19,6 +19,33 @@ export const logErrorMessage = (error: unknown) => {
     console.log(`An unknown error occured `, error);
   }
 };
+
+
+
+/**
+ * Returns an array where each entry contains an EN and FR version, this is more conveniant for rendering.
+ * 
+ * Reshaping @data 
+ * from: {en: { items:[{...},{...}, ..., {...}] }, fr: { items:[{...},{...}, ..., {...}] }}     
+ * to: [{en:{...}, fr:{...}}, {en:{...}, fr:{...}}, ...] 
+ */
+interface reshapedDataProps {
+  en: {
+    items: ProjectProps[] | ExpertiseSpecificationProps[]
+  },
+  fr: {
+    items: ProjectProps[] | ExpertiseSpecificationProps[]
+  }
+}
+export const dataReshaper = (data: reshapedDataProps) => {
+  const newShape = data?.en?.items.map((enItem, index: number) => ({
+    en: enItem,
+    fr: data?.fr?.items[index]
+  }));
+
+  return newShape;
+};
+
 
 
 

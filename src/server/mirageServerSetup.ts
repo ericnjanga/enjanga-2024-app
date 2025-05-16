@@ -276,42 +276,10 @@ function makeMirageServer() {
         className: "theme1",
       });
 
-
       */
 
 
-
-
-
-      server.create("pageSection", {
-        // Expertise specification 2
-        id: "6",
-        title: {
-          en: "Expertise 2",
-          fr: "[****** fr] Expertise 2"
-        },
-        description: {
-          en: "<p>...</p>",
-          fr: "<p>[****** fr] ...</p>"
-        },
-      });
-      server.create("pageSection", {
-        // Contact
-        id: "7",
-        title: {
-          en: "How can I help?",
-          fr: "Que puis-je faire pour vous?"
-        },
-        description: {
-          en: `<p>I'm always excited about new challenges. 
-          Please take a moment to fill out the form below, and tell me 
-          how I can contribute to your organization's success.</p>`,
-          fr: `<p>J'aime les défis! Veuillez me dire, s'il 
-          vous plaît, en remplissant le formulaire ci-dessous, comment 
-          je peux contribuer au succès de votre organisation.</p>`
-        },
-      });
-
+      /*
       // Expertise Specification ...
       // parentId: '2' ...
       server.create("expertiseSpec", {
@@ -345,6 +313,7 @@ function makeMirageServer() {
         `
         },
       });
+
       server.create("expertiseSpec", {
         id: "2",
         parentId: "2",
@@ -378,6 +347,7 @@ function makeMirageServer() {
         `
         },
       });
+
       server.create("expertiseSpec", {
         id: "3",
         parentId: "2",
@@ -416,6 +386,7 @@ function makeMirageServer() {
         `
         },
       });
+
       server.create("expertiseSpec", {
         id: "4",
         parentId: "2",
@@ -444,6 +415,7 @@ function makeMirageServer() {
         `
         },
       });
+
       server.create("expertiseSpec", {
         id: "5",
         parentId: "2",
@@ -479,7 +451,16 @@ function makeMirageServer() {
         `
         },
       });
+
+      */
+
+
+
+
+      /*
+      // Expertise Specification ...
       // parentId: '8' ...
+
       server.create("expertiseSpec", {
         id: "6",
         parentId: "8",
@@ -505,6 +486,7 @@ function makeMirageServer() {
           <p>Mon expérience des frameworks modernes et des meilleures pratiques me permet de créer rapidement des prototypes, de valider des concepts et de prendre des décisions basées sur les données. Cette approche garantit un produit final qui est à la fois convivial, techniquement solide et performant.</p>`
         },
       });
+
       server.create("expertiseSpec", {
         id: "7",
         parentId: "8",
@@ -527,6 +509,7 @@ function makeMirageServer() {
         `
         },
       });
+
       server.create("expertiseSpec", {
         id: "8",
         parentId: "8",
@@ -549,6 +532,7 @@ function makeMirageServer() {
         `
         },
       });
+  
       server.create("expertiseSpec", {
         id: "9",
         parentId: "8",
@@ -573,7 +557,15 @@ function makeMirageServer() {
         `
         },
       });
-      // parentId: '9' ...
+      
+      */
+     
+
+
+
+      /*
+      // Expertise Specification ...
+      // parentId: '9' ...      
       server.create("expertiseSpec", {
         id: "10",
         parentId: "9",
@@ -596,6 +588,52 @@ function makeMirageServer() {
         `
         },
       });
+
+
+
+
+
+      */
+
+
+
+
+      server.create("pageSection", {
+        // Expertise specification 2
+        id: "6",
+        title: {
+          en: "Expertise 2",
+          fr: "[****** fr] Expertise 2"
+        },
+        description: {
+          en: "<p>...</p>",
+          fr: "<p>[****** fr] ...</p>"
+        },
+      });
+      server.create("pageSection", {
+        // Contact
+        id: "7",
+        title: {
+          en: "How can I help?",
+          fr: "Que puis-je faire pour vous?"
+        },
+        description: {
+          en: `<p>I'm always excited about new challenges. 
+          Please take a moment to fill out the form below, and tell me 
+          how I can contribute to your organization's success.</p>`,
+          fr: `<p>J'aime les défis! Veuillez me dire, s'il 
+          vous plaît, en remplissant le formulaire ci-dessous, comment 
+          je peux contribuer au succès de votre organisation.</p>`
+        },
+      });
+
+      
+
+
+     
+
+      // parentId: '9' ...
+
       server.create("expertiseSpec", {
         id: "11",
         parentId: "9",

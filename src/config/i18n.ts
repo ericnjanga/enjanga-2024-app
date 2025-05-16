@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
+      learnMore: "Learn more",
       welcome: "Welcome",
       contactCTA: 'Get in touch with me',
       contactCTAalt: 'Open contact form to get in touch with Eric Njanga',
@@ -40,6 +41,7 @@ const resources = {
   },
   fr: {
     translation: {
+      learnMore: "En savoir plus",
       welcome: "Bienvenue",
       contactCTA: 'Me contacter',
       contactCTAalt: 'Ouvrir le formulaire de contact pour entrer en contact avec Eric Njanga',

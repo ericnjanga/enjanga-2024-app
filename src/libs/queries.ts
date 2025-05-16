@@ -38,6 +38,38 @@ export const queryData = {
       }
     }
   `,
+  expertiseSpecificationCollection: `
+    query getExpertiseSpecificationCollection(
+      $parentId: String!
+      $locale1: String!
+      $locale2: String!
+    ) {
+      en: expertiseSpecificationCollection(
+        locale: $locale1
+        where: { parentId: $parentId }
+      ) {
+        items {
+          title
+          blurb
+          description {
+            json
+          }
+        }
+      }
+      fr: expertiseSpecificationCollection(
+        locale: $locale2
+        where: { parentId: $parentId }
+      ) {
+        items {
+          title
+          blurb
+          description {
+            json
+          }
+        }
+      }
+    }
+  `,
 };
 
 

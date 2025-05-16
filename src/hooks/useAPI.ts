@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 // import { HostContext } from "../utils/contexts";
 // import { useParams } from "react-router-dom";
-import { PageSectionProps, InformationCard1Props, ProjectProps, NavOptionProps } from "../models";
+import { PageSectionProps, ExpertiseSpecificationProps, ProjectProps, NavOptionProps } from "../models";
 import { logErrorMessage } from "../utils/functions";
 import { mockContactForm } from "../models/mockupData";
 import { getCurrentLanguage } from "../components/LanguageModule/utils";
@@ -132,8 +132,8 @@ export const fetchData = async(dataType: string, dataId: string | null) => {
 };
 
 
-// Returns a database record of type "InformationCard1Props[]"
-export const useExpertises = (parentId: string): InformationCard1Props[] | null => {
+// Returns a database record of type "ExpertiseSpecificationProps[]"
+export const useExpertises = (parentId: string): ExpertiseSpecificationProps[] | null => {
   const [InformationCard1s, setPanelFrame] = useState(null); 
   
   useEffect(() => { 
@@ -144,8 +144,8 @@ export const useExpertises = (parentId: string): InformationCard1Props[] | null 
   return InformationCard1s;
 };
 
-// Returns a database record of type "InformationCard1Props"
-export const useExpertise = (id: string): InformationCard1Props | null => {
+// Returns a database record of type "ExpertiseSpecificationProps"
+export const useExpertise = (id: string): ExpertiseSpecificationProps | null => {
   const [InformationCard1s, setPanelFrame] = useState(null); 
   
   useEffect(() => { 
@@ -154,7 +154,7 @@ export const useExpertise = (id: string): InformationCard1Props | null => {
   return InformationCard1s;
 };
 
-// Returns a database record of type "InformationCard1Props[]"
+// Returns a database record of type "ExpertiseSpecificationProps[]"
 export const useProjects = (): ProjectProps[] | null => {
   const [projects, setPanelFrame] = useState(null); 
   

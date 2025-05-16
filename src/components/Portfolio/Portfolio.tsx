@@ -11,6 +11,7 @@ import { PortfolioList } from "../../utils/functions";
 import PanelHero from "../PanelHero/PanelHero";
 import { heroSectionId } from "./Portfolio.shared";
 import { queryData } from "../../libs/queries";
+import { dataReshaper } from "../../utils/functions";
 
 
 // The slider will contain an array of Projects ...
@@ -48,11 +49,8 @@ const CarrouselPortfolio = () => {
    * ----------------------
    */
 
-  // Reshaping the response (by merging items)
-  const itemsList = data.en.items.map((enItem: ProjectProps[], index: number) => ({
-    en: enItem,
-    fr: data.fr.items[index]
-  }));
+  // Data reshaped to group all translations into 1 object
+  const reshapedData = dataReshaper(data);
 
   // const itemsList = { items: mergedItems };
 

@@ -18,7 +18,7 @@ import { ContactFormRef } from "../../models";
 import Icon from "../Icons/icons";
 import { mockContactForm } from "../../models/mockupData";
 import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
-import { PageSectionProps, InformationCard1Props, ProjectProps } from "../../models";
+import { PageSectionProps, ExpertiseSpecificationProps, ProjectProps } from "../../models";
 import { getCurrentLanguage } from "../LanguageModule/utils";
 
 /**
@@ -32,7 +32,7 @@ import { getCurrentLanguage } from "../LanguageModule/utils";
  */
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalData, setModalContent] = useState<InformationCard1Props | ProjectProps | PageSectionProps | null>(null);
+  const [modalData, setModalContent] = useState<ExpertiseSpecificationProps | ProjectProps | PageSectionProps | null>(null);
   const [childComponent, setChildComponent] = useState('');
   const { formSubmit } = useThirdPartyFormSubmission();
 

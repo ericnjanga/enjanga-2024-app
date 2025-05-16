@@ -1,22 +1,48 @@
-import { InformationCard1Props } from "../../models";
-import "./InformationCard1.scss"; 
+import { ProjectProps, ExpertiseSpecificationProps } from "../../models";
+import "./InformationCard1.scss";
 import Icon from "../Icons/icons";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader";
 import { LanguageContext } from "../../utils/contexts";
+import { useTranslation } from "react-i18next";
 
-const InformationCard1 = ({ blurb, className, id }: InformationCard1Props) => {  
-  const context = useContext(ModalContext);
-  const activeLang = useContext(LanguageContext);
+import { useContentful } from "../../hooks/useContentful";
+// import { queryKeyData, sectionId } from "./Footer.shared";
+import { queryData } from "../../libs/queries";
 
-  if (!context) {
-    // return if the context is empty
+const InformationCard1 = ({ blurb, className, id }: ProjectProps | ExpertiseSpecificationProps) => {  
+  const { t } = useTranslation();
+
+  // // Getting the currently active locale...
+  // const activeLang = useContext(LanguageContext);
+
+  // // For getting modal-based fucnctionality
+  const modalContext = useContext(ModalContext);
+
+  // /**
+  //  * Fetching ContentFul data in all languages, and handling errors and loading time
+  //  * ----------------------
+  //  */
+  // const { data, isLoading, error } = useContentful({
+  //   query: queryData.expertiseSpecificationCollection,
+  //   variables: { locale1: "en-CA", locale2: "fr" },
+  //   queryKey: `expertiseCollection-${id}`,
+  // });
+
+  // Display a placeholder is there is no modal context or the data fetching is not yet completed
+  if (!modalContext) {
     return <Preloader />;
   }
+  // // Display an error messaye if there was problem fetching data
+  // if (error) return <p>{t("ErrorLoadingPosts")}</p>;
+  // /**
+  //  * Fetching ContentFul data in all languages, and handling errors and loading time
+  //  * ----------------------
+  //  */
 
   // Otherwise, destructure the context
-  const { openModal } = context; 
+  const { openModal } = modalContext;
 
   return (
     <div 
@@ -30,8 +56,8 @@ const InformationCard1 = ({ blurb, className, id }: InformationCard1Props) => {
     >
       <div className="card-body">
         <Icon name='cube' className="icon" />
-        <p className="mb-0">{blurb[activeLang]}</p>
-        <span className="btn btn-link">Learn more ...</span>
+        <p className="mb-0">{blurb}</p>
+        <span className="btn btn-link">{t("learnMore")} ...</span>
       </div>
     </div>
   );
