@@ -48,8 +48,6 @@ const CarrouselPortfolio = () => {
   // Data reshaped to group all translations into 1 object
   const reshapedData = dataReshaper(data); 
 
-  console.log('......???????', data); 
-
 
   // Turns the list of items into a carrousel according to @sliderPortfolioConfig object ...
   const PortfolioSliderWithMultiViews = withCarrousel(

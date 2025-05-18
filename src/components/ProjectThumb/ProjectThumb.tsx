@@ -3,11 +3,9 @@ import "./ProjectThumb.scss";
 import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
-import { LanguageContext } from "../../utils/contexts"; 
 
 const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
   const context = useContext(ModalContext); 
-  const activeLang = useContext(LanguageContext);
 
   if (!context) {
     // return if the context is empty
@@ -27,10 +25,10 @@ const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
         });
       }}
     >
-      <img className="img-fluid" src={image} alt={title[activeLang]} />
+      <img className="img-fluid" src={image?.url} alt={image?.description} />
       <div className="card-body">
-        {/* <h3 className="ProjectThumb-title">{title}</h3> */}
-        <p className="ProjectThumb-description mb-0">{title[activeLang]}</p>
+        <h3 className="ProjectThumb-title">{title}</h3>
+        <p className="ProjectThumb-description mb-0">{blurb}</p>
       </div>
     </div>
   );

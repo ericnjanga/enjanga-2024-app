@@ -25,6 +25,11 @@ export const queryData = {
           description {
             json
           }
+          image {
+            url
+            title
+            description
+          }
         } 
       }
       fr: projectCollection(locale: $locale2) { 
@@ -33,6 +38,11 @@ export const queryData = {
           blurb
           description {
             json
+          }
+          image {
+            url
+            title
+            description
           }
         } 
       }

@@ -48,7 +48,11 @@ export type ExpertiseSpecificationProps = {
 
 export type ProjectProps = {
   id?: string
-  image?: string
+  image?: {
+    url: string
+    title: string
+    description: string
+  }
   className?: string
   title: string
   blurb: string
