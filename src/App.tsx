@@ -42,7 +42,7 @@ function App() {
             </div>
 
               <div id="best-work">
-                {/* <CarrouselPortfolio /> */}
+                <CarrouselPortfolio />
               </div>
 
               <ParallaxFrame

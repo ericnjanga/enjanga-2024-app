@@ -169,19 +169,17 @@ export interface SliderConfig {
 }
 export interface PanelGridListProps {
   idsList: string[]; // An array of ids
-}
-// export interface PortfolioListProps {
-//   itemsList: ProjectProps[] | null;
-// }
+} 
 
-// ...
-type LocalizedProject = {
+// ... 
+export type ExpertiseSpecData = {
+  en: ExpertiseSpecificationProps;
+  fr: ExpertiseSpecificationProps;
+}; 
+export type ProjectData = {
   en: ProjectProps;
   fr: ProjectProps;
-};
-export type PortfolioListProps = {
-  itemsList: LocalizedProject[];
-};
+}; 
 
 export interface CharacterCounterProps {
   value: string;

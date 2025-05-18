@@ -1,10 +1,10 @@
-import React, { useState, ChangeEvent, useRef } from "react";
+import React, { useState, /*ChangeEvent, */useRef } from "react";
 import "./withCarrousel.scss";
 import { useSliderInit } from "../../hooks/helpers";
 import Preloader from "../../components/Preloader/Preloader";
 import { SliderConfig } from "../../models";
 import CarrouselControls from "./CarrouselControls/CarrouselControls";
-import { ProjectProps } from "../../models";
+import { ProjectData, ExpertiseSpecData } from "../../models";
 
 
 
@@ -13,7 +13,7 @@ import { ProjectProps } from "../../models";
 // Define the type for the HOC itself
 function withCarrousel<P extends object>(
   WrappedComponent: React.ComponentType<P>,
-  slidesList: string[] | ProjectProps[] | null,
+  slidesList: string[] | ProjectData[] | ExpertiseSpecData[],
   configObj: SliderConfig
 ): React.FC<P> {
   return (props: P) => {

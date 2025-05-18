@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css"; // Slick styles
 import "slick-carousel/slick/slick-theme.css"; // Slick theme
 import "slick-carousel"; // Slick JS (must be available after jQuery)
 
-import { ProjectProps, SliderConfig } from "../models"; 
+import { ProjectData, ExpertiseSpecData, SliderConfig } from "../models"; 
 
 
 // TypeScript type for slick methods 
@@ -31,7 +31,7 @@ export const useSliderInit = (
   sliderRef: React.RefObject<HTMLDivElement>,
   prevBtnRef: React.RefObject<HTMLButtonElement>, 
   nextBtnRef: React.RefObject<HTMLButtonElement>, 
-  listOfItems: ProjectProps[] | string[] | null,
+  listOfItems: string[] | ProjectData[] | ExpertiseSpecData[],
   setReadyState: React.Dispatch<React.SetStateAction<boolean>>,
   config: SliderConfig,
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>

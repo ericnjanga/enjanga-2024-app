@@ -1,6 +1,5 @@
 import "./Portfolio.scss";
 // import { useProjects } from "../../hooks/useAPI"; 
-import { ProjectProps } from "../../models";
 import Preloader from "../Preloader/Preloader";
 
 import { useContentful } from "../../hooks/useContentful";
@@ -12,16 +11,13 @@ import PanelHero from "../PanelHero/PanelHero";
 import { heroSectionId } from "./Portfolio.shared";
 import { queryData } from "../../libs/queries";
 import { dataReshaper } from "../../utils/functions";
+import { ProjectData } from "../../models";
 
 
-// The slider will contain an array of Projects ...
-interface PortfolioCollectionProps {
-  slidesList: ProjectProps[] | null;
-}
 
 // Wraps the list of items ...
-const PortfolioCollection: React.FC<PortfolioCollectionProps> = ({ slidesList }) => (
-  <PortfolioList itemsList={slidesList} />
+const PortfolioCollection = ({ slidesList }: { slidesList: ProjectData[]}) => (
+  <PortfolioList list={slidesList} />
 );
 
 const CarrouselPortfolio = () => {
@@ -50,18 +46,15 @@ const CarrouselPortfolio = () => {
    */
 
   // Data reshaped to group all translations into 1 object
-  const reshapedData = dataReshaper(data);
+  const reshapedData = dataReshaper(data); 
 
-  // const itemsList = { items: mergedItems };
-
-  console.log('......???????', data);
-  console.log('----------', itemsList);
+  console.log('......???????', data); 
 
 
   // Turns the list of items into a carrousel according to @sliderPortfolioConfig object ...
-  const PortfolioPortfolioCollection = withCarrousel(
+  const PortfolioSliderWithMultiViews = withCarrousel(
     PortfolioCollection,
-    itemsList,
+    reshapedData,
     sliderPortfolioConfig
   );
 
@@ -73,7 +66,7 @@ const CarrouselPortfolio = () => {
             <PanelHero id={heroSectionId} className="col" />
           </div>
           <div className="row">
-            <PortfolioPortfolioCollection slidesList={itemsList} />
+            <PortfolioSliderWithMultiViews slidesList={reshapedData} />
           </div>
         </div>
       </div>
