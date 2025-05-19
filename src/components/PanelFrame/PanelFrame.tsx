@@ -44,10 +44,7 @@ const PanelFrame: React.FC<PanelFrameProps> = ({
     queryKey: `expertiseCollection-${pageSectionId}`,
   });
 
-  // // Display a placeholder is there is no modal context or the data fetching is not yet completed
-  // if (isLoading) {
-  //   return <Preloader />;
-  // }
+  // Note: Using the <Preloader /> here crashes the code 
   // Display an error messaye if there was problem fetching data
   if (error) return <p>{t("ErrorLoadingPosts")}</p>;
   /**

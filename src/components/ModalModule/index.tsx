@@ -8,7 +8,6 @@
 import { useRef } from "react";
 import { useContext, useState, ReactNode } from "react";
 import "./modal.scss";
-import { fetchData } from "../../hooks/useAPI";
 import { ModalContext } from "../../utils/contexts";
 import ContactForm from "../ContactForm/ContactForm";
 import Preloader from "../Preloader/Preloader";
@@ -18,7 +17,7 @@ import { ContactFormRef } from "../../models";
 import Icon from "../Icons/icons";
 import { mockContactForm } from "../../models/mockupData";
 import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
-import { PageSectionProps, ExpertiseSpecificationProps, ProjectProps } from "../../models";
+import { ExpertiseSpecificationProps, ProjectProps } from "../../models";
 import { getCurrentLanguage } from "../LanguageModule/utils";
 
 /**
@@ -32,7 +31,7 @@ import { getCurrentLanguage } from "../LanguageModule/utils";
  */
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalData, setModalContent] = useState<ExpertiseSpecificationProps | ProjectProps | PageSectionProps | null>(null);
+  const [modalData, setModalContent] = useState<ExpertiseSpecificationProps | ProjectProps /*| PageSectionProps*/ | null>(null);
   const [childComponent, setChildComponent] = useState('');
   const { formSubmit } = useThirdPartyFormSubmission();
 
@@ -40,13 +39,20 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   function openModal({ // Function to open the modal
     dataType,
     dataId,
+    content
   }: {
     dataType: string;
-    dataId: string;
+    dataId?: string;
+    content?: ExpertiseSpecificationProps | ProjectProps
   }) {
     // Determining which child component should be rendered
     if (dataType === 'pageSections' && dataId === '7') {
       setChildComponent('contact');
+    }
+
+    // ...
+    if (dataType === 'expertiseSpecs' && content) {
+      setModalContent(content);
     }
 
     /**
@@ -54,9 +60,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
      * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
      * -- NOTE: The modal is always fetching something
      * */
-    fetchData(dataType, dataId).then((response) => {
-      setModalContent(response);
-    });
+    // fetchData(dataType, dataId).then((response) => {
+    //   setModalContent(response);
+    // });
 
     setIsOpen(true);
   }
@@ -125,7 +131,7 @@ const Modal = () => {
               />
             </button>
             <header className="modal-header"> 
-              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData && modalData.title && modalData.title[currentLang]}</Heading>
+              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData?.title}</Heading>
             </header>
 
             <main className="modal-body">
@@ -133,7 +139,12 @@ const Modal = () => {
                 (<Preloader />) :
                 (
                   <div
-                    dangerouslySetInnerHTML={{ __html: modalData.description[currentLang] }}
+                    dangerouslySetInnerHTML={{
+                      __html: String(
+                        modalData.description?.json?.content[0]?.content[0]
+                          ?.value ?? ""
+                      ),
+                    }}
                   ></div>
                 ) 
               }  

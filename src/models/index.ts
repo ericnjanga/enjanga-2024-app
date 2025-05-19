@@ -43,7 +43,19 @@ export type ExpertiseSpecificationProps = {
   className?: string
   title: string
   blurb: string
-  description: string
+  description: {
+    json: {
+      content: [
+        {
+          content: [
+            {
+              value: string
+            }
+          ]
+        }
+      ]
+    }
+  }
 };
 
 export type ProjectProps = {
@@ -56,7 +68,19 @@ export type ProjectProps = {
   className?: string
   title: string
   blurb: string
-  description: string
+  description: {
+    json: {
+      content: [
+        {
+          content: [
+            {
+              value: string
+            }
+          ]
+        }
+      ]
+    }
+  }
 };
 
 export type NavRoutes = '/welcome' | '/scope-of-expertise' | '/some-work' | '/about';
@@ -112,7 +136,7 @@ export interface LanguageProps {
 export type ModalContextProps = {
   isOpen: boolean               // Is the modal window open?
   childComponent: string          // Type of information being rendered: "data" or "another component"?
-  modalData: ExpertiseSpecificationProps | ProjectProps | PageSectionProps | null             // Data rendered by the modal
+  modalData: ExpertiseSpecificationProps | ProjectProps /*| PageSectionProps*/ | null             // Data rendered by the modal
   openModal: ({ 
     dataType, 
     dataId 

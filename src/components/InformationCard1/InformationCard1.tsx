@@ -11,7 +11,7 @@ import { useContentful } from "../../hooks/useContentful";
 // import { queryKeyData, sectionId } from "./Footer.shared";
 import { queryData } from "../../libs/queries";
 
-const InformationCard1 = ({ blurb, className, id }: ProjectProps | ExpertiseSpecificationProps) => {  
+const InformationCard1 = ({ title, blurb, description, className, id }: ProjectProps | ExpertiseSpecificationProps) => {  
   const { t } = useTranslation();
 
   // // Getting the currently active locale...
@@ -50,6 +50,7 @@ const InformationCard1 = ({ blurb, className, id }: ProjectProps | ExpertiseSpec
       onClick={() => {
         openModal({
           dataType: 'expertiseSpecs',
+          content: { title, description },
           dataId: id,
         });
       }}
