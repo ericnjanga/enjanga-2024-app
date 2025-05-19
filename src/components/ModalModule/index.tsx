@@ -51,7 +51,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
     }
 
     // ...
-    if (dataType === 'expertiseSpecs' && content) {
+    if ((dataType === 'expertiseSpecs' || dataType === 'projects') && content) {
       setModalContent(content);
     }
 

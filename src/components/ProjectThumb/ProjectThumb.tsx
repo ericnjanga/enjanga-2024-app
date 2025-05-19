@@ -4,7 +4,7 @@ import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
 
-const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
+const ProjectThumb = ({ id, title, blurb, description, className, image }: ProjectProps) => {
   const context = useContext(ModalContext); 
 
   if (!context) {
@@ -21,6 +21,7 @@ const ProjectThumb = ({ id, title, blurb, className, image }: ProjectProps) => {
       onClick={() => {
         openModal({
           dataType: "projects",
+          content: { title, description },
           dataId: id,
         });
       }}
