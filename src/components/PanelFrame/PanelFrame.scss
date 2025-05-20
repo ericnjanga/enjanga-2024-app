@@ -60,27 +60,8 @@
     // border: 10px solid chocolate;
   }
 
-  &.theme-1 {
-    color: var(--appname-theme-light-bbbb-1);
-    background-color: var(--appname-theme-light-bbbb-8);
-
-    .pageSection-intro-text {
-      a {
-        color: var(--appname-theme-light-eee-1);
-      }
-    }
-  }
 
   &.theme-2 {
-    color: var(--appname-theme-light-xxxx-0);
-    background-color: var(--appname-theme-light-bbbb-2);
-
-    .pageSection-intro-text {
-      a {
-        color: var(--appname-theme-light-eee-2);
-      }
-    }
-
     .PanelFrame-item {
       color: var(--appname-theme-light-xxxx-0);
       background-color: var(--appname-theme-light-bbbb-3);
@@ -102,15 +83,6 @@
   }
 
   &.theme-3 {
-    color: var(--appname-theme-light-xxxx-0);
-    background-color: var(--appname-theme-light-bbbb-01);
-
-    .pageSection-intro-text {
-      a {
-        color: var(--appname-theme-light-eee-1);
-      }
-    }
-
     .PanelFrame-item {
       color: var(--appname-theme-light-xxxx-0);
       background-color: var(--appname-theme-light-bbbb-02);

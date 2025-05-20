@@ -1,79 +1,42 @@
 import "./About.scss";
-import { useContext } from "react";
-import Heading from "../Heading/Heading";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
-import { LanguageContext } from "../../utils/contexts";
-import Preloader from "../Preloader/Preloader";
-
-import { useContentful } from "../../hooks/useContentful";
-import { queryKeyData, sectionId } from "./About.shared";
-import { queryData } from "../../libs/queries";
+import { sectionId, infoBlockIds } from "./About.shared";
+import InformationBlock from "../InformationBlock/InformationBlock";
+import PanelHero from "../PanelHero/PanelHero";
 
 const About = () => {
   // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
 
-  // Getting the currently active locale...
-  const activeLang = useContext(LanguageContext);
-
-  /**
-   * Fetching ContentFul data in all languages, and handling errors and loading time
-   * ----------------------
-   */
-  const { data, isLoading, error } = useContentful({
-    query: queryData.pageSection,
-    variables: { sectionId, locale1: "en-CA", locale2: "fr" },
-    queryKey: queryKeyData,
-  });
-
-  // Display a placeholder is there is no modal context or the data fetching is not yet completed
-  if (isLoading) {
-    return <Preloader />;
-  }
-  // Display an error messaye if there was problem fetching data
-  if (error) return <p>{t("ErrorLoadingPosts")}</p>;
-  /**
-   * Fetching ContentFul data in all languages, and handling errors and loading time
-   * ----------------------
-   */
-
   return (
-    <section className="About sc-block">
+    <section className="About sc-block PanelFrame theme-3">
       <div className="container">
         <div className="row">
-          <div className="col">
-            <article className="About-article pageSection-intro-text">
-              {data && activeLang && (
-                <>
-                  <Heading h="2" className="Hero-title">
-                    {data[activeLang]?.title}
-                  </Heading>
-                  <div
-                    className="About-description"
-                    dangerouslySetInnerHTML={{
-                      __html: String(
-                        data[activeLang]?.description?.json?.content[0]
-                          ?.content[0]?.value ?? ""
-                      ),
-                    }}
-                  />
-                  {/* <div>{documentToReactComponents(data.pageSection.description.json)}</div> */}
-                </>
-              )}
+            <PanelHero id={sectionId} className="col" />
+        </div>
 
-              <footer>
-                <Button
-                  icon="chat"
-                  variant="secondary"
-                  neonVersion={true}
-                  target="_blank"
-                  href="https://www.linkedin.com/in/ericnjanga/"
-                >
-                  {t("LinkedInCTA")}
-                </Button>
-              </footer>
-            </article>
+        <div className="row">
+          {infoBlockIds.map((id, key) => (
+            <div className="col-4 col-xs-12" key={key}>
+              <InformationBlock id={id} />
+            </div>
+          ))}
+        </div>
+
+        <div className="row">
+          <div className="col">
+            <footer className="text-center">
+              <Button
+                icon="chat"
+                variant="secondary"
+                neonVersion={true}
+                target="_blank"
+                href="https://www.linkedin.com/in/ericnjanga/"
+              >
+                {t("LinkedInCTA")}
+              </Button>
+            </footer>
           </div>
         </div>
       </div>

@@ -48,6 +48,28 @@ export const queryData = {
       }
     }
   `,
+  infoBlockById: `
+    query getInfoBlockEntryQuery(
+      $blockId: String!, 
+      $locale1: String!, 
+      $locale2: String!
+    ) {
+        en: infoBlock(id: $blockId, locale: $locale1) {  
+          title
+          blurb
+          description {
+            json
+          } 
+        }
+        fr: infoBlock(id: $blockId, locale: $locale2) {  
+          title
+          blurb
+          description {
+            json
+          } 
+        }
+      }
+  `,
   expertiseSpecificationCollection: `
     query getExpertiseSpecificationCollection(
       $parentId: String!
