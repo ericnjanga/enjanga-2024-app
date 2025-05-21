@@ -57,8 +57,9 @@ const InformationCard1 = ({ title, blurb, description, className, id }: ProjectP
     >
       <div className="card-body">
         <Icon name='cube' className="icon" />
+        <h3 className="InformationCard1-title">{title}</h3>
         <p className="mb-0">{blurb}</p>
-        <span className="btn btn-link">{t("learnMore")} ...</span>
+        {/* <span className="btn btn-link">{t("learnMore")} ...</span> */}
       </div>
     </div>
   );

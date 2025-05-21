@@ -47,14 +47,32 @@
 
 
 .theme-1 {
-  color: var(--appname-theme-light-bbbb-1);
+  // color: var(--appname-theme-light-bbbb-1);
+  color: #323069;
   background-color: var(--appname-theme-light-bbbb-8);
 
+  .InformationCard1-title, p {
+    color: #323069;
+  }
+}
+
+.theme-1, .theme-2, .theme-3 {
+  .pageSection-title {
+    opacity: 0.9;
+  }
   .pageSection-intro-text {
+    opacity: 0.8;
     a {
-      color: var(--appname-theme-light-eee-1);
+      opacity: 0.8;
     }
   }
+  .InformationCard1-title {
+    opacity: 0.85;
+  }
+  p {
+    opacity: 0.7;
+  }
+
 }
 
 .theme-2 {

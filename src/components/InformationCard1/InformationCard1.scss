@@ -4,6 +4,13 @@
   --appname-ExpertiseSpec-padd-left: 24px;
 }
 
+.InformationCard1 {
+  &-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
 .InformationCard1.card {
   display: block;
   width: 100%;
@@ -16,6 +23,7 @@
   padding-left: var(--appname-ExpertiseSpec-padd-left);
 
   cursor: pointer;
+ 
  
   &:hover {
     background-color: var(--appname-theme-light-aaaa-3x);
