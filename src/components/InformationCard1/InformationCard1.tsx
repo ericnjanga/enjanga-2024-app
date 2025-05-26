@@ -37,7 +37,7 @@ const InformationCard1 = ({ title, blurb, description, className }: ProjectProps
         <Icon name='cube' className="icon" />
         {description && <Icon name='arrow-outward' className="icon-hover" />}
         <h3 className="InformationCard1-title">{title}</h3>
-        <p className="mb-0">{blurb}</p>
+        <p className="InformationCard1-blurb mb-0">{blurb}</p>
       </div>
     </div>
   );

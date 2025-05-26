@@ -1,13 +1,21 @@
 :root {
-  --appname-ExpertiseSpec-padd: 24px;
-  --appname-ExpertiseSpec-padd-top: 60px;
-  --appname-ExpertiseSpec-padd-left: 24px;
+  --appname-ExpertiseSpec-padd: 15px 40px 15px 15px; //24px;
+  --appname-ExpertiseSpec-padd-top: 15px;
+  --appname-ExpertiseSpec-padd-left: 42px; //24px;
+  --appname-ExpertiseSpec-blurb-display: none;
+  --appname-ExpertiseSpec-icon-left: 10px;
+  --appname-ExpertiseSpec-icon-top: 18px;
+  --appname-ExpertiseSpec-iconhover-right: 10px; //23px;
 }
 
 .InformationCard1 {
   &-title {
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
+  }
+
+  &-blurb {
+    display: var(--appname-ExpertiseSpec-blurb-display);
   }
 }
 
@@ -34,12 +42,14 @@
 
   .icon {
     position: absolute;
-    top: var(--appname-ExpertiseSpec-padd);
-    left: var(--appname-ExpertiseSpec-padd);
+    top: var(--appname-ExpertiseSpec-icon-top);
+    left: var(--appname-ExpertiseSpec-icon-left);
+    display: var(--appname-ExpertiseSpec-icon-display);
   }
+
   .icon-hover {
     position: absolute;
-    right: 23px;
+    right: var(--appname-ExpertiseSpec-iconhover-right);
     opacity: 0.5;
   }
 
@@ -53,6 +63,10 @@
     // border: 4px dashed chocolate;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
+    --appname-ExpertiseSpec-padd: 24px 54px 24px 24px;
+    --appname-ExpertiseSpec-icon-top: 26px;
+    --appname-ExpertiseSpec-icon-left: 20px;
+    --appname-ExpertiseSpec-blurb-display: block;
   }
 
   // Large screen ...
@@ -60,6 +74,10 @@
     // border: 4px dashed turquoise;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
+    --appname-ExpertiseSpec-padd: 24px 54px 24px 24px;
+    --appname-ExpertiseSpec-icon-top: 26px;
+    --appname-ExpertiseSpec-icon-left: 20px;
+    --appname-ExpertiseSpec-blurb-display: block;
   }
 
   // Large Medium screen ...
@@ -67,20 +85,21 @@
     // border: 4px dashed blue;
     --appname-ExpertiseSpec-padd-top: 24px;
     --appname-ExpertiseSpec-padd-left: 60px;
+    --appname-ExpertiseSpec-padd: 24px 54px 24px 24px;
+    --appname-ExpertiseSpec-icon-top: 26px;
+    --appname-ExpertiseSpec-icon-left: 20px;
+    --appname-ExpertiseSpec-blurb-display: block;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 4px dashed lime;
-    // --appname-ExpertiseSpec-padd-top: 24px;
-    // --appname-ExpertiseSpec-padd-left: 60px;
+    --appname-ExpertiseSpec-padd: 20px;
   }
 
   // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
     // border: 4px dashed violet;
-    --appname-ExpertiseSpec-padd-top: 24px;
-    --appname-ExpertiseSpec-padd-left: 60px;
   }
 
   // Smaller Screen ...
