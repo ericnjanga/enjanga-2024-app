@@ -61,6 +61,29 @@
   }
 
 
+  &.theme-1 {
+    .PanelFrame-item {
+
+      // ... 
+      &.has-hover { 
+        &:hover {
+          border-color: var(--appname-theme-light-aaaa-7);
+          background-color: var(--appname-theme-light-aaaa-3x);
+
+          .icon-hover {
+            opacity: 1;
+          }
+        }
+
+        .icon-hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+
+
   &.theme-2 {
     .PanelFrame-item {
       color: var(--appname-theme-light-xxxx-0);
@@ -75,9 +98,11 @@
       }
 
       // ...
-      &:hover {
-        border-color: var(--appname-theme-light-aaaa-7);
-        background-color: var(--appname-theme-light-bbbb-3a);
+      &.has-hover {
+        &:hover {
+          border-color: var(--appname-theme-light-aaaa-7);
+          background-color: var(--appname-theme-light-bbbb-3a);
+        }
       }
     }
   }
@@ -92,9 +117,23 @@
       }
 
       // ...
-      &:hover {
-        border-color: var(--appname-theme-light-aaaa-7);
-        background-color: var(--appname-theme-light-bbbb-03);
+      &.has-hover { 
+        &:hover {
+          border-color: var(--appname-theme-light-aaaa-7);
+          background-color: var(--appname-theme-light-bbbb-3a);
+        }
+      }
+    }
+  }
+
+  &.theme-2, &.theme-3 {
+    .PanelFrame-item {
+      &.has-hover { 
+        &:hover {
+          .icon-hover {
+            color: #00ff94;
+          }
+        }
       }
     }
   }

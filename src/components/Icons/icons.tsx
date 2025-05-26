@@ -151,6 +151,21 @@ export default function Icon({ size = 'small', className, name }: IconProps) {
         />
       </svg>
     );
+  } else if (name === 'arrow-outward') {
+    return ( 
+      <svg
+        className={className}
+        width={dim.width}
+        height={dim.height}
+        viewBox="0 0 61 66"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path 
+          d="M5.6 52L0 46.4L38.4 8H4V0H52V48H44V13.6L5.6 52Z" 
+          fill="currentColor" 
+        />
+      </svg>
+    );
   }
  
   return <span>--icon--</span>;

@@ -40,6 +40,8 @@ const PanelHero = ({ id, className }: PanelHeroProps) => {
    * ----------------------
    */
 
+  console.log('....', data);
+
   return (
     <header className={clsx('pageSection-hero', className)}>
       {data && activeLang && (

@@ -22,36 +22,30 @@
   padding-top: var(--appname-ExpertiseSpec-padd-top);
   padding-left: var(--appname-ExpertiseSpec-padd-left);
 
-  cursor: pointer;
- 
- 
-  &:hover {
-    background-color: var(--appname-theme-light-aaaa-3x);
-    border-color: var(--appname-theme-light-aaaa-2);
+  &.has-hover {
+    cursor: pointer;
 
-    .btn {
-      text-decoration: none;
+    &:hover {
+      .icon-hover {
+        opacity: 1;
+      }
     }
+  }
+
+  .icon {
+    position: absolute;
+    top: var(--appname-ExpertiseSpec-padd);
+    left: var(--appname-ExpertiseSpec-padd);
+  }
+  .icon-hover {
+    position: absolute;
+    right: 23px;
+    opacity: 0.5;
   }
 
   .card-body {
     padding: 0;
-
-    .icon {
-      position: absolute;
-      top: var(--appname-ExpertiseSpec-padd);
-      left: var(--appname-ExpertiseSpec-padd);
-    }
   }
-  .btn {
-    padding-left: 0;
-    padding-bottom: 0;
-    font-size: 1rem;
-    color: var(--appname-theme-light-eee-1);
-  }
-
-
-
 
 
   // Extra Large screen ...

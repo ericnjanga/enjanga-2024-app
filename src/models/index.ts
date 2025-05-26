@@ -43,7 +43,7 @@ export type ExpertiseSpecificationProps = {
   className?: string
   title: string
   blurb: string
-  description: {
+  description?: {
     json: {
       content: [
         {
@@ -139,10 +139,15 @@ export type ModalContextProps = {
   modalData: ExpertiseSpecificationProps | ProjectProps /*| PageSectionProps*/ | null             // Data rendered by the modal
   openModal: ({ 
     dataType, 
+    content,
     dataId 
   } : { 
       dataType: string, 
-      dataId: string 
+      content: {
+        title: string,
+        description: { json: { content: [{ content: [{ value: string; }]; }]; }; } | { json: { content: [{ content: [{ value: string; }]; }]; }; } | undefined
+      }
+      dataId?: string 
   })                   => void     // Responsible for opening the modal
   closeModal:       () => void        // Responsible for losing the modal
   submitModalForm:  (data: typeof mockContactForm.initValues) => void
@@ -166,7 +171,7 @@ export interface ContactFormRef {
 export type IconProps = { 
   size?: 'small' | 'medium' | 'large', 
   className: string,
-  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat' | 'close' | 'slider-arrow-left' | 'slider-arrow-right',
+  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat' | 'close' | 'slider-arrow-left' | 'slider-arrow-right' | 'arrow-outward',
 };
 
 
