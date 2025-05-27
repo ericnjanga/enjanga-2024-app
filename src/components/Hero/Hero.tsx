@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <header className="Hero">
-      <div className="container Hero-content-wrapper">
+      <div className="container Hero-content-wrapper sc-block-pd-bot">
         <div className="row">
           <div className="col">
             <div className="Hero-jumbotron jumbotron__textwrapper pageSection-intro-text">
