@@ -7,6 +7,9 @@ import Preloader from "../Preloader/Preloader";
 import { useContentful } from "../../hooks/useContentful";
 import { queryData } from "../../libs/queries";
 import clsx from 'clsx';
+import { renderContentfulNode } from "../../libs/utils";
+import type { Node } from '@contentful/rich-text-types';
+
 
 type PanelHeroProps = {
   id: string;
@@ -49,16 +52,11 @@ const PanelHero = ({ id, className }: PanelHeroProps) => {
           <Heading h="2" className="pageSection-title">
             {data[activeLang]?.title}
           </Heading>
-          <div
-            className="pageSection-intro-text"
-            dangerouslySetInnerHTML={{
-              __html: String(
-                data[activeLang]?.description?.json?.content[0]?.content[0]
-                  ?.value ?? ""
-              ),
-            }}
-          />
-          {/* <div>{documentToReactComponents(data.pageSection.description.json)}</div> */}
+          <div className="pageSection-intro-text">
+            {data[activeLang]?.description?.json?.content?.map((node: Node, index: number) =>
+              renderContentfulNode(node, `node-${index}`)
+            )}
+          </div>
         </>
       )}
     </header>

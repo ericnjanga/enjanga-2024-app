@@ -20,6 +20,9 @@ import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
 import { ExpertiseSpecificationProps, ProjectProps } from "../../models";
 import { getCurrentLanguage } from "../LanguageModule/utils";
 
+import { renderContentfulNode } from "../../libs/utils";
+import type { Node } from '@contentful/rich-text-types';
+
 /**
  * 2) Modal Provider:
  * -------------------
@@ -138,14 +141,11 @@ const Modal = () => {
               {!modalData ? 
                 (<Preloader />) :
                 (
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: String(
-                        modalData.description?.json?.content[0]?.content[0]
-                          ?.value ?? ""
-                      ),
-                    }}
-                  ></div>
+                  <div className="pageSection-intro-text">
+                    {modalData.description?.json?.content?.map((node: Node, index: number) =>
+                      renderContentfulNode(node, `node-${index}`)
+                    )}
+                  </div>
                 ) 
               }  
 

@@ -1,5 +1,12 @@
 :root {
   --appname-expertise-PanelFrame-height: unset;
+  // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+  --appname-expertise-pageSection-hero-mb: 80px;
+  --appname-expertise-carrousel-controls-top: 300px; // 130px
+  --appname-expertise-carrousel-controls-right: unset; // 60px
+  --appname-expertise-carrousel-controls-left: 50%;
+  --appname-expertise-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
+  // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
 }
 
 #scope-of-expertise {
@@ -9,8 +16,12 @@
     // ...
     .carrousel-controls {
       position: absolute;
-      top: 130px;
-      right: 60px;
+      // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+      top: var(--appname-expertise-carrousel-controls-top);
+      right: var(--appname-expertise-carrousel-controls-right);
+      left: var(--appname-expertise-carrousel-controls-left);
+      margin-left: calc(-1 * var(--appname-expertise-carrousel-controls-marg-left)/2);
+      // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
       z-index: 10;
 
       &.slide-index-1,
@@ -32,6 +43,16 @@
 
     .PanelFrame {
       min-height: var(--appname-expertise-PanelFrame-height);
+
+      /*
+        * CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+        * Adapting the layout accomodate caroussel buttons on small and medium small devices  
+        * ----------------------
+      */
+      .pageSection-hero {
+        border: 4px solid turquoise;
+        margin-bottom: var(--appname-expertise-pageSection-hero-mb);
+      }
     }
   }
 
