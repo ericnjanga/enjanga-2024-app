@@ -7,9 +7,9 @@
   --appname-carousel-controls-flexdir: column;
   --appname-carousel-controls-width: min-content;
   --appname-carousel-controls-gap: 5px;
-  // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+  // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Portfolio frame) ---
   --appname-portfolio-pageSection-hero-mb: 75px;
-  --appname-portfolio-carrousel-controls-top: -65px; // -170px;
+  --appname-portfolio-carrousel-controls-top: -65px;
   --appname-portfolio-carrousel-controls-right: unset; // 0px
   --appname-portfolio-carrousel-controls-left: 50%;
   --appname-portfolio-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
@@ -25,12 +25,12 @@
 
   .PanelFrame {
     /*
-      * CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+      * CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Portfolio frame) ---
       * Adapting the layout accomodate caroussel buttons on small and medium small devices  
       * ----------------------
     */
     .pageSection-hero {
-      border: 4px solid turquoise;
+      // border: 4px solid turquoise;
       margin-bottom: var(--appname-portfolio-pageSection-hero-mb);
     }
 
@@ -39,7 +39,7 @@
       // ...
       .carrousel-controls {
         position: absolute;
-        // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+        // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Portfolio frame) ---
         top: var(--appname-portfolio-carrousel-controls-top);
         right: var(--appname-portfolio-carrousel-controls-right);
         left: var(--appname-portfolio-carrousel-controls-left);
@@ -48,12 +48,20 @@
         z-index: 10;
       }
 
-    
+      // Fix slide's width
       .slider-item {
         max-width: 360px;
       }
     
       .slick-track {
+        .slick-slide {
+          // Center inner slide
+          > div {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
         /**
         * Styling the 3 active items .......
         * ----------------------------------
@@ -116,5 +124,60 @@
         }
       }
     }
+  }
+
+
+
+
+
+  // Extra Large screen ...
+  @media (min-width: 1400px) {
+    // border: 4px solid purple;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-portfolio-pageSection-hero-mb: 45px;
+    --appname-portfolio-carrousel-controls-top: -190px;
+    --appname-portfolio-carrousel-controls-right: 9%;
+    --appname-portfolio-carrousel-controls-left: auto;
+    --appname-portfolio-carrousel-controls-marg-left: auto;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
+  }
+
+  // Large screen ...
+  @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+    // border: 4px solid violet;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-portfolio-pageSection-hero-mb: 35px;
+    --appname-portfolio-carrousel-controls-top: -170px;
+    --appname-portfolio-carrousel-controls-right: 9%;
+    --appname-portfolio-carrousel-controls-left: auto;
+    --appname-portfolio-carrousel-controls-marg-left: auto;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
+  }
+
+  // Large Medium screen ...
+  @media (min-width: 992px) and (max-width: (1200px - 1)) {
+    // border: 4px solid lime;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-portfolio-pageSection-hero-mb: 30px;
+    --appname-portfolio-carrousel-controls-top: -170px;
+    --appname-portfolio-carrousel-controls-right: 9%;
+    --appname-portfolio-carrousel-controls-left: auto;
+    --appname-portfolio-carrousel-controls-marg-left: auto;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
+  }
+
+  // Medium Medium screen ...
+  @media (min-width: 768px) and (max-width: (992px - 1)) {
+    // border: 4px solid blue;
+  }
+
+  // Small Screen ...
+  @media (min-width: 576px) and (max-width: (768px - 1)) {
+    // border: 4px solid turquoise;
+  }
+
+  // Smaller Screen ...
+  @media (max-width: (576px - 1px)) {
+    // border: 4px solid chocolate;
   }
 }
