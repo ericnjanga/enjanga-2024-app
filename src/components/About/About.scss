@@ -1,78 +1,59 @@
 :root { 
-  --appname-about-container-display: block;
-  --appname-about-container-overflow: hidden;
-  --appname-about-article-display: block;
-  --appname-about-article-flex-dir: column; 
-  --appname-about-article-justify-cont: center;
-  --appname-about-article-marg: 0;
+  --appname-about-description-block-display: grid;
+  --appname-about-description-block-grid: 1fr / 1fr;
+  --appname-about-description-block-gap: 10px;
+
+  --appname-about-footer-textalign: left;
+  --appname-about-footer-margbot: 20px;
 }
 
 .About {
-  // background-color: var(--appname-theme-light-bbbb-0);
+  .description-block {
+    margin-bottom: var(--appname-about-footer-margbot);
+    display: var(--appname-about-description-block-display);
+    grid: var(--appname-about-description-block-grid);
+    gap: var(--appname-about-description-block-gap);
+  }
 
-  // &-title {
-  //   color: var(--appname-theme-light-xxxx-0);
-  // }
-
-  // &-description {
-  //   color: var(--appname-theme-light-bbbb-6);
-  // }
-
-  // &-article {
-  //   position: relative;
-  //   z-index: 3;
-  //   background: rgba(2, 0, 35, 0.7);
-
-  //   display: var(--appname-about-article-display);
-  //   flex-direction: var(--appname-about-article-flex-dir); 
-  //   justify-content: var(--appname-about-article-justify-cont);
-  // }
-
-  // &-description {
-  //   a {
-  //     color: var(--appname-theme-light-eee-2);
-  //   }
-  // }
-
-  // .container {
-  //   position: relative;
-  //   display: var(--appname-about-container-display); 
-  //   overflow: var(--appname-about-container-overflow);
-  // }
+  .footer {
+    text-align: var(--appname-about-footer-textalign);
+  }
 
   // Extra Large screen ...
   @media (min-width: 1400px) {
-    // border: 10px solid purple;
-    --appname-about-container-display: flex;
-    --appname-about-article-display: flex;
-    --appname-about-container-overflow: visible;
+    // border: 4px solid purple; 
+    --appname-about-description-block-grid: 1fr / 1fr 1fr 1fr;
+    --appname-about-description-block-gap: 60px;
+    --appname-about-footer-textalign: center;
   }
 
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-    // border: 10px solid violet;
-    --appname-about-container-overflow: visible;
+    // border: 4px solid violet; 
+    --appname-about-description-block-grid: 1fr / 1fr 1fr 1fr;
+    --appname-about-description-block-gap: 30px;
+    --appname-about-footer-textalign: center;
   }
 
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
-    // border: 10px solid lime;
-    --appname-about-container-overflow: visible;
+    // border: 4px solid lime; 
+    --appname-about-description-block-grid: 1fr / 1fr 1fr 1fr;
+    --appname-about-footer-textalign: center;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
-    // border: 10px solid blue;
-    --appname-about-container-overflow: visible;
+    // border: 4px solid blue; 
   }
 
   // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
-    // border: 10px solid turquoise;
+    // border: 4px solid turquoise;
   }
 
   // Smaller Screen ...
   @media (max-width: (576px - 1px)) {
-    // border: 10px solid chocolate;
+    // border: 4px solid chocolate;
   }
 }

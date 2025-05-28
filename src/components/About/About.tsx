@@ -13,20 +13,20 @@ const About = () => {
     <section className="About sc-block PanelFrame theme-3">
       <div className="container">
         <div className="row">
-            <PanelHero id={sectionId} className="col" />
+          <PanelHero id={sectionId} className="col" />
         </div>
 
-        <div className="row">
+        <div className="row description-block">
           {infoBlockIds.map((id, key) => (
-            <div className="col-4 col-xs-12" key={key}>
+            <div className="col" key={key}>
               <InformationBlock id={id} />
             </div>
           ))}
         </div>
 
-        <div className="row">
-          <div className="col">
-            <footer className="text-center">
+        <footer className="footer">
+          <div className="row">
+            <div className="col">
               <Button
                 icon="chat"
                 variant="secondary"
@@ -36,9 +36,9 @@ const About = () => {
               >
                 {t("LinkedInCTA")}
               </Button>
-            </footer>
+            </div>
           </div>
-        </div>
+        </footer>
       </div>
     </section>
   );

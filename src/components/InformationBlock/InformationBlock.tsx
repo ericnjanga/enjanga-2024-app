@@ -8,6 +8,9 @@ import { useContentful } from "../../hooks/useContentful";
 import { queryKeyData } from "./InformationBlock.shared";
 import { queryData } from "../../libs/queries";
 
+import { renderContentfulNode } from "../../libs/utils";
+import type { Node } from '@contentful/rich-text-types';
+
 
 
 const InformationBlock = ({ id, hSize = '3' }: { id: string, hSize?: '1' | '2' | '3' | '4' | '5' | '6' }) => {
@@ -46,16 +49,9 @@ const InformationBlock = ({ id, hSize = '3' }: { id: string, hSize?: '1' | '2' |
         <Heading h={hSize} className="Hero-title">
           {data[activeLang]?.title}
         </Heading>
-        <div
-          className="About-description"
-          dangerouslySetInnerHTML={{
-            __html: String(
-              data[activeLang]?.description?.json?.content[0]
-                ?.content[0]?.value ?? ""
-            ),
-          }}
-        />
-        {/* <div>{documentToReactComponents(data.pageSection.description.json)}</div> */}
+        {data[activeLang]?.description?.json?.content?.map((node: Node, index: number) =>
+          renderContentfulNode(node, `node-${index}`)
+        )}
       </>
     )}
     </div>
