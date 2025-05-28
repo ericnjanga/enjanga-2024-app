@@ -1,11 +1,11 @@
 :root {
   --appname-expertise-PanelFrame-height: unset;
   // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-  --appname-expertise-pageSection-hero-mb: 80px;
-  --appname-expertise-carrousel-controls-top: 300px; // 130px
+  --appname-expertise-pageSection-hero-mb: 23%; // 80px;
+  --appname-expertise-carrousel-controls-top: 36%; //310px; // 130px
   --appname-expertise-carrousel-controls-right: unset; // 60px
   --appname-expertise-carrousel-controls-left: 50%;
-  --appname-expertise-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
+  --appname-expertise-carrousel-controls-marg-left: calc(-1 * 172.8px/2); // (Computed container's width)
   // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
 }
 
@@ -20,7 +20,7 @@
       top: var(--appname-expertise-carrousel-controls-top);
       right: var(--appname-expertise-carrousel-controls-right);
       left: var(--appname-expertise-carrousel-controls-left);
-      margin-left: calc(-1 * var(--appname-expertise-carrousel-controls-marg-left)/2);
+      margin-left: var(--appname-expertise-carrousel-controls-marg-left);
       // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
       z-index: 10;
 
@@ -62,26 +62,55 @@
   @media (min-width: 1400px) {
     border: 4px solid purple;
     --appname-expertise-PanelFrame-height: 703px;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-expertise-pageSection-hero-mb: 45px;
+    --appname-expertise-carrousel-controls-top: 120px;
+    --appname-expertise-carrousel-controls-right: 9%;
+    --appname-expertise-carrousel-controls-left: auto;
+    --appname-expertise-carrousel-controls-marg-left: auto;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     border: 4px solid violet;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-expertise-pageSection-hero-mb: 35px;
+    --appname-expertise-carrousel-controls-top: 90px;
+    --appname-expertise-carrousel-controls-right: 9%;
+    --appname-expertise-carrousel-controls-left: auto;
+    --appname-expertise-carrousel-controls-marg-left: auto;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     border: 4px solid lime;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-expertise-pageSection-hero-mb: 30px;
+    --appname-expertise-carrousel-controls-top: 70px;
+    --appname-expertise-carrousel-controls-right: 9%;
+    --appname-expertise-carrousel-controls-left: auto;
+    --appname-expertise-carrousel-controls-marg-left: auto;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     border: 4px solid blue;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-expertise-pageSection-hero-mb: 9%;
+    --appname-expertise-carrousel-controls-top: 38%;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
   // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
     border: 4px solid turquoise;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+    --appname-expertise-pageSection-hero-mb: 16%;
+    --appname-expertise-carrousel-controls-top: 35%;
+    // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
   // Smaller Screen ...

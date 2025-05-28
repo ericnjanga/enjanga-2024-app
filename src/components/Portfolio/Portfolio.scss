@@ -8,11 +8,11 @@
   --appname-carousel-controls-width: min-content;
   --appname-carousel-controls-gap: 5px;
   // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-  --appname-expertise-pageSection-hero-mb: 80px;
-  --appname-expertise-carrousel-controls-top: 300px; // -170px;
-  --appname-expertise-carrousel-controls-right: unset; // 0px
-  --appname-expertise-carrousel-controls-left: 50%;
-  --appname-expertise-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
+  --appname-portfolio-pageSection-hero-mb: 75px;
+  --appname-portfolio-carrousel-controls-top: -65px; // -170px;
+  --appname-portfolio-carrousel-controls-right: unset; // 0px
+  --appname-portfolio-carrousel-controls-left: 50%;
+  --appname-portfolio-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
   // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
 
   // Special card
@@ -23,96 +23,94 @@
   position: relative;
   background-color: var(--appname-theme-light-xxxx-0);
 
-  .slider {
-    // Default styles used inside "withCarrousel" HOC
-
-
+  .PanelFrame {
+    /*
+      * CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+      * Adapting the layout accomodate caroussel buttons on small and medium small devices  
+      * ----------------------
+    */
+    .pageSection-hero {
+      border: 4px solid turquoise;
+      margin-bottom: var(--appname-portfolio-pageSection-hero-mb);
+    }
 
     // ...
-    .carrousel-controls {
-      position: absolute;
-      // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-      top: var(--appname-expertise-carrousel-controls-top);
-      right: var(--appname-expertise-carrousel-controls-right);
-      left: var(--appname-expertise-carrousel-controls-left);
-      margin-left: calc(-1 * var(--appname-expertise-carrousel-controls-marg-left)/2);
-      // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
-      z-index: 10;
-    }
+    .slider {
+      // ...
+      .carrousel-controls {
+        position: absolute;
+        // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
+        top: var(--appname-portfolio-carrousel-controls-top);
+        right: var(--appname-portfolio-carrousel-controls-right);
+        left: var(--appname-portfolio-carrousel-controls-left);
+        margin-left: calc(-1 * var(--appname-portfolio-carrousel-controls-marg-left)/2);
+        // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
+        z-index: 10;
+      }
 
-    .PanelFrame {
-      /*
-        * CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-        * Adapting the layout accomodate caroussel buttons on small and medium small devices  
-        * ----------------------
-      */
-      .pageSection-hero {
-        border: 4px solid turquoise;
-        margin-bottom: var(--appname-expertise-pageSection-hero-mb);
+    
+      .slider-item {
+        max-width: 360px;
       }
-    }
-  
-    .slider-item {
-      max-width: 360px;
-    }
-  
-    .slick-track {
-      /**
-       * Styling the 3 active items .......
-       * ----------------------------------
-      */
-      @media (min-width: 1400px) { 
-        --appname-carousel-item-gap: 70px!important;
-      }
-  
-      @media (min-width: 1200px) {
-        --appname-carousel-item-gap: 25px;
-  
-        .slick-active {
-          // 1st element ...
-          &:has(+ .slick-active + .slick-active) {
-            .card {
-              margin-left: 0;
-              margin-right: var(--appname-carousel-item-gap);
+    
+      .slick-track {
+        /**
+        * Styling the 3 active items .......
+        * ----------------------------------
+        */
+        @media (min-width: 1400px) { 
+          --appname-carousel-item-gap: 70px!important;
+        }
+    
+        @media (min-width: 1200px) {
+          --appname-carousel-item-gap: 25px;
+    
+          .slick-active {
+            // 1st element ...
+            &:has(+ .slick-active + .slick-active) {
+              .card {
+                margin-left: 0;
+                margin-right: var(--appname-carousel-item-gap);
+              }
             }
-          }
-          // 2nd element ...
-          &:has(+ .slick-active),
-          &.slick-current + .slick-active {
-            .card {
-              margin-left: calc(var(--appname-carousel-item-gap) / 2);
-              margin-right: calc(var(--appname-carousel-item-gap) / 2);
+            // 2nd element ...
+            &:has(+ .slick-active),
+            &.slick-current + .slick-active {
+              .card {
+                margin-left: calc(var(--appname-carousel-item-gap) / 2);
+                margin-right: calc(var(--appname-carousel-item-gap) / 2);
+              }
             }
-          }
-          // 3rd element ...
-          &.slick-current + .slick-active + .slick-active,
-          &:last-of-type.slick-current {
-            .card {
-              margin-left: var(--appname-carousel-item-gap);
+            // 3rd element ...
+            &.slick-current + .slick-active + .slick-active,
+            &:last-of-type.slick-current {
+              .card {
+                margin-left: var(--appname-carousel-item-gap);
+              }
             }
           }
         }
-      }
-  
-      /**
-       * Styling the 2 active items .......
-       * ----------------------------------
-      */
-      @media (min-width: 768px) and (max-width: (1200px - 1)) {
-        --appname-carousel-item-gap: 20px;
-  
-        .slick-active {
-          // 1st element ...
-          &:has(+ .slick-active) {
-            .card {
-              margin-right: var(--appname-carousel-item-gap);
+    
+        /**
+        * Styling the 2 active items .......
+        * ----------------------------------
+        */
+        @media (min-width: 768px) and (max-width: (1200px - 1)) {
+          --appname-carousel-item-gap: 20px;
+    
+          .slick-active {
+            // 1st element ...
+            &:has(+ .slick-active) {
+              .card {
+                margin-right: var(--appname-carousel-item-gap);
+              }
             }
-          }
-          // 2nd element ...
-          &.slick-current + .slick-active,
-          &:last-of-type.slick-current {
-            .card {
-              margin-left: var(--appname-carousel-item-gap);
+            // 2nd element ...
+            &.slick-current + .slick-active,
+            &:last-of-type.slick-current {
+              .card {
+                margin-left: var(--appname-carousel-item-gap);
+              }
             }
           }
         }
