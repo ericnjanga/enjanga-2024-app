@@ -4,7 +4,7 @@ import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
 
-const ProjectThumb = ({ id, title, blurb, description, className, image }: ProjectProps) => {
+const ProjectThumb = ({ id, title, description, className, image }: ProjectProps) => {
   const context = useContext(ModalContext); 
 
   if (!context) {
@@ -23,13 +23,14 @@ const ProjectThumb = ({ id, title, blurb, description, className, image }: Proje
           dataType: "projects",
           content: { title, description },
           dataId: id,
+          size: ''
         });
       }}
     >
       <img className="img-fluid" src={image?.url} alt={image?.description} />
       <div className="card-body">
         <h3 className="ProjectThumb-title">{title}</h3>
-        <p className="ProjectThumb-description mb-0">{blurb}</p>
+        {/* <p className="ProjectThumb-description mb-0">{blurb}</p> */}
       </div>
     </div>
   );

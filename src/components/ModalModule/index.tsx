@@ -17,7 +17,7 @@ import { ContactFormRef } from "../../models";
 import Icon from "../Icons/icons";
 import { mockContactForm } from "../../models/mockupData";
 import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
-import { ExpertiseSpecificationProps, ProjectProps } from "../../models";
+import { OpenModalProps, ModalDataProps } from "../../models";
 import { getCurrentLanguage } from "../LanguageModule/utils";
 
 import { renderContentfulNode } from "../../libs/utils";
@@ -34,7 +34,7 @@ import type { Node } from '@contentful/rich-text-types';
  */
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalData, setModalContent] = useState<ExpertiseSpecificationProps | ProjectProps /*| PageSectionProps*/ | null>(null);
+  const [modalData, setModalContent] = useState<ModalDataProps>(null);
   const [childComponent, setChildComponent] = useState('');
   const { formSubmit } = useThirdPartyFormSubmission();
 
@@ -42,12 +42,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   function openModal({ // Function to open the modal
     dataType,
     dataId,
-    content
-  }: {
-    dataType: string;
-    dataId?: string;
-    content?: ExpertiseSpecificationProps | ProjectProps
-  }) {
+    content,
+    size = 'medium'
+  }: OpenModalProps) {
     // Determining which child component should be rendered
     if (dataType === 'pageSections' && dataId === '7') {
       setChildComponent('contact');
@@ -55,7 +52,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 
     // ...
     if ((dataType === 'expertiseSpecs' || dataType === 'projects') && content) {
-      setModalContent(content);
+      setModalContent({ content, size });
     }
 
     /**
@@ -121,12 +118,15 @@ const Modal = () => {
 
   // Otherwise, destructure the context
   const { isOpen, childComponent, closeModal, modalData } = context;
+  const modalSize = modalData?.size;
+
+  console.log('....modal daTA = ', modalData)
 
   return (
     <>
       {isOpen && (
         <section className="appname-modal modal-wrapper" tabIndex={-1}>
-          <div className="modal-content"> 
+          <div className={`modal-content modal-${modalSize}`}> 
             <button className="modal-btn-close" onClick={closeModal}>
               <Icon
                 name='close'
@@ -134,7 +134,7 @@ const Modal = () => {
               />
             </button>
             <header className="modal-header"> 
-              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData?.title}</Heading>
+              <Heading h='3' className={!modalData ? 'placeholder heading' : 'modal-header-heading'}>{modalData?.content?.title}</Heading>
             </header>
 
             <main className="modal-body">
@@ -142,7 +142,7 @@ const Modal = () => {
                 (<Preloader />) :
                 (
                   <div className="pageSection-intro-text">
-                    {modalData.description?.json?.content?.map((node: Node, index: number) =>
+                    {modalData.content?.description?.json?.content?.map((node: Node, index: number) =>
                       renderContentfulNode(node, `node-${index}`)
                     )}
                   </div>

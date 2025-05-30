@@ -3,13 +3,13 @@ import { Server } from "miragejs";
 import { ReactNode } from "react";
 import { FieldInputProps, FieldMetaProps } from "formik";
 import { mockContactForm } from "./mockupData";
-
+import type { Node } from '@contentful/rich-text-types';
 
 /**
- * This typing allows MirageJS' schema to recognize the cars model in Mirage instance, 
+ * This typing allows MirageJS' schema to recognize the cars model in Mirage instance,
  * enabling TypeScript to provide autocompletion and error-checking.
  */
-export type AppSchema = { 
+export type AppSchema = {
   // Correct models typing
   PageSection: Model;
   Hero: Model;
@@ -21,168 +21,162 @@ export type AppSchema = {
 export type AppRegistry = Registry<AppSchema, {}>;
 export type AppServer = Server<AppRegistry>;
 
-
 /**
  * Car properties: Enabling TypeScript to provide autocompletion and error-checking.
  */
 export type PageSectionProps = {
-  id?: string
+  id?: string;
   title: {
-    en: string
-    fr: string
-  }
+    en: string;
+    fr: string;
+  };
   description: {
-    en: string
-    fr: string
-  }
-}; 
- 
+    en: string;
+    fr: string;
+  };
+};
+
+export type ContentfulRichTextProps = {
+  json: {
+    content: Node[]
+  };
+};
+
 export type ExpertiseSpecificationProps = {
-  id: string
-  parentId: string
-  className?: string
-  title: string
-  blurb: string
-  description?: {
-    json: {
-      content: [
-        {
-          content: [
-            {
-              value: string
-            }
-          ]
-        }
-      ]
-    }
-  }
+  id: string;
+  parentId: string;
+  className?: string;
+  title: string;
+  blurb: string;
+  description?: ContentfulRichTextProps;
 };
 
 export type ProjectProps = {
-  id?: string
+  id?: string;
   image?: {
-    url: string
-    title: string
-    description: string
-  }
-  className?: string
-  title: string
-  blurb: string
-  description: {
-    json: {
-      content: [
-        {
-          content: [
-            {
-              value: string
-            }
-          ]
-        }
-      ]
-    }
-  }
+    url: string;
+    title: string;
+    description: string;
+  };
+  className?: string;
+  title: string;
+  blurb: string;
+  description?: ContentfulRichTextProps;
 };
 
-export type NavRoutes = '/welcome' | '/scope-of-expertise' | '/some-work' | '/about';
+export type NavRoutes =
+  | "/welcome"
+  | "/scope-of-expertise"
+  | "/some-work"
+  | "/about";
 
 export type NavOptionProps = {
-  id: string
-  route: NavRoutes 
+  id: string;
+  route: NavRoutes;
   name: {
-    en: string
-    fr: string
-  }
+    en: string;
+    fr: string;
+  };
   description: {
-    en: string
-    fr: string
-  }
+    en: string;
+    fr: string;
+  };
 };
 
 export type ExpertiseSpecProps = {
-  id: string
-  parentId: string
+  id: string;
+  parentId: string;
   blurb: {
-    en: string
-    fr: string
-  }
+    en: string;
+    fr: string;
+  };
   title: {
-    en: string
-    fr: string
-  }
+    en: string;
+    fr: string;
+  };
   description: {
-    en: string
-    fr: string
-  }
+    en: string;
+    fr: string;
+  };
 };
 
 export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'transparent';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "transparent";
+  size?: "sm" | "md" | "lg";
   label?: string;
-  neonVersion?: boolean
-  children: ReactNode
-  href?: string
-  target?: string
-  ariaLabel?: string
-  onClickHandler?: () => void
-  icon?: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat'
-};
-
-export interface LanguageProps {
-  
+  neonVersion?: boolean;
+  children: ReactNode;
+  href?: string;
+  target?: string;
+  ariaLabel?: string;
+  onClickHandler?: () => void;
+  icon?: "cube" | "hand" | "spinner" | "arrow down" | "chat";
 }
 
+export interface LanguageProps {}
+
+export type ModalSizeProps = "small" | "medium" | "large";
+export type OpenModalProps = {
+  dataType: string;
+  dataId?: string;
+  content: {
+    title: string;
+    description: ContentfulRichTextProps | string;
+  };
+  size?: ModalSizeProps;
+};
+export type ModalDataProps = {
+  content: {
+    title: string; 
+    description: ContentfulRichTextProps | string;
+  }
+  size: ModalSizeProps;
+} | null;
 
 export type ModalContextProps = {
-  isOpen: boolean               // Is the modal window open?
-  childComponent: string          // Type of information being rendered: "data" or "another component"?
-  modalData: ExpertiseSpecificationProps | ProjectProps /*| PageSectionProps*/ | null             // Data rendered by the modal
-  openModal: ({ 
-    dataType, 
-    content,
-    dataId 
-  } : { 
-      dataType: string, 
-      content: {
-        title: string,
-        description: { json: { content: [{ content: [{ value: string; }]; }]; }; } | { json: { content: [{ content: [{ value: string; }]; }]; }; } | undefined
-      }
-      dataId?: string 
-  })                   => void     // Responsible for opening the modal
-  closeModal:       () => void        // Responsible for losing the modal
-  submitModalForm:  (data: typeof mockContactForm.initValues) => void
+  isOpen: boolean; // Is the modal window open?
+  childComponent: string; // Type of information being rendered: "data" or "another component"?
+  // Data rendered by the modal
+  modalData: ModalDataProps;
+  openModal: ({ dataType, content, dataId, size }: OpenModalProps) => void; // Responsible for opening the modal
+  closeModal: () => void; // Responsible for losing the modal
+  submitModalForm: (data: typeof mockContactForm.initValues) => void;
 };
 
-export interface InputFieldProps extends FieldInputProps<string> { 
-  meta: FieldMetaProps<string> // Meta props from Formik for validation state
-  type?: string
-  className: string
-  description?: string
-  elementType?: "input" | "textarea" | "select" // Render as input, textarea, or select
+export interface InputFieldProps extends FieldInputProps<string> {
+  meta: FieldMetaProps<string>; // Meta props from Formik for validation state
+  type?: string;
+  className: string;
+  description?: string;
+  elementType?: "input" | "textarea" | "select"; // Render as input, textarea, or select
   options?: { value: string; label: string }[]; // Options for select inputs
-};
-
+}
 
 export interface ContactFormRef {
   submitForm: () => void;
 }
 
-
-export type IconProps = { 
-  size?: 'small' | 'medium' | 'large', 
-  className: string,
-  name: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat' | 'close' | 'slider-arrow-left' | 'slider-arrow-right' | 'arrow-outward',
+export type IconProps = {
+  size?: "small" | "medium" | "large";
+  className: string;
+  name:
+    | "cube"
+    | "hand"
+    | "spinner"
+    | "arrow down"
+    | "chat"
+    | "close"
+    | "slider-arrow-left"
+    | "slider-arrow-right"
+    | "arrow-outward";
 };
 
-
-export type HeadingProps = { 
-  h: '1' | '2' | '3' | '4' | '5' | '6', 
-  iconName?: 'cube' | 'hand' | 'spinner' | 'arrow down' | 'chat',
-  className?: string,
-  children: ReactNode 
+export type HeadingProps = {
+  h: "1" | "2" | "3" | "4" | "5" | "6";
+  iconName?: "cube" | "hand" | "spinner" | "arrow down" | "chat";
+  className?: string;
+  children: ReactNode;
 };
-
-
 
 export interface SliderConfig {
   dots?: boolean;
@@ -202,17 +196,17 @@ export interface SliderConfig {
 }
 export interface PanelGridListProps {
   idsList: string[]; // An array of ids
-} 
+}
 
-// ... 
+// ...
 export type ExpertiseSpecData = {
   en: ExpertiseSpecificationProps;
   fr: ExpertiseSpecificationProps;
-}; 
+};
 export type ProjectData = {
   en: ProjectProps;
   fr: ProjectProps;
-}; 
+};
 
 export interface CharacterCounterProps {
   value: string;
