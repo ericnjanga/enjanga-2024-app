@@ -41,6 +41,28 @@ export const renderContentfulNode = (node: Node, key: string): JSX.Element | nul
       );
     }
 
+    case BLOCKS.UL_LIST: {
+      const list = node as Block;
+      return (
+        <ul key={key}>
+          {list.content.map((child, i) =>
+            renderContentfulNode(child, `${key}-ul-${i}`)
+          )}
+        </ul>
+      );
+    }
+
+    case BLOCKS.LIST_ITEM: {
+      const listItem = node as Block;
+      return (
+        <li key={key}>
+          {listItem.content.map((child, i) =>
+            renderContentfulNode(child, `${key}-li-${i}`)
+          )}
+        </li>
+      );
+    }
+
     case 'text': {
       const textNode = node as Text;
       let textElement: React.ReactNode = textNode.value;
