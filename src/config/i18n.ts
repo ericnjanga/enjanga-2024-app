@@ -37,6 +37,7 @@ const resources = {
       Details280Maxchars: "The 280 characters limit has been reached",
 
       ErrorLoadingPosts: 'Error loading blog posts.',
+      ErrorLoadingDataHelper: 'Error loading data helpers.',
     },
   },
   fr: {
@@ -73,6 +74,7 @@ const resources = {
       Details280Maxchars: "La limite de 280 caractères a été atteinte",
 
       ErrorLoadingPosts: 'Erreur lors du chargement des articles de blog.',
+      ErrorLoadingDataHelper: '(fr) Error loading data helpers.',
     },
   },
 };

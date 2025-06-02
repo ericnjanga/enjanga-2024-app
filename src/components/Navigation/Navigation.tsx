@@ -1,20 +1,23 @@
 import "./Navigation.scss";
 import { useCallback } from "react";
 import { useContentful } from "../../hooks/useContentful";
-import { ModalContext, LanguageContext } from "../../utils/contexts";
+import {
+  ModalContext,
+  LanguageContext,
+  DataHelperContext,
+} from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "../LanguageModule/LanguageToggle/LanguageToggle";
 import { useNavigate } from "react-router-dom";
-import { 
+import {
   LogoAndBrand,
   ContactButton,
   queryData,
   queryKeyData,
   NavigationListOfItems,
 } from "./Navigation.shared";
-
 
 /**
  *
@@ -24,10 +27,9 @@ const Navigation = () => {
   // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
 
-  // Getting the currently active locale...
+  // Getting the currently active locale, data helper, and modal context ...
   const activeLang = useContext(LanguageContext);
-
-  // For getting modal-based fucnctionality
+  const dataHelper = useContext(DataHelperContext);
   const modalContext = useContext(ModalContext);
 
   // Processing route nativation
@@ -43,10 +45,10 @@ const Navigation = () => {
     [navigate]
   );
 
-  /** 
-   * Fetching ContentFul data in all languages, and handling errors and loading time 
+  /**
+   * Fetching ContentFul data in all languages, and handling errors and loading time
    * ----------------------
-  */
+   */
   const { data, isLoading, error } = useContentful({
     query: queryData,
     variables: { locale1: "en-CA", locale2: "fr" },
@@ -59,10 +61,10 @@ const Navigation = () => {
   }
   // Display an error messaye if there was problem fetching data
   if (error) return <p>{t("ErrorLoadingPosts")}</p>;
-  /** 
-   * Fetching ContentFul data in all languages, and handling errors and loading time 
+  /**
+   * Fetching ContentFul data in all languages, and handling errors and loading time
    * ----------------------
-  */
+   */
 
   // Otherwise, destructure the context
   const { openModal } = modalContext;
@@ -96,14 +98,21 @@ const Navigation = () => {
 
           <LanguageToggle className="mx-auto" />
 
-          <ContactButton
-            onClick={() => {
-              openModal({
-                dataType: "pageSections",
-                dataId: "7",
-              });
-            }}
-          />
+          {/** Only render contact button if the data helper is available */}
+          {dataHelper?.contactModalDataContent && (
+            <ContactButton
+              onClick={() => {
+                openModal({
+                  dataType: "contact",
+                  content: {
+                    title: dataHelper?.contactModalDataContent?.title,
+                    description:
+                      dataHelper?.contactModalDataContent?.description,
+                  },
+                });
+              }}
+            />
+          )}
         </div>
       </div>
     </nav>

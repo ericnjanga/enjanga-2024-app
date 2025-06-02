@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ModalContextProps } from "../models";
+import { ModalContextProps, HelperDataContextProps } from "../models";
 
 
 
@@ -11,3 +11,4 @@ import { ModalContextProps } from "../models";
 export const ModalContext = createContext<ModalContextProps | null>(null);
 export const ContentContext = createContext(null); // Test ***
 export const LanguageContext = createContext<'en' | 'fr'>('en');
+export const HelperDataContext = createContext<HelperDataContextProps | null>(null);

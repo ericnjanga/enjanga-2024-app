@@ -1,5 +1,9 @@
 import "./Footer.scss";
-import { ModalContext, LanguageContext } from "../../utils/contexts";
+import {
+  ModalContext,
+  LanguageContext,
+  DataHelperContext,
+} from "../../utils/contexts";
 import { useContext } from "react";
 import Heading from "../Heading/Heading";
 import Preloader from "../Preloader/Preloader";
@@ -10,16 +14,16 @@ import { useContentful } from "../../hooks/useContentful";
 import { queryKeyData, sectionId } from "./Footer.shared";
 import { queryData } from "../../libs/queries";
 
+
 const Footer = () => {
   // For extracting localised content from "i18n.ts" file based on the currently active locale
   const { t } = useTranslation();
 
-  // Getting the currently active locale...
+  // Getting the currently active locale, data helper, and modal context ...
   const activeLang = useContext(LanguageContext);
-
-  // For getting modal-based fucnctionality
+  const dataHelper = useContext(DataHelperContext);
   const modalContext = useContext(ModalContext);
-  
+
   /**
    * Fetching ContentFul data in all languages, and handling errors and loading time
    * ----------------------
@@ -49,36 +53,41 @@ const Footer = () => {
     <footer className="Footer sc-block">
       <div className="container text-center">
         {data && activeLang && (
-            <>
-              <Heading h="2" className="Hero-title">
-                {data[activeLang]?.title}
-              </Heading>
-              <div
-                className="title"
-                dangerouslySetInnerHTML={{
-                  __html: String(
-                    data[activeLang]?.description?.json?.content[0]?.content[0]
-                      ?.value ?? ""
-                  ),
-                }}
-              />
-            </>
-          )}
-
-
-        <Button
-          variant="transparent"
-          icon="chat"
-          ariaLabel={t("contactCTAalt")}
-          onClickHandler={() => {
-            openModal({
-              dataType: "pageSections",
-              dataId: "7",
-            });
-          }}
-        >
-          {t("contactCTA")}
-        </Button>
+          <>
+            <Heading h="2" className="Hero-title">
+              {data[activeLang]?.title}
+            </Heading>
+            <div
+              className="title"
+              dangerouslySetInnerHTML={{
+                __html: String(
+                  data[activeLang]?.description?.json?.content[0]?.content[0]
+                    ?.value ?? ""
+                ),
+              }}
+            />
+          </>
+        )}
+        
+        {/** Only render contact button if the data helper is available */}
+        {dataHelper?.contactModalDataContent && (
+          <Button
+            variant="transparent"
+            icon="chat"
+            ariaLabel={t("contactCTAalt")}
+            onClickHandler={() => {
+              openModal({
+                dataType: "contact",
+                content: {
+                  title: dataHelper?.contactModalDataContent?.title,
+                  description: dataHelper?.contactModalDataContent?.description,
+                },
+              });
+            }}
+          >
+            {t("contactCTA")}
+          </Button>
+        )}
       </div>
     </footer>
   );

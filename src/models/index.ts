@@ -61,7 +61,7 @@ export type ProjectProps = {
   className?: string;
   title: string;
   blurb: string;
-  description?: ContentfulRichTextProps;
+  description: ContentfulRichTextProps;
 };
 
 export type NavRoutes =
@@ -115,23 +115,27 @@ export interface ButtonProps {
 
 export interface LanguageProps {}
 
+export type dataDescriptionProps = ContentfulRichTextProps; // | string;
+export type dataContentProps = {
+    title: string;
+    description: dataDescriptionProps;
+  };
+
 export type ModalSizeProps = "small" | "medium" | "large";
 export type OpenModalProps = {
   dataType: string;
   dataId?: string;
-  content: {
-    title: string;
-    description: ContentfulRichTextProps | string;
-  };
+  content: dataContentProps;
   size?: ModalSizeProps;
 };
 export type ModalDataProps = {
-  content: {
-    title: string; 
-    description: ContentfulRichTextProps | string;
-  }
+  content: dataContentProps;
   size: ModalSizeProps;
 } | null;
+
+export type HelperDataContextProps = {
+  contactModalDataContent: dataContentProps
+};
 
 export type ModalContextProps = {
   isOpen: boolean; // Is the modal window open?
