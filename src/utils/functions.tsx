@@ -77,10 +77,6 @@ export const PortfolioList = ({ list }:{ list: ProjectData[]}) => {
   // Getting the currently active locale...
   const activeLang = useContext(LanguageContext);
 
-  console.log('******** list = ', list);
-
-  // const sortedList = list?.slice().sort((a, b) => b.id.localeCompare(a.id));
-
   return (
     <>
       {list && activeLang && list.map((project, index) => { 

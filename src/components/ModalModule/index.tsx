@@ -18,7 +18,6 @@ import Icon from "../Icons/icons";
 import { mockContactForm } from "../../models/mockupData";
 import { useThirdPartyFormSubmission } from "../../hooks/useAPI";
 import { OpenModalProps, ModalDataProps } from "../../models";
-import { getCurrentLanguage } from "../LanguageModule/utils";
 
 import { renderContentfulNode } from "../../libs/utils";
 import type { Node } from '@contentful/rich-text-types';
@@ -41,18 +40,16 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   // [Core LOGIC] ...
   function openModal({ // Function to open the modal
     dataType,
-    dataId,
     content,
     size = 'medium'
   }: OpenModalProps) {
-    // Determining which child component should be rendered
-    if (dataType === 'pageSections' && dataId === '7') {
-      setChildComponent('contact');
-    }
 
-    // ...
-    if ((dataType === 'expertiseSpecs' || dataType === 'projects') && content) {
-      setModalContent({ content, size });
+    // Save modal props (these props will be used on opening) ...
+    setModalContent({ content, size });
+
+    // Determining which child component should be rendered
+    if (dataType === 'contact') {
+      setChildComponent('contact');
     }
 
     /**
@@ -103,7 +100,6 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 const Modal = () => {
   const context = useContext(ModalContext);
   const formRef = useRef<ContactFormRef>(null);
-  const currentLang = getCurrentLanguage();
 
   if (!context) {
     // return if the context is empty
@@ -119,8 +115,6 @@ const Modal = () => {
   // Otherwise, destructure the context
   const { isOpen, childComponent, closeModal, modalData } = context;
   const modalSize = modalData?.size;
-
-  console.log('....modal daTA = ', modalData)
 
   return (
     <>

@@ -4,7 +4,7 @@ import { ModalContext } from "../../utils/contexts";
 import { useContext } from "react";
 import Preloader from "../Preloader/Preloader"; 
 
-const ProjectThumb = ({ id, title, description, className, image }: ProjectProps) => {
+const ProjectThumb = ({ title, description, className, image }: ProjectProps) => {
   const context = useContext(ModalContext); 
 
   if (!context) {
@@ -22,8 +22,7 @@ const ProjectThumb = ({ id, title, description, className, image }: ProjectProps
         openModal({
           dataType: "projects",
           content: { title, description },
-          dataId: id,
-          size: ''
+          size: 'large'
         });
       }}
     >

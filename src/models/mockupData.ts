@@ -228,8 +228,7 @@ export const mockContactForm = {
 //     dataType, 
 //     dataId 
 //   } : {  
-//       dataType: string, 
-//       dataId: string 
+//       dataType: string,
 //   }) => {
 //     console.log(`Modal opened with dataType ${dataType} | dataId ${dataId} | .`);
 //   },

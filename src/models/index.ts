@@ -124,7 +124,6 @@ export type dataContentProps = {
 export type ModalSizeProps = "small" | "medium" | "large";
 export type OpenModalProps = {
   dataType: string;
-  dataId?: string;
   content: dataContentProps;
   size?: ModalSizeProps;
 };
@@ -133,7 +132,7 @@ export type ModalDataProps = {
   size: ModalSizeProps;
 } | null;
 
-export type HelperDataContextProps = {
+export type DataHelperContextProps = {
   contactModalDataContent: dataContentProps
 };
 
@@ -142,7 +141,7 @@ export type ModalContextProps = {
   childComponent: string; // Type of information being rendered: "data" or "another component"?
   // Data rendered by the modal
   modalData: ModalDataProps;
-  openModal: ({ dataType, content, dataId, size }: OpenModalProps) => void; // Responsible for opening the modal
+  openModal: ({ dataType, content, size }: OpenModalProps) => void; // Responsible for opening the modal
   closeModal: () => void; // Responsible for losing the modal
   submitModalForm: (data: typeof mockContactForm.initValues) => void;
 };
