@@ -8,31 +8,7 @@ import { mockContactForm } from "../models/mockupData";
 import { getCurrentLanguage } from "../components/LanguageModule/utils";
 
 
-
-
-
-
-
-/**
- * TODO:
- * MUST BE DELETED AFTER FULL CONTENTFULL INTEGRATION 
- */
-// Returns a database record of type "PageSectionProps"
-export const usePageSection = (id: string): PageSectionProps | null => {
-  const [pageSection, setPageSection] = useState(null); 
-
-  useEffect(() => {  
-    fetchData('pageSections', id).then(response => setPageSection(response));
-  }, [id]);
-  return pageSection;
-}; 
-/**
- * TODO:
- * MUST BE DELETED AFTER FULL CONTENTFULL INTEGRATION 
- */
-
-
-
+ 
 
 
 
@@ -284,3 +260,17 @@ export const useCardDetails = (): HeroProps | null => {
 
 
  
+
+
+
+
+ 
+// Returns a database record of type "PageSectionProps"
+// export const usePageSection = (id: string): PageSectionProps | null => {
+//   const [pageSection, setPageSection] = useState(null); 
+
+//   useEffect(() => {  
+//     fetchData('pageSections', id).then(response => setPageSection(response));
+//   }, [id]);
+//   return pageSection;
+// }; 
