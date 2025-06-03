@@ -107,6 +107,8 @@ const Modal = () => {
   const { isOpen, childComponent, closeModal, modalData } = context;
   const modalSize = modalData?.size;
 
+  console.log('****', modalData)
+
   return (
     <>
       {isOpen && (

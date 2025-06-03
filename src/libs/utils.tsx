@@ -1,9 +1,11 @@
 import {
   BLOCKS,
+  INLINES,
   MARKS,
   Text,
   Node,
   Block,
+  Inline,
 } from '@contentful/rich-text-types';
 
 export const renderContentfulNode = (node: Node, key: string): JSX.Element | null => {
@@ -41,6 +43,17 @@ export const renderContentfulNode = (node: Node, key: string): JSX.Element | nul
       );
     }
 
+    case BLOCKS.HEADING_3: {
+      const heading = node as Block;
+      return (
+        <h3 key={key}>
+          {heading.content.map((child, i) =>
+            renderContentfulNode(child, `${key}-h3-${i}`)
+          )}
+        </h3>
+      );
+    }
+
     case BLOCKS.UL_LIST: {
       const list = node as Block;
       return (
@@ -60,6 +73,18 @@ export const renderContentfulNode = (node: Node, key: string): JSX.Element | nul
             renderContentfulNode(child, `${key}-li-${i}`)
           )}
         </li>
+      );
+    }
+
+    case INLINES.HYPERLINK: {
+      const link = node as Inline;
+      const uri = link.data.uri;
+      return (
+        <a key={key} href={uri} target="_blank" rel="noopener noreferrer">
+          {link.content.map((child, i) =>
+            renderContentfulNode(child, `${key}-link-${i}`)
+          )}
+        </a>
       );
     }
 
