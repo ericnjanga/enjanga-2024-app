@@ -4,10 +4,10 @@
 
 
 :root {
-    --appname-modal-space-gap: 1.25rem;
-    --appname-modal-heading-margtop: 1.875rem; // 30px
-    --appname-modal-gallery-images-margtop: 1.25rem;
-    --appname-modal-gallery-grid-template: 1fr / 1fr;
+    --enjanga2025app-modal-space-gap: 1.25rem;
+    --enjanga2025app-modal-heading-margtop: 1.875rem; // 30px
+    --enjanga2025app-modal-gallery-images-margtop: 1.25rem;
+    --enjanga2025app-modal-gallery-grid-template: 1fr / 1fr;
 }
 
 
@@ -15,7 +15,7 @@
 @layer modal {
     .modal { 
         .modal-header, .modal-body, .modal-footer {
-            padding: var(--appname-modal-space-gap);
+            padding: var(--enjanga2025app-modal-space-gap);
         }
 
         .modal-body {
@@ -26,12 +26,12 @@
                 gap: 0.625rem;
             } 
             h4 {
-                margin-top: var(--appname-modal-heading-margtop);
+                margin-top: var(--enjanga2025app-modal-heading-margtop);
             }
             .gallery-images {
-                grid-template-columns: var(--appname-modal-gallery-grid-template);
+                grid-template-columns: var(--enjanga2025app-modal-gallery-grid-template);
                 grid-gap: 0.75rem;
-                margin-top: var(--appname-modal-gallery-images-margtop);
+                margin-top: var(--enjanga2025app-modal-gallery-images-margtop);
             }
  
             .list-highlights {
@@ -58,25 +58,25 @@
         // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;
-            --appname-modal-space-gap: 1.875rem 3.125rem;
-            --appname-modal-heading-margtop: 2.5rem;
-            --appname-modal-gallery-images-margtop: 1.875rem;
+            --enjanga2025app-modal-space-gap: 1.875rem 3.125rem;
+            --enjanga2025app-modal-heading-margtop: 2.5rem;
+            --enjanga2025app-modal-gallery-images-margtop: 1.875rem;
         }
         
         // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;
-            --appname-modal-space-gap: 1.875rem 2.5rem;
-            --appname-modal-heading-margtop: 2.5rem;
-            --appname-modal-gallery-images-margtop: 1.875rem;
+            --enjanga2025app-modal-space-gap: 1.875rem 2.5rem;
+            --enjanga2025app-modal-heading-margtop: 2.5rem;
+            --enjanga2025app-modal-gallery-images-margtop: 1.875rem;
         }
         
         // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;
-            --appname-modal-space-gap: 1.875rem 2.5rem;
-            --appname-modal-heading-margtop: 2.5rem;
-            --appname-modal-gallery-images-margtop: 1.875rem;
+            --enjanga2025app-modal-space-gap: 1.875rem 2.5rem;
+            --enjanga2025app-modal-heading-margtop: 2.5rem;
+            --enjanga2025app-modal-gallery-images-margtop: 1.875rem;
         }
 
         // Medium Medium screen ...

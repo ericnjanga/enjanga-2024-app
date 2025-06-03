@@ -1,5 +1,5 @@
 :root {
-  --appname-carrousel-controls-btn-text-display: none;
+  --enjanga2025app-carrousel-controls-btn-text-display: none;
 }
 
 .carrousel-controls {
@@ -26,7 +26,7 @@
     }
 
     span {
-      display: var(--appname-carrousel-controls-btn-text-display);
+      display: var(--enjanga2025app-carrousel-controls-btn-text-display);
     }
   }
 
@@ -48,13 +48,13 @@
     }
 
     &:hover {
-      background-color: var(--appname-theme-light-aaaa-3x); 
-      border-color: var(--appname-theme-light-aaaa-2);
+      background-color: var(--enjanga2025app-theme-light-aaaa-3x); 
+      border-color: var(--enjanga2025app-theme-light-aaaa-2);
     }
     &:active {
-      color: var(--appname-theme-light-xxxx-0); 
-      background-color: var(--appname-theme-light-eee-1);
-      border-color: var(--appname-theme-light-eee-1);
+      color: var(--enjanga2025app-theme-light-xxxx-0); 
+      background-color: var(--enjanga2025app-theme-light-eee-1);
+      border-color: var(--enjanga2025app-theme-light-eee-1);
     }
   }
 }

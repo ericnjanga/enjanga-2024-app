@@ -1,20 +1,20 @@
 :root {
-    --appname-banner-feature-padd: 20px;
-    --appname-banner-feature-img-height: 300px;
-    --appname-banner-feature-img-width: 100%;
-    --appname-banner-feature-img-obj-orientation: top;
-    --appname-banner-feature-display: block;
-    --appname-banner-feature-flex-dir: row;
+    --enjanga2025app-banner-feature-padd: 20px;
+    --enjanga2025app-banner-feature-img-height: 300px;
+    --enjanga2025app-banner-feature-img-width: 100%;
+    --enjanga2025app-banner-feature-img-obj-orientation: top;
+    --enjanga2025app-banner-feature-display: block;
+    --enjanga2025app-banner-feature-flex-dir: row;
 
-    --appname-banner-shine-display: flex;
-    --appname-banner-shine-gap: 35px;
-    --appname-banner-shine-direction: column;
-    --appname-banner-shine-aligitms: unset;
-    --appname-banner-shine-msg-marg: 0;
-    --appname-banner-shine-msg-txtalign: left;
-    --appname-banner-shine-box-1-title-mrg: 0 0 20px 0;
+    --enjanga2025app-banner-shine-display: flex;
+    --enjanga2025app-banner-shine-gap: 35px;
+    --enjanga2025app-banner-shine-direction: column;
+    --enjanga2025app-banner-shine-aligitms: unset;
+    --enjanga2025app-banner-shine-msg-marg: 0;
+    --enjanga2025app-banner-shine-msg-txtalign: left;
+    --enjanga2025app-banner-shine-box-1-title-mrg: 0 0 20px 0;
 
-    --appname-banner-shine-cta-mrg: 20px 0 0 0;
+    --enjanga2025app-banner-shine-cta-mrg: 20px 0 0 0;
 }
 
 
@@ -47,7 +47,7 @@
     .banner-shine, .banner-feature {
         p, ul {
             &+ .btn {
-                margin: var(--appname-banner-shine-cta-mrg); 
+                margin: var(--enjanga2025app-banner-shine-cta-mrg); 
             }
         }
     }
@@ -55,21 +55,21 @@
     @layer banner-shine {
         .banner-shine { 
             .container {
-                display: var(--appname-banner-shine-display);
-                gap: var(--appname-banner-shine-gap);
-                flex-direction: var(--appname-banner-shine-direction);
-                align-items: var(--appname-banner-shine-aligitms);
+                display: var(--enjanga2025app-banner-shine-display);
+                gap: var(--enjanga2025app-banner-shine-gap);
+                flex-direction: var(--enjanga2025app-banner-shine-direction);
+                align-items: var(--enjanga2025app-banner-shine-aligitms);
             }
 
             // ...
             .btn-secondary {
                 background-color: transparent;
-                border-color: var(--appname-clr-fff);
+                border-color: var(--enjanga2025app-clr-fff);
 
                 &:hover {
-                    color: var(--appname-clr-dark-col3-f8f);
-                    background-color: var(--appname-clr-col3-ff7);
-                    border-color: var(--appname-clr-col1-300);
+                    color: var(--enjanga2025app-clr-dark-col3-f8f);
+                    background-color: var(--enjanga2025app-clr-col3-ff7);
+                    border-color: var(--enjanga2025app-clr-col1-300);
                 }
             }
 
@@ -77,7 +77,7 @@
                 flex: 1;
 
                 h2 {
-                    margin: var(--appname-banner-shine-box-1-title-mrg);
+                    margin: var(--enjanga2025app-banner-shine-box-1-title-mrg);
                 }
             }
             &__box-2 {
@@ -89,45 +89,45 @@
             // Extra Large screen ...
             @media (min-width: 1400px) {
                 // border: 10px solid purple;
-                --appname-banner-shine-msg-marg: 0 auto;
-                --appname-banner-shine-msg-txtalign: center;
-                --appname-banner-shine-direction: row;
-                --appname-banner-shine-aligitms: center;
-                --appname-banner-shine-gap: 50px;
-                --appname-banner-shine-box-1-title-mrg: 0 0 45px 0;
-                --appname-banner-shine-cta-mrg: 40px 0 0 0;
+                --enjanga2025app-banner-shine-msg-marg: 0 auto;
+                --enjanga2025app-banner-shine-msg-txtalign: center;
+                --enjanga2025app-banner-shine-direction: row;
+                --enjanga2025app-banner-shine-aligitms: center;
+                --enjanga2025app-banner-shine-gap: 50px;
+                --enjanga2025app-banner-shine-box-1-title-mrg: 0 0 45px 0;
+                --enjanga2025app-banner-shine-cta-mrg: 40px 0 0 0;
             }
             
             // Large screen ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 10px solid violet;
-                --appname-banner-shine-msg-marg: 0 auto;
-                --appname-banner-shine-msg-txtalign: center;
-                --appname-banner-shine-direction: row;
-                --appname-banner-shine-aligitms: center;
-                --appname-banner-shine-gap: 50px;
-                --appname-banner-shine-box-1-title-mrg: 0 0 35px 0;
-                --appname-banner-shine-cta-mrg: 40px 0 0 0;
+                --enjanga2025app-banner-shine-msg-marg: 0 auto;
+                --enjanga2025app-banner-shine-msg-txtalign: center;
+                --enjanga2025app-banner-shine-direction: row;
+                --enjanga2025app-banner-shine-aligitms: center;
+                --enjanga2025app-banner-shine-gap: 50px;
+                --enjanga2025app-banner-shine-box-1-title-mrg: 0 0 35px 0;
+                --enjanga2025app-banner-shine-cta-mrg: 40px 0 0 0;
             }
             
             // Large Medium screen ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 10px solid lime;
-                --appname-banner-shine-msg-marg: 0 auto;
-                --appname-banner-shine-msg-txtalign: center;
-                --appname-banner-shine-direction: row;
-                --appname-banner-shine-aligitms: center;
-                --appname-banner-shine-gap: 50px;
-                --appname-banner-shine-box-1-title-mrg: 0 0 30px 0;
-                --appname-banner-shine-cta-mrg: 35px 0 0 0;
+                --enjanga2025app-banner-shine-msg-marg: 0 auto;
+                --enjanga2025app-banner-shine-msg-txtalign: center;
+                --enjanga2025app-banner-shine-direction: row;
+                --enjanga2025app-banner-shine-aligitms: center;
+                --enjanga2025app-banner-shine-gap: 50px;
+                --enjanga2025app-banner-shine-box-1-title-mrg: 0 0 30px 0;
+                --enjanga2025app-banner-shine-cta-mrg: 35px 0 0 0;
             }
 
             // Medium Medium screen ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 10px solid blue;
-                --appname-banner-shine-msg-marg: 0 auto;
-                --appname-banner-shine-msg-txtalign: center;
-                --appname-banner-shine-cta-mrg: 25px 0 0 0;
+                --enjanga2025app-banner-shine-msg-marg: 0 auto;
+                --enjanga2025app-banner-shine-msg-txtalign: center;
+                --enjanga2025app-banner-shine-cta-mrg: 25px 0 0 0;
             }
             // // Small Screen ...
             // @media (min-width: 576px) and (max-width: (768px - 1)) {
@@ -140,8 +140,8 @@
         }
         .banner-shine--center-stage {
             .banner-shine__message {
-                margin: var(--appname-banner-shine-msg-marg);
-                text-align: var(--appname-banner-shine-msg-txtalign);
+                margin: var(--enjanga2025app-banner-shine-msg-marg);
+                text-align: var(--enjanga2025app-banner-shine-msg-txtalign);
             }
         }
         .banner-shine--2-cols-1-full {
@@ -153,18 +153,18 @@
 
     @layer banner-feature {
         .banner-feature {
-            display: var(--appname-banner-feature-display);
-            flex-direction: var(--appname-banner-feature-flex-dir);
+            display: var(--enjanga2025app-banner-feature-display);
+            flex-direction: var(--enjanga2025app-banner-feature-flex-dir);
 
             &--text {
                 flex: 1;
-                padding: var(--appname-banner-feature-padd);
+                padding: var(--enjanga2025app-banner-feature-padd);
             }
             &--img-deco {
                 display: block;
-                object-position: var(--appname-banner-feature-img-obj-orientation);
-                width: var(--appname-banner-feature-img-width);
-                height: var(--appname-banner-feature-img-height);
+                object-position: var(--enjanga2025app-banner-feature-img-obj-orientation);
+                width: var(--enjanga2025app-banner-feature-img-width);
+                height: var(--enjanga2025app-banner-feature-img-height);
                 background-repeat: no-repeat;
                 background-size:cover;
             }
@@ -173,41 +173,41 @@
             // Extra Large screen ...
             @media (min-width: 1400px) {
                 // border: 10px solid purple;
-                --appname-banner-feature-display: flex;
-                --appname-banner-feature-flex-dir: row-reverse;
-                --appname-banner-feature-padd: 80px;
-                --appname-banner-feature-img-height: auto;
-                --appname-banner-feature-img-width: 55%;
-                --appname-banner-feature-img-obj-orientation: left;
+                --enjanga2025app-banner-feature-display: flex;
+                --enjanga2025app-banner-feature-flex-dir: row-reverse;
+                --enjanga2025app-banner-feature-padd: 80px;
+                --enjanga2025app-banner-feature-img-height: auto;
+                --enjanga2025app-banner-feature-img-width: 55%;
+                --enjanga2025app-banner-feature-img-obj-orientation: left;
             }
             
             // Large screen ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 10px solid violet;
-                --appname-banner-feature-display: flex;
-                --appname-banner-feature-flex-dir: row-reverse;
-                --appname-banner-feature-padd: 80px;
-                --appname-banner-feature-img-height: auto;
-                --appname-banner-feature-img-width: 50%;
-                --appname-banner-feature-img-obj-orientation: left;
+                --enjanga2025app-banner-feature-display: flex;
+                --enjanga2025app-banner-feature-flex-dir: row-reverse;
+                --enjanga2025app-banner-feature-padd: 80px;
+                --enjanga2025app-banner-feature-img-height: auto;
+                --enjanga2025app-banner-feature-img-width: 50%;
+                --enjanga2025app-banner-feature-img-obj-orientation: left;
             }
             
             // Large Medium screen ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 10px solid lime;
-                --appname-banner-feature-display: flex;
-                --appname-banner-feature-flex-dir: row-reverse;
-                --appname-banner-feature-padd: 50px;
-                --appname-banner-feature-img-height: auto;
-                --appname-banner-feature-img-width: 50%;
-                --appname-banner-feature-img-obj-orientation: left;
+                --enjanga2025app-banner-feature-display: flex;
+                --enjanga2025app-banner-feature-flex-dir: row-reverse;
+                --enjanga2025app-banner-feature-padd: 50px;
+                --enjanga2025app-banner-feature-img-height: auto;
+                --enjanga2025app-banner-feature-img-width: 50%;
+                --enjanga2025app-banner-feature-img-obj-orientation: left;
             }
 
             // Medium Medium screen ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 10px solid blue;
-                --appname-banner-feature-padd: 50px;
-                --appname-banner-feature-img-height: 350px;
+                --enjanga2025app-banner-feature-padd: 50px;
+                --enjanga2025app-banner-feature-img-height: 350px;
             }
 
             // // Small Screen ...

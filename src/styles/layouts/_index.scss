@@ -1,15 +1,15 @@
 :root {
-    --appname-section-intro-card-marg: 0 0 4px 0;
-    --appname-section-intro-card-display: block;
+    --enjanga2025app-section-intro-card-marg: 0 0 4px 0;
+    --enjanga2025app-section-intro-card-display: block;
 
     // Intro card
-    --appname-section-intro-h-textalign: left;
-    --appname-section-intro-card-padd: 30px 20px 20px 20px;
+    --enjanga2025app-section-intro-h-textalign: left;
+    --enjanga2025app-section-intro-card-padd: 30px 20px 20px 20px;
 
     // Skills card
-    --appname-skills-wrapper-grid-template: 1fr / 1fr;
-    --appname-skills-card-padd: 30px 20px 20px 20px;
-    --appname-skills-card-1st-child-gridrow: unset;
+    --enjanga2025app-skills-wrapper-grid-template: 1fr / 1fr;
+    --enjanga2025app-skills-card-padd: 30px 20px 20px 20px;
+    --enjanga2025app-skills-card-1st-child-gridrow: unset;
 }
 
 @layer best-work {
@@ -21,47 +21,47 @@
 @layer section-introduction {
     .section-introduction {
         .card-group {
-            display: var(--appname-section-intro-card-display);
+            display: var(--enjanga2025app-section-intro-card-display);
 
             .card {
-                margin: var(--appname-section-intro-card-marg);
+                margin: var(--enjanga2025app-section-intro-card-marg);
 
                 .card-body {
-                    padding: var(--appname-section-intro-card-padd);
+                    padding: var(--enjanga2025app-section-intro-card-padd);
                 }
             }
 
             // Extra Large screen ...
             @media (min-width: 1400px) {
                 // border: 4px solid purple;
-                --appname-section-intro-card-display: flex;
-                --appname-section-intro-card-padd: 45px 55px 40px 55px;
+                --enjanga2025app-section-intro-card-display: flex;
+                --enjanga2025app-section-intro-card-padd: 45px 55px 40px 55px;
             }
             
             // Large screen ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 4px solid violet;
-                --appname-section-intro-card-display: flex;
-                --appname-section-intro-card-padd: 45px 45px 35px 45px;
+                --enjanga2025app-section-intro-card-display: flex;
+                --enjanga2025app-section-intro-card-padd: 45px 45px 35px 45px;
             }
             
             // Large Medium screen ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 4px solid lime;
-                --appname-section-intro-card-display: flex;
-                --appname-section-intro-card-padd: 45px 30px 30px 30px;
+                --enjanga2025app-section-intro-card-display: flex;
+                --enjanga2025app-section-intro-card-padd: 45px 30px 30px 30px;
             }
 
             // Medium Medium screen ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 4px solid blue;
-                --appname-section-intro-card-padd: 45px 30px 30px 30px;
+                --enjanga2025app-section-intro-card-padd: 45px 30px 30px 30px;
             }
 
             // Small Screen ...
             @media (min-width: 576px) and (max-width: (768px - 1)) {
                 // border: 4px solid turquoise;
-                --appname-section-intro-card-padd: 45px 30px 30px 30px;
+                --enjanga2025app-section-intro-card-padd: 45px 30px 30px 30px;
             }
 
             // Smaller Screen ...
@@ -71,31 +71,31 @@
         }
 
         &__header {
-            text-align: var(--appname-section-intro-h-textalign);
+            text-align: var(--enjanga2025app-section-intro-h-textalign);
         }
 
         // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 3px solid purple;
-            --appname-section-intro-h-textalign: center;
+            --enjanga2025app-section-intro-h-textalign: center;
         }
         
         // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 3px solid violet;
-            --appname-section-intro-h-textalign: center;
+            --enjanga2025app-section-intro-h-textalign: center;
         }
         
         // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 3px solid lime;
-            --appname-section-intro-h-textalign: center;
+            --enjanga2025app-section-intro-h-textalign: center;
         }
     
         // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 3px solid blue;
-            --appname-section-intro-h-textalign: center;
+            --enjanga2025app-section-intro-h-textalign: center;
         }
     
         // // Small Screen ...
@@ -132,53 +132,53 @@
         }
         .section-skills__wrapper {
             display: grid;
-            grid-template: var(--appname-skills-wrapper-grid-template);
+            grid-template: var(--enjanga2025app-skills-wrapper-grid-template);
             gap: 4px;
 
             .special-card { 
                 .card-body {
-                    padding: var(--appname-skills-card-padd);
+                    padding: var(--enjanga2025app-skills-card-padd);
                 }
 
                 &:first-of-type { // Occupy 2 rows
-                    grid-row: var(--appname-skills-card-1st-child-gridrow);
+                    grid-row: var(--enjanga2025app-skills-card-1st-child-gridrow);
                 }
             }
 
             // Extra Large screen ...
             @media (min-width: 1400px) {
                 // border: 4px solid purple;
-                --appname-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
-                --appname-skills-card-1st-child-gridrow: span 2;
-                --appname-skills-card-padd: 40px 40px 40px 85px;
+                --enjanga2025app-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --enjanga2025app-skills-card-1st-child-gridrow: span 2;
+                --enjanga2025app-skills-card-padd: 40px 40px 40px 85px;
             }
             
             // Large screen ...
             @media (min-width: 1200px) and (max-width: (1400px - 1)) {
                 // border: 4px solid violet;
-                --appname-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
-                --appname-skills-card-1st-child-gridrow: span 2;
-                --appname-skills-card-padd: 40px 40px 40px 65px;
+                --enjanga2025app-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --enjanga2025app-skills-card-1st-child-gridrow: span 2;
+                --enjanga2025app-skills-card-padd: 40px 40px 40px 65px;
             }
             
             // Large Medium screen ...
             @media (min-width: 992px) and (max-width: (1200px - 1)) {
                 // border: 4px solid lime;
-                --appname-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
-                --appname-skills-card-1st-child-gridrow: span 2;
-                --appname-skills-card-padd: 30px 30px 30px 55px;
+                --enjanga2025app-skills-wrapper-grid-template: 1fr 1fr / 1fr 1fr;
+                --enjanga2025app-skills-card-1st-child-gridrow: span 2;
+                --enjanga2025app-skills-card-padd: 30px 30px 30px 55px;
             }
     
             // Medium Medium screen ...
             @media (min-width: 768px) and (max-width: (992px - 1)) {
                 // border: 4px solid blue;
-                --appname-skills-card-padd: 45px 30px 30px 30px;
+                --enjanga2025app-skills-card-padd: 45px 30px 30px 30px;
             }
     
             // // Small Screen ...
             // @media (min-width: 576px) and (max-width: (768px - 1)) {
             //     border: 4px solid turquoise;
-            //     --appname-skills-card-padd: 45px 30px 30px 30px;
+            //     --enjanga2025app-skills-card-padd: 45px 30px 30px 30px;
             // }
     
             // // Smaller Screen ...

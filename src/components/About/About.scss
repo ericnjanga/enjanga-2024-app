@@ -1,45 +1,45 @@
 :root { 
-  --appname-about-description-block-display: grid;
-  --appname-about-description-block-grid: 1fr / 1fr;
-  --appname-about-description-block-gap: 10px;
+  --enjanga2025app-about-description-block-display: grid;
+  --enjanga2025app-about-description-block-grid: 1fr / 1fr;
+  --enjanga2025app-about-description-block-gap: 10px;
 
-  --appname-about-footer-textalign: left;
-  --appname-about-footer-margbot: 20px;
+  --enjanga2025app-about-footer-textalign: left;
+  --enjanga2025app-about-footer-margbot: 20px;
 }
 
 .About {
   .description-block {
-    margin-bottom: var(--appname-about-footer-margbot);
-    display: var(--appname-about-description-block-display);
-    grid: var(--appname-about-description-block-grid);
-    gap: var(--appname-about-description-block-gap);
+    margin-bottom: var(--enjanga2025app-about-footer-margbot);
+    display: var(--enjanga2025app-about-description-block-display);
+    grid: var(--enjanga2025app-about-description-block-grid);
+    gap: var(--enjanga2025app-about-description-block-gap);
   }
 
   .footer {
-    text-align: var(--appname-about-footer-textalign);
+    text-align: var(--enjanga2025app-about-footer-textalign);
   }
 
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 4px solid purple; 
-    --appname-about-description-block-grid: 1fr / 1fr 1fr 1fr;
-    --appname-about-description-block-gap: 60px;
-    --appname-about-footer-textalign: center;
+    --enjanga2025app-about-description-block-grid: 1fr / 1fr 1fr 1fr;
+    --enjanga2025app-about-description-block-gap: 60px;
+    --enjanga2025app-about-footer-textalign: center;
   }
 
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 4px solid violet; 
-    --appname-about-description-block-grid: 1fr / 1fr 1fr 1fr;
-    --appname-about-description-block-gap: 30px;
-    --appname-about-footer-textalign: center;
+    --enjanga2025app-about-description-block-grid: 1fr / 1fr 1fr 1fr;
+    --enjanga2025app-about-description-block-gap: 30px;
+    --enjanga2025app-about-footer-textalign: center;
   }
 
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 4px solid lime; 
-    --appname-about-description-block-grid: 1fr / 1fr 1fr 1fr;
-    --appname-about-footer-textalign: center;
+    --enjanga2025app-about-description-block-grid: 1fr / 1fr 1fr 1fr;
+    --enjanga2025app-about-footer-textalign: center;
   }
 
   // Medium Medium screen ...

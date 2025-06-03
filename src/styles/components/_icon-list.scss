@@ -1,6 +1,6 @@
 :root {
-    --appname-logo-icon-height: 30px;
-    --appname-logo-icon-gap: 26px;
+    --enjanga2025app-logo-icon-height: 30px;
+    --enjanga2025app-logo-icon-gap: 26px;
 }
 /**
  * Icons (bootstrap, material)
@@ -13,43 +13,43 @@
         display: flex;
         list-style: none;
         justify-content: center;
-        gap: var(--appname-logo-icon-gap);
+        gap: var(--enjanga2025app-logo-icon-gap);
         padding: 0; 
         overflow: hidden;
 
         li {
             display: none; /* Hide all list items */
             img {
-                height: var(--appname-logo-icon-height);
+                height: var(--enjanga2025app-logo-icon-height);
             }
         } 
 
         // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 4px solid purple;
-            --appname-logo-icon-height: 53px;
-            --appname-logo-icon-gap: 70px;
+            --enjanga2025app-logo-icon-height: 53px;
+            --enjanga2025app-logo-icon-gap: 70px;
         }
         
         // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 4px solid violet;
-            --appname-logo-icon-height: 53px;
-            --appname-logo-icon-gap: 70px;
+            --enjanga2025app-logo-icon-height: 53px;
+            --enjanga2025app-logo-icon-gap: 70px;
         }
         
         // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 4px solid lime;
-            --appname-logo-icon-height: 53px;
-            --appname-logo-icon-gap: 70px;
+            --enjanga2025app-logo-icon-height: 53px;
+            --enjanga2025app-logo-icon-gap: 70px;
         }
 
         // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 4px solid blue;
-            --appname-logo-icon-height: 53px;
-            --appname-logo-icon-gap: 70px;
+            --enjanga2025app-logo-icon-height: 53px;
+            --enjanga2025app-logo-icon-gap: 70px;
         }
 
         // // Small Screen ...

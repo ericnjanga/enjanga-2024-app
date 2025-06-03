@@ -1,11 +1,11 @@
 :root {
-  --appname-modal-brd-width: 7px; 
-  --appname-modal-body-padd: 2rem 2rem 1rem 2rem;
-  --appname-modal-footer-padd: 1rem 2rem;
+  --enjanga2025app-modal-brd-width: 7px; 
+  --enjanga2025app-modal-body-padd: 2rem 2rem 1rem 2rem;
+  --enjanga2025app-modal-footer-padd: 1rem 2rem;
   // Modal width sizes
-  --appname-modal-width-large: 900px;
-  --appname-modal-width-medium: 500px;
-  --appname-modal-width-small: 300px;
+  --enjanga2025app-modal-width-large: 900px;
+  --enjanga2025app-modal-width-medium: 500px;
+  --enjanga2025app-modal-width-small: 300px;
 }
 
 .appname-modal.modal-wrapper {
@@ -19,34 +19,34 @@
 
   .modal-content {
     margin: 2rem auto;
-    max-width: var(--appname-modal-width-medium);
+    max-width: var(--enjanga2025app-modal-width-medium);
     min-height: 300px;
     padding: 0;
     border-radius: 6px;
 
     // border styles ...
-    border: var(--appname-modal-brd-width) solid var(--appname-theme-light-xxxx-0); 
+    border: var(--enjanga2025app-modal-brd-width) solid var(--enjanga2025app-theme-light-xxxx-0); 
 
     // inner droshadow looking like a solid border ...
-    box-shadow: inset 0 0 0 1px var(--appname-theme-light-cccc-8);
-    background-color: var(--appname-theme-light-bbbb-8);
+    box-shadow: inset 0 0 0 1px var(--enjanga2025app-theme-light-cccc-8);
+    background-color: var(--enjanga2025app-theme-light-bbbb-8);
 
     &.modal-large {
-      max-width: var(--appname-modal-width-large);
+      max-width: var(--enjanga2025app-modal-width-large);
     }
     &.modal-small {
-      max-width: var(--appname-modal-width-small);
+      max-width: var(--enjanga2025app-modal-width-small);
     }
   }
   .modal-header {
-    padding: var(--appname-modal-body-padd);
+    padding: var(--enjanga2025app-modal-body-padd);
     
     .modal-header-heading {
       margin: 0;
     }
   }
   .modal-body {
-    padding: var(--appname-modal-body-padd);
+    padding: var(--enjanga2025app-modal-body-padd);
     padding-top: 0;
     max-height: 400px;
     overflow-y: scroll;
@@ -75,7 +75,7 @@
   .modal-footer {
     display: flex;
     gap: 10px;
-    padding: var(--appname-modal-footer-padd);
-    border-top: 1px solid var(--appname-theme-light-cccc-8); 
+    padding: var(--enjanga2025app-modal-footer-padd);
+    border-top: 1px solid var(--enjanga2025app-theme-light-cccc-8); 
   }
 }

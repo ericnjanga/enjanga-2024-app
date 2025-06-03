@@ -1,5 +1,5 @@
 :root { 
-  --appname-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
+  --enjanga2025app-carousel-card-padd: 0.938rem 1.25rem 1.25rem 1.25rem;
 }
 
 .ProjectThumb.card {
@@ -11,31 +11,31 @@
   background-color: transparent;
   border: 2px solid transparent;
 
-  border-radius: var(--appname-bdr-radius-0);
+  border-radius: var(--enjanga2025app-bdr-radius-0);
   overflow: hidden;
 
   cursor: pointer;
 
   .img-fluid {
-    background-color: var(--appname-theme-light-cccc-2);
+    background-color: var(--enjanga2025app-theme-light-cccc-2);
   }
 
   &:hover {
-    border-color: var(--appname-theme-light-aaaa-2);
-    background-color: var(--appname-theme-light-aaaa-3x);
+    border-color: var(--enjanga2025app-theme-light-aaaa-2);
+    background-color: var(--enjanga2025app-theme-light-aaaa-3x);
 
     .img-fluid {
       background-color: transparent;
     }
 
     .ProjectThumb-description {
-      color: var(--appname-theme-light-bbbb-1);
+      color: var(--enjanga2025app-theme-light-bbbb-1);
     } 
   }
 
   .card-body {
     background-color: transparent;
-    padding: var(--appname-carousel-card-padd);
+    padding: var(--enjanga2025app-carousel-card-padd);
   }
 
   .ProjectThumb-description {

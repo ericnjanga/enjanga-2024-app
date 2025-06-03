@@ -1,17 +1,17 @@
 :root {
-  --appname-PanelFrame-gap: 4px;
-  --appname-PanelFrame-column-count: 1;
-  --appname-pageSection-hero-marg-bottom: 15px;
+  --enjanga2025app-PanelFrame-gap: 4px;
+  --enjanga2025app-PanelFrame-column-count: 1;
+  --enjanga2025app-pageSection-hero-marg-bottom: 15px;
 }
 
 .PanelFrame {
   .content-grid {
-    column-count: var(--appname-PanelFrame-column-count);
-    column-gap: var(--appname-PanelFrame-gap); /* Consistent gap */
+    column-count: var(--enjanga2025app-PanelFrame-column-count);
+    column-gap: var(--enjanga2025app-PanelFrame-gap); /* Consistent gap */
 
     .PanelFrame-item {
       break-inside: avoid; /* Prevent item splitting */
-      margin-bottom: var(--appname-PanelFrame-gap); /* Gap between rows */
+      margin-bottom: var(--enjanga2025app-PanelFrame-gap); /* Gap between rows */
     }
   }
 
@@ -24,35 +24,35 @@
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 10px solid purple;
-    --appname-PanelFrame-column-count: 2;
-    --appname-pageSection-hero-marg-bottom: 45px;
+    --enjanga2025app-PanelFrame-column-count: 2;
+    --enjanga2025app-pageSection-hero-marg-bottom: 45px;
   }
 
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 10px solid violet;
-    --appname-PanelFrame-column-count: 2;
-    --appname-pageSection-hero-marg-bottom: 35px;
+    --enjanga2025app-PanelFrame-column-count: 2;
+    --enjanga2025app-pageSection-hero-marg-bottom: 35px;
   }
 
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 10px solid lime;
-    --appname-PanelFrame-column-count: 2;
-    --appname-pageSection-hero-marg-bottom: 30px;
+    --enjanga2025app-PanelFrame-column-count: 2;
+    --enjanga2025app-pageSection-hero-marg-bottom: 30px;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 10px solid blue;
-    --appname-PanelFrame-column-count: 2;
-    --appname-pageSection-hero-marg-bottom: 30px;
+    --enjanga2025app-PanelFrame-column-count: 2;
+    --enjanga2025app-pageSection-hero-marg-bottom: 30px;
   }
 
   // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
     // border: 10px solid turquoise;
-    --appname-pageSection-hero-marg-bottom: 25px;
+    --enjanga2025app-pageSection-hero-marg-bottom: 25px;
   }
 
   // Smaller Screen ...
@@ -67,8 +67,8 @@
       // ... 
       &.has-hover { 
         &:hover {
-          border-color: var(--appname-theme-light-aaaa-7);
-          background-color: var(--appname-theme-light-aaaa-3x);
+          border-color: var(--enjanga2025app-theme-light-aaaa-7);
+          background-color: var(--enjanga2025app-theme-light-aaaa-3x);
 
           .icon-hover {
             opacity: 1;
@@ -86,22 +86,22 @@
 
   &.theme-2 {
     .PanelFrame-item {
-      color: var(--appname-theme-light-xxxx-0);
-      background-color: var(--appname-theme-light-bbbb-3);
+      color: var(--enjanga2025app-theme-light-xxxx-0);
+      background-color: var(--enjanga2025app-theme-light-bbbb-3);
 
       .icon {
-        color: var(--appname-theme-light-bbbb-10);
+        color: var(--enjanga2025app-theme-light-bbbb-10);
       }
 
       .btn-link {
-        color: var(--appname-theme-light-eee-2);
+        color: var(--enjanga2025app-theme-light-eee-2);
       }
 
       // ...
       &.has-hover {
         &:hover {
-          border-color: var(--appname-theme-light-aaaa-7);
-          background-color: var(--appname-theme-light-bbbb-3a);
+          border-color: var(--enjanga2025app-theme-light-aaaa-7);
+          background-color: var(--enjanga2025app-theme-light-bbbb-3a);
         }
       }
     }
@@ -109,18 +109,18 @@
 
   &.theme-3 {
     .PanelFrame-item {
-      color: var(--appname-theme-light-xxxx-0);
-      background-color: var(--appname-theme-light-bbbb-02);
+      color: var(--enjanga2025app-theme-light-xxxx-0);
+      background-color: var(--enjanga2025app-theme-light-bbbb-02);
 
       .icon {
-        color: var(--appname-theme-light-bbbb-10);
+        color: var(--enjanga2025app-theme-light-bbbb-10);
       }
 
       // ...
       &.has-hover { 
         &:hover {
-          border-color: var(--appname-theme-light-aaaa-7);
-          background-color: var(--appname-theme-light-bbbb-3a);
+          border-color: var(--enjanga2025app-theme-light-aaaa-7);
+          background-color: var(--enjanga2025app-theme-light-bbbb-3a);
         }
       }
     }

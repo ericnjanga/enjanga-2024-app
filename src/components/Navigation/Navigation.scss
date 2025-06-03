@@ -1,11 +1,11 @@
 :root {
   //navbar-nav
-  --appname-navbar-logo-width: 135px;
-  --appname-navbar-margin: 0;
-  --appname-navbar-gap: 0;
-  --appname-navbar-padding: 8px 0;
-  --appname-navbar-navitem-sep-display: none;
-  --appname-navbar-navitem-sep-right: -12px;
+  --enjanga2025app-navbar-logo-width: 135px;
+  --enjanga2025app-navbar-margin: 0;
+  --enjanga2025app-navbar-gap: 0;
+  --enjanga2025app-navbar-padding: 8px 0;
+  --enjanga2025app-navbar-navitem-sep-display: none;
+  --enjanga2025app-navbar-navitem-sep-right: -12px;
 
   --webite-navbar-collapse-padding: 15px 0;
 }
@@ -13,14 +13,14 @@
 @layer navbar {
   .Navigation {
     &.dark {
-      background-color: var(--appname-theme-light-bbbb-0);
+      background-color: var(--enjanga2025app-theme-light-bbbb-0);
 
       .nav-link {
-        color: var(--appname-theme-light-xxxx-0);
+        color: var(--enjanga2025app-theme-light-xxxx-0);
         cursor: pointer;
 
         &:hover {
-          color: var(--appname-theme-light-aaaa-y);
+          color: var(--enjanga2025app-theme-light-aaaa-y);
         }
       }
 
@@ -28,49 +28,49 @@
         position: relative;
   
         &::after { // separator between links
-          background-color: var(--appname-theme-light-bbbb-4);
+          background-color: var(--enjanga2025app-theme-light-bbbb-4);
         }
       } 
     }
   }
   .Navigation {
-    padding: var(--appname-navbar-padding);
+    padding: var(--enjanga2025app-navbar-padding);
     // // Extra Large screen ...
     @media (min-width: 1400px) {
       // border: 3px solid purple; 
-      --appname-navbar-margin: 0 auto;
-      --appname-navbar-padding: 10px 0;
-      --appname-navbar-navitem-sep-display: block;
-      --appname-navbar-gap: 30px;
-      --appname-navbar-navitem-sep-right: -18px;
+      --enjanga2025app-navbar-margin: 0 auto;
+      --enjanga2025app-navbar-padding: 10px 0;
+      --enjanga2025app-navbar-navitem-sep-display: block;
+      --enjanga2025app-navbar-gap: 30px;
+      --enjanga2025app-navbar-navitem-sep-right: -18px;
       --webite-navbar-collapse-padding: 0;
     }
 
     // Large screen ...
     @media (min-width: 1200px) and (max-width: (1400px - 1)) {
       // border: 3px solid violet; 
-      --appname-navbar-margin: 0 auto;
-      --appname-navbar-padding: 10px 0;
-      --appname-navbar-navitem-sep-display: block;
-      --appname-navbar-gap: 30px;
-      --appname-navbar-navitem-sep-right: -18px;
+      --enjanga2025app-navbar-margin: 0 auto;
+      --enjanga2025app-navbar-padding: 10px 0;
+      --enjanga2025app-navbar-navitem-sep-display: block;
+      --enjanga2025app-navbar-gap: 30px;
+      --enjanga2025app-navbar-navitem-sep-right: -18px;
       --webite-navbar-collapse-padding: 0;
     }
 
     // Large Medium screen ...
     @media (min-width: 992px) and (max-width: (1200px - 1)) {
       // border: 3px solid lime; 
-      --appname-navbar-margin: 0 auto;
-      --appname-navbar-padding: 10px 0;
-      --appname-navbar-navitem-sep-display: block;
-      --appname-navbar-gap: 20px;
+      --enjanga2025app-navbar-margin: 0 auto;
+      --enjanga2025app-navbar-padding: 10px 0;
+      --enjanga2025app-navbar-navitem-sep-display: block;
+      --enjanga2025app-navbar-gap: 20px;
       --webite-navbar-collapse-padding: 0;
     }
 
     // Medium Medium screen ...
     @media (min-width: 768px) and (max-width: (992px - 1)) {
       // border: 3px solid blue;
-      --appname-navbar-padding: 10px 0;
+      --enjanga2025app-navbar-padding: 10px 0;
     }
 
     // // Small Screen ...
@@ -93,7 +93,7 @@
     }
 
     .navbar-nav {
-      gap: var(--appname-navbar-gap);
+      gap: var(--enjanga2025app-navbar-gap);
     }
 
     .nav-item {
@@ -101,10 +101,10 @@
 
       // separator between links
       &::after {
-        display: var(--appname-navbar-navitem-sep-display);
+        display: var(--enjanga2025app-navbar-navitem-sep-display);
         position: absolute;
         top: 30%;
-        right: var(--appname-navbar-navitem-sep-right);
+        right: var(--enjanga2025app-navbar-navitem-sep-right);
         content: "";
         width: 1px;
         height: 20px; 
@@ -124,7 +124,7 @@
       }
 
       &.active {
-        text-shadow: 0 0 7px var(--appname-clr-col1-accent-xx1);
+        text-shadow: 0 0 7px var(--enjanga2025app-clr-col1-accent-xx1);
         text-decoration: underline;
       }
 
@@ -150,7 +150,7 @@
 
     .navbar-brand {
       img {
-        width: var(--appname-navbar-logo-width);
+        width: var(--enjanga2025app-navbar-logo-width);
         height: inherit;
       }
 

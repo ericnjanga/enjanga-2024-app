@@ -1,16 +1,16 @@
 :root {
-  --appname-LanguageToggle-gap: 5px;
+  --enjanga2025app-LanguageToggle-gap: 5px;
 }
 
 .LanguageToggle {
   display: flex;
-  border: 1px solid var(--appname-theme-light-cccc-10);
-  padding: var(--appname-LanguageToggle-gap);
-  gap: var(--appname-LanguageToggle-gap);
+  border: 1px solid var(--enjanga2025app-theme-light-cccc-10);
+  padding: var(--enjanga2025app-LanguageToggle-gap);
+  gap: var(--enjanga2025app-LanguageToggle-gap);
   border-radius: 8px;
 
   .btn {
-    color: var(--appname-theme-light-xxxx-0);
+    color: var(--enjanga2025app-theme-light-xxxx-0);
     font-size: 14px;
     border-width: 0px;
     letter-spacing: 2px;
@@ -18,11 +18,11 @@
     line-height: 0.8rem;
 
     &:hover {
-      background-color: var(--appname-theme-light-eee-0);
+      background-color: var(--enjanga2025app-theme-light-eee-0);
     }
 
     &.active {
-      background-color: var(--appname-theme-light-eee-1);
+      background-color: var(--enjanga2025app-theme-light-eee-1);
     }
   }
 }

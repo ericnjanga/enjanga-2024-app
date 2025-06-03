@@ -1,18 +1,18 @@
 :root {
-  --appname-carousel-hover-state: 35%;
-  --appname-carousel-btnprev-y: -60px;
-  --appname-carousel-item-gap: 20px;
+  --enjanga2025app-carousel-hover-state: 35%;
+  --enjanga2025app-carousel-btnprev-y: -60px;
+  --enjanga2025app-carousel-item-gap: 20px;
 
-  --appname-carousel-controls-top: -110px;
-  --appname-carousel-controls-flexdir: column;
-  --appname-carousel-controls-width: min-content;
-  --appname-carousel-controls-gap: 5px;
+  --enjanga2025app-carousel-controls-top: -110px;
+  --enjanga2025app-carousel-controls-flexdir: column;
+  --enjanga2025app-carousel-controls-width: min-content;
+  --enjanga2025app-carousel-controls-gap: 5px;
   // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Portfolio frame) ---
-  --appname-portfolio-pageSection-hero-mb: 75px;
-  --appname-portfolio-carrousel-controls-top: -65px;
-  --appname-portfolio-carrousel-controls-right: unset; // 0px
-  --appname-portfolio-carrousel-controls-left: 50%;
-  --appname-portfolio-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
+  --enjanga2025app-portfolio-pageSection-hero-mb: 75px;
+  --enjanga2025app-portfolio-carrousel-controls-top: -65px;
+  --enjanga2025app-portfolio-carrousel-controls-right: unset; // 0px
+  --enjanga2025app-portfolio-carrousel-controls-left: 50%;
+  --enjanga2025app-portfolio-carrousel-controls-marg-left: 172.8px; // (Computed container's width)
   // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
 
   // Special card
@@ -21,7 +21,7 @@
 
 .Portfolio {
   position: relative;
-  background-color: var(--appname-theme-light-xxxx-0);
+  background-color: var(--enjanga2025app-theme-light-xxxx-0);
 
   .PanelFrame {
     /*
@@ -31,7 +31,7 @@
     */
     .pageSection-hero {
       // border: 4px solid turquoise;
-      margin-bottom: var(--appname-portfolio-pageSection-hero-mb);
+      margin-bottom: var(--enjanga2025app-portfolio-pageSection-hero-mb);
     }
 
     // ...
@@ -40,10 +40,10 @@
       .carrousel-controls {
         position: absolute;
         // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Portfolio frame) ---
-        top: var(--appname-portfolio-carrousel-controls-top);
-        right: var(--appname-portfolio-carrousel-controls-right);
-        left: var(--appname-portfolio-carrousel-controls-left);
-        margin-left: calc(-1 * var(--appname-portfolio-carrousel-controls-marg-left)/2);
+        top: var(--enjanga2025app-portfolio-carrousel-controls-top);
+        right: var(--enjanga2025app-portfolio-carrousel-controls-right);
+        left: var(--enjanga2025app-portfolio-carrousel-controls-left);
+        margin-left: calc(-1 * var(--enjanga2025app-portfolio-carrousel-controls-marg-left)/2);
         // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
         z-index: 10;
       }
@@ -67,33 +67,33 @@
         * ----------------------------------
         */
         @media (min-width: 1400px) { 
-          --appname-carousel-item-gap: 70px!important;
+          --enjanga2025app-carousel-item-gap: 70px!important;
         }
     
         @media (min-width: 1200px) {
-          --appname-carousel-item-gap: 25px;
+          --enjanga2025app-carousel-item-gap: 25px;
     
           .slick-active {
             // 1st element ...
             &:has(+ .slick-active + .slick-active) {
               .card {
                 margin-left: 0;
-                margin-right: var(--appname-carousel-item-gap);
+                margin-right: var(--enjanga2025app-carousel-item-gap);
               }
             }
             // 2nd element ...
             &:has(+ .slick-active),
             &.slick-current + .slick-active {
               .card {
-                margin-left: calc(var(--appname-carousel-item-gap) / 2);
-                margin-right: calc(var(--appname-carousel-item-gap) / 2);
+                margin-left: calc(var(--enjanga2025app-carousel-item-gap) / 2);
+                margin-right: calc(var(--enjanga2025app-carousel-item-gap) / 2);
               }
             }
             // 3rd element ...
             &.slick-current + .slick-active + .slick-active,
             &:last-of-type.slick-current {
               .card {
-                margin-left: var(--appname-carousel-item-gap);
+                margin-left: var(--enjanga2025app-carousel-item-gap);
               }
             }
           }
@@ -104,20 +104,20 @@
         * ----------------------------------
         */
         @media (min-width: 768px) and (max-width: (1200px - 1)) {
-          --appname-carousel-item-gap: 20px;
+          --enjanga2025app-carousel-item-gap: 20px;
     
           .slick-active {
             // 1st element ...
             &:has(+ .slick-active) {
               .card {
-                margin-right: var(--appname-carousel-item-gap);
+                margin-right: var(--enjanga2025app-carousel-item-gap);
               }
             }
             // 2nd element ...
             &.slick-current + .slick-active,
             &:last-of-type.slick-current {
               .card {
-                margin-left: var(--appname-carousel-item-gap);
+                margin-left: var(--enjanga2025app-carousel-item-gap);
               }
             }
           }
@@ -134,11 +134,11 @@
   @media (min-width: 1400px) {
     // border: 4px solid purple;
     // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-    --appname-portfolio-pageSection-hero-mb: 45px;
-    --appname-portfolio-carrousel-controls-top: -190px;
-    --appname-portfolio-carrousel-controls-right: 9%;
-    --appname-portfolio-carrousel-controls-left: auto;
-    --appname-portfolio-carrousel-controls-marg-left: auto;
+    --enjanga2025app-portfolio-pageSection-hero-mb: 45px;
+    --enjanga2025app-portfolio-carrousel-controls-top: -190px;
+    --enjanga2025app-portfolio-carrousel-controls-right: 9%;
+    --enjanga2025app-portfolio-carrousel-controls-left: auto;
+    --enjanga2025app-portfolio-carrousel-controls-marg-left: auto;
     // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
@@ -146,11 +146,11 @@
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 4px solid violet;
     // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-    --appname-portfolio-pageSection-hero-mb: 35px;
-    --appname-portfolio-carrousel-controls-top: -170px;
-    --appname-portfolio-carrousel-controls-right: 9%;
-    --appname-portfolio-carrousel-controls-left: auto;
-    --appname-portfolio-carrousel-controls-marg-left: auto;
+    --enjanga2025app-portfolio-pageSection-hero-mb: 35px;
+    --enjanga2025app-portfolio-carrousel-controls-top: -170px;
+    --enjanga2025app-portfolio-carrousel-controls-right: 9%;
+    --enjanga2025app-portfolio-carrousel-controls-left: auto;
+    --enjanga2025app-portfolio-carrousel-controls-marg-left: auto;
     // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 
@@ -158,11 +158,11 @@
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 4px solid lime;
     // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS (for Expertise frame) ---
-    --appname-portfolio-pageSection-hero-mb: 30px;
-    --appname-portfolio-carrousel-controls-top: -170px;
-    --appname-portfolio-carrousel-controls-right: 9%;
-    --appname-portfolio-carrousel-controls-left: auto;
-    --appname-portfolio-carrousel-controls-marg-left: auto;
+    --enjanga2025app-portfolio-pageSection-hero-mb: 30px;
+    --enjanga2025app-portfolio-carrousel-controls-top: -170px;
+    --enjanga2025app-portfolio-carrousel-controls-right: 9%;
+    --enjanga2025app-portfolio-carrousel-controls-left: auto;
+    --enjanga2025app-portfolio-carrousel-controls-marg-left: auto;
     // CAROUSSEL CONTROLS ADAPTATION FOR SMALL SCREENS ---
   }
 

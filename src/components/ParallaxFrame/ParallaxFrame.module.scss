@@ -1,42 +1,42 @@
 :root {
-  --appname-parallaxWrapper-width: 100%;
-  --appname-parallaxWrapper-height: 200px;
+  --enjanga2025app-parallaxWrapper-width: 100%;
+  --enjanga2025app-parallaxWrapper-height: 200px;
 }
 
 
 
 .parallaxWrapper {
-  width: var(--appname-parallaxWrapper-width);
-  height: var(--appname-parallaxWrapper-height);
+  width: var(--enjanga2025app-parallaxWrapper-width);
+  height: var(--enjanga2025app-parallaxWrapper-height);
 
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 3px solid purple;
-    --appname-parallaxWrapper-height: 520px;
+    --enjanga2025app-parallaxWrapper-height: 520px;
   }
   
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
       // border: 3px solid violet;
-      --appname-parallaxWrapper-height: 470px;
+      --enjanga2025app-parallaxWrapper-height: 470px;
   }
   
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
       // border: 3px solid lime;
-      --appname-parallaxWrapper-height: 470px;
+      --enjanga2025app-parallaxWrapper-height: 470px;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
       // border: 3px solid blue;
-      --appname-parallaxWrapper-height: 420px;
+      --enjanga2025app-parallaxWrapper-height: 420px;
   }
 
   // Small Screen ...
   @media (min-width: 576px) and (max-width: (768px - 1)) {
       // border: 3px solid turquoise;
-      --appname-parallaxWrapper-height: 320px;
+      --enjanga2025app-parallaxWrapper-height: 320px;
   }
 
   // Smaller Screen ...

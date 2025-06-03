@@ -24,14 +24,14 @@
 // Refactor this later ***** (was associated to .PanelFrame)
 // --------------
 :root {
-  --appname-pageSection-header-marg-bottom: 15px;
+  --enjanga2025app-pageSection-header-marg-bottom: 15px;
 }
 .pageSection-title {
-  margin-bottom: var(--appname-pageSection-header-marg-bottom) !important;
+  margin-bottom: var(--enjanga2025app-pageSection-header-marg-bottom) !important;
 }
 
 .pageSection-hero {
-  margin-bottom: var(--appname-pageSection-hero-marg-bottom);
+  margin-bottom: var(--enjanga2025app-pageSection-hero-marg-bottom);
 }
 .pageSection-intro-text {
   max-width: 744px;
@@ -47,9 +47,9 @@
 
 
 .theme-1 {
-  // color: var(--appname-theme-light-bbbb-1);
+  // color: var(--enjanga2025app-theme-light-bbbb-1);
   color: #323069;
-  background-color: var(--appname-theme-light-bbbb-8);
+  background-color: var(--enjanga2025app-theme-light-bbbb-8);
 
   .InformationCard1-title, p {
     color: #323069;
@@ -76,36 +76,36 @@
 }
 
 .theme-2 {
-  color: var(--appname-theme-light-xxxx-0);
-  background-color: var(--appname-theme-light-bbbb-2);
+  color: var(--enjanga2025app-theme-light-xxxx-0);
+  background-color: var(--enjanga2025app-theme-light-bbbb-2);
 
   .pageSection-intro-text {
     a {
-      color: var(--appname-theme-light-eee-2);
+      color: var(--enjanga2025app-theme-light-eee-2);
     }
   }
 
   .PanelFrame-item {
-    color: var(--appname-theme-light-xxxx-0);
-    background-color: var(--appname-theme-light-bbbb-3);
+    color: var(--enjanga2025app-theme-light-xxxx-0);
+    background-color: var(--enjanga2025app-theme-light-bbbb-3);
 
     .icon {
-      color: var(--appname-theme-light-bbbb-10);
+      color: var(--enjanga2025app-theme-light-bbbb-10);
     }
 
     .btn-link {
-      color: var(--appname-theme-light-eee-2);
+      color: var(--enjanga2025app-theme-light-eee-2);
     }
   }
 }
 
 .theme-3 {
-  color: var(--appname-theme-light-xxxx-0);
-  background-color: var(--appname-theme-light-bbbb-01);
+  color: var(--enjanga2025app-theme-light-xxxx-0);
+  background-color: var(--enjanga2025app-theme-light-bbbb-01);
 
   .pageSection-intro-text {
     a {
-      color: var(--appname-theme-light-eee-1);
+      color: var(--enjanga2025app-theme-light-eee-1);
     }
   }
 }

@@ -1,126 +1,126 @@
 :root {
-  --appname-hero-height: auto; // 270px;
-  --appname-hero-container-paddtop: 70px;
+  --enjanga2025app-hero-height: auto; // 270px;
+  --enjanga2025app-hero-container-paddtop: 70px;
 
-  --appname-hero-subtitle: 1.188rem;
-  --appname-hero-subtitle-lineheight: 1.75rem;
+  --enjanga2025app-hero-subtitle: 1.188rem;
+  --enjanga2025app-hero-subtitle-lineheight: 1.75rem;
 
-  --appname-hero-decoration-display: block;
-  --appname-hero-decoration-height: 400px;
-  --appname-hero-decoration-right: 0;
+  --enjanga2025app-hero-decoration-display: block;
+  --enjanga2025app-hero-decoration-height: 400px;
+  --enjanga2025app-hero-decoration-right: 0;
 
-  --appname-hero-jumbotron-margin: 0;
+  --enjanga2025app-hero-jumbotron-margin: 0;
 }
 
 @layer hero {
   .Hero {
     position: relative;
-    height: var(--appname-hero-height);
+    height: var(--enjanga2025app-hero-height);
     overflow: hidden;
-    background-color: var(--appname-theme-light-bbbb-0);
+    background-color: var(--enjanga2025app-theme-light-bbbb-0);
 
     &-title {
-      color: var(--appname-theme-light-xxxx-0);
+      color: var(--enjanga2025app-theme-light-xxxx-0);
     }
 
     &-subtitle {
-      color: var(--appname-theme-light-bbbb-6);
-      font-size: var(--appname-hero-subtitle);
-      line-height: var(--appname-hero-subtitle-lineheight);
+      color: var(--enjanga2025app-theme-light-bbbb-6);
+      font-size: var(--enjanga2025app-hero-subtitle);
+      line-height: var(--enjanga2025app-hero-subtitle-lineheight);
       p {
         margin-bottom: 0;
       }
     }
 
     &-content-wrapper {
-      padding-top: var(--appname-hero-container-paddtop);
+      padding-top: var(--enjanga2025app-hero-container-paddtop);
     }
 
     &-decoration {
       position: absolute;
       z-index: 1;
-      display: var(--appname-hero-decoration-display);
+      display: var(--enjanga2025app-hero-decoration-display);
       // width: inherit;
-      height: var(--appname-hero-decoration-height);
-      right: var(--appname-hero-decoration-right);
+      height: var(--enjanga2025app-hero-decoration-height);
+      right: var(--enjanga2025app-hero-decoration-right);
       bottom: 0;
     }
 
     &-jumbotron {
       position: relative;
-      margin: var(--appname-hero-jumbotron-margin);
+      margin: var(--enjanga2025app-hero-jumbotron-margin);
       z-index: 3;
     }
 
     // Extra Large screen ...
     @media (min-width: 1400px) {
       // border: 3px solid purple;
-      --appname-hero-height: auto; // 640px;
-      --appname-hero-container-paddtop: 150px;
+      --enjanga2025app-hero-height: auto; // 640px;
+      --enjanga2025app-hero-container-paddtop: 150px;
 
-      --appname-hero-subtitle: 1.3rem;
-      --appname-hero-subtitle-lineheight: 1.9rem;
+      --enjanga2025app-hero-subtitle: 1.3rem;
+      --enjanga2025app-hero-subtitle-lineheight: 1.9rem;
 
-      --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -15%;
-      --appname-hero-decoration-display: block;
+      --enjanga2025app-hero-decoration-height: 100%;
+      --enjanga2025app-hero-decoration-right: -15%;
+      --enjanga2025app-hero-decoration-display: block;
     }
 
     // Large screen ...
     @media (min-width: 1200px) and (max-width: (1400px - 1)) {
       // border: 3px solid violet;
-      --appname-hero-height: auto; // 560px;
-      --appname-hero-container-paddtop: 150px;
+      --enjanga2025app-hero-height: auto; // 560px;
+      --enjanga2025app-hero-container-paddtop: 150px;
 
-      --appname-hero-subtitle: 1.38rem;
-      --appname-hero-subtitle-lineheight: 1.95rem;
+      --enjanga2025app-hero-subtitle: 1.38rem;
+      --enjanga2025app-hero-subtitle-lineheight: 1.95rem;
 
-      --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -15%;
-      --appname-hero-decoration-display: block;
+      --enjanga2025app-hero-decoration-height: 100%;
+      --enjanga2025app-hero-decoration-right: -15%;
+      --enjanga2025app-hero-decoration-display: block;
     }
 
     // Large Medium screen ...
     @media (min-width: 992px) and (max-width: (1200px - 1)) {
       // border: 3px solid lime;
-      --appname-hero-height: auto; // 430px;
-      --appname-hero-container-paddtop: 120px;
+      --enjanga2025app-hero-height: auto; // 430px;
+      --enjanga2025app-hero-container-paddtop: 120px;
 
-      --appname-hero-subtitle: 1.38rem;
-      --appname-hero-subtitle-lineheight: 1.95rem;
+      --enjanga2025app-hero-subtitle: 1.38rem;
+      --enjanga2025app-hero-subtitle-lineheight: 1.95rem;
 
-      --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -15%;
-      --appname-hero-decoration-display: block;
+      --enjanga2025app-hero-decoration-height: 100%;
+      --enjanga2025app-hero-decoration-right: -15%;
+      --enjanga2025app-hero-decoration-display: block;
     }
 
     // Medium Medium screen ...
     @media (min-width: 768px) and (max-width: (992px - 1)) {
       // border: 3px solid blue;
-      --appname-hero-height: auto; // 430px;
-      --appname-hero-container-paddtop: 130px;
+      --enjanga2025app-hero-height: auto; // 430px;
+      --enjanga2025app-hero-container-paddtop: 130px;
 
-      --appname-hero-subtitle: 1.288rem;
-      --appname-hero-subtitle-lineheight: 1.85rem;
+      --enjanga2025app-hero-subtitle: 1.288rem;
+      --enjanga2025app-hero-subtitle-lineheight: 1.85rem;
 
-      --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -20%;
-      --appname-hero-decoration-display: block;
+      --enjanga2025app-hero-decoration-height: 100%;
+      --enjanga2025app-hero-decoration-right: -20%;
+      --enjanga2025app-hero-decoration-display: block;
     }
 
     // Small Screen ...
     @media (min-width: 576px) and (max-width: (768px - 1)) {
       // border: 3px solid turquoise;
 
-      --appname-hero-decoration-height: 100%;
-      --appname-hero-decoration-right: -20%;
-      --appname-hero-decoration-display: block;
+      --enjanga2025app-hero-decoration-height: 100%;
+      --enjanga2025app-hero-decoration-right: -20%;
+      --enjanga2025app-hero-decoration-display: block;
     }
 
     // Smaller Screen ...
     @media (max-width: (576px - 1px)) {
       // border: 3px solid chocolate;
-      --appname-hero-decoration-right: -40%;
+      --enjanga2025app-hero-decoration-right: -40%;
     }
   }
 }

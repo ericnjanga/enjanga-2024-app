@@ -7,14 +7,14 @@
 **/
 
 :root {
-    --appname-anchors-scrollto-top: -80px; 
-    --appname-btnscrolltop-font-size: 0.8rem;
-    --appname-btnscrolltop-x-pos: 10px; 
+    --enjanga2025app-anchors-scrollto-top: -80px; 
+    --enjanga2025app-btnscrolltop-font-size: 0.8rem;
+    --enjanga2025app-btnscrolltop-x-pos: 10px; 
 
-    --appname-hero-elts-spacer: 20px 0 0 0;
+    --enjanga2025app-hero-elts-spacer: 20px 0 0 0;
 
     // Special card
-    --appname-special-card-padd: 30px 20px 20px 20px;
+    --enjanga2025app-special-card-padd: 30px 20px 20px 20px;
 }
 
 
@@ -25,7 +25,7 @@
 
     .anchors-scrollto {
         position: absolute;
-        top: var(--appname-anchors-scrollto-top);  
+        top: var(--enjanga2025app-anchors-scrollto-top);  
         display: block;
         width: 100px;
         height: 20px; 
@@ -33,25 +33,25 @@
         // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 4px dashed purple;
-            --appname-anchors-scrollto-top: -160px;
+            --enjanga2025app-anchors-scrollto-top: -160px;
         }
         
         // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 4px dashed violet;
-            --appname-anchors-scrollto-top: -160px;
+            --enjanga2025app-anchors-scrollto-top: -160px;
         }
         
         // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 4px dashed lime;
-            --appname-anchors-scrollto-top: -140px;
+            --enjanga2025app-anchors-scrollto-top: -140px;
         }
 
         // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 4px dashed blue;
-            --appname-anchors-scrollto-top: -130px;
+            --enjanga2025app-anchors-scrollto-top: -130px;
         }
 
         // Small Screen ...
@@ -74,24 +74,24 @@
         position: fixed;
         z-index: 999;
         bottom: 30px;  
-        left: var(--appname-btnscrolltop-x-pos); 
+        left: var(--enjanga2025app-btnscrolltop-x-pos); 
 
         // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;  
-            --appname-btnscrolltop-x-pos: 50px;
+            --enjanga2025app-btnscrolltop-x-pos: 50px;
         }
         
         // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;  
-            --appname-btnscrolltop-x-pos: 90px;
+            --enjanga2025app-btnscrolltop-x-pos: 90px;
         }
         
         // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;  
-            --appname-btnscrolltop-x-pos: 90px;
+            --enjanga2025app-btnscrolltop-x-pos: 90px;
         }
 
         // Medium Medium screen ...
@@ -116,30 +116,30 @@
     .icon-list,
     .section-footer-cta,
     .site-carousel {
-        // margin: var(--appname-hero-elts-spacer);
+        // margin: var(--enjanga2025app-hero-elts-spacer);
 
         // Extra Large screen ...
         @media (min-width: 1400px) {
             // border: 10px solid purple;
-            --appname-hero-elts-spacer: 35px 0 0 0;
+            --enjanga2025app-hero-elts-spacer: 35px 0 0 0;
         }
         
         // Large screen ...
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             // border: 10px solid violet;
-            --appname-hero-elts-spacer: 35px 0 0 0;
+            --enjanga2025app-hero-elts-spacer: 35px 0 0 0;
         }
         
         // Large Medium screen ...
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
             // border: 10px solid lime;
-            --appname-hero-elts-spacer: 30px 0 0 0;
+            --enjanga2025app-hero-elts-spacer: 30px 0 0 0;
         }
 
         // Medium Medium screen ...
         @media (min-width: 768px) and (max-width: (992px - 1)) {
             // border: 10px solid blue;
-            --appname-hero-elts-spacer: 25px 0 0 0;
+            --enjanga2025app-hero-elts-spacer: 25px 0 0 0;
         }
 
         // // Small Screen ...
@@ -157,7 +157,7 @@
 @layer special-card {
     .special-card {
         // .card-body {
-        //     padding: var(--appname-special-card-padd);
+        //     padding: var(--enjanga2025app-special-card-padd);
         // }
 
         // &__title {}

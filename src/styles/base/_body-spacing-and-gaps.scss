@@ -1,34 +1,34 @@
 :root {
-  --appname-spacing-top-gap: 20px;
-  --appname-header-bot-spacing: 1.438rem; // 23px;
+  --enjanga2025app-spacing-top-gap: 20px;
+  --enjanga2025app-header-bot-spacing: 1.438rem; // 23px;
 }
 
 body {
   // Extra Large screen ...
   @media (min-width: 1400px) {
     // border: 4px solid purple;
-    --appname-spacing-section-h-small: 120px;
-    --appname-header-bot-spacing: 1.875rem; // 30px;
+    --enjanga2025app-spacing-section-h-small: 120px;
+    --enjanga2025app-header-bot-spacing: 1.875rem; // 30px;
   }
   
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 4px solid violet;
-    --appname-spacing-section-h-small: 90px;
-    --appname-header-bot-spacing: 1.875rem; // 30px;
+    --enjanga2025app-spacing-section-h-small: 90px;
+    --enjanga2025app-header-bot-spacing: 1.875rem; // 30px;
   }
   
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 4px solid lime;
-    --appname-spacing-section-h-small: 70px;
-    --appname-header-bot-spacing: 1.875rem; // 30px;
+    --enjanga2025app-spacing-section-h-small: 70px;
+    --enjanga2025app-header-bot-spacing: 1.875rem; // 30px;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 4px solid blue;
-    --appname-spacing-section-h-small: 60px;
+    --enjanga2025app-spacing-section-h-small: 60px;
   }
 
   // Small Screen ...
@@ -46,24 +46,24 @@ body {
 
 @layer blocks {
   .sc-block {
-    padding-top: var(--appname-spacing-section-h-small);
-    padding-bottom: var(--appname-spacing-section-h-small);
+    padding-top: var(--enjanga2025app-spacing-section-h-small);
+    padding-bottom: var(--enjanga2025app-spacing-section-h-small);
   }
 
   .sc-block-mg-top {
-    margin-top: var(--appname-spacing-section-h-small);
+    margin-top: var(--enjanga2025app-spacing-section-h-small);
   }
   .sc-block-mg-bot {
-    margin-bottom: var(--appname-spacing-section-h-small);
+    margin-bottom: var(--enjanga2025app-spacing-section-h-small);
   }
   .sc-header-bot-spacing {
-    margin-bottom: var(--appname-header-bot-spacing);
+    margin-bottom: var(--enjanga2025app-header-bot-spacing);
   }
   .sc-block-pd-top {
-    padding-top: var(--appname-spacing-section-h-small);
+    padding-top: var(--enjanga2025app-spacing-section-h-small);
   }
   .sc-block-pd-bot {
-    padding-bottom: var(--appname-spacing-section-h-small);
+    padding-bottom: var(--enjanga2025app-spacing-section-h-small);
   }
 }
 

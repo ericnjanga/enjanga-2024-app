@@ -1,38 +1,38 @@
 :root {
   // Font sizes and line heights ...
-  --appname-h1-fs: 2.6rem; // 48px;
-  --appname-h1-ln: 2.7rem; // 54px;
+  --enjanga2025app-h1-fs: 2.6rem; // 48px;
+  --enjanga2025app-h1-ln: 2.7rem; // 54px;
 
-  --appname-h2-fs: 2.125rem; // 34px;
-  --appname-h2-ln: 2.15rem; // 39px;
+  --enjanga2025app-h2-fs: 2.125rem; // 34px;
+  --enjanga2025app-h2-ln: 2.15rem; // 39px;
 
-  --appname-h3-fs: 1.625rem; // 26px;
-  --appname-h3-ln: 1.875rem; // 30px;
+  --enjanga2025app-h3-fs: 1.625rem; // 26px;
+  --enjanga2025app-h3-ln: 1.875rem; // 30px;
 
-  --appname-h4-fs: 1.438rem; // 23px;
-  --appname-h4-ln: 1.296rem; // 27px
+  --enjanga2025app-h4-fs: 1.438rem; // 23px;
+  --enjanga2025app-h4-ln: 1.296rem; // 27px
 
   // Bottom margins
-  --appname-h1-mb: 0.938rem; // 15px;
-  --appname-h2-mb: 0.938rem; // 15px;
-  --appname-h3-mb: 0.625rem; // 10px;
-  --appname-h4-mb: 0.625rem; // 10px;
+  --enjanga2025app-h1-mb: 0.938rem; // 15px;
+  --enjanga2025app-h2-mb: 0.938rem; // 15px;
+  --enjanga2025app-h3-mb: 0.625rem; // 10px;
+  --enjanga2025app-h4-mb: 0.625rem; // 10px;
 
-  --appname-h1-icon-dim: 2.5rem;
-  --appname-h2-icon-dim: 2.2rem;
-  --appname-h3-icon-dim: 2.0rem;
-  --appname-h4-icon-dim: 1.7rem;
+  --enjanga2025app-h1-icon-dim: 2.5rem;
+  --enjanga2025app-h2-icon-dim: 2.2rem;
+  --enjanga2025app-h3-icon-dim: 2.0rem;
+  --enjanga2025app-h4-icon-dim: 1.7rem;
 
-  --appname-default-icon-top: 0rem;
-  --appname-default-icon-dim: 1rem;
-  --appname-default-icon-marg: 0 0.5rem 0 0;
+  --enjanga2025app-default-icon-top: 0rem;
+  --enjanga2025app-default-icon-dim: 1rem;
+  --enjanga2025app-default-icon-marg: 0 0.5rem 0 0;
 
 
-  --appname-h1-icon-top: -0rem;
-  --appname-h2-icon-top: -0.25rem;
+  --enjanga2025app-h1-icon-top: -0rem;
+  --enjanga2025app-h2-icon-top: -0.25rem;
 
-  --appname-h1-icon-marg: 0 0.5rem 0 0;
-  --appname-h2-icon-marg: 0 0.4rem 0 0;
+  --enjanga2025app-h1-icon-marg: 0 0.5rem 0 0;
+  --enjanga2025app-h2-icon-marg: 0 0.4rem 0 0;
 }
 
 .Heading {
@@ -41,10 +41,10 @@
 
   .icon {
     position: relative;
-    top: var(--appname-default-icon-top);
-    margin: var(--appname-default-icon-marg);
-    width: var(--appname-default-icon-dim);
-    height: var(--appname-default-icon-dim);
+    top: var(--enjanga2025app-default-icon-top);
+    margin: var(--enjanga2025app-default-icon-marg);
+    width: var(--enjanga2025app-default-icon-dim);
+    height: var(--enjanga2025app-default-icon-dim);
     opacity: 0.65;
   }
 
@@ -52,118 +52,118 @@
   @media (min-width: 1400px) {
     // border: 3px solid purple;
     // Font sizes and line heights ...
-    --appname-h1-fs: 4.6rem; //80px;
-    --appname-h1-ln: 79px;
-    --appname-h1-mb: 30px;
+    --enjanga2025app-h1-fs: 4.6rem; //80px;
+    --enjanga2025app-h1-ln: 79px;
+    --enjanga2025app-h1-mb: 30px;
 
-    --appname-h2-fs: 3rem; // 48px;
-    --appname-h2-ln: 3.25rem; // 52px;
+    --enjanga2025app-h2-fs: 3rem; // 48px;
+    --enjanga2025app-h2-ln: 3.25rem; // 52px;
 
-    --appname-h3-fs: 30px;
-    --appname-h3-ln: 2.188rem; // 35px;
+    --enjanga2025app-h3-fs: 30px;
+    --enjanga2025app-h3-ln: 2.188rem; // 35px;
 
-    --appname-h4-fs: 1.625rem; // 26px;
-    --appname-h4-ln: 1.875rem; // 30px;
+    --enjanga2025app-h4-fs: 1.625rem; // 26px;
+    --enjanga2025app-h4-ln: 1.875rem; // 30px;
 
     // Margins ...
-    --appname-h2-mb: 1.25rem; // 20px
-    --appname-h3-mb: 0.813rem; // 13px;
-    --appname-h4-mb: 0.813rem; // 13
+    --enjanga2025app-h2-mb: 1.25rem; // 20px
+    --enjanga2025app-h3-mb: 0.813rem; // 13px;
+    --enjanga2025app-h4-mb: 0.813rem; // 13
 
     // ...
-    --appname-h1-icon-dim: 4.9rem;
-    --appname-h1-icon-marg: 0 1.7rem 0 0;
-    --appname-h2-icon-dim: 3.8rem;
-    --appname-h2-icon-marg: 0 1rem 0 0;
-    --appname-h2-icon-top: -0.55rem;
+    --enjanga2025app-h1-icon-dim: 4.9rem;
+    --enjanga2025app-h1-icon-marg: 0 1.7rem 0 0;
+    --enjanga2025app-h2-icon-dim: 3.8rem;
+    --enjanga2025app-h2-icon-marg: 0 1rem 0 0;
+    --enjanga2025app-h2-icon-top: -0.55rem;
   }
 
   // Large screen ...
   @media (min-width: 1200px) and (max-width: (1400px - 1)) {
     // border: 3px solid violet;
     // Font sizes and line heights ...
-    --appname-h1-fs: 72px;
-    --appname-h1-ln: 70px;
-    --appname-h1-mb: 30px;
+    --enjanga2025app-h1-fs: 72px;
+    --enjanga2025app-h1-ln: 70px;
+    --enjanga2025app-h1-mb: 30px;
 
-    --appname-h2-fs: 2.875rem; // 46px;
-    --appname-h2-ln: 3.25rem; // 52px;
+    --enjanga2025app-h2-fs: 2.875rem; // 46px;
+    --enjanga2025app-h2-ln: 3.25rem; // 52px;
 
-    --appname-h3-fs: 1.75rem; // 28px;
-    --appname-h3-ln: 2rem; // 32px;
+    --enjanga2025app-h3-fs: 1.75rem; // 28px;
+    --enjanga2025app-h3-ln: 2rem; // 32px;
 
-    --appname-h4-fs: 1.625rem; // 26px;
-    --appname-h4-ln: 1.875rem; // 30px;
+    --enjanga2025app-h4-fs: 1.625rem; // 26px;
+    --enjanga2025app-h4-ln: 1.875rem; // 30px;
 
     // Margins ...
-    --appname-h2-mb: 1.25rem; // 20px
-    --appname-h3-mb: 0.625rem; // 10px;
-    --appname-h4-mb: 0.813rem; // 13
+    --enjanga2025app-h2-mb: 1.25rem; // 20px
+    --enjanga2025app-h3-mb: 0.625rem; // 10px;
+    --enjanga2025app-h4-mb: 0.813rem; // 13
 
     // ...
-    --appname-h1-icon-dim: 4.4rem;
-    --appname-h1-icon-marg: 0 1.2rem 0 0;
-    --appname-h2-icon-dim: 3.3rem;
-    --appname-h2-icon-marg: 0 0.8rem 0 0;
-    --appname-h2-icon-top: -0.45rem;
+    --enjanga2025app-h1-icon-dim: 4.4rem;
+    --enjanga2025app-h1-icon-marg: 0 1.2rem 0 0;
+    --enjanga2025app-h2-icon-dim: 3.3rem;
+    --enjanga2025app-h2-icon-marg: 0 0.8rem 0 0;
+    --enjanga2025app-h2-icon-top: -0.45rem;
   }
 
   // Large Medium screen ...
   @media (min-width: 992px) and (max-width: (1200px - 1)) {
     // border: 3px solid lime;
     // Font sizes and line heights ...
-    --appname-h1-fs: 68px;
-    --appname-h1-ln: 64px;
-    --appname-h1-mb: 22px;
+    --enjanga2025app-h1-fs: 68px;
+    --enjanga2025app-h1-ln: 64px;
+    --enjanga2025app-h1-mb: 22px;
 
-    --appname-h2-fs: 2.625rem; // 42px;
-    --appname-h2-ln: 2.938rem; // 47px
+    --enjanga2025app-h2-fs: 2.625rem; // 42px;
+    --enjanga2025app-h2-ln: 2.938rem; // 47px
 
-    --appname-h3-fs: 1.625rem; // 26px;
-    --appname-h3-ln: 2rem; // 32px;
+    --enjanga2025app-h3-fs: 1.625rem; // 26px;
+    --enjanga2025app-h3-ln: 2rem; // 32px;
 
-    --appname-h4-fs: 1.438rem; // 23px;
-    --appname-h4-ln: 1.296rem; // 27px
+    --enjanga2025app-h4-fs: 1.438rem; // 23px;
+    --enjanga2025app-h4-ln: 1.296rem; // 27px
 
     // Margins ...
-    --appname-h2-mb: 1.25rem; // 20px
-    --appname-h3-mb: 0.625rem; // 10px;
-    --appname-h4-mb: 0.813rem; // 13
+    --enjanga2025app-h2-mb: 1.25rem; // 20px
+    --enjanga2025app-h3-mb: 0.625rem; // 10px;
+    --enjanga2025app-h4-mb: 0.813rem; // 13
 
     // ...
-    --appname-h1-icon-dim: 3.7rem;
-    --appname-h1-icon-marg: 0 1rem 0 0;
-    --appname-h2-icon-dim: 2.8rem;
-    --appname-h2-icon-marg: 0 0.8rem 0 0;
+    --enjanga2025app-h1-icon-dim: 3.7rem;
+    --enjanga2025app-h1-icon-marg: 0 1rem 0 0;
+    --enjanga2025app-h2-icon-dim: 2.8rem;
+    --enjanga2025app-h2-icon-marg: 0 0.8rem 0 0;
   }
 
   // Medium Medium screen ...
   @media (min-width: 768px) and (max-width: (992px - 1)) {
     // border: 3px solid blue;
     // Font sizes and line heights ...
-    --appname-h1-fs: 58px;
-    --appname-h1-ln: 56px;
-    --appname-h1-mb: 22px;
+    --enjanga2025app-h1-fs: 58px;
+    --enjanga2025app-h1-ln: 56px;
+    --enjanga2025app-h1-mb: 22px;
 
-    --appname-h2-fs: 2.375rem; // 38px;
-    --appname-h2-ln: 2.625rem; // 42px;
+    --enjanga2025app-h2-fs: 2.375rem; // 38px;
+    --enjanga2025app-h2-ln: 2.625rem; // 42px;
 
-    --appname-h3-fs: 1.625rem; // 26px;
-    --appname-h3-ln: 1.875rem; // 30px;
+    --enjanga2025app-h3-fs: 1.625rem; // 26px;
+    --enjanga2025app-h3-ln: 1.875rem; // 30px;
 
-    --appname-h4-fs: 1.438rem; // 23px;
-    --appname-h4-ln: 1.296rem; // 27px
+    --enjanga2025app-h4-fs: 1.438rem; // 23px;
+    --enjanga2025app-h4-ln: 1.296rem; // 27px
 
     // Margins ...
-    --appname-h2-mb: 1.25rem; // 20
-    --appname-h3-mb: 0.625rem; // 10px;
-    --appname-h4-mb: 0.813rem; // 13
+    --enjanga2025app-h2-mb: 1.25rem; // 20
+    --enjanga2025app-h3-mb: 0.625rem; // 10px;
+    --enjanga2025app-h4-mb: 0.813rem; // 13
 
     // ...
-    --appname-h1-icon-dim: 3rem;
-    --appname-h1-icon-marg: 0 0.8rem 0 0;
-    --appname-h2-icon-dim: 2.4rem;
-    --appname-h2-icon-marg: 0 0.6rem 0 0;
+    --enjanga2025app-h1-icon-dim: 3rem;
+    --enjanga2025app-h1-icon-marg: 0 0.8rem 0 0;
+    --enjanga2025app-h2-icon-dim: 2.4rem;
+    --enjanga2025app-h2-icon-marg: 0 0.6rem 0 0;
   }
 
   // // Small Screen ...
@@ -178,55 +178,55 @@
 }
 
 .Heading--1 {
-  margin-bottom: var(--appname-h1-mb);
-  font-size: var(--appname-h1-fs);
-  line-height: var(--appname-h1-ln);
+  margin-bottom: var(--enjanga2025app-h1-mb);
+  font-size: var(--enjanga2025app-h1-fs);
+  line-height: var(--enjanga2025app-h1-ln);
   letter-spacing: -0.66px;
 
   .icon {
-    margin: var(--appname-h1-icon-marg);
-    top: var(--appname-h1-icon-top);
-    width: var(--appname-h1-icon-dim);
-    height: var(--appname-h1-icon-dim);
+    margin: var(--enjanga2025app-h1-icon-marg);
+    top: var(--enjanga2025app-h1-icon-top);
+    width: var(--enjanga2025app-h1-icon-dim);
+    height: var(--enjanga2025app-h1-icon-dim);
   }
 }
 
 .Heading--2 {
-  margin-bottom: var(--appname-h2-mb);
-  font-size: var(--appname-h2-fs);
-  line-height: var(--appname-h2-ln);
+  margin-bottom: var(--enjanga2025app-h2-mb);
+  font-size: var(--enjanga2025app-h2-fs);
+  line-height: var(--enjanga2025app-h2-ln);
   letter-spacing: -0.28px;
   font-weight: 350;
 
   .icon {
-    margin: var(--appname-h2-icon-marg);
-    top: var(--appname-h2-icon-top);
-    width: var(--appname-h2-icon-dim);
-    height: var(--appname-h2-icon-dim);
+    margin: var(--enjanga2025app-h2-icon-marg);
+    top: var(--enjanga2025app-h2-icon-top);
+    width: var(--enjanga2025app-h2-icon-dim);
+    height: var(--enjanga2025app-h2-icon-dim);
   }
 }
 
 .Heading--3 {
-  margin-bottom: var(--appname-h3-mb);
-  font-size: var(--appname-h3-fs);
-  line-height: var(--appname-h3-ln);
+  margin-bottom: var(--enjanga2025app-h3-mb);
+  font-size: var(--enjanga2025app-h3-fs);
+  line-height: var(--enjanga2025app-h3-ln);
   letter-spacing: -0.46px;
 
   .icon {
-    width: var(--appname-h3-icon-dim);
-    height: var(--appname-h3-icon-dim);
+    width: var(--enjanga2025app-h3-icon-dim);
+    height: var(--enjanga2025app-h3-icon-dim);
   }
 }
 
 .Heading--4 {
-  margin-bottom: var(--appname-h4-mb);
-  font-size: var(--appname-h4-fs);
-  line-height: var(--appname-h4-ln);
+  margin-bottom: var(--enjanga2025app-h4-mb);
+  font-size: var(--enjanga2025app-h4-fs);
+  line-height: var(--enjanga2025app-h4-ln);
   letter-spacing: -0.46px;
 
   .icon {
-    width: var(--appname-h4-icon-dim);
-    height: var(--appname-h4-icon-dim);
+    width: var(--enjanga2025app-h4-icon-dim);
+    height: var(--enjanga2025app-h4-icon-dim);
   }
 }
 
