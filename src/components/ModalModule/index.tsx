@@ -52,15 +52,6 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
       setChildComponent('contact');
     }
 
-    /**
-     * TODO:
-     * NEEDS TO MAKE SURE THS IS PERFOMANCE OPTIMIZED
-     * -- NOTE: The modal is always fetching something
-     * */
-    // fetchData(dataType, dataId).then((response) => {
-    //   setModalContent(response);
-    // });
-
     setIsOpen(true);
   }
 

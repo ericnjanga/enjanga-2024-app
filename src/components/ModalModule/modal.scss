@@ -2,6 +2,10 @@
   --appname-modal-brd-width: 7px; 
   --appname-modal-body-padd: 2rem 2rem 1rem 2rem;
   --appname-modal-footer-padd: 1rem 2rem;
+  // Modal width sizes
+  --appname-modal-width-large: 900px;
+  --appname-modal-width-medium: 500px;
+  --appname-modal-width-small: 300px;
 }
 
 .appname-modal.modal-wrapper {
@@ -15,7 +19,7 @@
 
   .modal-content {
     margin: 2rem auto;
-    max-width: 500px;
+    max-width: var(--appname-modal-width-medium);
     min-height: 300px;
     padding: 0;
     border-radius: 6px;
@@ -26,6 +30,13 @@
     // inner droshadow looking like a solid border ...
     box-shadow: inset 0 0 0 1px var(--appname-theme-light-cccc-8);
     background-color: var(--appname-theme-light-bbbb-8);
+
+    &.modal-large {
+      max-width: var(--appname-modal-width-large);
+    }
+    &.modal-small {
+      max-width: var(--appname-modal-width-small);
+    }
   }
   .modal-header {
     padding: var(--appname-modal-body-padd);
@@ -37,10 +48,8 @@
   .modal-body {
     padding: var(--appname-modal-body-padd);
     padding-top: 0;
-
-    // p:last-of-type {
-    //   margin-bottom: 0;
-    // }
+    max-height: 400px;
+    overflow-y: scroll;
   }
 
   .modal-btn-close {
